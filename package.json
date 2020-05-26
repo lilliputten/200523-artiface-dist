@@ -1,7 +1,8 @@
 {
   "name": "ArtiFaceDist",
-  "version": "0.0.2",
-  "timestamp": "2020.05.26, 18:48",
+  "version": "0.0.4",
+  "timestamp": "2020.05.26, 20:19",
+  "timetag": "200526-2019",
   "description": "Arti Webpack UI Library Distributive ",
   "main": "bundle.js",
   "keywords": [],

@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack://webpack-react-cosmos-test/Hello.pcss"],"names":[],"mappings":"AAAA;EACE,qBAAqB;AACvB,C","file":"styles.css","sourcesContent":[".Hello {\n  border: 1px solid red;\n}"],"sourceRoot":""}
+{"version":3,"sources":["webpack://ArtiFace/Hello.pcss"],"names":[],"mappings":"AAAA;EACE,qBAAqB;AACvB,C","file":"styles.css","sourcesContent":[".Hello {\n  border: 1px solid red;\n}"],"sourceRoot":""}

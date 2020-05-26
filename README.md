@@ -2,5 +2,5 @@
 
 ## Project info
 
-- Version: 0.0.4
-- Last changes timestamp: 2020.05.26, 20:19
+- Version: 0.0.5
+- Last changes timestamp: 2020.05.26, 21:33

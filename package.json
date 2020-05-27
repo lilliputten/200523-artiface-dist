@@ -1,9 +1,9 @@
 {
   "name": "ArtiFace",
   "description": "Arti Webpack UI Library",
-  "version": "0.0.6",
-  "timestamp": "2020.05.26, 22:32",
-  "timetag": "200526-2232",
+  "version": "0.0.7",
+  "timestamp": "2020.05.27, 22:14",
+  "timetag": "200527-2214",
   "main": "build.js",
   "keywords": [
     "UI",

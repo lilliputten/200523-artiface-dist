@@ -82,14 +82,20 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 14);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fails = __webpack_require__(2);
+var fails = __webpack_require__(3);
 
 // Thank's IE8 for his funny defineProperty
 module.exports = !fails(function () {
@@ -98,7 +104,7 @@ module.exports = !fails(function () {
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -107,7 +113,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -120,17 +126,17 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react");
+module.exports = require("@bem-react/classname");
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DESCRIPTORS = __webpack_require__(0);
-var defineProperty = __webpack_require__(5).f;
+var DESCRIPTORS = __webpack_require__(1);
+var defineProperty = __webpack_require__(6).f;
 
 var FunctionPrototype = Function.prototype;
 var FunctionPrototypeToString = FunctionPrototype.toString;
@@ -154,13 +160,13 @@ if (DESCRIPTORS && !(NAME in FunctionPrototype)) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DESCRIPTORS = __webpack_require__(0);
-var IE8_DOM_DEFINE = __webpack_require__(6);
-var anObject = __webpack_require__(10);
-var toPrimitive = __webpack_require__(11);
+var DESCRIPTORS = __webpack_require__(1);
+var IE8_DOM_DEFINE = __webpack_require__(7);
+var anObject = __webpack_require__(11);
+var toPrimitive = __webpack_require__(12);
 
 var nativeDefineProperty = Object.defineProperty;
 
@@ -180,12 +186,12 @@ exports.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, A
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DESCRIPTORS = __webpack_require__(0);
-var fails = __webpack_require__(2);
-var createElement = __webpack_require__(7);
+var DESCRIPTORS = __webpack_require__(1);
+var fails = __webpack_require__(3);
+var createElement = __webpack_require__(8);
 
 // Thank's IE8 for his funny defineProperty
 module.exports = !DESCRIPTORS && !fails(function () {
@@ -196,11 +202,11 @@ module.exports = !DESCRIPTORS && !fails(function () {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(8);
-var isObject = __webpack_require__(1);
+var global = __webpack_require__(9);
+var isObject = __webpack_require__(2);
 
 var document = global.document;
 // typeof document.createElement is 'object' in old IE
@@ -212,7 +218,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var check = function (it) {
@@ -229,10 +235,10 @@ module.exports =
   // eslint-disable-next-line no-new-func
   Function('return this')();
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)))
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 var g;
@@ -258,10 +264,10 @@ module.exports = g;
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(1);
+var isObject = __webpack_require__(2);
 
 module.exports = function (it) {
   if (!isObject(it)) {
@@ -271,10 +277,10 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(1);
+var isObject = __webpack_require__(2);
 
 // `ToPrimitive` abstract operation
 // https://tc39.github.io/ecma262/#sec-toprimitive
@@ -291,13 +297,13 @@ module.exports = function (input, PREFERRED_STRING) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -305,23 +311,38 @@ module.exports = function (input, PREFERRED_STRING) {
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
-var es_function_name = __webpack_require__(4);
+var es_function_name = __webpack_require__(5);
 
 // EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(3);
+var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
-// EXTERNAL MODULE: ./src/demo/Hello.pcss
-var demo_Hello = __webpack_require__(12);
+// EXTERNAL MODULE: external "@bem-react/classname"
+var classname_ = __webpack_require__(4);
 
+// EXTERNAL MODULE: ./src/demo/Hello.pcss
+var demo_Hello = __webpack_require__(13);
+
+// CONCATENATED MODULE: ./src/demo/img/LockColor2.svg
+/* harmony default export */ var LockColor2 = (__webpack_require__.p + "assets/LockColor2-e3f5be6c.svg");
 // CONCATENATED MODULE: ./src/demo/Hello.jsx
 
 
 
 
+
+
+
+var cnHello = Object(classname_["cn"])('Hello');
+
 var Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,greeting = _ref$greeting === void 0 ? 'Greeting' : _ref$greeting,_ref$name = _ref.name,name = _ref$name === void 0 ? 'Name' : _ref$name;
   return /*#__PURE__*/(
-    external_react_default.a.createElement("h1", { className: "Hello" }, greeting, ", ", name, "!"));
+    external_react_default.a.createElement("div", { className: cnHello() }, /*#__PURE__*/
+    external_react_default.a.createElement("h1", { className: cnHello('Title') }, greeting, ", ", name, "!"), /*#__PURE__*/
+    external_react_default.a.createElement("div", { className: cnHello('Image') }, /*#__PURE__*/
+    external_react_default.a.createElement("img", { src: LockColor2 }))));
+
+
 
 };
 // CONCATENATED MODULE: ./src/build.js

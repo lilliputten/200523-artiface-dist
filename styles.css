@@ -1,5 +1,10 @@
 .Hello {
   border: 1px solid red;
 }
+  .Hello-Image img {
+      max-width: 64px;
+      max-height: 64px;
+    }
+
 
 /*# sourceMappingURL=styles.css.map*/

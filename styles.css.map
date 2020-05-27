@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack://ArtiFace/./src/demo/Hello.pcss"],"names":[],"mappings":"AAAA;AACA;AACA,C","file":"styles.css","sourcesContent":[".Hello {\n  border: 1px solid red;\n}"],"sourceRoot":""}
+{"version":3,"sources":["webpack://ArtiFace/./src/demo/Hello.pcss"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA","file":"styles.css","sourcesContent":[".Hello {\n  border: 1px solid red;\n}\n  .Hello-Image img {\n      max-width: 64px;\n      max-height: 64px;\n    }\n"],"sourceRoot":""}

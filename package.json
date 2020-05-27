@@ -1,15 +1,19 @@
 {
-  "bundleDependencies": false,
-  "name": "ArtiFaceDist",
+  "name": "ArtiFace",
+  "description": "Arti Webpack UI Library",
   "version": "0.0.6",
   "timestamp": "2020.05.26, 22:32",
   "timetag": "200526-2232",
-  "description": "Arti Webpack UI Library Distributive ",
-  "main": "bundle.js",
-  "keywords": [],
+  "main": "build.js",
+  "keywords": [
+    "UI",
+    "webpack",
+    "library"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bem-react/classname": "^1.5.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

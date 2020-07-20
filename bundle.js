@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 14);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -95,150 +95,298 @@ module.exports = require("react");
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fails = __webpack_require__(3);
+/** @module config
+ *  @description App config
+ *  @since 2019.08.29, 10:28
+ *  @changed 2020.05.17, 04:12
+ */
 
-// Thank's IE8 for his funny defineProperty
-module.exports = !fails(function () {
-  return Object.defineProperty({}, 1, { get: function () { return 7; } })[1] != 7;
-});
+var config = {
+  build: __webpack_require__(3),
+  css: __webpack_require__(4),
+  userAgent: __webpack_require__(6)
+  // app: require('./app'),
+  // constants: require('./constants'),
+};
 
+module.exports = config;
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-module.exports = function (it) {
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-
+module.exports = require("@bem-react/classname");
 
 /***/ }),
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = function (exec) {
-  try {
-    return !!exec();
-  } catch (error) {
-    return true;
-  }
-};
+/** @module config.build
+ *  @description Build management config
+ *  @since 2019.09.10, 14:25
+ *  @changed 2019.09.10, 14:25
+ */
 
+var DEBUG = false;
+var DEV_DEBUG = false;
+
+module.exports = { // Common-used build variables...
+
+  DEBUG: DEBUG,
+  DEV_DEBUG: DEV_DEBUG,
+
+  THEME: "default",
+  buildTag: "v.0.0.9-200720-1429-build-prod-default",
+  version: "0.0.9" };
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("@bem-react/classname");
+/** @module config.css
+ *  @description Global styles config
+ *  @since 2019.08.29, 10:28
+ *  @changed 2019.09.03, 11:04
+ */
+
+// Theme...
+var THEME = "default";
+var theme = __webpack_require__(5);
+
+// Some reusable parameters...
+var defaultFontSize = theme.defaultFontSize || 16;
+var textColor = theme.textColor || '#444';
+
+var defaultTransitonTime = 250;
+var defaultAnimateTimeout = 500;
+
+module.exports = { // Common-used css variables...
+
+  THEME: THEME,
+
+  primaryColor: theme.primaryColor,
+  primaryLightColor: theme.primaryLightColor,
+  primaryDarkColor: theme.primaryDarkColor,
+  primaryContrastColor: theme.primaryContrastColor,
+
+  secondaryColor: theme.secondaryColor,
+  secondaryLightColor: theme.secondaryLightColor,
+  secondaryDarkColor: theme.secondaryDarkColor,
+  secondaryContrastColor: theme.secondaryContrastColor,
+
+  // Colors...
+
+  // Colors for dialogs styles
+  errorColor: theme.errorColor || '#c33',
+  warnColor: theme.warnColor || '#f96',
+  successColor: theme.successColor || '#ac9',
+  infoColor: theme.infoColor || '#9bd',
+  confirmColor: theme.confirmColor || theme.primaryColor || textColor,
+  selectColor: theme.selectColor || '#05b',
+
+  textColor: textColor,
+  defaultTextColor: textColor,
+
+  // Neutral colors...
+
+  neutralExtraDarkColor: '#666',
+  neutralDarkColor: '#999',
+  neutralTintedDarkColor: '#aaa',
+  neutralShadedColor: '#bbb',
+  neutralColor: '#ccc',
+  neutralTintedColor: '#d0d0d0',
+  neutralLightColor: '#e0e0e0',
+  neutralExtraLightColor: '#f0f0f0',
+
+  // Fonts...
+
+  defaultFont: theme.defaultFont || '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+
+  defaultFontSize: defaultFontSize,
+  fontSize: defaultFontSize,
+  fontSizeM: defaultFontSize,
+  fontSizeSm: defaultFontSize - 2,
+  fontSizeXs: defaultFontSize - 4,
+  fontSizeLg: defaultFontSize + 2,
+  fontSizeXl: defaultFontSize + 4,
+  fontSizeXxl: defaultFontSize + 8,
+  titleFontSize: defaultFontSize + 8,
+  defaultLineHeight: 1.6,
+  // defaultFontWeight: 400,
+  defaultFontWeight: 'normal',
+  // defaultFontWeight: 500,
+  // defaultBemFontSize: defaultFontSize,
+
+  // Breakpoints (from bootstrap)
+  bk_xs: 0,
+  bk_sm_pre: 575.98,
+  bk_sm: 576,
+  bk_md_pre: 767.98,
+  bk_md: 768,
+  bk_lg_pre: 991.98,
+  bk_lg: 992,
+  bk_xl_pre: 1199.98,
+  bk_xl: 1200,
+
+  // Median breakpoints (breakpoints between popular screen sizes
+  bm_xs: 0,
+  bm_sm_pre: 399.98,
+  bm_sm: 400,
+  bm_md_pre: 699.98,
+  bm_md: 700,
+  bm_lg_pre: 799.98,
+  bm_lg: 800,
+  bm_xl_pre: 1099.98,
+  bm_xl: 1100,
+
+  // Spacings & paddings...
+
+  innerPadding: 5,
+  itemPadding: 10,
+  containerPadding: 15,
+  blockPadding: 20,
+
+  // Timeouts & delays...
+
+  transitionTime: defaultTransitonTime, // ms
+
+  animateTimeout: defaultAnimateTimeout, // ms
+  modalAnimateTimeout: defaultAnimateTimeout // ms
+
+  // Parameters...
+
+  // // Use global flex container & in page components scrolls
+  // // NOTE: 2019.06.14, 13:14 -- Not used. Using `html.Clippable` dynamically creating selectors.
+  // useGlobalClipping: true,
+};
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var DESCRIPTORS = __webpack_require__(1);
-var defineProperty = __webpack_require__(6).f;
+/** @module config.themes.default
+ *  @desc App theme css parameters
+ *  @since 2019.09.06, 11:23
+ *  @changed 2019.09.06, 11:24
+ */
 
-var FunctionPrototype = Function.prototype;
-var FunctionPrototypeToString = FunctionPrototype.toString;
-var nameRE = /^\s*function ([^ (]*)/;
-var NAME = 'name';
+module.exports = {
 
-// Function instances `.name` property
-// https://tc39.github.io/ecma262/#sec-function-instances-name
-if (DESCRIPTORS && !(NAME in FunctionPrototype)) {
-  defineProperty(FunctionPrototype, NAME, {
-    configurable: true,
-    get: function () {
-      try {
-        return FunctionPrototypeToString.call(this).match(nameRE)[1];
-      } catch (error) {
-        return '';
-      }
-    }
-  });
-}
+  primaryDarkColor: '#06d', // '#c90'
+  primaryColor: '#07f', // '#fc0'
+  primaryLightColor: '#6af', // '#fe8'
+  primaryContrastColor: '#fff',
 
+  secondaryDarkColor: '#233',
+  secondaryColor: '#677',
+  secondaryLightColor: '#abb',
+  secondaryContrastColor: '#fff' };
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var DESCRIPTORS = __webpack_require__(1);
-var IE8_DOM_DEFINE = __webpack_require__(7);
-var anObject = __webpack_require__(11);
-var toPrimitive = __webpack_require__(12);
+/* WEBPACK VAR INJECTION */(function(global) {/** @module config.build
+ *  @description Build management config
+ *  @since 2019.09.10, 14:25
+ *  @changed 2020.05.17, 04:12
+ *
+ * Detecting next browser features (see `detectUserAgent` function):
+ *
+ *  - ANTGalio
+ *  - WebKit
+ *  - Opera
+ *  - Firefox
+ *  - Safari
+ *  - IE
+ *  - Edge
+ *  - Chrome
+ *  - Blink
+ *
+ * NOTE: All config submodules uses only ES5 syntax (no webpack/babel poly/overfills for avoid compatibility issues)
+ */
 
-var nativeDefineProperty = Object.defineProperty;
+/** Prefix to add for each body agent class.
+     * Adding `{cssAgentPrefix}BrowserId` class for each detected browser feature).
+     * E.g.: 'ua_Chrome', 'ua_IE' etc...
+     */
+var cssAgentPrefix = 'ua_';
 
-// `Object.defineProperty` method
-// https://tc39.github.io/ecma262/#sec-object.defineproperty
-exports.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return nativeDefineProperty(O, P, Attributes);
-  } catch (error) { /* empty */ }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
+var hasOwnProperty = Object.prototype.hasOwnProperty;
 
+function detectSafari() {
+  var isSafari = false;
+  try {
+    isSafari = /constructor/i.test(String(global.HTMLElement));
+  }
+  catch (error) {} // eslint-disable-line no-empty
+  if (!isSafari) {
+    var notificationObject = global.safari && typeof global.safari !== 'undefined' && global.safari.pushNotification;
+    isSafari = !!notificationObject && String(notificationObject) === '[object SafariRemoteNotification]';
+  }
+  return isSafari;
+}
+
+function detectUserAgent() {
+
+  var agentString = String(global.navigator && global.navigator.userAgent || 'none');
+  // var agentString = getAgentString()
+  var document = global.document;
+  var body = document && document.body /*  || {} */;
+
+  var ua = {};
+
+  ua.ANTGalio = agentString.indexOf('ANTGalio') !== -1;
+  ua.WebKit = agentString.indexOf('WebKit') !== -1;
+
+  ua.Opera = !!global.opr && !!global.opr.addons || !!global.opera || agentString.indexOf(' OPR/') != -1;
+
+  // Firefox 1.0+
+  ua.Firefox = typeof InstallTrigger !== 'undefined';
+
+  // // Safari 3.0+ "[object HTMLElementConstructor]"
+  // ua.Safari = /constructor/i.test(global.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]" })(!global.safari || (typeof global.safari !== 'undefined' && global.safari.pushNotification))
+  ua.Safari = detectSafari();
+
+  ua.IE = /*@cc_on!@*/!!(document && document.documentMode);
+
+  // Edge 20+
+  ua.Edge = !ua.IE && !!global.StyleMedia;
+
+  // Chrome 1 - 71
+  ua.Chrome = !!global.chrome && (!!global.chrome.webstore || !!global.chrome.runtime);
+
+  // Blink engine detection
+  ua.Blink = (ua.Chrome || ua.Opera) && !!global.CSS;
+
+  var agentData = {
+    agentString: agentString,
+    agentsList: [] };
+
+  var cssAgentClasses = '';
+  for (var key in ua) {// Filter non-false agent keys, construct agentsList...
+    if (hasOwnProperty.call(ua, key) && ua[key]) {
+      agentData[key] = ua[key];
+      agentData.agentsList.push(key);
+      cssAgentClasses += (cssAgentClasses ? ' ' : '') + cssAgentPrefix + key;
+    }
+  }
+
+  if (body) {// Add agent classes to body class
+    body.className = (body.className ? body.className + ' ' : '') + cssAgentClasses;
+  }
+
+  return agentData;
+
+}
+
+var userAgent = detectUserAgent();
+
+module.exports = userAgent;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(7)))
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var DESCRIPTORS = __webpack_require__(1);
-var fails = __webpack_require__(3);
-var createElement = __webpack_require__(8);
-
-// Thank's IE8 for his funny defineProperty
-module.exports = !DESCRIPTORS && !fails(function () {
-  return Object.defineProperty(createElement('div'), 'a', {
-    get: function () { return 7; }
-  }).a != 7;
-});
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(9);
-var isObject = __webpack_require__(2);
-
-var document = global.document;
-// typeof document.createElement is 'object' in old IE
-var EXISTS = isObject(document) && isObject(document.createElement);
-
-module.exports = function (it) {
-  return EXISTS ? document.createElement(it) : {};
-};
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(global) {var check = function (it) {
-  return it && it.Math == Math && it;
-};
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-module.exports =
-  // eslint-disable-next-line no-undef
-  check(typeof globalThis == 'object' && globalThis) ||
-  check(typeof window == 'object' && window) ||
-  check(typeof self == 'object' && self) ||
-  check(typeof global == 'object' && global) ||
-  // eslint-disable-next-line no-new-func
-  Function('return this')();
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)))
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports) {
 
 var g;
@@ -264,70 +412,43 @@ module.exports = g;
 
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(2);
-
-module.exports = function (it) {
-  if (!isObject(it)) {
-    throw TypeError(String(it) + ' is not an object');
-  } return it;
-};
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(2);
-
-// `ToPrimitive` abstract operation
-// https://tc39.github.io/ecma262/#sec-toprimitive
-// instead of the ES6 spec version, we didn't implement @@toPrimitive case
-// and the second argument - flag - preferred type is a string
-module.exports = function (input, PREFERRED_STRING) {
-  if (!isObject(input)) return input;
-  var fn, val;
-  if (PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
-  if (typeof (fn = input.valueOf) == 'function' && !isObject(val = fn.call(input))) return val;
-  if (!PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
-  throw TypeError("Can't convert object to primitive value");
-};
-
-
-/***/ }),
-/* 13 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 14 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
-var es_function_name = __webpack_require__(5);
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "config", function() { return /* reexport */ config_default.a; });
+__webpack_require__.d(__webpack_exports__, "Hello", function() { return /* reexport */ src_demo_Hello; });
+
+// EXTERNAL MODULE: ./src/config/config.js
+var config = __webpack_require__(1);
+var config_default = /*#__PURE__*/__webpack_require__.n(config);
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
 // EXTERNAL MODULE: external "@bem-react/classname"
-var classname_ = __webpack_require__(4);
+var classname_ = __webpack_require__(2);
 
 // EXTERNAL MODULE: ./src/demo/Hello.pcss
-var demo_Hello = __webpack_require__(13);
+var demo_Hello = __webpack_require__(8);
 
 // CONCATENATED MODULE: ./src/demo/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = (__webpack_require__.p + "assets/LockColor2-e3f5be6c.svg");
 // CONCATENATED MODULE: ./src/demo/Hello.jsx
 
 
+// import config from 'config'
 
 
 
@@ -345,23 +466,17 @@ var Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,greeti
 
 
 };
+
+/* harmony default export */ var src_demo_Hello = (Hello_Hello);
 // CONCATENATED MODULE: ./src/build.js
 /** @module build
  *  @desc Library exportable ditributive
  *  @since 2020.05.19, 17:16
- *  @changed 2020.05.19, 19:01
+ *  @changed 2020.05.27, 22:58
  */
 
-// import * as Hello from './demo/Hello.jsx'
+// export { Hello } from './demo/Hello.jsx'
 
-// export const Hello
-
-/* harmony default export */ var build = __webpack_exports__["default"] = ({
-  Hello: Hello_Hello });
-
-// export const libExport = {
-//   Hello,
-// }
 
 /***/ })
 /******/ ]);

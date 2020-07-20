@@ -136,8 +136,8 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.0.11-200720-1742-build-prod-default",
-  version: "0.0.11" };
+  buildTag: "v.0.0.12-200720-1744-build-prod-default",
+  version: "0.0.12" };
 
 /***/ }),
 /* 4 */
@@ -453,6 +453,9 @@ var demo_Hello = __webpack_require__(8);
 
 
 
+
+console.log(LockColor2);
+debugger;
 
 var cnHello = Object(classname_["cn"])('Hello');
 

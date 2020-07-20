@@ -4,9 +4,9 @@ TODO: Some end-user (app-developer) how-to & manual reference notes comes here.
 
 ## Build info
 
-- Version: 0.0.11
-- Last changes timestamp: 2020.07.20, 17:42
-- Last changes timetag: 200720-1742
+- Version: 0.0.12
+- Last changes timestamp: 2020.07.20, 17:44
+- Last changes timetag: 200720-1744
 
 ## Usage
 

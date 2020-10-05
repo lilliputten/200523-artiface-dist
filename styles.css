@@ -24,20 +24,7 @@
 
   box-sizing: border-box;
 
-  /* @mixin debug; */
-
-  border: 1px solid transparent; /* Hide default css frame for `button` tags (if applied)*/
-  border-radius: 3px;
-  padding: 0 8px;
-  /* display: inline-block;*/
-
-  /* &_fullWidth {*/
-  /*   display: block;*/
-  /* }*/
-
-  position: relative;
-
-  cursor: default;
+  /* @mixin debug; */ /* Hide default css frame for `button` tags (if applied)*/
 
   /* &_plain.FormItem_hovered {*/
   /*   ^&-Text {*/
@@ -67,19 +54,39 @@
     white-space: nowrap;
   }
 
+.FormItemDummy {
+
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0 8px;
+
+  position: relative;
+
+  cursor: default;
+
+}
+
+/* }*/
+
 .FormItemDummy.FormItem_hoverable:not(.FormItem_disabled) {
     cursor: pointer;
   }
 
+/*   display: block;*/
+
 .FormItemDummy-Icon {
     color: #ccc; /* Default icon color*/
   }
+
+/* &_fullWidth {*/
 
 .FormItemDummy-Text {
     overflow: hidden;
     text-overflow: ellipsis;
     /* max-width: 100%;*/
   }
+
+/* display: inline-block;*/
 
 .FormItemDummy-Icon + .FormItemDummy-Text { /* Spacing between icon and text*/
     margin-left: 8px;
@@ -240,8 +247,6 @@
   border-color: transparent;
   border-radius: 3px;
 
-  cursor: default;
-
   /* &_fullWidth {*/
   /*   display: block;*/
   /* }*/
@@ -269,6 +274,12 @@
     position: relative;
     vertical-align: bottom;
   }
+
+.FormButton {
+
+  cursor: default;
+
+}
 
 .FormButton.FormItem_hoverable:not(.FormItem_disabled) {
     cursor: pointer;

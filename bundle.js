@@ -231,7 +231,7 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.0.15-201005-2039-build-prod-default",
+  buildTag: "v.0.0.15-201005-2204-build-prod-default",
   version: "0.0.15" };
 
 /***/ }),
@@ -770,7 +770,7 @@ var FormItemHOC_deriveState = function deriveState() {for (var _len = arguments.
       return set[id] != null /* && val == null */ ? set[id] : val;
     }, null);
     if (val != null) {var _extends2;
-      return extends_default()(extends_default()({}, state), {}, (_extends2 = {}, _extends2[id] = val, _extends2));
+      return extends_default()({}, state, (_extends2 = {}, _extends2[id] = val, _extends2));
     }
     return state;
   }, defaultState);
@@ -878,7 +878,7 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
       //   console.log(this.state)
       //   debugger
       // }
-      _this.id = props.id || params.id;_this.formItemRef = external_react_default.a.createRef();return _this;}_temp.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {// TODO: Update event subscriptions if `hoverable` flag changed?
+      _this.id = props.id || params.id;_this.formItemRef = /*#__PURE__*/external_react_default.a.createRef();return _this;}_temp.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {// TODO: Update event subscriptions if `hoverable` flag changed?
       return FormItemHOC_deriveState(params, props, state); // deriveStateFromProps(props, state)
     };_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
       var formItemDomRef = this.formItemDomRef;var hoverable = this.state.hoverable;if (hoverable && formItemDomRef && formItemDomRef.addEventListener) {this.hoverableInited = true;formItemDomRef.addEventListener('mouseover', this.handleMouseOver);formItemDomRef.addEventListener('mouseout', this.handleMouseOut);}};_proto.componentWillUnmount = function componentWillUnmount() {if (this.hoverableInited) {// const { formItemRef: { current } = {} } = this
@@ -1073,7 +1073,7 @@ FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$Compon
     var content = [iconElem, textElem]; // children || text
 
     var tagName = tag || 'div';
-    var element = external_react_default.a.createElement(tagName, renderProps, content);
+    var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
     return element;
   };return FormItemDummy;}(external_react_default.a.Component /** @lends @FormItemDummy.prototype */);
 
@@ -1253,7 +1253,7 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$Component) {inh
     var content = [iconElem, textElem]; // children || text
 
     var tagName = tag || 'div';
-    var element = external_react_default.a.createElement(tagName, renderProps, content);
+    var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
     return element;
   };return FormButton;}(external_react_default.a.Component /** @lends @FormButton.prototype */);
 
@@ -1332,7 +1332,7 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$Component) {inheri
     var mods = FormGroup_classNameModifiers.reduce(function (mods, id) {
       var val = _this2.state[id] != null ? _this2.state[id] : _this2.props[id];
       if (val != null) {var _extends2;
-        return extends_default()(extends_default()({}, mods), {}, (_extends2 = {}, _extends2[id] = val, _extends2));
+        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
       }
       return mods;
     }, {});

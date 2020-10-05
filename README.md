@@ -29,7 +29,18 @@ They postfixed with underscore (`_`; eg, `find_`). You can use symlinks if worki
 
 The npm requirements using in final (builded) library code, contained in `dependencies` and `peerDependencies` sections in `package.json` (`devDependencies` using only for build/dev environment).
 
-## Install
+## Project folders structure
+
+- `!Docs` (optional) -- Some project documentation (other than included in the `README*` files).
+- `!Work` (optional) -- Some work materials (what may be useful in future).
+- `build` (auto-generated; see `build` npm script) -- Production build.
+- `build-dev` (auto-generated; see `build-dev` npm script) -- Development build (debug & tesing only).
+- `demo-html` -- Demo html template folder.
+- `publish` (auto-initialized with publish submodule; see `publish` and `postinstall-publish-submodule` npm scripts) -- Folder for syncing with 'dist' repository (specified in `util-config*`).
+- `src` -- Source files
+- `static-build-files` -- Static files added to the build.
+
+## Installation & usage
 
 ```shell
 npm i -S git+{{REPO_ADDR}}
@@ -89,7 +100,6 @@ import 'DistName/styles.css' // Import styles
 const { Hello } = DistName // Destruct specific components
 render(<Hello />, document.getElementById('root')) // Minimalistic render sample
 ```
-
 
 ### Run cosmos components indpector:
 

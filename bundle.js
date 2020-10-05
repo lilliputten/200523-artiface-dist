@@ -231,8 +231,8 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.0.17-201006-0047-build-prod-default",
-  version: "0.0.17" };
+  buildTag: "v.0.0.18-201006-0218-build-prod-default",
+  version: "0.0.18" };
 
 /***/ }),
 /* 10 */

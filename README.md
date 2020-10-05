@@ -4,9 +4,9 @@ __TODO:__ Create end-user (app-developer) how-to & manual reference notes.
 
 ## Build info
 
-- Version: 0.0.15
-- Last changes timestamp: 2020.10.05, 20:39
-- Last changes timetag: 201005-2039
+- Version: 0.0.18
+- Last changes timestamp: 2020.10.06, 02:18
+- Last changes timetag: 201006-0218
 
 ## Usage
 
@@ -22,9 +22,8 @@ or via npm:
 npm i -S git+{{REPO_ADDR}} DistName
 ```
 
-To update to actual library package use any of:
+To update to actual library package version use command:
 ```shell
-npm i -S DistName
 npm update -S DistName
 ```
 

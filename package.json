@@ -1,0 +1,31 @@
+{
+  "name": "YouFaceDist",
+  "description": "Arti UI Components Library",
+  "NOTE": "All version and time stamp properties are updated automatically (see `util-update-build-variables.sh`, `util-increment-version.sh`)!",
+  "version": "0.0.17",
+  "timetag": "201006-0047",
+  "timestamp": "2020.10.06, 00:47",
+  "changed": "2020.10.06, 00:47",
+  "main": "bundle.js",
+  "keywords": [
+    "ARTI",
+    "UI",
+    "webpack",
+    "components",
+    "library"
+  ],
+  "author": "igor@lilliputten.ru",
+  "license": "ISC",
+  "peerDependencies": {},
+  "dependencies": {
+    "@bem-react/classname": "^1.5.8",
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

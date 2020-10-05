@@ -13,13 +13,13 @@ __TODO:__ Create end-user (app-developer) how-to & manual reference notes.
 Library can be added in `dependencies` section of `package.json` file as:
 
 ```json
-  "DistName": "git+{{REPO_ADDR}}",
+  "DistName": "git+{{REPO_ADDR}}"
 ```
 
 or via npm:
 
 ```shell
-npm i -S git+{{REPO_ADDR}}
+npm i -S git+{{REPO_ADDR}} DistName
 ```
 
 To update to actual library package use any of:
@@ -38,5 +38,5 @@ render(<Hello />, document.getElementById('root')) // Minimalistic render sample
 ```
 
 <!--
- @changed 2020.10.06, 02:14
+ @changed 2020.10.06, 02:16
 -->

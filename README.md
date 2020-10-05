@@ -1,4 +1,4 @@
-# ARTI WebInterface library cpmponents distributive
+# ARTI WebInterface library components distributive
 
 __TODO:__ Create end-user (app-developer) how-to & manual reference notes.
 

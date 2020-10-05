@@ -1,96 +1,34 @@
-# ARTI WebInterface UI components library
+# ARTI WebInterface library cpmponents distributive
 
-## Build info (auto-generated)
+__TODO:__ Create end-user (app-developer) how-to & manual reference notes.
 
-- Version: 0.0.17
-- Last changes timestamp: 2020.10.06, 00:47
-- Last changes timetag: 201006-0047
+## Build info
 
-## Requirements
+- Version: 0.0.15
+- Last changes timestamp: 2020.10.05, 20:39
+- Last changes timetag: 201005-2039
 
-Some maintenance commands (`*.sh` scripts or commands in `scripts` section of `package.json`) utilizes specific posix command line commands like next:
+## Usage
 
-- `cp`
-- `mv`
-- `rm`
-- `test`
+Library can be added in `dependencies` section of `package.json` file as:
 
-(...and so on...)
+```json
+  "DistName": "git+{{REPO_ADDR}}",
+```
 
-They may be installed on windows via cygin or similar software.
-
-Some scripts (rarely used) used some posix commands what doubles windows cmd commands (with different syntax):
-
-- `date`
-- `find`
-- `tar`
-
-They postfixed with underscore (`_`; eg, `find_`). You can use symlinks if working under linux/macos etc.
-
-The npm requirements using in final (builded) library code, contained in `dependencies` and `peerDependencies` sections in `package.json` (`devDependencies` using only for build/dev environment).
-
-## Project folders structure
-
-- `!Docs` (optional) -- Some project documentation (other than included in the `README*` files).
-- `!Work` (optional) -- Some work materials (what may be useful in future).
-- `build` (auto-generated; see `build` npm script) -- Production build.
-- `build-dev` (auto-generated; see `build-dev` npm script) -- Development build (debug & tesing only).
-- `demo-html` -- Demo html template folder.
-- `publish` (auto-initialized with publish submodule; see `publish` and `postinstall-publish-submodule` npm scripts) -- Folder for syncing with 'dist' repository (specified in `util-config*`).
-- `src` -- Source files
-- `static-build-files` -- Static files added to the build.
-
-## Installation & usage
+or via npm:
 
 ```shell
 npm i -S git+{{REPO_ADDR}}
 ```
 
-## Build & publish cycle
-
-### Increment patch (minor number) version:
-
+To update to actual library package use any of:
 ```shell
-util-increment-version.sh
-```
-
-### Update build info (build version, date/time stamp & tag):
-
-```shell
-util-update-build-variables.sh
-```
-
-### Build default target (usually `build-prod-default`, 'Build production library'):
-
-```shell
-npm run -s build
-```
-
-### Update & push `publish` repository:
-
-```shell
-npm run -s publish
-```
-
-NOTE: Target repository specified in npm script `postinstall-publish-submodule`.
-
-TODO: To use external automation scripts? To use crossplatform replacements for posix commands?
-
-After publishing you need to update requirements in target projects using command:
-
-```shell
+npm i -S DistName
 npm update -S DistName
 ```
 
-Update command suitable if you using npm requirement string like:
-
-```json
-  "dependencies": {
-    "DistName": "git+{{DIST_REPO_ADDR}}",
-    ...
-```
-
-### Using in js code with imports:
+### Usage in js code with imports:
 
 ```javascript
 import * as DistName from 'DistName' // Import code bundle
@@ -100,5 +38,5 @@ render(<Hello />, document.getElementById('root')) // Minimalistic render sample
 ```
 
 <!--
- @changed 2020.10.06, 01:47
+ @changed 2020.10.06, 02:14
 -->

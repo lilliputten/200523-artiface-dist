@@ -1,3 +1,479 @@
+.FormItem {
+  /* @mixin debug;*/
+  /* @mixin FormItemMixin;*/
+  display: inline-block;
+  box-sizing: border-box;
+}
+  .FormItem_solid {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+/** @module FormItemDummy.styles
+ *  @class FormItemDummy
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.07.20, 19:24
+ */
+
+.FormItemDummy {
+
+  display: inline-block;
+
+  box-sizing: border-box;
+
+  /* @mixin debug; */
+
+  border: 1px solid transparent; /* Hide default css frame for `button` tags (if applied)*/
+  border-radius: 3px;
+  padding: 0 8px;
+  /* display: inline-block;*/
+
+  /* &_fullWidth {*/
+  /*   display: block;*/
+  /* }*/
+
+  position: relative;
+
+  cursor: default;
+
+  /* &_plain.FormItem_hovered {*/
+  /*   ^&-Text {*/
+  /*     text-decoration: underline;*/
+  /*   }*/
+  /*   ^&-Icon {*/
+  /*     color: color($neutralColor shade(5));*/
+  /*   }*/
+  /* }*/
+
+  /* &:before {*/
+  /*   border-radius: @calc($formItemBorderRadius - 1)px;*/
+  /*   position: absolute;*/
+  /*   display: block;*/
+  /*   left: 1px;*/
+  /*   top: 1px;*/
+
+  /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
+
+}
+
+.FormItemDummy_solid {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+.FormItemDummy.FormItem_hoverable:not(.FormItem_disabled) {
+    cursor: pointer;
+  }
+
+.FormItemDummy-Icon {
+    color: #ccc; /* Default icon color*/
+  }
+
+.FormItemDummy-Text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* max-width: 100%;*/
+  }
+
+.FormItemDummy-Icon + .FormItemDummy-Text { /* Spacing between icon and text*/
+    margin-left: 8px;
+  }
+
+/* }*/
+
+.FormItemDummy-Text, .FormItemDummy-Icon {
+    display: block;
+    display: inline-block;
+    position: relative;
+    /* z-index: 1;*/
+  }
+
+/*   // z-index: 0;*/
+
+.FormItemDummy_hasIcon {
+    min-width: 32px;
+  }
+
+/*   content: '';*/
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Icon {
+      position: absolute;
+    }
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Text {
+      margin-left: 24px;
+    }
+
+/*   bottom: 1px;*/
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Text {
+      margin-right: 24px;
+      margin-left: 0;
+    }
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Icon {
+      position: absolute;
+      right: 0;
+      right: 8px;
+    }
+
+/*   right: 1px;*/
+
+.FormItemDummy_style {
+
+    /* TODO: styles: error, warn, success, info*/
+  }
+
+/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+
+.FormItemDummy_style_default {
+      border-color: #ccc;
+      background-color: rgb(227, 227, 227);
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_default .FormItemDummy-Text {
+        color: #000;
+      }
+
+.FormItemDummy_style_default .FormItemDummy-Icon {
+        color: #aaa;
+      }
+
+.FormItemDummy_style_default.FormItem_hovered {
+        border-color: rgb(184, 184, 184);
+        background-color: rgb(211, 211, 211);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+/* Button styles...*/
+
+.FormItemDummy_style_primary {
+      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
+      border-color: rgb(0, 107, 230);
+      background-color: #07f;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_primary .FormItemDummy-Text {
+        color: #fff;
+      }
+
+.FormItemDummy_style_primary .FormItemDummy-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormItemDummy_style_primary.FormItem_hovered {
+        border-color: rgb(0, 96, 207);
+        background-color: rgb(0, 111, 237);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+.FormItemDummy_style_secondary { /* $formItemBorderColor;*/
+      border-color: rgb(92, 107, 107);
+      background-color: #677;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_secondary .FormItemDummy-Text {
+        color: #fff;
+      }
+
+.FormItemDummy_style_secondary .FormItemDummy-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormItemDummy_style_secondary.FormItem_hovered {
+        border-color: rgb(83, 96, 96);
+        background-color: rgb(95, 111, 111);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+/** @module FormButton.styles
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.07.20, 19:24
+ */
+
+.FormButton {
+
+  /* @mixin FormItemMixin;*/
+
+  /* border: 1px solid transparent; // Hide default css frame for `button` tags (if applied)*/
+  padding: 0 8px;
+
+  /* TODO: @mixin FormItemFramed*/
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 3px;
+
+  cursor: default;
+
+  /* &_fullWidth {*/
+  /*   display: block;*/
+  /* }*/
+  /* &_plain.FormItem_hovered {*/
+  /*   ^&-Text {*/
+  /*     text-decoration: underline;*/
+  /*   }*/
+  /*   ^&-Icon {*/
+  /*     color: color($neutralColor shade(5));*/
+  /*   }*/
+  /* }*/
+
+}
+
+/* @mixin debug;*/
+
+.FormButton, .FormButton-Text, .FormButton-Icon {
+    white-space: nowrap;
+    position: relative;
+    line-height: 31px;
+  }
+
+.FormButton-Text, .FormButton-Icon {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+  }
+
+.FormButton.FormItem_hoverable:not(.FormItem_disabled) {
+    cursor: pointer;
+  }
+
+.FormButton-Icon {
+    color: #ccc; /* Default icon color*/
+  }
+
+.FormButton-Text {
+    /* @mixin debug green;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* // max-width: 100%;*/
+  }
+
+.FormButton_hasIcon {
+    min-width: 32px;
+  }
+
+.FormButton_hasText.FormButton_hasIcon .FormButton-Icon {
+      position: absolute;
+    }
+
+.FormButton_hasText.FormButton_hasIcon .FormButton-Text {
+      margin-left: 24px;
+    }
+
+.FormButton_hasText.FormButton_hasIcon.FormButton_rightIcon .FormButton-Text {
+      margin-right: 24px;
+      margin-left: 0;
+    }
+
+.FormButton_hasText.FormButton_hasIcon.FormButton_rightIcon .FormButton-Icon {
+      position: absolute;
+      right: 0;
+      right: 8px;
+    }
+
+
+/** @module FormButton-Styles.styles
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.07.20, 19:24
+ */
+
+.FormButton {
+
+  /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
+
+}
+
+.FormButton_style {
+
+    /* TODO: styles: error, warn, success, info*/
+  }
+
+/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+
+.FormButton_style_default {
+      border-color: #ccc;
+      background-color: rgb(227, 227, 227);
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_default .FormButton-Text {
+        color: #000;
+      }
+
+.FormButton_style_default .FormButton-Icon {
+        color: #aaa;
+      }
+
+.FormButton_style_default.FormItem_hovered {
+        border-color: rgb(184, 184, 184);
+        background-color: rgb(211, 211, 211);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormButton_style_default.FormItem_hovered .FormButton-Icon, .FormButton_style_default.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* Button styles...*/
+
+.FormButton_style_primary {
+      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
+      border-color: rgb(0, 107, 230);
+      background-color: #07f;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_primary .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_primary .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_primary.FormItem_hovered {
+        border-color: rgb(0, 96, 207);
+        background-color: rgb(0, 111, 237);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormButton_style_primary.FormItem_hovered .FormButton-Icon, .FormButton_style_primary.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_secondary { /* $formItemBorderColor;*/
+      border-color: rgb(92, 107, 107);
+      background-color: #677;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_secondary .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_secondary .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_secondary.FormItem_hovered {
+        border-color: rgb(83, 96, 96);
+        background-color: rgb(95, 111, 111);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormButton_style_secondary.FormItem_hovered .FormButton-Icon, .FormButton_style_secondary.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/** @module FormGroup.styles
+ *  @class FormGroup
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.07.20, 19:24
+ */
+
+.FormGroup {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  /* TODO: Use config for values?*/
+
+  margin: -2px -2px;
+}
+
+/* Padded content*/
+
+.FormGroup_padded {
+    padding: 5px;
+  }
+
+/* Background styles*/
+
+.FormGroup_background_shaded {
+      background-color: #f0f0f0;
+    }
+
+.FormGroup_flow {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+.FormGroup_flow > .FormItem_fill {
+      flex: 1 1;
+    }
+
+.FormGroup > .FormGroup_align_right {
+      /* Align to right*/
+      justify-content: flex-end;
+      align-items: flex-end;
+      flex: 1 1;
+    }
+
+/* No margins for nested groups*/
+
+.FormGroup > .FormGroup.FormItem {
+    /* margin-top: 0;*/
+    /* margin-bottom: 0;*/
+    margin: 0;
+  }
+
+.FormGroup > .FormItem {
+    margin: 2px 2px;
+  }
+
 .Hello {
   /* @mixin debug;*/
   position: relative;

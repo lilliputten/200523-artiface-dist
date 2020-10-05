@@ -4,22 +4,22 @@ TODO: Some end-user (app-developer) how-to & manual reference notes comes here.
 
 ## Build info
 
-- Version: 0.0.12
-- Last changes timestamp: 2020.07.20, 17:44
-- Last changes timetag: 200720-1744
+- Version: 0.0.15
+- Last changes timestamp: 2020.10.05, 20:39
+- Last changes timetag: 201005-2039
 
 ## Usage
 
 Library can be added in `dependencies` section of `package.json` file as:
 
 ```json
-  "ArtiFaceDist": "git+https://github.com/lilliputten/200523-artiface-dist.git",
+  "ArtiFaceDist": "git+https://github.com/lilliputten/{PRJNAME}.git",
 ```
 
 or via npm:
 
 ```shell
-npm i -S git+https://github.com/lilliputten/200523-artiface-dist.git
+npm i -S git+https://github.com/lilliputten/{PRJNAME}.git
 ```
 
 To update to actual library package use:

@@ -27,7 +27,7 @@ util-increment-version.sh
 ### Update build info (build version, date/time stamp & tag):
 
 ```shell
-util-update-build-props.sh
+util-update-build-variables.sh
 ```
 
 ### Build default target (usually `build-prod-default`, 'Build production library'):

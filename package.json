@@ -1,10 +1,10 @@
 {
   "name": "YouFaceDist",
   "description": "Arti UI Components Library",
-  "NOTE": "All version and time stamp properties are updated automatically (see `util-update-build-props.sh`, `util-increment-version.sh`)!",
+  "NOTE": "All version and time stamp properties are updated automatically (see `util-update-build-variables.sh`, `util-increment-version.sh`)!",
   "version": "0.0.15",
-  "timetag": "201005-2204",
-  "timestamp": "2020.10.05, 22:04",
+  "timetag": "201006-0012",
+  "timestamp": "2020.10.06, 00:12",
   "changed": "2020.10.05, 23:09",
   "main": "bundle.js",
   "keywords": [

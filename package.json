@@ -1,11 +1,11 @@
 {
-  "name": "WebUiDist",
+  "name": "WebUiCoreDist",
   "description": "Arti UI Components Library",
   "NOTE": "All version and time stamp properties are updated automatically (see `util-update-build-variables.sh`, `util-increment-version.sh`)!",
-  "version": "0.0.18",
-  "timetag": "201006-0218",
-  "timestamp": "2020.10.06, 02:18",
-  "changed": "2020.10.06, 01:52",
+  "version": "0.1.2",
+  "timetag": "201208-1339",
+  "timestamp": "2020.12.08, 13:39",
+  "changed": "2020.11.05, 19:31",
   "main": "bundle.js",
   "keywords": [
     "ARTI",
@@ -16,7 +16,6 @@
   ],
   "author": "igor@lilliputten.ru",
   "license": "ISC",
-  "peerDependencies": {},
   "dependencies": {
     "@bem-react/classname": "^1.5.8",
     "@fortawesome/fontawesome-free": "^5.14.0",
@@ -26,6 +25,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  }
+    "react-calendar": "^3.2.0",
+    "react-datepicker": "^3.3.0",
+    "react-dom": "^16.13.1",
+    "react-onclickoutside": "^6.9.0",
+    "react-popper": "^1.3.7"
+  },
+  "peerDependencies": {}
 }

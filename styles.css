@@ -1,16 +1,203 @@
+/** @module InlineIcon.styles
+ *  @since 2020.10.07, 02:08
+ *  @changed 2020.10.07, 02:08
+ */
+
+.InlineIcon {
+}
+
+/** @module Popup.styles
+ *  @since 2020.10.27, 00:39
+ *  @changed 2020.10.29, 03:14
+ */
+
+.Popup-ControlWrapper {
+  }
+
+.Popup-ContentWrapper {
+    z-index: 100; /* Lift above all other regular elements*/
+    position: absolute;
+    /* display: none;*/
+    visibility: hidden;
+    -webkit-animation-name: WebUiCore_Popup;
+            animation-name: WebUiCore_Popup;
+    -webkit-animation-duration: .2s;
+            animation-duration: .2s;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
+    border-radius: 3px;
+  }
+
+.Popup-ContentWrapper_show {
+      /* display: block;*/
+      visibility: visible;
+      -webkit-animation-name: WebUiCore_Popup_visible;
+              animation-name: WebUiCore_Popup_visible;
+    }
+
+@-webkit-keyframes WebUiCore_Popup_visible {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+@keyframes WebUiCore_Popup_visible {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+@-webkit-keyframes WebUiCore_Popup {
+      0% {
+        visibility: visible;
+        margin: 0;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      99% {
+        margin: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        visibility: hidden;
+        margin: -9999px 0 0 -9999px;
+        opacity: 0;
+      }
+    }
+
+@keyframes WebUiCore_Popup {
+      0% {
+        visibility: visible;
+        margin: 0;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      99% {
+        margin: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        visibility: hidden;
+        margin: -9999px 0 0 -9999px;
+        opacity: 0;
+      }
+    }
+
+/** @module FormItemHOC.style
+ *  @since 2019.09.25, 19:18
+ *  @changed 2020.06.04, 22:58
+ */
+
 .FormItem {
   /* @mixin debug;*/
   /* @mixin FormItemMixin;*/
   display: inline-block;
-  box-sizing: border-box;
 }
-  .FormItem_solid {
+
+/* box-sizing: border-box; // NOTE: Use formItemInnerHeight for inner elements*/
+
+.FormItem_solid {
     height: 32px;
     line-height: 32px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+.FormItem_clickable {
+    cursor: pointer;
+  }
+
+.FormItem_framed {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    /* border-color: $formItemBorderColor; */
+    /* border-color: transparent; */
+    border-color: transparent;
+    /* @mixin FormItemFramed;*/
+    /* border-color: $formItemBorderColor;*/
+    /* box-shadow: inset 0 0 0 1px $formItemBorderColor;*/
+  }
+
+/* background-color: $formItemBgColor;*/
+
+.FormItem_framed.FormItem_hovered {
+      border-color: rgb(184, 184, 184);
+      /* box-shadow: inset 0 0 0 1px color($formItemBorderColor shade(10%));*/
+      /* 0 0 2px 1px color($formItemBorderColor alpha(50%)); // Outer shadow (not using due to clipping issues)*/
+    }
+
+/* focusable:*/
+
+.FormItem_framed.FormItem_focused {
+      border-color: rgb(163, 163, 163);
+      /* box-shadow: inset 0 0 1px 1px color($formItemBorderColor shade(20%));*/
+      /* 0 0 2px 2px color($formItemBorderColor alpha(70%)); // Outer shadow (not using due to clipping issues)*/
+    }
+
+.FormItem_fullWidth {
+    /* display: block;*/
+    /* width: 100%;*/
+    flex: 5 1;
+  }
+
+/** @module MenuItem.styles
+ *  @since 2020.10.27, 03:05
+ *  @changed 2020.10.27, 03:06
+ */
+
+.MenuItem {
+  padding: 2px 6px;
+}
+
+.MenuItem:not(.MenuItem_disabled) {
+    cursor: pointer;
+  }
+
+.MenuItem.FormItem_hovered {
+      background-color: #07f;
+      color: #fff;
+    }
+
+.MenuItem_checkable,
+  .MenuItem_withIcon {
+    position: relative;
+  }
+
+.MenuItem_checkable .MenuItem-Icon, .MenuItem_withIcon .MenuItem-Icon {
+      position: absolute;
+      left: 8px;
+      opacity: .5; /* ???*/
+      /* color: $(primaryColor);*/
+    }
+
+.MenuItem_checkable .MenuItem-Text, .MenuItem_withIcon .MenuItem-Text {
+      padding-left: 25px;
+    }
+
+/** @module Menu.styles
+ *  @since 2020.10.27, 02:58
+ *  @changed 2020.10.27, 02:58
+ */
+
+.Menu:not(.Menu_layout_horizontal) .MenuItem {
+      display: block;
+    }
 
 /** @module FormItemDummy.styles
  *  @class FormItemDummy
@@ -229,9 +416,19 @@
           opacity: .9;
         }
 
+/** @module FormLabel.styles
+ *  @since 2020.10.06, 23:45
+ *  @changed 2020.10.06, 23:46
+ */
+
+.FormLabel {
+  /* height: $(formItemHeight)px;*/
+  line-height: 32px;
+}
+
 /** @module FormButton.styles
  *  @since 2020.07.20, 19:24
- *  @changed 2020.07.20, 19:24
+ *  @changed 2020.10.21, 23:42
  */
 
 .FormButton {
@@ -240,12 +437,6 @@
 
   /* border: 1px solid transparent; // Hide default css frame for `button` tags (if applied)*/
   padding: 0 8px;
-
-  /* TODO: @mixin FormItemFramed*/
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 3px;
 
   /* &_fullWidth {*/
   /*   display: block;*/
@@ -266,8 +457,10 @@
 .FormButton, .FormButton-Text, .FormButton-Icon {
     white-space: nowrap;
     position: relative;
-    line-height: 31px;
+    line-height: 30px;
   }
+
+/* border-radius: @calc($formItemBorderRadius)px;*/
 
 .FormButton-Text, .FormButton-Icon {
     display: inline-block;
@@ -281,13 +474,19 @@
 
 }
 
+/* border-color: transparent;*/
+
 .FormButton.FormItem_hoverable:not(.FormItem_disabled) {
     cursor: pointer;
   }
 
+/* border-style: solid;*/
+
 .FormButton-Icon {
     color: #ccc; /* Default icon color*/
   }
+
+/* border-width: 1px;*/
 
 .FormButton-Text {
     /* @mixin debug green;*/
@@ -295,6 +494,8 @@
     text-overflow: ellipsis;
     /* // max-width: 100%;*/
   }
+
+/* @mixin FormItemFramed;*/
 
 .FormButton_hasIcon {
     min-width: 32px;
@@ -315,14 +516,79 @@
 
 .FormButton_hasText.FormButton_hasIcon.FormButton_rightIcon .FormButton-Icon {
       position: absolute;
-      right: 0;
       right: 8px;
     }
 
+.FormButton.FormItem_hovered {
+    z-index: 10; /* Lift active item up*/
+  }
 
 /** @module FormButton-Styles.styles
  *  @since 2020.07.20, 19:24
- *  @changed 2020.07.20, 19:24
+ *  @changed 2020.10.29, 03:30
+ */
+
+/* Button variations...*/
+
+.FormButton_variation_popupControl {
+    }
+
+.FormButton_rotatedIcon .FormButton-Icon {
+      transform: rotate(0deg);
+      -webkit-animation-duration: .2s;
+              animation-duration: .2s;
+      /* animation-timing-function: ease-out;*/
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards;
+      -webkit-animation-name: WebUiCore_FormButton_rotatedIcon_normal;
+              animation-name: WebUiCore_FormButton_rotatedIcon_normal;
+    }
+
+.FormButton_rotatedIcon.FormButton_checked .FormButton-Icon {
+      transform: rotate(180deg);
+      -webkit-animation-name: WebUiCore_FormButton_rotatedIcon_checked;
+              animation-name: WebUiCore_FormButton_rotatedIcon_checked;
+    }
+
+@-webkit-keyframes WebUiCore_FormButton_rotatedIcon_normal {
+      0% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+@keyframes WebUiCore_FormButton_rotatedIcon_normal {
+      0% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+@-webkit-keyframes WebUiCore_FormButton_rotatedIcon_checked {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+
+@keyframes WebUiCore_FormButton_rotatedIcon_checked {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+
+/** @module FormButton-Styles.styles
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.10.21, 22:52
  */
 
 .FormButton {
@@ -336,7 +602,13 @@
     /* TODO: styles: error, warn, success, info*/
   }
 
-/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+/* ... ???*/
+
+.FormButton_style_plain.FormButton_onDark .FormButton-Text {
+          color: #fff;
+        }
+
+/* @define-mixin styledDarkButton $bgColor, $textColor: $specialContrastColor {*/
 
 .FormButton_style_default {
       border-color: #ccc;
@@ -356,24 +628,51 @@
 .FormButton_style_default.FormItem_hovered {
         border-color: rgb(184, 184, 184);
         background-color: rgb(211, 211, 211);
-        /* ^^^&-Icon {*/
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
         /*   // color: color($iconColor shade(10));*/
         /* }*/
       }
 
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+/* ^^^&-Icon, ^^^&-Text {*/
 
 .FormButton_style_default.FormItem_hovered .FormButton-Icon, .FormButton_style_default.FormItem_hovered .FormButton-Text {
           opacity: .9;
         }
 
-/* Button styles...*/
+.FormButton_style_default.FormButton_onDark {
+        border-color: rgba(204, 204, 204, 0.2);
+        background-color: rgba(227, 227, 227, 0.2);
+      }
 
-.FormButton_style_primary {
-      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
-      border-color: rgb(0, 107, 230);
-      background-color: #07f;
-    }
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_default.FormButton_onDark .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_default.FormButton_onDark .FormButton-Icon {
+        color: #aaa;
+      }
+
+.FormButton_style_default.FormButton_onDark.FormItem_hovered {
+        border-color: rgba(184, 184, 184, 0.2);
+        background-color: rgba(211, 211, 211, 0.2);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_default.FormButton_onDark.FormItem_hovered .FormButton-Icon, .FormButton_style_default.FormButton_onDark.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* Theme colors*/
+
+.FormButton_style_primary { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 107, 230); background-color: #07f;}
 
 /* box-shadow: inset 0 0 0 1px $borderColor;*/
 
@@ -388,21 +687,21 @@
 .FormButton_style_primary.FormItem_hovered {
         border-color: rgb(0, 96, 207);
         background-color: rgb(0, 111, 237);
-        /* ^^^&-Icon {*/
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
         /*   // color: color($iconColor shade(10));*/
         /* }*/
       }
 
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+/* ^^^&-Icon, ^^^&-Text {*/
 
 .FormButton_style_primary.FormItem_hovered .FormButton-Icon, .FormButton_style_primary.FormItem_hovered .FormButton-Text {
           opacity: .9;
         }
 
-.FormButton_style_secondary { /* $formItemBorderColor;*/
-      border-color: rgb(92, 107, 107);
-      background-color: #677;
-    }
+/* }*/
+
+.FormButton_style_secondary { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(92, 107, 107); background-color: #677;}
 
 /* box-shadow: inset 0 0 0 1px $borderColor;*/
 
@@ -417,14 +716,780 @@
 .FormButton_style_secondary.FormItem_hovered {
         border-color: rgb(83, 96, 96);
         background-color: rgb(95, 111, 111);
-        /* ^^^&-Icon {*/
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
         /*   // color: color($iconColor shade(10));*/
         /* }*/
       }
 
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+/* ^^^&-Icon, ^^^&-Text {*/
 
 .FormButton_style_secondary.FormItem_hovered .FormButton-Icon, .FormButton_style_secondary.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/*   @mixin buttonStyle $bgColor, $borderColor, $iconColor, $textColor;*/
+
+.FormButton_style_error { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(184, 46, 46); background-color: #c33;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_error .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_error .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_error.FormItem_hovered {
+        border-color: rgb(166, 41, 41);
+        background-color: rgb(190, 47, 47);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_error.FormItem_hovered .FormButton-Icon, .FormButton_style_error.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/*   $textColor: #000;*/
+
+.FormButton_style_warn { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 107, 46); background-color: #f73;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_warn .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_warn .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_warn.FormItem_hovered {
+        border-color: rgb(207, 96, 41);
+        background-color: rgb(237, 111, 47);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_warn.FormItem_hovered .FormButton-Icon, .FormButton_style_warn.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/*   $iconColor: $neutralTintedDarkColor;*/
+
+.FormButton_style_success { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(77, 138, 46); background-color: #593;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_success .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_success .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_success.FormItem_hovered {
+        border-color: rgb(69, 124, 41);
+        background-color: rgb(79, 142, 47);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_success.FormItem_hovered .FormButton-Icon, .FormButton_style_success.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/*   $borderColor: $formItemBorderColor;*/
+
+.FormButton_style_info { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(31, 138, 153); background-color: #29a;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_info .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_info .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_info.FormItem_hovered {
+        border-color: rgb(28, 124, 138);
+        background-color: rgb(32, 142, 158);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_info.FormItem_hovered .FormButton-Icon, .FormButton_style_info.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/*   $bgColor: color($neutralExtraDarkColor tint(10));*/
+
+.FormButton_style_confirm { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(122, 138, 15); background-color: #891;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_confirm .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_confirm .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_confirm.FormItem_hovered {
+        border-color: rgb(110, 124, 14);
+        background-color: rgb(126, 142, 16);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_confirm.FormItem_hovered .FormButton-Icon, .FormButton_style_confirm.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_default^&_onDark {*/
+
+.FormButton_style_select { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 77, 168); background-color: #05b;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_select .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_select .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_select.FormItem_hovered {
+        border-color: rgb(0, 69, 151);
+        background-color: rgb(0, 79, 174);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_select.FormItem_hovered .FormButton-Icon, .FormButton_style_select.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_lightBue { @mixin styledButton #29a }*/
+
+.FormButton_style_maroon { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(115, 0, 0); background-color: #800000;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_maroon .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_maroon .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_maroon.FormItem_hovered {
+        border-color: rgb(104, 0, 0);
+        background-color: rgb(119, 0, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_maroon.FormItem_hovered .FormButton-Icon, .FormButton_style_maroon.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_Blue { @mixin styledButton #05b }*/
+
+.FormButton_style_red { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 0, 0); background-color: #ff0000;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_red .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_red .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_red.FormItem_hovered {
+        border-color: rgb(207, 0, 0);
+        background-color: rgb(237, 0, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_red.FormItem_hovered .FormButton-Icon, .FormButton_style_red.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_grassGreen { @mixin styledButton #891 }*/
+
+.FormButton_style_purple { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(115, 0, 115); background-color: #800080;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_purple .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_purple .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_purple.FormItem_hovered {
+        border-color: rgb(104, 0, 104);
+        background-color: rgb(119, 0, 119);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_purple.FormItem_hovered .FormButton-Icon, .FormButton_style_purple.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_green { @mixin styledButton #593 }*/
+
+.FormButton_style_fuchsia { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 0, 230); background-color: #ff00ff;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_fuchsia .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_fuchsia .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_fuchsia.FormItem_hovered {
+        border-color: rgb(207, 0, 207);
+        background-color: rgb(237, 0, 237);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_fuchsia.FormItem_hovered .FormButton-Icon, .FormButton_style_fuchsia.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_orange { @mixin styledButton #f73 }*/
+
+.FormButton_style_green { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 115, 0); background-color: #008000;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_green .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_green .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_green.FormItem_hovered {
+        border-color: rgb(0, 104, 0);
+        background-color: rgb(0, 119, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_green.FormItem_hovered .FormButton-Icon, .FormButton_style_green.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_lime { @mixin styledButton #00ff00 }*/
+
+.FormButton_style_olive { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(115, 115, 0); background-color: #808000;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_olive .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_olive .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_olive.FormItem_hovered {
+        border-color: rgb(104, 104, 0);
+        background-color: rgb(119, 119, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_olive.FormItem_hovered .FormButton-Icon, .FormButton_style_olive.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_yellow { @mixin styledButton #ffff00 }*/
+
+.FormButton_style_navy { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 0, 115); background-color: #000080;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_navy .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_navy .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_navy.FormItem_hovered {
+        border-color: rgb(0, 0, 104);
+        background-color: rgb(0, 0, 119);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_navy.FormItem_hovered .FormButton-Icon, .FormButton_style_navy.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_red { @mixin styledButton #c33 }*/
+
+.FormButton_style_blue { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 0, 230); background-color: #0000ff;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_blue .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_blue .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_blue.FormItem_hovered {
+        border-color: rgb(0, 0, 207);
+        background-color: rgb(0, 0, 237);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_blue.FormItem_hovered .FormButton-Icon, .FormButton_style_blue.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* Custom colors (see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)*/
+
+.FormButton_style_teal { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 115, 115); background-color: #008080;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_teal .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_teal .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_teal.FormItem_hovered {
+        border-color: rgb(0, 104, 104);
+        background-color: rgb(0, 119, 119);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_teal.FormItem_hovered .FormButton-Icon, .FormButton_style_teal.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* &_aqua { @mixin styledButton #00ffff }*/
+
+.FormButton_style_orange { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 149, 0); background-color: #ffa500;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_orange .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_orange .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_orange.FormItem_hovered {
+        border-color: rgb(207, 134, 0);
+        background-color: rgb(237, 153, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_orange.FormItem_hovered .FormButton-Icon, .FormButton_style_orange.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+
+.FormButton_style_blueviolet { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(124, 39, 203); background-color: #8a2be2;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_blueviolet .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_blueviolet .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_blueviolet.FormItem_hovered {
+        border-color: rgb(112, 35, 183);
+        background-color: rgb(128, 40, 210);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_blueviolet.FormItem_hovered .FormButton-Icon, .FormButton_style_blueviolet.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+/* Button styles...*/
+
+.FormButton_style_brown { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(149, 38, 38); background-color: #a52a2a;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_brown .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_brown .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_brown.FormItem_hovered {
+        border-color: rgb(134, 34, 34);
+        background-color: rgb(153, 39, 39);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_brown.FormItem_hovered .FormButton-Icon, .FormButton_style_brown.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_cadetblue { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(86, 142, 144); background-color: #5f9ea0;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_cadetblue .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_cadetblue .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_cadetblue.FormItem_hovered {
+        border-color: rgb(77, 128, 130);
+        background-color: rgb(88, 147, 149);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_cadetblue.FormItem_hovered .FormButton-Icon, .FormButton_style_cadetblue.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkblue { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 0, 125); background-color: #00008b;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkblue .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkblue .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkblue.FormItem_hovered {
+        border-color: rgb(0, 0, 113);
+        background-color: rgb(0, 0, 129);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkblue.FormItem_hovered .FormButton-Icon, .FormButton_style_darkblue.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkcyan { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 125, 125); background-color: #008b8b;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkcyan .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkcyan .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkcyan.FormItem_hovered {
+        border-color: rgb(0, 113, 113);
+        background-color: rgb(0, 129, 129);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkcyan.FormItem_hovered .FormButton-Icon, .FormButton_style_darkcyan.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkgoldenrod { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(166, 121, 10); background-color: #b8860b;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkgoldenrod .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkgoldenrod .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkgoldenrod.FormItem_hovered {
+        border-color: rgb(149, 109, 9);
+        background-color: rgb(171, 125, 10);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkgoldenrod.FormItem_hovered .FormButton-Icon, .FormButton_style_darkgoldenrod.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkorange { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 126, 0); background-color: #ff8c00;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkorange .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkorange .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkorange.FormItem_hovered {
+        border-color: rgb(207, 113, 0);
+        background-color: rgb(237, 130, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkorange.FormItem_hovered .FormButton-Icon, .FormButton_style_darkorange.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkorchid { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(138, 45, 184); background-color: #9932cc;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkorchid .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkorchid .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkorchid.FormItem_hovered {
+        border-color: rgb(124, 41, 166);
+        background-color: rgb(142, 47, 190);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkorchid.FormItem_hovered .FormButton-Icon, .FormButton_style_darkorchid.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkred { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(125, 0, 0); background-color: #8b0000;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkred .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkred .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkred.FormItem_hovered {
+        border-color: rgb(113, 0, 0);
+        background-color: rgb(129, 0, 0);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkred.FormItem_hovered .FormButton-Icon, .FormButton_style_darkred.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkslateblue { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(65, 55, 125); background-color: #483d8b;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkslateblue .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkslateblue .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkslateblue.FormItem_hovered {
+        border-color: rgb(59, 50, 113);
+        background-color: rgb(67, 57, 129);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkslateblue.FormItem_hovered .FormButton-Icon, .FormButton_style_darkslateblue.FormItem_hovered .FormButton-Text {
+          opacity: .9;
+        }
+
+.FormButton_style_darkslategray { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(42, 71, 71); background-color: #2f4f4f;}
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormButton_style_darkslategray .FormButton-Text {
+        color: #fff;
+      }
+
+.FormButton_style_darkslategray .FormButton-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormButton_style_darkslategray.FormItem_hovered {
+        border-color: rgb(38, 64, 64);
+        background-color: rgb(44, 73, 73);
+        /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+        /* .FormButton-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* ^^^&-Icon, ^^^&-Text {*/
+
+.FormButton_style_darkslategray.FormItem_hovered .FormButton-Icon, .FormButton_style_darkslategray.FormItem_hovered .FormButton-Text {
           opacity: .9;
         }
 
@@ -442,7 +1507,7 @@
 
   /* TODO: Use config for values?*/
 
-  margin: -2px -2px;
+  margin: -4px -4px;
 }
 
 /* Padded content*/
@@ -482,8 +1547,187 @@
   }
 
 .FormGroup > .FormItem {
-    margin: 2px 2px;
+    margin: 4px 4px;
   }
+
+/** @module FormButtonGroup.styles
+ *  @class FormButtonGroup
+ *  @since 2020.10.21, 23:43
+ *  @changed 2020.10.21, 23:43
+ */
+
+.FormButtonGroup > .FormButton {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+.FormButtonGroup > .FormButton:not(:last-child) {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* border-right-width: 0;*/
+  }
+
+.FormButtonGroup > .FormButton:not(:first-child) {
+    margin-left: 0;
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* border-left-width: 0;*/
+  }
+
+.FormGroup > .FormItem.FormButtonGroup {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+/** @module FormInputGroup.styles
+ *  @class FormInputGroup
+ *  @since 2020.10.21, 23:43
+ *  @changed 2020.10.21, 23:43
+ */
+
+.FormInputGroup > .FormItem {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+.FormInputGroup > .FormItem:not(:last-child) {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* border-right-width: 0;*/
+  }
+
+.FormInputGroup > .FormItem:not(:first-child) {
+    margin-left: 0;
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* border-left-width: 0;*/
+  }
+
+.FormGroup > .FormItem.FormInputGroup {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+/** @module FormText.styles
+ *  @since 2020.10.29, 21:25
+ *  @changed 2020.10.29, 22:42
+ */
+
+.FormText {
+  /* height: $(formItemHeight)px;*/
+  line-height: 32px;
+}
+
+/** @module FormSelect.styles
+ *  @since 2020.10.28, 22:49
+ *  @changed 2020.10.29, 03:14
+ */
+
+.FormSelect {
+  /* height: $(formItemHeight)px;*/
+  /* line-height: $(formItemHeight)px;*/
+}
+
+/** @module FormTextInput.styles
+ *  @since 2020.10.07, 00:20
+ *  @changed 2020.10.29, 23:44
+ */
+
+.FormTextInput {
+  /* NOTE: FormItem is inherited*/
+  border-color: #ccc;
+}
+
+input.FormTextInput-Control {
+    /* box-shadow: inset 0 0 1px red; // DEBUG*/
+    /* border-radius: $(formItemBorderRadius)px; */
+    padding: 0 8px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: #444;
+  }
+
+input.FormTextInput-Control::-moz-placeholder {
+    color: #ccc;
+  }
+
+input.FormTextInput-Control:-ms-input-placeholder {
+    color: #ccc;
+  }
+
+input.FormTextInput-Control::placeholder {
+    color: #ccc;
+  }
+
+input.FormTextInput-Control:focus {
+    outline: 0;
+  }
+
+input.FormTextInput-Control:-ms-clear {
+    display: none;
+  }
+
+/* outline: none;*/
+
+input.FormTextInput-Control:-internal-autofill-selected,
+    input.FormTextInput-Control:-webkit-autofill:active,
+    input.FormTextInput-Control:-webkit-autofill:hover,
+    input.FormTextInput-Control:-webkit-autofill:focus,
+    input.FormTextInput-Control:-internal-autofill-previewed,
+    input.FormTextInput-Control:-webkit-autofill {
+      /* TODO -- 2020.05.06, 03:03 Override autofill font-size styles?*/
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+      font-size: 16px !important;
+      outline: none;
+    }
+
+input.FormTextInput-Control:-webkit-autofill { /* Emulate input frame (hidden by autofill background)*/
+      border: 1px solid #ccc;
+    }
+
+input.FormTextInput-Control::-ms-clear {
+      display: none;
+    }
+
+.FormTextInput_hasIcon { /* ???*/
+    position: relative;
+  }
+
+.FormTextInput_hasIcon input.FormTextInput-Control {
+      padding-right: 30px;
+    }
+
+.FormTextInput_hasIcon .FormTextInput-Icon {
+      position: absolute;
+      right: 8px;
+      top: 2px;
+      opacity: .5;
+      cursor: pointer;
+    }
+
+.FormTextInput_hasIcon .FormTextInput-Icon:hover { /* Check for `disabled`?*/
+        opacity: .75;
+      }
+
+
+/** @module FormPasswordInput.styles
+ *  @since 2020.10.29, 23:50
+ *  @changed 2020.10.30, 00:03
+ */
+
+.FormPasswordInput {
+}
+
 
 .Hello {
   /* @mixin debug;*/
@@ -505,6 +1749,90 @@
       max-width: 64px;
       max-height: 64px;
     }
+
+/** @module demo.pcss
+ *  @desc Demo app entry point
+ *  @since 2020.05.19, 17:16
+ *  @changed 2020.05.27, 22:58
+ */
+
+body {
+  /* margin: 0;*/
+  /* padding: 0;*/
+  background-color: #fff;
+
+}
+
+body,
+table,
+input,
+textarea,
+.defaultFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
+  /* font-size: 30px; // DEBUG*/
+  color: #444;
+}
+
+body, html {
+  /* overflow: hidden;*/
+}
+
+/* // TODO: ANTGalio?*/
+
+/* html, body, .App, .App__Container, .Page, .Page__Container {*/
+
+/*   position: absolute; // ???*/
+
+/*   top: 0;*/
+
+/*   bottom: 0;*/
+
+/*   left: 0;*/
+
+/*   right: 0;*/
+
+/* }*/
+
+/* .Page__Container {*/
+
+/*   position: absolute;*/
+
+/* }*/
+
+.hContainer {
+  /* width: 100%; */
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  /* @mixin debug green; */
+  /* margin-left: -$padding; */
+  /* margin-right: -$padding; */
+  /* padding: auto; */
+}
+
+.hRow {
+  margin-right: -15px;
+  margin-left: -15px;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* padding-left: $padding; */
+  /* padding-right: $padding; */
+}
+
+.hCell {
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  max-width: 100%;
+  /* width: 100%; */
+  /* flex-basis: 0; */
+  /* flex-grow: 1; */
+}
 
 
 /*# sourceMappingURL=styles.css.map*/

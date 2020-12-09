@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 36);
+/******/ 	return __webpack_require__(__webpack_require__.s = 37);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -105,7 +105,7 @@ module.exports = require("react");
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(21)();
+  module.exports = __webpack_require__(22)();
 }
 
 
@@ -148,12 +148,6 @@ module.exports = _defineProperty;
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("@bem-react/classname");
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -163,7 +157,7 @@ function _inheritsLoose(subClass, superClass) {
 module.exports = _inheritsLoose;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 function _extends() {
@@ -187,13 +181,7 @@ function _extends() {
 module.exports = _extends;
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /** @module config
@@ -203,14 +191,26 @@ module.exports = require("@fortawesome/react-fontawesome");
  */
 
 var config = {
-  build: __webpack_require__(10),
-  css: __webpack_require__(11),
-  userAgent: __webpack_require__(13)
-  // app: require('./app'),
+  app: __webpack_require__(10),
+  build: __webpack_require__(11),
+  css: __webpack_require__(12),
+  userAgent: __webpack_require__(14)
   // constants: require('./constants'),
 };
 
 module.exports = config;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("@bem-react/classname");
 
 /***/ }),
 /* 9 */
@@ -220,6 +220,29 @@ module.exports = require("@fortawesome/free-solid-svg-icons");
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+/** @module config.app
+ *  @description Core app config
+ *  @since 2019.09.10, 14:25
+ *  @changed 2019.09.10, 14:25
+ */
+
+module.exports = { // Common-used app variables...
+
+  defaultPageSize: 20, // Number of entries per page
+
+  useCssModules: false, // To use css-module mappings (see `cssMappings` below)
+
+  // Css-modules mappings in format `{ [originalClassName]: transformedClassName }`.
+  // Set it with `WebUiCore.utils.setFactoryOptions(React, { useCssModules: true, cssMappings })`
+  cssMappings: null
+
+  // cssModulePrefix: 'WebUiCore', // UNUSED
+};
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 /** @module config.build
@@ -237,11 +260,11 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.2-201208-1339-build-prod-default",
-  version: "0.1.2" };
+  buildTag: "v.0.1.4-201208-2216-build-prod-default",
+  version: "0.1.4" };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /** @module config.css
@@ -252,7 +275,7 @@ module.exports = { // Common-used build variables...
 
 // Theme...
 var THEME = "default";
-var theme = __webpack_require__(12);
+var theme = __webpack_require__(13);
 
 // Some reusable parameters...
 var defaultFontSize = theme.defaultFontSize || 16;
@@ -409,7 +432,7 @@ Object.assign(cssConfig, { // Form properties...
 module.exports = cssConfig;
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /** @module config.themes.default
@@ -431,7 +454,7 @@ module.exports = {
   secondaryContrastColor: '#fff' };
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** @module config.build
@@ -531,10 +554,10 @@ function detectUserAgent() {
 var userAgent = detectUserAgent();
 
 module.exports = userAgent;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(14)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(15)))
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 var g;
@@ -558,12 +581,6 @@ try {
 
 module.exports = g;
 
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 16 */
@@ -599,6 +616,12 @@ module.exports = g;
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -609,7 +632,7 @@ module.exports = g;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(22);
+var ReactPropTypesSecret = __webpack_require__(23);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -667,7 +690,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -684,12 +707,6 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 24 */
@@ -765,6 +782,12 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -773,6 +796,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "config", function() { return /* reexport */ config_default.a; });
+__webpack_require__.d(__webpack_exports__, "utils", function() { return /* reexport */ utils_namespaceObject; });
 __webpack_require__.d(__webpack_exports__, "InlineIcon", function() { return /* reexport */ elements_InlineIcon_InlineIcon; });
 __webpack_require__.d(__webpack_exports__, "Popup", function() { return /* reexport */ elements_Popup_Popup; });
 __webpack_require__.d(__webpack_exports__, "Menu", function() { return /* reexport */ elements_Menu_Menu; });
@@ -789,20 +813,121 @@ __webpack_require__.d(__webpack_exports__, "FormTextInput", function() { return 
 __webpack_require__.d(__webpack_exports__, "FormPasswordInput", function() { return /* reexport */ forms_FormPasswordInput_FormPasswordInput; });
 __webpack_require__.d(__webpack_exports__, "Hello", function() { return /* reexport */ demo_Hello_Hello; });
 
+// NAMESPACE OBJECT: ./src/utils/utils.js
+var utils_namespaceObject = {};
+__webpack_require__.r(utils_namespaceObject);
+__webpack_require__.d(utils_namespaceObject, "setConfigOptions", function() { return configure_setConfigOptions; });
+__webpack_require__.d(utils_namespaceObject, "cssMapping", function() { return configure_cssMapping; });
+__webpack_require__.d(utils_namespaceObject, "cn", function() { return configure_cn; });
+
 // EXTERNAL MODULE: ./src/config/config.js
-var config = __webpack_require__(8);
+var config = __webpack_require__(6);
 var config_default = /*#__PURE__*/__webpack_require__.n(config);
 
+// EXTERNAL MODULE: external "@bem-react/classname"
+var classname_ = __webpack_require__(8);
+
+// CONCATENATED MODULE: ./src/utils/configure.js
+/** @module build
+ *  @desc Library exportable ditributive
+ *  @since 2020.05.19, 17:16
+ *  @changed 2020.12.08, 21:47
+ */
+
+
+
+
+var configMap;
+
+var configure_getConfigMap = function getConfigMap() {
+  if (!configMap) {
+    configMap = {};
+    Object.keys(config_default.a).forEach(function (scopeId) {
+      var scopeObj = config_default.a[scopeId];
+      // const mapObj = configMap[scopeId] || (configMap[scopeId] = {})
+      Object.keys(scopeObj).forEach(function (keyId) {
+        if (configMap[keyId]) {
+          configMap[keyId].push(scopeId);
+          // const error = new Error('Duplicated config key "' + keyId + '" in scope "' + scopeId + '" and "' + configMap[keyId] + '"')
+          // console.error(error) // eslint-disable-line no-console
+          // debugger // eslint-disable-line no-debugger
+          // throw error
+        } else
+        {
+          configMap[keyId] = [scopeId];
+        }
+      });
+    });
+  }
+  return configMap;
+};
+
+var configure_setConfigOptions = function setConfigOptions(options) {
+  var map = configure_getConfigMap();
+  Object.entries(options).map(function (_ref) {var key = _ref[0],val = _ref[1]; // Set entry
+    var scopes = map[key];
+    scopes.map(function (scope) {
+      var obj = config_default.a[scope];
+      if (obj) {
+        obj[key] = val;
+      }
+    });
+  });
+};
+
+var configure_cssMapping = function cssMapping(classNames) {var _config$app =
+  config_default.a.app,useCssModules = _config$app.useCssModules,cssMappings = _config$app.cssMappings;
+  if (!useCssModules || !cssMappings || !Object.keys(cssMappings)) {// No css-module transforms
+    return classNames;
+  }
+  var classNamesList = typeof classNames === 'string' ? classNames.split(' ').map(function (s) {return s.trim();}) : classNames;
+  if (!Array.isArray(classNamesList)) {
+    throw new Error('Class list must be an array!');
+  }
+  var resultList = classNamesList.map(function (className) {
+    var result = cssMappings[className] || className;
+    // if (className !== result) {
+    //   console.log('WebUiCore:utils:cssMapping', className, '->', result)
+    //   debugger
+    // }
+    return result;
+  });
+  return resultList.join(' ');
+};
+
+// Wrapper for `@bem-react/classname/cn()` function
+// See original method call signatures & usage in `https://github.com/bem/bem-react/tree/master/packages/classname`
+var configure_cn = function cn() {for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
+  var result = classname_["cn"].apply(cn, args);
+  if (typeof result === 'string') {// If class name, not fabric
+    return configure_cssMapping(result);
+  } else
+  if (typeof result === 'function') {
+    return function cnCssMapping() {for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}
+      var res = result.apply(null, args);
+      if (typeof res === 'string') {
+        res = configure_cssMapping(res);
+      }
+      return res;
+    };
+  }
+  return result;
+};
+// CONCATENATED MODULE: ./src/utils/utils.js
+/** @module build
+ *  @desc Library exportable ditributive
+ *  @since 2020.05.19, 17:16
+ *  @changed 2020.05.27, 22:58
+ */
+
+
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inheritsLoose.js
-var inheritsLoose = __webpack_require__(5);
+var inheritsLoose = __webpack_require__(4);
 var inheritsLoose_default = /*#__PURE__*/__webpack_require__.n(inheritsLoose);
 
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
-
-// EXTERNAL MODULE: external "@bem-react/classname"
-var classname_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: external "@fortawesome/react-fontawesome"
 var react_fontawesome_ = __webpack_require__(7);
@@ -811,7 +936,7 @@ var react_fontawesome_ = __webpack_require__(7);
 var free_solid_svg_icons_ = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./src/elements/InlineIcon/InlineIcon.pcss
-var InlineIcon_InlineIcon = __webpack_require__(15);
+var InlineIcon_InlineIcon = __webpack_require__(16);
 
 // CONCATENATED MODULE: ./src/elements/InlineIcon/InlineIcon.jsx
  /** @module InlineIcon
@@ -833,7 +958,7 @@ var InlineIcon_InlineIcon = __webpack_require__(15);
 
 
 
-var cnInlineIcon = Object(classname_["cn"])('InlineIcon');var
+var cnInlineIcon = configure_cn('InlineIcon');var
 
 InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(InlineIcon, _React$Component);function InlineIcon() {return _React$Component.apply(this, arguments) || this;}var _proto = InlineIcon.prototype;_proto.
 
@@ -879,7 +1004,7 @@ InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$Component) {inh
 
 /* harmony default export */ var elements_InlineIcon_InlineIcon = (InlineIcon_InlineIcon_InlineIcon);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/extends.js
-var helpers_extends = __webpack_require__(6);
+var helpers_extends = __webpack_require__(5);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
@@ -891,7 +1016,7 @@ var defineProperty = __webpack_require__(3);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
-var Popup_Popup = __webpack_require__(16);
+var Popup_Popup = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./src/elements/Popup/Popup.jsx
  /** @module Popup
@@ -907,7 +1032,7 @@ var Popup_Popup = __webpack_require__(16);
 
 
 
-var cnPopup = Object(classname_["cn"])('Popup');
+var cnPopup = configure_cn('Popup');
 
 var delayedClickTimeout = 200;
 var globalClickEventName = 'mousedown';var
@@ -1103,7 +1228,7 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$Component) {inheritsLoose_defa
 
 /* harmony default export */ var elements_Popup_Popup = (Popup_Popup_Popup);
 // EXTERNAL MODULE: ./src/forms/FormItemHOC/FormItemHOC.pcss
-var FormItemHOC = __webpack_require__(17);
+var FormItemHOC = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./src/forms/FormItemHOC/FormItemHOC.jsx
  /** @module FormItemHOC
@@ -1117,7 +1242,7 @@ var FormItemHOC = __webpack_require__(17);
 
 
 
-var cnFormItem = Object(classname_["cn"])('FormItem');
+var cnFormItem = configure_cn('FormItem');
 
 var classNameModifiers = [// Pass props/state params to class modifiers
 // Display-related modifiers...
@@ -1309,7 +1434,7 @@ var FormItemHOC_FormItemHOC = function FormItemHOC(params) {
 
 /* harmony default export */ var forms_FormItemHOC_FormItemHOC = (FormItemHOC_FormItemHOC);
 // EXTERNAL MODULE: ./src/elements/MenuItem/MenuItem.pcss
-var MenuItem_MenuItem = __webpack_require__(18);
+var MenuItem_MenuItem = __webpack_require__(19);
 
 // CONCATENATED MODULE: ./src/elements/MenuItem/MenuItem.jsx
  /** @module MenuItem
@@ -1329,7 +1454,7 @@ var MenuItem_MenuItem = __webpack_require__(18);
 
 
 
-var cnMenuItem = Object(classname_["cn"])('MenuItem');var
+var cnMenuItem = configure_cn('MenuItem');var
 
 MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(MenuItem, _React$Component);function MenuItem() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
 
@@ -1425,7 +1550,7 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsL
 
 /* harmony default export */ var elements_MenuItem_MenuItem = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(MenuItem_MenuItem_MenuItem));
 // EXTERNAL MODULE: ./src/elements/Menu/Menu.pcss
-var Menu_Menu = __webpack_require__(19);
+var Menu_Menu = __webpack_require__(20);
 
 // CONCATENATED MODULE: ./src/elements/Menu/Menu.jsx
  /** @module Menu
@@ -1443,7 +1568,7 @@ var Menu_Menu = __webpack_require__(19);
 
 
 
-var cnMenu = Object(classname_["cn"])('Menu');
+var cnMenu = configure_cn('Menu');
 
 // Unique id counter
 var Menu_uniqIdCount = 1;var
@@ -1653,7 +1778,7 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
  *  @changed 2020.10.27, 03:03
  */
 // EXTERNAL MODULE: ./src/forms/FormItemDummy/FormItemDummy.pcss
-var FormItemDummy_FormItemDummy = __webpack_require__(20);
+var FormItemDummy_FormItemDummy = __webpack_require__(21);
 
 // CONCATENATED MODULE: ./src/forms/FormItemDummy/FormItemDummy.jsx
  /** @module FormItemDummy
@@ -1673,7 +1798,7 @@ var FormItemDummy_FormItemDummy = __webpack_require__(20);
 
 
 
-var cnFormItemDummy = Object(classname_["cn"])('FormItemDummy');var
+var cnFormItemDummy = configure_cn('FormItemDummy');var
 
 FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormItemDummy, _React$Component);
 
@@ -1829,7 +1954,7 @@ var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./src/forms/FormLabel/FormLabel.pcss
-var FormLabel_FormLabel = __webpack_require__(23);
+var FormLabel_FormLabel = __webpack_require__(24);
 
 // CONCATENATED MODULE: ./src/forms/FormLabel/FormLabel.jsx
  /** @module FormLabel
@@ -1847,7 +1972,7 @@ var FormLabel_FormLabel = __webpack_require__(23);
 
 
 
-var cnFormLabel = Object(classname_["cn"])('FormLabel');var
+var cnFormLabel = configure_cn('FormLabel');var
 
 FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormLabel, _React$Component);function FormLabel() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
 
@@ -1922,13 +2047,13 @@ FormLabel_FormLabel_FormLabel.propTypes = {
 
 /* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormLabel_FormLabel_FormLabel));
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton.pcss
-var FormButton_FormButton = __webpack_require__(24);
+var FormButton_FormButton = __webpack_require__(25);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Variations.pcss
-var FormButton_Variations = __webpack_require__(25);
+var FormButton_Variations = __webpack_require__(26);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Styles.pcss
-var FormButton_Styles = __webpack_require__(26);
+var FormButton_Styles = __webpack_require__(27);
 
 // CONCATENATED MODULE: ./src/forms/FormButton/FormButton.jsx
  /** @module FormButton
@@ -1941,6 +2066,7 @@ var FormButton_Styles = __webpack_require__(26);
 
 
 // import connect from 'react-redux/es/connect/connect'
+// import { cn } from '@bem-react/classname'
 
 
 
@@ -1951,7 +2077,7 @@ var FormButton_Styles = __webpack_require__(26);
 
 
 
-var cnFormButton = Object(classname_["cn"])('FormButton');var
+var cnFormButton = configure_cn('FormButton');var
 
 FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormButton, _React$PureComponent);function FormButton() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
 
@@ -2140,7 +2266,7 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
 
 /* harmony default export */ var forms_FormButton_FormButton = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormButton_FormButton_FormButton));
 // EXTERNAL MODULE: ./src/forms/FormGroup/FormGroup.pcss
-var FormGroup_FormGroup = __webpack_require__(27);
+var FormGroup_FormGroup = __webpack_require__(28);
 
 // CONCATENATED MODULE: ./src/forms/FormGroup/FormGroup.jsx
  /** @module FormGroup
@@ -2169,7 +2295,7 @@ var FormGroup_classNameModifiers = [
 // 'fullWidth',
 ];
 
-var cnFormGroup = Object(classname_["cn"])('FormGroup');var
+var cnFormGroup = configure_cn('FormGroup');var
 
 FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormGroup, _React$Component);
 
@@ -2223,7 +2349,7 @@ FormGroup_FormGroup_FormGroup.propTypes = {
 
 /* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
 // EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
-var FormButtonGroup_FormButtonGroup = __webpack_require__(28);
+var FormButtonGroup_FormButtonGroup = __webpack_require__(29);
 
 // CONCATENATED MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.jsx
  /** @module FormButtonGroup
@@ -2253,7 +2379,7 @@ var FormButtonGroup_classNameModifiers = [
 // 'fullWidth',
 ];
 
-var cnFormButtonGroup = Object(classname_["cn"])('FormButtonGroup');var
+var cnFormButtonGroup = configure_cn('FormButtonGroup');var
 
 FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormButtonGroup, _React$Component);function FormButtonGroup() {return _React$Component.apply(this, arguments) || this;}var _proto = FormButtonGroup.prototype;_proto.
 
@@ -2296,7 +2422,7 @@ FormButtonGroup_FormButtonGroup_FormButtonGroup.propTypes = {
 
 /* harmony default export */ var forms_FormButtonGroup_FormButtonGroup = (forms_FormItemHOC_FormItemHOC(FormButtonGroup_FormButtonGroup_FormButtonGroup));
 // EXTERNAL MODULE: ./src/forms/FormInputGroup/FormInputGroup.pcss
-var FormInputGroup_FormInputGroup = __webpack_require__(29);
+var FormInputGroup_FormInputGroup = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./src/forms/FormInputGroup/FormInputGroup.jsx
  /** @module FormInputGroup
@@ -2326,7 +2452,7 @@ var FormInputGroup_classNameModifiers = [
 // 'fullWidth',
 ];
 
-var cnFormInputGroup = Object(classname_["cn"])('FormInputGroup');var
+var cnFormInputGroup = configure_cn('FormInputGroup');var
 
 FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormInputGroup, _React$Component);function FormInputGroup() {return _React$Component.apply(this, arguments) || this;}var _proto = FormInputGroup.prototype;_proto.
 
@@ -2369,7 +2495,7 @@ FormInputGroup_FormInputGroup_FormInputGroup.propTypes = {
 
 /* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
 // EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
-var FormText_FormText = __webpack_require__(30);
+var FormText_FormText = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
  /** @module FormText
@@ -2387,7 +2513,7 @@ var FormText_FormText = __webpack_require__(30);
 
 
 
-var cnFormText = Object(classname_["cn"])('FormText');var
+var cnFormText = configure_cn('FormText');var
 
 FormText_FormText_FormText = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormText, _React$Component);function FormText() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
 
@@ -2448,7 +2574,7 @@ FormText_FormText_FormText.propTypes = {
 
 /* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
 // EXTERNAL MODULE: ./src/forms/FormSelect/FormSelect.pcss
-var FormSelect_FormSelect = __webpack_require__(31);
+var FormSelect_FormSelect = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./src/forms/FormSelect/FormSelect.jsx
  /** @module FormSelect
@@ -2474,7 +2600,7 @@ var FormSelect_FormSelect = __webpack_require__(31);
 
 
 
-var cnFormSelect = Object(classname_["cn"])('FormSelect');var
+var cnFormSelect = configure_cn('FormSelect');var
 
 FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormSelect, _React$Component);function FormSelect() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
 
@@ -2606,7 +2732,7 @@ FormSelect_FormSelect_FormSelect.propTypes = {
 
 /* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormSelect_FormSelect_FormSelect));
 // EXTERNAL MODULE: ./src/forms/FormTextInput/FormTextInput.pcss
-var FormTextInput_FormTextInput = __webpack_require__(32);
+var FormTextInput_FormTextInput = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./src/forms/FormTextInput/FormTextInput.jsx
  /** @module FormTextInput
@@ -2627,7 +2753,7 @@ var FormTextInput_FormTextInput = __webpack_require__(32);
 
 
 
-var cnFormTextInput = Object(classname_["cn"])('FormTextInput');var
+var cnFormTextInput = configure_cn('FormTextInput');var
 
 FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormTextInput, _React$Component);
 
@@ -2856,7 +2982,7 @@ FormTextInput_FormTextInput_FormTextInput.propTypes = {
 
 /* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
 // EXTERNAL MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.pcss
-var FormPasswordInput_FormPasswordInput = __webpack_require__(33);
+var FormPasswordInput_FormPasswordInput = __webpack_require__(34);
 
 // CONCATENATED MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.jsx
  /** @module FormPasswordInput
@@ -2878,7 +3004,7 @@ var FormPasswordInput_FormPasswordInput = __webpack_require__(33);
 
 
 
-var cnFormPasswordInput = Object(classname_["cn"])('FormPasswordInput');var
+var cnFormPasswordInput = configure_cn('FormPasswordInput');var
 
 FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormPasswordInput, _React$Component);
 
@@ -2978,7 +3104,7 @@ FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_
 //
 // export FormPager from './FormPager'
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(34);
+var Hello_Hello = __webpack_require__(35);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -2989,6 +3115,7 @@ var Hello_Hello = __webpack_require__(34);
  */
 
 
+// import { cn } from '@bem-react/classname'
 
 // import config from 'config'
 
@@ -2996,11 +3123,12 @@ var Hello_Hello = __webpack_require__(34);
 
 
 
-var cnHello = Object(classname_["cn"])('Hello');
+var cnHello = configure_cn('Hello');
 
 var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,greeting = _ref$greeting === void 0 ? 'Greeting' : _ref$greeting,_ref$name = _ref.name,name = _ref$name === void 0 ? 'Name' : _ref$name;
+  var className = cnHello();
   return /*#__PURE__*/(
-    external_react_default.a.createElement("div", { className: cnHello() }, /*#__PURE__*/
+    external_react_default.a.createElement("div", { className: className }, /*#__PURE__*/
     external_react_default.a.createElement("h1", { className: cnHello('Title') }, greeting, ", ", name, "!"), /*#__PURE__*/
     external_react_default.a.createElement("div", { className: cnHello('Image') }, /*#__PURE__*/
     external_react_default.a.createElement("img", { src: LockColor2 }))));
@@ -3011,7 +3139,7 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(35);
+var build = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./src/build.js
 /** @module build

@@ -1834,5 +1834,9 @@ body, html {
   /* flex-grow: 1; */
 }
 
+.WebUiCoreTest {
+  background-color: purple;
+}
+
 
 /*# sourceMappingURL=styles.css.map*/

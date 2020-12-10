@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 37);
+/******/ 	return __webpack_require__(__webpack_require__.s = 40);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -113,20 +113,6 @@ if (false) { var throwOnDirectAccess, ReactIs; } else {
 /* 2 */
 /***/ (function(module, exports) {
 
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-module.exports = _assertThisInitialized;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
 function _defineProperty(obj, key, value) {
   if (key in obj) {
     Object.defineProperty(obj, key, {
@@ -143,6 +129,20 @@ function _defineProperty(obj, key, value) {
 }
 
 module.exports = _defineProperty;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized;
 
 /***/ }),
 /* 4 */
@@ -204,13 +204,13 @@ module.exports = config;
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("@fortawesome/react-fontawesome");
+module.exports = require("@bem-react/classname");
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("@bem-react/classname");
+module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 /* 9 */
@@ -788,6 +788,24 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 40 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -805,12 +823,16 @@ __webpack_require__.d(__webpack_exports__, "FormItemDummy", function() { return 
 __webpack_require__.d(__webpack_exports__, "FormLabel", function() { return /* reexport */ forms_FormLabel_FormLabel; });
 __webpack_require__.d(__webpack_exports__, "FormButton", function() { return /* reexport */ forms_FormButton_FormButton; });
 __webpack_require__.d(__webpack_exports__, "FormGroup", function() { return /* reexport */ forms_FormGroup_FormGroup; });
+__webpack_require__.d(__webpack_exports__, "FormLabeledGroup", function() { return /* reexport */ forms_FormLabeledGroup_FormLabeledGroup; });
 __webpack_require__.d(__webpack_exports__, "FormButtonGroup", function() { return /* reexport */ forms_FormButtonGroup_FormButtonGroup; });
 __webpack_require__.d(__webpack_exports__, "FormInputGroup", function() { return /* reexport */ forms_FormInputGroup_FormInputGroup; });
+__webpack_require__.d(__webpack_exports__, "FormDelim", function() { return /* reexport */ forms_FormDelim_FormDelim; });
+__webpack_require__.d(__webpack_exports__, "FormSpacer", function() { return /* reexport */ forms_FormSpacer_FormSpacer; });
 __webpack_require__.d(__webpack_exports__, "FormText", function() { return /* reexport */ forms_FormText_FormText; });
 __webpack_require__.d(__webpack_exports__, "FormSelect", function() { return /* reexport */ forms_FormSelect_FormSelect; });
 __webpack_require__.d(__webpack_exports__, "FormTextInput", function() { return /* reexport */ forms_FormTextInput_FormTextInput; });
 __webpack_require__.d(__webpack_exports__, "FormPasswordInput", function() { return /* reexport */ forms_FormPasswordInput_FormPasswordInput; });
+__webpack_require__.d(__webpack_exports__, "FormRadio", function() { return /* reexport */ forms_FormRadio_FormRadio; });
 __webpack_require__.d(__webpack_exports__, "Hello", function() { return /* reexport */ demo_Hello_Hello; });
 
 // NAMESPACE OBJECT: ./src/utils/utils.js
@@ -825,7 +847,7 @@ var config = __webpack_require__(6);
 var config_default = /*#__PURE__*/__webpack_require__.n(config);
 
 // EXTERNAL MODULE: external "@bem-react/classname"
-var classname_ = __webpack_require__(8);
+var classname_ = __webpack_require__(7);
 
 // CONCATENATED MODULE: ./src/utils/configure.js
 /** @module build
@@ -930,7 +952,7 @@ var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
 // EXTERNAL MODULE: external "@fortawesome/react-fontawesome"
-var react_fontawesome_ = __webpack_require__(7);
+var react_fontawesome_ = __webpack_require__(8);
 
 // EXTERNAL MODULE: external "@fortawesome/free-solid-svg-icons"
 var free_solid_svg_icons_ = __webpack_require__(9);
@@ -1008,11 +1030,11 @@ var helpers_extends = __webpack_require__(5);
 var extends_default = /*#__PURE__*/__webpack_require__.n(helpers_extends);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
-var assertThisInitialized = __webpack_require__(2);
+var assertThisInitialized = __webpack_require__(3);
 var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThisInitialized);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/defineProperty.js
-var defineProperty = __webpack_require__(3);
+var defineProperty = __webpack_require__(2);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
@@ -1377,6 +1399,19 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
       function () {
         var disabled = _this.getStateOrPropOrParam('disabled');
         var hoverable = _this.getStateOrPropOrParam('hoverable');
@@ -1390,17 +1425,34 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
         if (hoverable && !disabled) {
           _this.setState({ hovered: false });
         }
+      });defineProperty_default()(assertThisInitialized_default()(_this), "handleFocus",
+
+      function () {
+        var disabled = _this.getStateOrPropOrParam('disabled');
+        var focusable = _this.getStateOrPropOrParam('focusable');
+        if (focusable && !disabled) {
+          _this.setState({ focused: true });
+        }
+      });defineProperty_default()(assertThisInitialized_default()(_this), "handleBlur",
+      function () {
+        var disabled = _this.getStateOrPropOrParam('disabled');
+        var focusable = _this.getStateOrPropOrParam('focusable');
+        if (focusable && !disabled) {
+          _this.setState({ focused: false });
+        }
       });defineProperty_default()(assertThisInitialized_default()(_this), "setDomRef",
 
       function (domRef) {// Children dom node receiver
         _this.formItemDomRef = domRef;
+        domRef && domRef.focus && domRef.focus();
       });_this.state = FormItemHOC_deriveState(defaultState, params, props); // deriveStateFromProps(props, defaultState)
       _this.id = props.id || params.id; // this.formItemRef = React.createRef()
       return _this;}_temp.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {// TODO: Update event subscriptions if `hoverable` flag changed?
       return FormItemHOC_deriveState(params, props, state); // deriveStateFromProps(props, state)
     };_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
-      var formItemDomRef = this.formItemDomRef;var hoverable = this.state.hoverable;if (hoverable && formItemDomRef && formItemDomRef.addEventListener) {this.hoverableInited = true;formItemDomRef.addEventListener('mouseover', this.handleMouseOver);formItemDomRef.addEventListener('mouseout', this.handleMouseOut);}};_proto.componentWillUnmount = function componentWillUnmount() {if (this.hoverableInited) {// const { formItemRef: { current } = {} } = this
-        var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.removeEventListener) {formItemDomRef.removeEventListener('mouseover', this.handleMouseOver);formItemDomRef.removeEventListener('mouseout', this.handleMouseOut);}}};_proto.getClassName = function getClassName() {var _this2 = this; // Collect modifier values from state or props
+      var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.addEventListener) {var hoverable = this.getStateOrPropOrParam('hoverable');var focusable = this.getStateOrPropOrParam('focusable');if (hoverable && !this.hoverableInited) {this.hoverableInited = true;formItemDomRef.addEventListener('mouseover', this.handleMouseOver);formItemDomRef.addEventListener('mouseout', this.handleMouseOut);}if (focusable && !this.focusableInited) {this.focusableInited = true;formItemDomRef.addEventListener('focus', this.handleFocus);formItemDomRef.addEventListener('blur', this.handleBlur);}}};_proto.componentWillUnmount = function componentWillUnmount() {var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.removeEventListener) {// const hoverable = this.getStateOrPropOrParam('hoverable')
+        // const focusable = this.getStateOrPropOrParam('focusable')
+        if (this.hoverableInited) {formItemDomRef.removeEventListener('mouseover', this.handleMouseOver);formItemDomRef.removeEventListener('mouseout', this.handleMouseOut);}if (this.focusableInited) {formItemDomRef.removeEventListener('focus', this.handleFocus);formItemDomRef.removeEventListener('blur', this.handleBlur);}}};_proto.getClassName = function getClassName() {var _this2 = this; // Collect modifier values from state or props
       var mods = classNameModifiers.reduce(function (mods, id) {var val = _this2.getStateOrPropOrParam(id); // (this.state[id] != null) ? this.state[id] : this.props[id]
         if (val != null) {mods[id] = val;}return mods;}, {});return cnFormItem(mods, [this.props.className]);} /* // For `focusable` state (TODO?)
                                                                                                                 * handleFocus() {
@@ -1411,15 +1463,22 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
                                                                                                                 * }
                                                                                                                 */;_proto.render = function render() {// const id = this.getId() // this.props.id || this.id || (this.id = this.createUniqId())
       var _this$state = this.state,hovered = _this$state.hovered,focused = _this$state.focused; // TODO: Generate unique id?
-      return /*#__PURE__*/external_react_default.a.createElement(WrappedComponent, extends_default()({}, this.props, { // id={id}
-        hovered: hovered, focused: focused, className: this.getClassName(), setDomRef: this.setDomRef // Children dom node receiver
-      }));};return _temp;}(external_react_default.a.Component), _temp;};
+      var renderProps = { hovered: hovered, focused: focused, className: this.getClassName(), setDomRef: this.setDomRef // Children dom node receiver
+      };var focusable = this.getStateOrPropOrParam('focusable');if (focusable) {renderProps.tabIndex = 0;}return /*#__PURE__*/(
+        external_react_default.a.createElement(WrappedComponent, extends_default()({},
+        this.props,
+        renderProps)));
+
+
+
+    };return _temp;}(external_react_default.a.Component), _temp;};
+
 
 
 /** Usage:
-                                                       * FormItemHOC(component)
-                                                       * FormItemHOC(params)(component)
-                                                       */
+                                                 * FormItemHOC(component)
+                                                 * FormItemHOC(params)(component)
+                                                 */
 var FormItemHOC_FormItemHOC = function FormItemHOC(params) {
   if (typeof params === 'string') {// Passed identifier
     params = { id: params };
@@ -2348,6 +2407,60 @@ FormGroup_FormGroup_FormGroup.propTypes = {
   onChange: prop_types_default.a.func };
 
 /* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
+// CONCATENATED MODULE: ./src/forms/FormLabeledGroup/FormLabeledGroup.jsx
+/** @module FormLabeledGroup
+ *  @class FormLabeledGroup
+ *  @since 2020.05.10, 09:24
+ *  @changed 2020.12.10, 16:20
+ */
+
+
+// import { cn } from 'utils'
+
+
+
+
+// import './FormLabeledGroup.pcss'
+
+// const cnFormLabeledGroup = cn('FormLabeledGroup')
+
+// class FormLabeledGroup extends React.PureComponent [>* @lends @FormLabeledGroup.prototype <] {
+var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @lends @FormLabeledGroup.prototype */{var
+
+
+  children =
+
+
+
+
+
+
+
+
+
+  props.children,id = props.id,fullWidth = props.fullWidth,innerFlex = props.innerFlex,htmlFor = props.htmlFor,title = props.title,text = props.text,flow = props.flow;
+  // const thisClassName = cnFormLabeledGroup({ flow, full })
+  return /*#__PURE__*/(
+    external_react_default.a.createElement(forms_FormGroup_FormGroup, {
+      fullWidth: fullWidth,
+      innerFlex: innerFlex,
+      flow: flow,
+      id: id }, /*#__PURE__*/
+
+    external_react_default.a.createElement(forms_FormLabel_FormLabel, {
+      htmlFor: htmlFor,
+      title: title,
+      text: text || title + ':',
+      fixed: flow && fullWidth,
+      firstInBlock: !flow && fullWidth }),
+
+    children));
+
+
+
+};
+
+/* harmony default export */ var forms_FormLabeledGroup_FormLabeledGroup = (FormLabeledGroup_FormLabeledGroup);
 // EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
 var FormButtonGroup_FormButtonGroup = __webpack_require__(29);
 
@@ -2494,8 +2607,56 @@ FormInputGroup_FormInputGroup_FormInputGroup.propTypes = {
   onChange: prop_types_default.a.func };
 
 /* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
+// EXTERNAL MODULE: ./src/forms/FormDelim/FormDelim.pcss
+var FormDelim_FormDelim = __webpack_require__(31);
+
+// CONCATENATED MODULE: ./src/forms/FormDelim/FormDelim.jsx
+/** @module FormDelim
+ *  @class FormDelim
+ *  @since 2020.11.27, 12:52
+ *  @changed 2020.11.27, 12:52
+ */
+
+
+
+
+
+
+var FormDelim_FormDelim_FormDelim = function FormDelim(props) {var
+  id = props.id;
+  var className = Object(classname_["cn"])('FormDelim')({ id: id }, [props.className]);
+  return /*#__PURE__*/(
+    external_react_default.a.createElement("div", { className: className }));
+
+};
+
+/* harmony default export */ var forms_FormDelim_FormDelim = (FormDelim_FormDelim_FormDelim);
+// EXTERNAL MODULE: ./src/forms/FormSpacer/FormSpacer.pcss
+var FormSpacer_FormSpacer = __webpack_require__(32);
+
+// CONCATENATED MODULE: ./src/forms/FormSpacer/FormSpacer.jsx
+/** @module FormSpacer
+ *  @class FormSpacer
+ *  @since 2020.11.27, 12:52
+ *  @changed 2020.11.27, 12:52
+ */
+
+
+
+
+
+
+var FormSpacer_FormSpacer_FormSpacer = function FormSpacer(props) {var
+  id = props.id;
+  var className = Object(classname_["cn"])('FormSpacer')({ id: id }, [props.className]);
+  return /*#__PURE__*/(
+    external_react_default.a.createElement("div", { className: className }));
+
+};
+
+/* harmony default export */ var forms_FormSpacer_FormSpacer = (FormSpacer_FormSpacer_FormSpacer);
 // EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
-var FormText_FormText = __webpack_require__(31);
+var FormText_FormText = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
  /** @module FormText
@@ -2574,7 +2735,7 @@ FormText_FormText_FormText.propTypes = {
 
 /* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
 // EXTERNAL MODULE: ./src/forms/FormSelect/FormSelect.pcss
-var FormSelect_FormSelect = __webpack_require__(32);
+var FormSelect_FormSelect = __webpack_require__(34);
 
 // CONCATENATED MODULE: ./src/forms/FormSelect/FormSelect.jsx
  /** @module FormSelect
@@ -2732,7 +2893,7 @@ FormSelect_FormSelect_FormSelect.propTypes = {
 
 /* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormSelect_FormSelect_FormSelect));
 // EXTERNAL MODULE: ./src/forms/FormTextInput/FormTextInput.pcss
-var FormTextInput_FormTextInput = __webpack_require__(33);
+var FormTextInput_FormTextInput = __webpack_require__(35);
 
 // CONCATENATED MODULE: ./src/forms/FormTextInput/FormTextInput.jsx
  /** @module FormTextInput
@@ -2740,6 +2901,7 @@ var FormTextInput_FormTextInput = __webpack_require__(33);
                                                                                                                                                                                                                           *  @since 2020.10.07, 00:20
                                                                                                                                                                                                                           *  @changed 2020.10.29, 23:44
                                                                                                                                                                                                                           */
+/* eslint-disable react/require-default-props */
 
 
 
@@ -2755,13 +2917,12 @@ var FormTextInput_FormTextInput = __webpack_require__(33);
 
 var cnFormTextInput = configure_cn('FormTextInput');var
 
-FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormTextInput, _React$Component);
-
+FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormTextInput, _React$PureComponent);
 
   // Lifecycle...
 
   function FormTextInput(props) {var _this;
-    _this = _React$Component.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "updateValue",
+    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "updateValueWithState",
 
 
 
@@ -2802,13 +2963,12 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$Compon
 
     function (state) {var _this$props =
       _this.props,id = _this$props.id,onChange = _this$props.onChange,disabled = _this$props.disabled,numericValue = _this$props.numericValue;
-      if (!disabled && typeof onChange === 'function') {var _event =
-        event,target = _event.target;var
+      if (!disabled && typeof onChange === 'function') {var
         value = state.value;
         if (numericValue && !isNaN(value)) {
           value = Number(value);
         }
-        onChange({ event: event, id: id, target: target, value: value });
+        onChange({ id: id, value: value });
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "handleChange",
 
@@ -2868,12 +3028,12 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$Compon
       if (typeof _this.props.onFocusOut === 'function') {// Propogate event if handler passed
         _this.props.onFocusOut(event);
       }
-    });var _this$props$value = _this.props.value,_value = _this$props$value === void 0 ? '' : _this$props$value;_this.state = { value: _value };return _this;}var _proto = FormTextInput.prototype;_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevValue = prevProps.value;var propsValue = this.props.value;var stateValue = this.state.value;if (prevValue !== propsValue && propsValue !== stateValue) {this.setState({ value: propsValue }, this.updateValue);} else if (prevState.value !== stateValue) {this.updateValue(this.state);}} // Helper methods...
+    });var _this$props$value = _this.props.value,_value = _this$props$value === void 0 ? '' : _this$props$value;_this.state = { value: _value };return _this;}var _proto = FormTextInput.prototype;_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevValue = prevProps.value;var propsValue = this.props.value;var stateValue = this.state.value;if (propsValue !== prevValue && propsValue !== stateValue) {// New value from props
+      this.setState({ value: propsValue }, this.updateValueWithState);} else if (stateValue !== prevState.value) {// New value from state
+      this.updateValueWithState(this.state);}} // Helper methods...
   ;_proto.hasValue = function hasValue() {var value = this.state.value;return value != null && value !== '';};_proto.hasIcon = function hasIcon() {var _this$props3 = this.props,icon = _this$props3.icon,hasIcon = _this$props3.hasIcon,hasClear = _this$props3.hasClear;return hasIcon || !!icon || hasClear && this.hasValue();};_proto.getClassName = function getClassName() {var _this$props4 = this.props,id = _this$props4.id,hasClear = _this$props4.hasClear;var hasValue = this.hasValue();var hasClearActive = hasClear && hasValue;var classList = cnFormTextInput({ id: id, hasIcon: this.hasIcon(), hasValue: this.hasValue(), hasClear: hasClear, hasClearActive: hasClearActive }, [this.props.className]);return classList;} // Event handlers...
   ; // Render...
-  _proto.
-  renderInput = function renderInput() {var _this2 = this;var
-
+  _proto.renderInput = function renderInput() {var _this2 = this;var
     value =
     this.state.value;var _this$props5 =
 
@@ -2973,16 +3133,17 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$Compon
 
 
 
-  };return FormTextInput;}(external_react_default.a.Component /** @lends @FormTextInput.prototype */);
+  };return FormTextInput;}(external_react_default.a.PureComponent /** @lends @FormTextInput.prototype */);defineProperty_default()(FormTextInput_FormTextInput_FormTextInput, "propTypes",
+
+{
+  id: prop_types_default.a.string });
 
 
 
-FormTextInput_FormTextInput_FormTextInput.propTypes = {
-  id: prop_types_default.a.string };
 
 /* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
 // EXTERNAL MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.pcss
-var FormPasswordInput_FormPasswordInput = __webpack_require__(34);
+var FormPasswordInput_FormPasswordInput = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.jsx
  /** @module FormPasswordInput
@@ -3081,6 +3242,209 @@ FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_
                                                                                              * }
                                                                                              */
 /* harmony default export */ var forms_FormPasswordInput_FormPasswordInput = (/* FormItemHOC({ hoverable: true, framed: true })( */FormPasswordInput_FormPasswordInput_FormPasswordInput);
+// EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio.pcss
+var FormRadio_FormRadio = __webpack_require__(37);
+
+// CONCATENATED MODULE: ./src/forms/FormRadio/FormRadio.jsx
+ /** @module FormRadio
+                                                                                                                                                                                                                          *  @class FormRadio
+                                                                                                                                                                                                                          *  @since 2020.04.02, 14:53
+                                                                                                                                                                                                                          *  @changed 2020.04.02, 14:53
+                                                                                                                                                                                                                          */
+/* eslint-disable react/require-default-props, react/jsx-max-depth */
+
+
+
+
+
+// import FormItem from '../FormItem'
+
+
+
+
+var cnFormRadio = configure_cn('FormRadio');var
+
+FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormRadio, _React$PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function FormRadio(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;
+    // this.formItemRef = React.createRef()
+    defineProperty_default()(assertThisInitialized_default()(_this), "updateValueWithState",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (state) {var _this$props =
+      _this.props,id = _this$props.id,onChange = _this$props.onChange,disabled = _this$props.disabled;
+      if (!disabled && typeof onChange === 'function') {var
+        value = state.value;
+        onChange({ id: id, value: value });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "handleChange",
+
+
+
+    function () {
+      _this.setState(function (_ref) {var value = _ref.value;return { value: !value };});
+    });var _value = _this.props.value;_this.state = { value: _value };return _this;}var _proto = FormRadio.prototype;_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
+    this.afterRender();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevValue = prevProps.value;var propsValue = this.props.value;var stateValue = this.state.value;if (propsValue !== prevValue && propsValue !== stateValue) {// New value from props
+      this.setState({ value: propsValue }, this.updateValueWithState);} else if (stateValue !== prevState.value) {// New value from state
+      this.updateValueWithState(this.state);}this.afterRender();return true;} // Helper methods...
+  ;_proto.getClassName = function getClassName() {var id = this.props.id;var value = this.state.value;var checked = !!value;var mods = { id: id, checked: checked };var classList = cnFormRadio(mods, [this.props.className]);return classList;};_proto.focus = function focus() {// Invoke containing input focus method
+    // if (this.inputDomElem && typeof this.inputDomElem.focus == 'function') {
+    //   this.inputDomElem.focus()
+    // }
+  };_proto.select = function select() {// Invoke containing input select method
+    // if (this.inputDomElem && typeof this.inputDomElem.select == 'function') {
+    //   this.inputDomElem.select()
+    // }
+  };_proto.afterRender = function afterRender() {// Calling after each (including first) render
+    // // TODO: Move `focus` and `select` forwarding to `FormItem` (for `focusable` variant)?
+    // if (this.formItemRef && this.formItemRef.current) {
+    //   if (!this.formItemRef.current.focus && this.focus) {
+    //     this.formItemRef.current.focus = this.focus.bind(this)
+    //   }
+    //   if (!this.formItemRef.current.select && this.select) {
+    //     this.formItemRef.current.select = this.select.bind(this)
+    //   }
+    // }
+  }; // handleChange = (event) => { // ???
+  //   const {
+  //     id,
+  //     inputId,
+  //     name,
+  //     onChange,
+  //     disabled,
+  //   } = this.props
+  //   const { target } = event
+  //   const { checked } = target
+  //   if (!disabled && typeof onChange === 'function') {
+  //     onChange({
+  //       event,
+  //       id: inputId || id || name,
+  //       target,
+  //       value: !!checked,
+  //     })
+  //   }
+  // }
+  // handleFocused = () => {
+  //   this.setState({ focused: true })
+  // }
+  // handleUnfocused = () => {
+  //   this.setState({ focused: false })
+  // }
+  // Render...
+  _proto.renderInput = function renderInput() {var _this$props2 = this.props,id = _this$props2.id,inputId = _this$props2.inputId,name = _this$props2.name,setDomRef = _this$props2.setDomRef,tabIndex = _this$props2.tabIndex;var value = this.state.value;var checked = !!value;var inputProps = { type: 'checkbox', className: cnFormRadio('Input'), id: inputId || id || name, name: name || inputId || id, checked: checked, onChange: this.handleChange,
+      // onFocus={this.handleFocused}
+      // onBlur={this.handleUnfocused}
+      ref: setDomRef,
+      tabIndex: tabIndex };
+
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("input", inputProps));
+
+  };_proto.
+
+  render = function render() {var _this$props3 =
+
+
+
+    this.props,id = _this$props3.id,disabled = _this$props3.disabled;
+    var renderProps = {
+      id: id,
+      className: this.getClassName(),
+      disabled: disabled
+      // ref: setDomRef, // Init ref for FormItemHOC
+      // ref: this.formItemRef,
+      // tabIndex,
+    };
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("div", renderProps, /*#__PURE__*/
+      external_react_default.a.createElement("div", {
+        className: cnFormRadio('Control'),
+        disabled: disabled }, /*#__PURE__*/
+
+      external_react_default.a.createElement("span", { className: cnFormRadio('Frame') }, /*#__PURE__*/
+      external_react_default.a.createElement("span", { className: cnFormRadio('Actor') })),
+
+      this.renderInput())));
+
+
+
+  };return FormRadio;}(external_react_default.a.PureComponent /** @lends @FormRadio.prototype */);defineProperty_default()(FormRadio_FormRadio_FormRadio, "propTypes", { id: prop_types_default.a.string, name: prop_types_default.a.string, value: prop_types_default.a.bool, disabled: prop_types_default.a.bool, onChange: prop_types_default.a.func });defineProperty_default()(FormRadio_FormRadio_FormRadio, "defaultProps", { value: false });
+
+
+
+/* harmony default export */ var forms_FormRadio_FormRadio = (forms_FormItemHOC_FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormRadio_FormRadio_FormRadio));
 // CONCATENATED MODULE: ./src/forms/forms.js
 /** @module forms
  *  @desc Form components
@@ -3091,20 +3455,16 @@ FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_
 // Form elements...
  // DEBUG: Demo element
 
+// export FormSwitch from './FormSwitch'
 
 // TODO...
 
-
-// export FormLabeledGroup from './FormLabeledGroup'
-
 // export FormDateRange from './FormDateRange'
 // export FormDateTime from './FormDateTime'
-// export FormRadio from './FormRadio'
-// export FormSwitch from './FormSwitch'
 //
 // export FormPager from './FormPager'
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(35);
+var Hello_Hello = __webpack_require__(38);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -3139,7 +3499,7 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(36);
+var build = __webpack_require__(39);
 
 // CONCATENATED MODULE: ./src/build.js
 /** @module build

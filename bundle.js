@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -105,7 +105,7 @@ module.exports = require("react");
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(22)();
+  module.exports = __webpack_require__(24)();
 }
 
 
@@ -191,10 +191,10 @@ module.exports = _extends;
  */
 
 var config = {
-  app: __webpack_require__(10),
-  build: __webpack_require__(11),
-  css: __webpack_require__(12),
-  userAgent: __webpack_require__(14)
+  app: __webpack_require__(13),
+  build: __webpack_require__(14),
+  css: __webpack_require__(15),
+  userAgent: __webpack_require__(17)
   // constants: require('./constants'),
 };
 
@@ -214,12 +214,89 @@ module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 /* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* global window */
+
+
+var root;
+
+if (typeof self !== 'undefined') {
+  root = self;
+} else if (typeof window !== 'undefined') {
+  root = window;
+} else if (typeof global !== 'undefined') {
+  root = global;
+} else if (true) {
+  root = module;
+} else {}
+
+var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(root);
+/* harmony default export */ __webpack_exports__["a"] = (result);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10), __webpack_require__(41)(module)))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("@fortawesome/free-solid-svg-icons");
 
 /***/ }),
-/* 10 */
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return symbolObservablePonyfill; });
+function symbolObservablePonyfill(root) {
+	var result;
+	var Symbol = root.Symbol;
+
+	if (typeof Symbol === 'function') {
+		if (Symbol.observable) {
+			result = Symbol.observable;
+		} else {
+			result = Symbol('observable');
+			Symbol.observable = result;
+		}
+	} else {
+		result = '@@observable';
+	}
+
+	return result;
+};
+
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports) {
 
 /** @module config.app
@@ -242,7 +319,7 @@ module.exports = { // Common-used app variables...
 };
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /** @module config.build
@@ -260,11 +337,11 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.5-201209-2308-build-prod-default",
-  version: "0.1.5" };
+  buildTag: "v.0.1.6-201211-0117-build-prod-default",
+  version: "0.1.6" };
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /** @module config.css
@@ -275,7 +352,7 @@ module.exports = { // Common-used build variables...
 
 // Theme...
 var THEME = "default";
-var theme = __webpack_require__(13);
+var theme = __webpack_require__(16);
 
 // Some reusable parameters...
 var defaultFontSize = theme.defaultFontSize || 16;
@@ -283,6 +360,13 @@ var textColor = theme.textColor || '#444';
 
 var defaultTransitonTime = 250;
 var defaultAnimateTimeout = 500;
+
+var errorColor = theme.errorColor || '#c33';
+var warnColor = theme.warnColor || '#f73'; // '#f96'
+var successColor = theme.successColor || '#593'; // '#ac9'
+var infoColor = theme.infoColor || '#29a'; // '#9bd'
+var confirmColor = theme.confirmColor /* || theme.primaryColor || textColor */ || '#891'; // '#07f'
+var selectColor = theme.selectColor || '#05b';
 
 // module.exports = { // Common-used css variables...
 var cssConfig = { // Common-used css variables...
@@ -302,12 +386,12 @@ var cssConfig = { // Common-used css variables...
   // Colors...
 
   // Colors for dialogs styles
-  errorColor: theme.errorColor || '#c33',
-  warnColor: theme.warnColor || '#f73', // '#f96',
-  successColor: theme.successColor || '#593', // '#ac9',
-  infoColor: theme.infoColor || '#29a', // '#9bd',
-  confirmColor: theme.confirmColor /* || theme.primaryColor || textColor */ || '#891', // '#07f',
-  selectColor: theme.selectColor || '#05b',
+  errorColor: errorColor, // theme.errorColor || '#c33',
+  warnColor: warnColor, // theme.warnColor || '#f73', // '#f96',
+  successColor: successColor, // theme.successColor || '#593', // '#ac9',
+  infoColor: infoColor, // theme.infoColor || '#29a', // '#9bd',
+  confirmColor: confirmColor, // theme.confirmColor /* || theme.primaryColor || textColor */ || '#891', // '#07f',
+  selectColor: selectColor, // theme.selectColor || '#05b',
 
   specialContrastColor: '#fff', // Generic contrast for accenting colors
 
@@ -333,6 +417,53 @@ var cssConfig = { // Common-used css variables...
   layoutLightBgColor: theme.layoutLightBgColor || '#f7f7f7',
 
   layoutBorderColor: theme.layoutBorderColor || '#ccc',
+
+  themeColors: { // Generic theming colors...
+
+    // primary: theme.primaryColor,
+    // secondary: theme.primaryColor,
+
+    error: errorColor,
+    warn: warnColor,
+    success: successColor,
+    info: infoColor,
+    confirm: confirmColor,
+    select: selectColor,
+
+    // red: '#c33',
+    // orange: '#f73',
+    // green: '#593',
+    // grassGreen: '#891',
+    // Blue: '#05b',
+    // lightBue: '#29a',
+
+    maroon: '#800000',
+    red: '#ff0000',
+    purple: '#800080',
+    fuchsia: '#ff00ff',
+    green: '#008000',
+    // lime: '#00ff00',
+    olive: '#808000',
+    // yellow: '#ffff00',
+    navy: '#000080',
+    blue: '#0000ff',
+    teal: '#008080',
+    // aqua: '#00ffff',
+    orange: '#ffa500',
+
+    blueviolet: '#8a2be2',
+    brown: '#a52a2a',
+    cadetblue: '#5f9ea0',
+    darkblue: '#00008b',
+    darkcyan: '#008b8b',
+    darkgoldenrod: '#b8860b',
+    darkorange: '#ff8c00',
+    darkorchid: '#9932cc',
+    darkred: '#8b0000',
+    darkslateblue: '#483d8b',
+    darkslategray: '#2f4f4f' },
+
+
 
   // Fonts...
 
@@ -432,7 +563,7 @@ Object.assign(cssConfig, { // Form properties...
 module.exports = cssConfig;
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /** @module config.themes.default
@@ -454,7 +585,7 @@ module.exports = {
   secondaryContrastColor: '#fff' };
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** @module config.build
@@ -554,45 +685,7 @@ function detectUserAgent() {
 var userAgent = detectUserAgent();
 
 module.exports = userAgent;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(15)))
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)))
 
 /***/ }),
 /* 18 */
@@ -622,6 +715,18 @@ module.exports = g;
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -632,7 +737,7 @@ module.exports = g;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(23);
+var ReactPropTypesSecret = __webpack_require__(25);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -690,7 +795,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -707,18 +812,6 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 26 */
@@ -806,6 +899,54 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+module.exports = function(originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -955,10 +1096,10 @@ var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_)
 var react_fontawesome_ = __webpack_require__(8);
 
 // EXTERNAL MODULE: external "@fortawesome/free-solid-svg-icons"
-var free_solid_svg_icons_ = __webpack_require__(9);
+var free_solid_svg_icons_ = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./src/elements/InlineIcon/InlineIcon.pcss
-var InlineIcon_InlineIcon = __webpack_require__(16);
+var InlineIcon_InlineIcon = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./src/elements/InlineIcon/InlineIcon.jsx
  /** @module InlineIcon
@@ -1038,7 +1179,7 @@ var defineProperty = __webpack_require__(2);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
 // EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
-var Popup_Popup = __webpack_require__(17);
+var Popup_Popup = __webpack_require__(19);
 
 // CONCATENATED MODULE: ./src/elements/Popup/Popup.jsx
  /** @module Popup
@@ -1250,7 +1391,7 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$Component) {inheritsLoose_defa
 
 /* harmony default export */ var elements_Popup_Popup = (Popup_Popup_Popup);
 // EXTERNAL MODULE: ./src/forms/FormItemHOC/FormItemHOC.pcss
-var FormItemHOC = __webpack_require__(18);
+var FormItemHOC = __webpack_require__(20);
 
 // CONCATENATED MODULE: ./src/forms/FormItemHOC/FormItemHOC.jsx
  /** @module FormItemHOC
@@ -1323,7 +1464,7 @@ var FormItemHOC_deriveState = function deriveState() {for (var _len = arguments.
 // Unique id counter
 var uniqIdCount = 1;
 
-var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, params) {var _temp;if (params === void 0) {params = {};}return _temp = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(_temp, _React$Component);var _proto = _temp.prototype;
+var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, params) {var _temp;if (params === void 0) {params = {};}return _temp = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormItem, _React$Component);var _proto = FormItem.prototype;
 
     // Helper methods...
     _proto.
@@ -1344,8 +1485,12 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
 
     // Lifecycle methods...
     ;
-    function _temp(props) {var _this;
+    function FormItem(props) {var _this;
       _this = _React$Component.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "handleMouseOver",
+
+
+
+
 
 
 
@@ -1444,16 +1589,17 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
 
       function (domRef) {// Children dom node receiver
         _this.formItemDomRef = domRef;
-        domRef && domRef.focus && domRef.focus();
+        // domRef && domRef.focus && domRef.focus()
       });_this.state = FormItemHOC_deriveState(defaultState, params, props); // deriveStateFromProps(props, defaultState)
       _this.id = props.id || params.id; // this.formItemRef = React.createRef()
-      return _this;}_temp.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {// TODO: Update event subscriptions if `hoverable` flag changed?
+      return _this;}FormItem.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {// TODO: Update event subscriptions if `hoverable` flag changed?
       return FormItemHOC_deriveState(params, props, state); // deriveStateFromProps(props, state)
-    };_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
-      var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.addEventListener) {var hoverable = this.getStateOrPropOrParam('hoverable');var focusable = this.getStateOrPropOrParam('focusable');if (hoverable && !this.hoverableInited) {this.hoverableInited = true;formItemDomRef.addEventListener('mouseover', this.handleMouseOver);formItemDomRef.addEventListener('mouseout', this.handleMouseOut);}if (focusable && !this.focusableInited) {this.focusableInited = true;formItemDomRef.addEventListener('focus', this.handleFocus);formItemDomRef.addEventListener('blur', this.handleBlur);}}};_proto.componentWillUnmount = function componentWillUnmount() {var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.removeEventListener) {// const hoverable = this.getStateOrPropOrParam('hoverable')
+    };_proto.componentDidMount = function componentDidMount() {var _this2 = this; // const { formItemRef: { current } = {} } = this
+      var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.addEventListener) {var hoverable = this.getStateOrPropOrParam('hoverable');var focusable = this.getStateOrPropOrParam('focusable');if (hoverable && !this.hoverableInited) {this.hoverableInited = true;formItemDomRef.addEventListener('mouseover', this.handleMouseOver);formItemDomRef.addEventListener('mouseout', this.handleMouseOut);}if (focusable && !this.focusableInited) {this.focusableInited = true;formItemDomRef.addEventListener('focus', this.handleFocus);formItemDomRef.addEventListener('blur', this.handleBlur);this.focus = function () {// Focus handler
+            var domRef = _this2.formItemDomRef;domRef && domRef.focus && domRef.focus();};}}};_proto.componentWillUnmount = function componentWillUnmount() {var formItemDomRef = this.formItemDomRef;if (formItemDomRef && formItemDomRef.removeEventListener) {// const hoverable = this.getStateOrPropOrParam('hoverable')
         // const focusable = this.getStateOrPropOrParam('focusable')
-        if (this.hoverableInited) {formItemDomRef.removeEventListener('mouseover', this.handleMouseOver);formItemDomRef.removeEventListener('mouseout', this.handleMouseOut);}if (this.focusableInited) {formItemDomRef.removeEventListener('focus', this.handleFocus);formItemDomRef.removeEventListener('blur', this.handleBlur);}}};_proto.getClassName = function getClassName() {var _this2 = this; // Collect modifier values from state or props
-      var mods = classNameModifiers.reduce(function (mods, id) {var val = _this2.getStateOrPropOrParam(id); // (this.state[id] != null) ? this.state[id] : this.props[id]
+        if (this.hoverableInited) {formItemDomRef.removeEventListener('mouseover', this.handleMouseOver);formItemDomRef.removeEventListener('mouseout', this.handleMouseOut);}if (this.focusableInited) {formItemDomRef.removeEventListener('focus', this.handleFocus);formItemDomRef.removeEventListener('blur', this.handleBlur);}}};_proto.getClassName = function getClassName() {var _this3 = this; // Collect modifier values from state or props
+      var mods = classNameModifiers.reduce(function (mods, id) {var val = _this3.getStateOrPropOrParam(id); // (this.state[id] != null) ? this.state[id] : this.props[id]
         if (val != null) {mods[id] = val;}return mods;}, {});return cnFormItem(mods, [this.props.className]);} /* // For `focusable` state (TODO?)
                                                                                                                 * handleFocus() {
                                                                                                                 *   this.setState({ focused: true })
@@ -1464,21 +1610,21 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
                                                                                                                 */;_proto.render = function render() {// const id = this.getId() // this.props.id || this.id || (this.id = this.createUniqId())
       var _this$state = this.state,hovered = _this$state.hovered,focused = _this$state.focused; // TODO: Generate unique id?
       var renderProps = { hovered: hovered, focused: focused, className: this.getClassName(), setDomRef: this.setDomRef // Children dom node receiver
-      };var focusable = this.getStateOrPropOrParam('focusable');if (focusable) {renderProps.tabIndex = 0;}return /*#__PURE__*/(
-        external_react_default.a.createElement(WrappedComponent, extends_default()({},
-        this.props,
-        renderProps)));
+        // formItemDomRef: this.formItemDomRef,
+      };var focusable = this.getStateOrPropOrParam('focusable');if (focusable) {renderProps.tabIndex = 0;}return /*#__PURE__*/external_react_default.a.createElement(WrappedComponent, extends_default()({},
+      this.props,
+      renderProps));
 
 
 
-    };return _temp;}(external_react_default.a.Component), _temp;};
+    };return FormItem;}(external_react_default.a.Component), _temp;};
 
 
 
 /** Usage:
-                                                 * FormItemHOC(component)
-                                                 * FormItemHOC(params)(component)
-                                                 */
+                                                    * FormItemHOC(component)
+                                                    * FormItemHOC(params)(component)
+                                                    */
 var FormItemHOC_FormItemHOC = function FormItemHOC(params) {
   if (typeof params === 'string') {// Passed identifier
     params = { id: params };
@@ -1493,7 +1639,7 @@ var FormItemHOC_FormItemHOC = function FormItemHOC(params) {
 
 /* harmony default export */ var forms_FormItemHOC_FormItemHOC = (FormItemHOC_FormItemHOC);
 // EXTERNAL MODULE: ./src/elements/MenuItem/MenuItem.pcss
-var MenuItem_MenuItem = __webpack_require__(19);
+var MenuItem_MenuItem = __webpack_require__(21);
 
 // CONCATENATED MODULE: ./src/elements/MenuItem/MenuItem.jsx
  /** @module MenuItem
@@ -1609,7 +1755,7 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsL
 
 /* harmony default export */ var elements_MenuItem_MenuItem = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(MenuItem_MenuItem_MenuItem));
 // EXTERNAL MODULE: ./src/elements/Menu/Menu.pcss
-var Menu_Menu = __webpack_require__(20);
+var Menu_Menu = __webpack_require__(22);
 
 // CONCATENATED MODULE: ./src/elements/Menu/Menu.jsx
  /** @module Menu
@@ -1837,7 +1983,7 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
  *  @changed 2020.10.27, 03:03
  */
 // EXTERNAL MODULE: ./src/forms/FormItemDummy/FormItemDummy.pcss
-var FormItemDummy_FormItemDummy = __webpack_require__(21);
+var FormItemDummy_FormItemDummy = __webpack_require__(23);
 
 // CONCATENATED MODULE: ./src/forms/FormItemDummy/FormItemDummy.jsx
  /** @module FormItemDummy
@@ -1957,7 +2103,7 @@ FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$Compon
       // clickable: (clickable != null) ? clickable : true,
       // checked,
       hasIcon: !!(hasIcon || icon), hasText: !onlyIcon && !!(hasText || text || children) };};var _proto = FormItemDummy.prototype;_proto.getClassName = function getClassName() {// TODO: Refactor properties!
-    var _this$props2 = this.props,id = _this$props2.id,onlyIcon = _this$props2.onlyIcon,largeIcon = _this$props2.largeIcon,rightIcon = _this$props2.rightIcon,style = _this$props2.style,fullWidth = _this$props2.fullWidth,type = _this$props2.type;var _this$state = this.state,hasIcon = _this$state.hasIcon,hasText = _this$state.hasText;var classList = cnFormItemDummy({ id: id, style: style, fullWidth: fullWidth, // checked,
+    var _this$props2 = this.props,id = _this$props2.id,onlyIcon = _this$props2.onlyIcon,largeIcon = _this$props2.largeIcon,rightIcon = _this$props2.rightIcon,theme = _this$props2.theme,fullWidth = _this$props2.fullWidth,type = _this$props2.type;var _this$state = this.state,hasIcon = _this$state.hasIcon,hasText = _this$state.hasText;var classList = cnFormItemDummy({ id: id, theme: theme, fullWidth: fullWidth, // checked,
       // plain,
       hasIcon: hasIcon, hasText: hasText, onlyIcon: onlyIcon, largeIcon: largeIcon, rightIcon: rightIcon, type: type, solid: true }, [this.props.className]);return classList;} // Handlers...
   ; // Render...
@@ -2013,7 +2159,7 @@ var prop_types = __webpack_require__(1);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: ./src/forms/FormLabel/FormLabel.pcss
-var FormLabel_FormLabel = __webpack_require__(24);
+var FormLabel_FormLabel = __webpack_require__(26);
 
 // CONCATENATED MODULE: ./src/forms/FormLabel/FormLabel.jsx
  /** @module FormLabel
@@ -2106,13 +2252,13 @@ FormLabel_FormLabel_FormLabel.propTypes = {
 
 /* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormLabel_FormLabel_FormLabel));
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton.pcss
-var FormButton_FormButton = __webpack_require__(25);
+var FormButton_FormButton = __webpack_require__(27);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Variations.pcss
-var FormButton_Variations = __webpack_require__(26);
+var FormButton_Variations = __webpack_require__(28);
 
-// EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Styles.pcss
-var FormButton_Styles = __webpack_require__(27);
+// EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Themes.pcss
+var FormButton_Themes = __webpack_require__(29);
 
 // CONCATENATED MODULE: ./src/forms/FormButton/FormButton.jsx
  /** @module FormButton
@@ -2208,8 +2354,8 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
         onClick(event);
       }
     });return _this;}var _proto = FormButton.prototype;_proto.hasIcon = function hasIcon() {var _this$props2 = this.props,icon = _this$props2.icon,hasIcon = _this$props2.hasIcon;return !!(hasIcon || icon);};_proto.hasText = function hasText() {var _this$props3 = this.props,hasText = _this$props3.hasText,onlyIcon = _this$props3.onlyIcon,children = _this$props3.children,text = _this$props3.text;return !onlyIcon && !!(hasText || text || children);};_proto.getClassName = function getClassName() {// TODO: Refactor properties!
-    var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,largeIcon = _this$props4.largeIcon,rotatedIcon = _this$props4.rotatedIcon,onlyIcon = _this$props4.onlyIcon,rightIcon = _this$props4.rightIcon,style = _this$props4.style,onDark = _this$props4.onDark,plain = _this$props4.plain,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
-      checked: checked, fullWidth: fullWidth, id: id, largeIcon: largeIcon, rotatedIcon: rotatedIcon, onlyIcon: onlyIcon, rightIcon: rightIcon, solid: true, style: style, onDark: onDark, plain: plain, type: type, variation: variation };var classList = cnFormButton(extends_default()({}, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
+    var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,largeIcon = _this$props4.largeIcon,rotatedIcon = _this$props4.rotatedIcon,onlyIcon = _this$props4.onlyIcon,rightIcon = _this$props4.rightIcon,theme = _this$props4.theme,onDark = _this$props4.onDark,plain = _this$props4.plain,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
+      checked: checked, fullWidth: fullWidth, id: id, largeIcon: largeIcon, rotatedIcon: rotatedIcon, onlyIcon: onlyIcon, rightIcon: rightIcon, solid: true, theme: theme, onDark: onDark, plain: plain, type: type, variation: variation };var classList = cnFormButton(extends_default()({}, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
   ; // Render...
   _proto.renderIcon = function renderIcon() {
     var hasIcon = this.hasIcon();
@@ -2314,7 +2460,7 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
   rightIcon: prop_types_default.a.bool, // Icon placed at right side
   // TODO: size: PropTypes.string, // Different form item sizes? (eg: md -- default, sm, xs, lg, xl, xxl)
 
-  style: prop_types_default.a.string, // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
+  theme: prop_types_default.a.string, // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
   onDark: prop_types_default.a.bool, // On dark background
   fullWidth: prop_types_default.a.bool, // Occupies all horizontal space
   plain: prop_types_default.a.bool, // ??? Plain icon (no border & background -- if no style specified, looks as link)
@@ -2325,7 +2471,7 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
 
 /* harmony default export */ var forms_FormButton_FormButton = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormButton_FormButton_FormButton));
 // EXTERNAL MODULE: ./src/forms/FormGroup/FormGroup.pcss
-var FormGroup_FormGroup = __webpack_require__(28);
+var FormGroup_FormGroup = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./src/forms/FormGroup/FormGroup.jsx
  /** @module FormGroup
@@ -2462,7 +2608,7 @@ var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @le
 
 /* harmony default export */ var forms_FormLabeledGroup_FormLabeledGroup = (FormLabeledGroup_FormLabeledGroup);
 // EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
-var FormButtonGroup_FormButtonGroup = __webpack_require__(29);
+var FormButtonGroup_FormButtonGroup = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.jsx
  /** @module FormButtonGroup
@@ -2535,7 +2681,7 @@ FormButtonGroup_FormButtonGroup_FormButtonGroup.propTypes = {
 
 /* harmony default export */ var forms_FormButtonGroup_FormButtonGroup = (forms_FormItemHOC_FormItemHOC(FormButtonGroup_FormButtonGroup_FormButtonGroup));
 // EXTERNAL MODULE: ./src/forms/FormInputGroup/FormInputGroup.pcss
-var FormInputGroup_FormInputGroup = __webpack_require__(30);
+var FormInputGroup_FormInputGroup = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./src/forms/FormInputGroup/FormInputGroup.jsx
  /** @module FormInputGroup
@@ -2608,7 +2754,7 @@ FormInputGroup_FormInputGroup_FormInputGroup.propTypes = {
 
 /* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
 // EXTERNAL MODULE: ./src/forms/FormDelim/FormDelim.pcss
-var FormDelim_FormDelim = __webpack_require__(31);
+var FormDelim_FormDelim = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./src/forms/FormDelim/FormDelim.jsx
 /** @module FormDelim
@@ -2632,7 +2778,7 @@ var FormDelim_FormDelim_FormDelim = function FormDelim(props) {var
 
 /* harmony default export */ var forms_FormDelim_FormDelim = (FormDelim_FormDelim_FormDelim);
 // EXTERNAL MODULE: ./src/forms/FormSpacer/FormSpacer.pcss
-var FormSpacer_FormSpacer = __webpack_require__(32);
+var FormSpacer_FormSpacer = __webpack_require__(34);
 
 // CONCATENATED MODULE: ./src/forms/FormSpacer/FormSpacer.jsx
 /** @module FormSpacer
@@ -2656,7 +2802,7 @@ var FormSpacer_FormSpacer_FormSpacer = function FormSpacer(props) {var
 
 /* harmony default export */ var forms_FormSpacer_FormSpacer = (FormSpacer_FormSpacer_FormSpacer);
 // EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
-var FormText_FormText = __webpack_require__(33);
+var FormText_FormText = __webpack_require__(35);
 
 // CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
  /** @module FormText
@@ -2735,7 +2881,7 @@ FormText_FormText_FormText.propTypes = {
 
 /* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
 // EXTERNAL MODULE: ./src/forms/FormSelect/FormSelect.pcss
-var FormSelect_FormSelect = __webpack_require__(34);
+var FormSelect_FormSelect = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./src/forms/FormSelect/FormSelect.jsx
  /** @module FormSelect
@@ -2834,13 +2980,13 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$Component) {inh
 
 
 
-    this.props,id = _this$props.id,disabled = _this$props.disabled,text = _this$props.text,title = _this$props.title,show = _this$props.show,singleChoice = _this$props.singleChoice,controlButtonStyle = _this$props.controlButtonStyle;
+    this.props,id = _this$props.id,disabled = _this$props.disabled,text = _this$props.text,title = _this$props.title,show = _this$props.show,singleChoice = _this$props.singleChoice,controlButtonTheme = _this$props.controlButtonTheme;
 
     var controlContent = /*#__PURE__*/
     external_react_default.a.createElement(forms_FormButton_FormButton, {
       icon: "faChevronDown",
       rightIcon: true,
-      style: controlButtonStyle || 'primary',
+      theme: controlButtonTheme || 'primary',
       variation: "popupControl",
       rotatedIcon: true,
       text: text,
@@ -2893,7 +3039,7 @@ FormSelect_FormSelect_FormSelect.propTypes = {
 
 /* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormSelect_FormSelect_FormSelect));
 // EXTERNAL MODULE: ./src/forms/FormTextInput/FormTextInput.pcss
-var FormTextInput_FormTextInput = __webpack_require__(35);
+var FormTextInput_FormTextInput = __webpack_require__(37);
 
 // CONCATENATED MODULE: ./src/forms/FormTextInput/FormTextInput.jsx
  /** @module FormTextInput
@@ -3143,7 +3289,7 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureCo
 
 /* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
 // EXTERNAL MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.pcss
-var FormPasswordInput_FormPasswordInput = __webpack_require__(36);
+var FormPasswordInput_FormPasswordInput = __webpack_require__(38);
 
 // CONCATENATED MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.jsx
  /** @module FormPasswordInput
@@ -3242,16 +3388,865 @@ FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_
                                                                                              * }
                                                                                              */
 /* harmony default export */ var forms_FormPasswordInput_FormPasswordInput = (/* FormItemHOC({ hoverable: true, framed: true })( */FormPasswordInput_FormPasswordInput_FormPasswordInput);
+// EXTERNAL MODULE: ./node_modules/symbol-observable/es/index.js
+var es = __webpack_require__(9);
+
+// CONCATENATED MODULE: ./node_modules/redux/es/redux.js
+
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+var randomString = function randomString() {
+  return Math.random().toString(36).substring(7).split('').join('.');
+};
+
+var ActionTypes = {
+  INIT: "@@redux/INIT" + randomString(),
+  REPLACE: "@@redux/REPLACE" + randomString(),
+  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
+    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
+  }
+};
+
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+function isPlainObject(obj) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  var proto = obj;
+
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto);
+  }
+
+  return Object.getPrototypeOf(obj) === proto;
+}
+
+/**
+ * Creates a Redux store that holds the state tree.
+ * The only way to change the data in the store is to call `dispatch()` on it.
+ *
+ * There should only be a single store in your app. To specify how different
+ * parts of the state tree respond to actions, you may combine several reducers
+ * into a single reducer function by using `combineReducers`.
+ *
+ * @param {Function} reducer A function that returns the next state tree, given
+ * the current state tree and the action to handle.
+ *
+ * @param {any} [preloadedState] The initial state. You may optionally specify it
+ * to hydrate the state from the server in universal apps, or to restore a
+ * previously serialized user session.
+ * If you use `combineReducers` to produce the root reducer function, this must be
+ * an object with the same shape as `combineReducers` keys.
+ *
+ * @param {Function} [enhancer] The store enhancer. You may optionally specify it
+ * to enhance the store with third-party capabilities such as middleware,
+ * time travel, persistence, etc. The only store enhancer that ships with Redux
+ * is `applyMiddleware()`.
+ *
+ * @returns {Store} A Redux store that lets you read the state, dispatch actions
+ * and subscribe to changes.
+ */
+
+function createStore(reducer, preloadedState, enhancer) {
+  var _ref2;
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
+    throw new Error('It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function.');
+  }
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloadedState;
+    preloadedState = undefined;
+  }
+
+  if (typeof enhancer !== 'undefined') {
+    if (typeof enhancer !== 'function') {
+      throw new Error('Expected the enhancer to be a function.');
+    }
+
+    return enhancer(createStore)(reducer, preloadedState);
+  }
+
+  if (typeof reducer !== 'function') {
+    throw new Error('Expected the reducer to be a function.');
+  }
+
+  var currentReducer = reducer;
+  var currentState = preloadedState;
+  var currentListeners = [];
+  var nextListeners = currentListeners;
+  var isDispatching = false;
+  /**
+   * This makes a shallow copy of currentListeners so we can use
+   * nextListeners as a temporary list while dispatching.
+   *
+   * This prevents any bugs around consumers calling
+   * subscribe/unsubscribe in the middle of a dispatch.
+   */
+
+  function ensureCanMutateNextListeners() {
+    if (nextListeners === currentListeners) {
+      nextListeners = currentListeners.slice();
+    }
+  }
+  /**
+   * Reads the state tree managed by the store.
+   *
+   * @returns {any} The current state tree of your application.
+   */
+
+
+  function getState() {
+    if (isDispatching) {
+      throw new Error('You may not call store.getState() while the reducer is executing. ' + 'The reducer has already received the state as an argument. ' + 'Pass it down from the top reducer instead of reading it from the store.');
+    }
+
+    return currentState;
+  }
+  /**
+   * Adds a change listener. It will be called any time an action is dispatched,
+   * and some part of the state tree may potentially have changed. You may then
+   * call `getState()` to read the current state tree inside the callback.
+   *
+   * You may call `dispatch()` from a change listener, with the following
+   * caveats:
+   *
+   * 1. The subscriptions are snapshotted just before every `dispatch()` call.
+   * If you subscribe or unsubscribe while the listeners are being invoked, this
+   * will not have any effect on the `dispatch()` that is currently in progress.
+   * However, the next `dispatch()` call, whether nested or not, will use a more
+   * recent snapshot of the subscription list.
+   *
+   * 2. The listener should not expect to see all state changes, as the state
+   * might have been updated multiple times during a nested `dispatch()` before
+   * the listener is called. It is, however, guaranteed that all subscribers
+   * registered before the `dispatch()` started will be called with the latest
+   * state by the time it exits.
+   *
+   * @param {Function} listener A callback to be invoked on every dispatch.
+   * @returns {Function} A function to remove this change listener.
+   */
+
+
+  function subscribe(listener) {
+    if (typeof listener !== 'function') {
+      throw new Error('Expected the listener to be a function.');
+    }
+
+    if (isDispatching) {
+      throw new Error('You may not call store.subscribe() while the reducer is executing. ' + 'If you would like to be notified after the store has been updated, subscribe from a ' + 'component and invoke store.getState() in the callback to access the latest state. ' + 'See https://redux.js.org/api-reference/store#subscribelistener for more details.');
+    }
+
+    var isSubscribed = true;
+    ensureCanMutateNextListeners();
+    nextListeners.push(listener);
+    return function unsubscribe() {
+      if (!isSubscribed) {
+        return;
+      }
+
+      if (isDispatching) {
+        throw new Error('You may not unsubscribe from a store listener while the reducer is executing. ' + 'See https://redux.js.org/api-reference/store#subscribelistener for more details.');
+      }
+
+      isSubscribed = false;
+      ensureCanMutateNextListeners();
+      var index = nextListeners.indexOf(listener);
+      nextListeners.splice(index, 1);
+      currentListeners = null;
+    };
+  }
+  /**
+   * Dispatches an action. It is the only way to trigger a state change.
+   *
+   * The `reducer` function, used to create the store, will be called with the
+   * current state tree and the given `action`. Its return value will
+   * be considered the **next** state of the tree, and the change listeners
+   * will be notified.
+   *
+   * The base implementation only supports plain object actions. If you want to
+   * dispatch a Promise, an Observable, a thunk, or something else, you need to
+   * wrap your store creating function into the corresponding middleware. For
+   * example, see the documentation for the `redux-thunk` package. Even the
+   * middleware will eventually dispatch plain object actions using this method.
+   *
+   * @param {Object} action A plain object representing “what changed”. It is
+   * a good idea to keep actions serializable so you can record and replay user
+   * sessions, or use the time travelling `redux-devtools`. An action must have
+   * a `type` property which may not be `undefined`. It is a good idea to use
+   * string constants for action types.
+   *
+   * @returns {Object} For convenience, the same action object you dispatched.
+   *
+   * Note that, if you use a custom middleware, it may wrap `dispatch()` to
+   * return something else (for example, a Promise you can await).
+   */
+
+
+  function dispatch(action) {
+    if (!isPlainObject(action)) {
+      throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
+    }
+
+    if (typeof action.type === 'undefined') {
+      throw new Error('Actions may not have an undefined "type" property. ' + 'Have you misspelled a constant?');
+    }
+
+    if (isDispatching) {
+      throw new Error('Reducers may not dispatch actions.');
+    }
+
+    try {
+      isDispatching = true;
+      currentState = currentReducer(currentState, action);
+    } finally {
+      isDispatching = false;
+    }
+
+    var listeners = currentListeners = nextListeners;
+
+    for (var i = 0; i < listeners.length; i++) {
+      var listener = listeners[i];
+      listener();
+    }
+
+    return action;
+  }
+  /**
+   * Replaces the reducer currently used by the store to calculate the state.
+   *
+   * You might need this if your app implements code splitting and you want to
+   * load some of the reducers dynamically. You might also need this if you
+   * implement a hot reloading mechanism for Redux.
+   *
+   * @param {Function} nextReducer The reducer for the store to use instead.
+   * @returns {void}
+   */
+
+
+  function replaceReducer(nextReducer) {
+    if (typeof nextReducer !== 'function') {
+      throw new Error('Expected the nextReducer to be a function.');
+    }
+
+    currentReducer = nextReducer; // This action has a similiar effect to ActionTypes.INIT.
+    // Any reducers that existed in both the new and old rootReducer
+    // will receive the previous state. This effectively populates
+    // the new state tree with any relevant data from the old one.
+
+    dispatch({
+      type: ActionTypes.REPLACE
+    });
+  }
+  /**
+   * Interoperability point for observable/reactive libraries.
+   * @returns {observable} A minimal observable of state changes.
+   * For more information, see the observable proposal:
+   * https://github.com/tc39/proposal-observable
+   */
+
+
+  function observable() {
+    var _ref;
+
+    var outerSubscribe = subscribe;
+    return _ref = {
+      /**
+       * The minimal observable subscription method.
+       * @param {Object} observer Any object that can be used as an observer.
+       * The observer object should have a `next` method.
+       * @returns {subscription} An object with an `unsubscribe` method that can
+       * be used to unsubscribe the observable from the store, and prevent further
+       * emission of values from the observable.
+       */
+      subscribe: function subscribe(observer) {
+        if (typeof observer !== 'object' || observer === null) {
+          throw new TypeError('Expected the observer to be an object.');
+        }
+
+        function observeState() {
+          if (observer.next) {
+            observer.next(getState());
+          }
+        }
+
+        observeState();
+        var unsubscribe = outerSubscribe(observeState);
+        return {
+          unsubscribe: unsubscribe
+        };
+      }
+    }, _ref[es["a" /* default */]] = function () {
+      return this;
+    }, _ref;
+  } // When a store is created, an "INIT" action is dispatched so that every
+  // reducer returns their initial state. This effectively populates
+  // the initial state tree.
+
+
+  dispatch({
+    type: ActionTypes.INIT
+  });
+  return _ref2 = {
+    dispatch: dispatch,
+    subscribe: subscribe,
+    getState: getState,
+    replaceReducer: replaceReducer
+  }, _ref2[es["a" /* default */]] = observable, _ref2;
+}
+
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+
+function getUndefinedStateErrorMessage(key, action) {
+  var actionType = action && action.type;
+  var actionDescription = actionType && "action \"" + String(actionType) + "\"" || 'an action';
+  return "Given " + actionDescription + ", reducer \"" + key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.";
+}
+
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject(inputState)) {
+    return "The " + argumentName + " has unexpected type of \"" + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+  if (action && action.type === ActionTypes.REPLACE) return;
+
+  if (unexpectedKeys.length > 0) {
+    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
+  }
+}
+
+function assertReducerShape(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, {
+      type: ActionTypes.INIT
+    });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
+    }
+
+    if (typeof reducer(undefined, {
+      type: ActionTypes.PROBE_UNKNOWN_ACTION()
+    }) === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle " + ActionTypes.INIT + " or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
+    }
+  });
+}
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
+
+function combineReducers(reducers) {
+  var reducerKeys = Object.keys(reducers);
+  var finalReducers = {};
+
+  for (var i = 0; i < reducerKeys.length; i++) {
+    var key = reducerKeys[i];
+
+    if (false) {}
+
+    if (typeof reducers[key] === 'function') {
+      finalReducers[key] = reducers[key];
+    }
+  }
+
+  var finalReducerKeys = Object.keys(finalReducers); // This is used to make sure we don't warn about the same
+  // keys multiple times.
+
+  var unexpectedKeyCache;
+
+  if (false) {}
+
+  var shapeAssertionError;
+
+  try {
+    assertReducerShape(finalReducers);
+  } catch (e) {
+    shapeAssertionError = e;
+  }
+
+  return function combination(state, action) {
+    if (state === void 0) {
+      state = {};
+    }
+
+    if (shapeAssertionError) {
+      throw shapeAssertionError;
+    }
+
+    if (false) { var warningMessage; }
+
+    var hasChanged = false;
+    var nextState = {};
+
+    for (var _i = 0; _i < finalReducerKeys.length; _i++) {
+      var _key = finalReducerKeys[_i];
+      var reducer = finalReducers[_key];
+      var previousStateForKey = state[_key];
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if (typeof nextStateForKey === 'undefined') {
+        var errorMessage = getUndefinedStateErrorMessage(_key, action);
+        throw new Error(errorMessage);
+      }
+
+      nextState[_key] = nextStateForKey;
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+    }
+
+    hasChanged = hasChanged || finalReducerKeys.length !== Object.keys(state).length;
+    return hasChanged ? nextState : state;
+  };
+}
+
+function bindActionCreator(actionCreator, dispatch) {
+  return function () {
+    return dispatch(actionCreator.apply(this, arguments));
+  };
+}
+/**
+ * Turns an object whose values are action creators, into an object with the
+ * same keys, but with every function wrapped into a `dispatch` call so they
+ * may be invoked directly. This is just a convenience method, as you can call
+ * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
+ *
+ * For convenience, you can also pass an action creator as the first argument,
+ * and get a dispatch wrapped function in return.
+ *
+ * @param {Function|Object} actionCreators An object whose values are action
+ * creator functions. One handy way to obtain it is to use ES6 `import * as`
+ * syntax. You may also pass a single function.
+ *
+ * @param {Function} dispatch The `dispatch` function available on your Redux
+ * store.
+ *
+ * @returns {Function|Object} The object mimicking the original object, but with
+ * every action creator wrapped into the `dispatch` call. If you passed a
+ * function as `actionCreators`, the return value will also be a single
+ * function.
+ */
+
+
+function bindActionCreators(actionCreators, dispatch) {
+  if (typeof actionCreators === 'function') {
+    return bindActionCreator(actionCreators, dispatch);
+  }
+
+  if (typeof actionCreators !== 'object' || actionCreators === null) {
+    throw new Error("bindActionCreators expected an object or a function, instead received " + (actionCreators === null ? 'null' : typeof actionCreators) + ". " + "Did you write \"import ActionCreators from\" instead of \"import * as ActionCreators from\"?");
+  }
+
+  var boundActionCreators = {};
+
+  for (var key in actionCreators) {
+    var actionCreator = actionCreators[key];
+
+    if (typeof actionCreator === 'function') {
+      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
+    }
+  }
+
+  return boundActionCreators;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    keys.push.apply(keys, Object.getOwnPropertySymbols(object));
+  }
+
+  if (enumerableOnly) keys = keys.filter(function (sym) {
+    return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+  });
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+function compose() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce(function (a, b) {
+    return function () {
+      return a(b.apply(void 0, arguments));
+    };
+  });
+}
+
+/**
+ * Creates a store enhancer that applies middleware to the dispatch method
+ * of the Redux store. This is handy for a variety of tasks, such as expressing
+ * asynchronous actions in a concise manner, or logging every action payload.
+ *
+ * See `redux-thunk` package as an example of the Redux middleware.
+ *
+ * Because middleware is potentially asynchronous, this should be the first
+ * store enhancer in the composition chain.
+ *
+ * Note that each middleware will be given the `dispatch` and `getState` functions
+ * as named arguments.
+ *
+ * @param {...Function} middlewares The middleware chain to be applied.
+ * @returns {Function} A store enhancer applying the middleware.
+ */
+
+function applyMiddleware() {
+  for (var _len = arguments.length, middlewares = new Array(_len), _key = 0; _key < _len; _key++) {
+    middlewares[_key] = arguments[_key];
+  }
+
+  return function (createStore) {
+    return function () {
+      var store = createStore.apply(void 0, arguments);
+
+      var _dispatch = function dispatch() {
+        throw new Error('Dispatching while constructing your middleware is not allowed. ' + 'Other middleware would not be applied to this dispatch.');
+      };
+
+      var middlewareAPI = {
+        getState: store.getState,
+        dispatch: function dispatch() {
+          return _dispatch.apply(void 0, arguments);
+        }
+      };
+      var chain = middlewares.map(function (middleware) {
+        return middleware(middlewareAPI);
+      });
+      _dispatch = compose.apply(void 0, chain)(store.dispatch);
+      return _objectSpread2({}, store, {
+        dispatch: _dispatch
+      });
+    };
+  };
+}
+
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+function isCrushed() {}
+
+if (false) {}
+
+
+
+// CONCATENATED MODULE: ./src/forms/FormBooleanHOC/FormBooleanHOC.jsx
+ /** @module FormBooleanHOC
+                                                                                                                                                                                                                                                                                *  @class FormBooleanHOC
+                                                                                                                                                                                                                                                                                *  @since 2020.12.10, 22:17
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.10, 22:17
+                                                                                                                                                                                                                                                                                */
+/* eslint-disable react/require-default-props, react/jsx-max-depth */
+
+
+
+
+
+var cnFormBooleanHOC = configure_cn('FormBooleanHOC');
+
+var FormBooleanHOC_defaultState = {// Default state
+  // hoverable: false,
+  // focusable: false,
+};
+
+// class FormBooleanHOC extends React.PureComponent [>* @lends @FormBooleanHOC.prototype <] {
+var FormBooleanHOC_wrapFormBooleanHOC = function wrapFormBooleanHOC(WrappedComponent, params) {var _class, _temp;if (params === void 0) {params = {};}return _temp = _class = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormBoolean, _React$Component);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Lifecycle methods...
+
+    function FormBoolean(props) {var _this;
+      _this = _React$Component.call(this, props) || this;
+      // this.formItemRef = React.createRef()
+      defineProperty_default()(assertThisInitialized_default()(_this), "updateValueWithState",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      function (state) {var _this$props =
+        _this.props,id = _this$props.id,onChange = _this$props.onChange,disabled = _this$props.disabled;
+        if (!disabled && typeof onChange === 'function') {var
+          value = state.value;
+          onChange({ id: id, value: value });
+        }
+      });defineProperty_default()(assertThisInitialized_default()(_this), "handleChange",
+
+
+
+      function (_ref) {var value = _ref.value;
+        _this.setState(function (_ref2) {var stateValue = _ref2.value;
+          if (value == null) {
+            value = !stateValue;
+          }
+          return { value: value };
+        });
+      });var _value = _this.props.value; // this.state = deriveState(defaultState, params, props) // deriveStateFromProps(props, defaultState)
+      _this.id = props.id || params.id;_this.state = { value: _value };return _this;}var _proto = FormBoolean.prototype;_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
+      this.afterRender();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevValue = prevProps.value;var propsValue = this.props.value;var stateValue = this.state.value;if (propsValue !== prevValue && propsValue !== stateValue) {// New value from props
+        this.setState({ value: propsValue }, this.updateValueWithState);} else if (stateValue !== prevState.value) {// New value from state
+        this.updateValueWithState(this.state);}this.afterRender();} // Helper methods...
+    ;_proto.getClassName = function getClassName() {var id = this.props.id;var value = this.state.value;var checked = !!value;var mods = { id: id, checked: checked };var classList = cnFormBooleanHOC(mods, [this.props.className]);return classList;};_proto.focus = function focus() {// Invoke containing input focus method
+      // if (this.inputDomElem && typeof this.inputDomElem.focus == 'function') {
+      //   this.inputDomElem.focus()
+      // }
+    };_proto.afterRender = function afterRender() {// Calling after each (including first) render
+      // // TODO: Move `focus` and `select` forwarding to `FormItem` (for `focusable` variant)?
+      // if (this.formItemRef && this.formItemRef.current) {
+      //   if (!this.formItemRef.current.focus && this.focus) {
+      //     this.formItemRef.current.focus = this.focus.bind(this)
+      //   }
+      //   if (!this.formItemRef.current.select && this.select) {
+      //     this.formItemRef.current.select = this.select.bind(this)
+      //   }
+      // }
+    }; // Render...
+    _proto.renderInput = function renderInput() {var _this$props2 = this.props,id = _this$props2.id,inputId = _this$props2.inputId,name = _this$props2.name,setDomRef = _this$props2.setDomRef,tabIndex = _this$props2.tabIndex;var value = this.state.value;var checked = !!value;var inputProps = { type: 'checkbox', className: cnFormBooleanHOC('Input'), id: inputId || id || name, name: name || inputId || id, checked: checked,
+        onChange: this.handleChange,
+        // onFocus={this.handleFocused}
+        // onBlur={this.handleUnfocused}
+        ref: setDomRef,
+        tabIndex: tabIndex };
+
+      return /*#__PURE__*/(
+        external_react_default.a.createElement("input", inputProps));
+
+    };_proto.
+
+    render = function render() {var _this$props3 =
+
+
+
+      this.props,id = _this$props3.id,disabled = _this$props3.disabled;var
+      value = this.state.value;
+      var renderProps = {
+        id: id,
+        className: this.getClassName(),
+        disabled: disabled,
+        value: value,
+        handleChange: this.handleChange
+        // ref: setDomRef, // Init ref for FormItemHOC
+        // ref: this.formItemRef,
+        // tabIndex,
+      };
+      return /*#__PURE__*/(
+        external_react_default.a.createElement(WrappedComponent, extends_default()({},
+        this.props,
+        renderProps)));
+
+
+
+    };return FormBoolean;}(external_react_default.a.Component), defineProperty_default()(_class, "propTypes", { id: prop_types_default.a.string, name: prop_types_default.a.string, value: prop_types_default.a.bool, disabled: prop_types_default.a.bool, onChange: prop_types_default.a.func }), defineProperty_default()(_class, "defaultProps", { id: params.id, value: false }), _temp;};
+
+
+
+/** Usage:
+                                                                                                                                                                                                                                                                                                    * FormBooleanHOC(component)
+                                                                                                                                                                                                                                                                                                    * FormBooleanHOC(params)(component)
+                                                                                                                                                                                                                                                                                                    */
+var FormBooleanHOC = function FormBooleanHOC(params) {
+  if (typeof params === 'string') {// Passed identifier
+    params = { id: params };
+  }
+  if (typeof params === 'object') {// Params passed -> metafabric
+    return function (component) {return FormBooleanHOC_wrapFormBooleanHOC(component, params);};
+  } else
+  {// Component passed -> simple fabric
+    return FormBooleanHOC_wrapFormBooleanHOC(params);
+  }
+};
+
+// export default FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormBooleanHOC)
+/* harmony default export */ var FormBooleanHOC_FormBooleanHOC = (FormBooleanHOC);
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio.pcss
-var FormRadio_FormRadio = __webpack_require__(37);
+var FormRadio_FormRadio = __webpack_require__(39);
+
+// EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio-Themes.pcss
+var FormRadio_Themes = __webpack_require__(40);
 
 // CONCATENATED MODULE: ./src/forms/FormRadio/FormRadio.jsx
  /** @module FormRadio
-                                                                                                                                                                                                                          *  @class FormRadio
-                                                                                                                                                                                                                          *  @since 2020.04.02, 14:53
-                                                                                                                                                                                                                          *  @changed 2020.04.02, 14:53
-                                                                                                                                                                                                                          */
+                                                                                                                                        *  @class FormRadio
+                                                                                                                                        *  @since 2020.04.02, 14:53
+                                                                                                                                        *  @changed 2020.04.02, 14:53
+                                                                                                                                        */
 /* eslint-disable react/require-default-props, react/jsx-max-depth */
+
 
 
 
@@ -3262,9 +4257,11 @@ var FormRadio_FormRadio = __webpack_require__(37);
 
 
 
+
+
 var cnFormRadio = configure_cn('FormRadio');var
 
-FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormRadio, _React$PureComponent);
+FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormRadio, _React$PureComponent);function FormRadio() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormRadio.prototype;
 
 
 
@@ -3278,134 +4275,36 @@ FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {in
 
 
 
-  function FormRadio(props) {var _this;
-    _this = _React$PureComponent.call(this, props) || this;
-    // this.formItemRef = React.createRef()
-    defineProperty_default()(assertThisInitialized_default()(_this), "updateValueWithState",
+  // Helper methods...
+  _proto.
+  getClassName = function getClassName() {var _this$props =
+    this.props,id = _this$props.id,value = _this$props.value,theme = _this$props.theme;
+    var checked = !!value;
+    var mods = { id: id, checked: checked, theme: theme };
+    var classList = cnFormRadio(mods, [this.props.className]);
+    return classList;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (state) {var _this$props =
-      _this.props,id = _this$props.id,onChange = _this$props.onChange,disabled = _this$props.disabled;
-      if (!disabled && typeof onChange === 'function') {var
-        value = state.value;
-        onChange({ id: id, value: value });
-      }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "handleChange",
-
-
-
-    function () {
-      _this.setState(function (_ref) {var value = _ref.value;return { value: !value };});
-    });var _value = _this.props.value;_this.state = { value: _value };return _this;}var _proto = FormRadio.prototype;_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
-    this.afterRender();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevValue = prevProps.value;var propsValue = this.props.value;var stateValue = this.state.value;if (propsValue !== prevValue && propsValue !== stateValue) {// New value from props
-      this.setState({ value: propsValue }, this.updateValueWithState);} else if (stateValue !== prevState.value) {// New value from state
-      this.updateValueWithState(this.state);}this.afterRender();return true;} // Helper methods...
-  ;_proto.getClassName = function getClassName() {var id = this.props.id;var value = this.state.value;var checked = !!value;var mods = { id: id, checked: checked };var classList = cnFormRadio(mods, [this.props.className]);return classList;};_proto.focus = function focus() {// Invoke containing input focus method
-    // if (this.inputDomElem && typeof this.inputDomElem.focus == 'function') {
-    //   this.inputDomElem.focus()
-    // }
-  };_proto.select = function select() {// Invoke containing input select method
-    // if (this.inputDomElem && typeof this.inputDomElem.select == 'function') {
-    //   this.inputDomElem.select()
-    // }
-  };_proto.afterRender = function afterRender() {// Calling after each (including first) render
-    // // TODO: Move `focus` and `select` forwarding to `FormItem` (for `focusable` variant)?
-    // if (this.formItemRef && this.formItemRef.current) {
-    //   if (!this.formItemRef.current.focus && this.focus) {
-    //     this.formItemRef.current.focus = this.focus.bind(this)
-    //   }
-    //   if (!this.formItemRef.current.select && this.select) {
-    //     this.formItemRef.current.select = this.select.bind(this)
-    //   }
-    // }
-  }; // handleChange = (event) => { // ???
-  //   const {
-  //     id,
-  //     inputId,
-  //     name,
-  //     onChange,
-  //     disabled,
-  //   } = this.props
-  //   const { target } = event
-  //   const { checked } = target
-  //   if (!disabled && typeof onChange === 'function') {
-  //     onChange({
-  //       event,
-  //       id: inputId || id || name,
-  //       target,
-  //       value: !!checked,
-  //     })
-  //   }
-  // }
-  // handleFocused = () => {
-  //   this.setState({ focused: true })
-  // }
-  // handleUnfocused = () => {
-  //   this.setState({ focused: false })
-  // }
   // Render...
-  _proto.renderInput = function renderInput() {var _this$props2 = this.props,id = _this$props2.id,inputId = _this$props2.inputId,name = _this$props2.name,setDomRef = _this$props2.setDomRef,tabIndex = _this$props2.tabIndex;var value = this.state.value;var checked = !!value;var inputProps = { type: 'checkbox', className: cnFormRadio('Input'), id: inputId || id || name, name: name || inputId || id, checked: checked, onChange: this.handleChange,
-      // onFocus={this.handleFocused}
-      // onBlur={this.handleUnfocused}
+  ;_proto.
+  renderInput = function renderInput() {var _this$props2 =
+
+
+
+
+
+
+
+
+    this.props,id = _this$props2.id,inputId = _this$props2.inputId,name = _this$props2.name,setDomRef = _this$props2.setDomRef,tabIndex = _this$props2.tabIndex,handleChange = _this$props2.handleChange,value = _this$props2.value;
+    var checked = !!value;
+    var inputProps = {
+      type: 'checkbox',
+      className: cnFormRadio('Input'),
+      id: inputId || id || name,
+      name: name || inputId || id,
+      checked: checked,
+      onChange: handleChange,
       ref: setDomRef,
       tabIndex: tabIndex };
 
@@ -3422,11 +4321,8 @@ FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {in
     var renderProps = {
       id: id,
       className: this.getClassName(),
-      disabled: disabled
-      // ref: setDomRef, // Init ref for FormItemHOC
-      // ref: this.formItemRef,
-      // tabIndex,
-    };
+      disabled: disabled };
+
     return /*#__PURE__*/(
       external_react_default.a.createElement("div", renderProps, /*#__PURE__*/
       external_react_default.a.createElement("div", {
@@ -3440,11 +4336,15 @@ FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {in
 
 
 
-  };return FormRadio;}(external_react_default.a.PureComponent /** @lends @FormRadio.prototype */);defineProperty_default()(FormRadio_FormRadio_FormRadio, "propTypes", { id: prop_types_default.a.string, name: prop_types_default.a.string, value: prop_types_default.a.bool, disabled: prop_types_default.a.bool, onChange: prop_types_default.a.func });defineProperty_default()(FormRadio_FormRadio_FormRadio, "defaultProps", { value: false });
+  };return FormRadio;}(external_react_default.a.PureComponent /** @lends @FormRadio.prototype */);
 
 
 
-/* harmony default export */ var forms_FormRadio_FormRadio = (forms_FormItemHOC_FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormRadio_FormRadio_FormRadio));
+// export default FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormRadio)
+defineProperty_default()(FormRadio_FormRadio_FormRadio, "propTypes", { id: prop_types_default.a.string, name: prop_types_default.a.string, value: prop_types_default.a.bool, disabled: prop_types_default.a.bool, onChange: prop_types_default.a.func });defineProperty_default()(FormRadio_FormRadio_FormRadio, "defaultProps", { value: false });/* harmony default export */ var forms_FormRadio_FormRadio = (compose(
+forms_FormItemHOC_FormItemHOC({ hoverable: true, focusable: true, framed: false }),
+FormBooleanHOC_FormBooleanHOC)(
+FormRadio_FormRadio_FormRadio));
 // CONCATENATED MODULE: ./src/forms/forms.js
 /** @module forms
  *  @desc Form components
@@ -3455,6 +4355,7 @@ FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {in
 // Form elements...
  // DEBUG: Demo element
 
+// export FormCheck from './FormCheck'
 // export FormSwitch from './FormSwitch'
 
 // TODO...
@@ -3464,7 +4365,7 @@ FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {in
 //
 // export FormPager from './FormPager'
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(38);
+var Hello_Hello = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -3499,7 +4400,7 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(39);
+var build = __webpack_require__(43);
 
 // CONCATENATED MODULE: ./src/build.js
 /** @module build

@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -105,7 +105,7 @@ module.exports = require("react");
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(24)();
+  module.exports = __webpack_require__(21)();
 }
 
 
@@ -191,10 +191,10 @@ module.exports = _extends;
  */
 
 var config = {
-  app: __webpack_require__(13),
-  build: __webpack_require__(14),
-  css: __webpack_require__(15),
-  userAgent: __webpack_require__(17)
+  app: __webpack_require__(15),
+  build: __webpack_require__(16),
+  css: __webpack_require__(17),
+  userAgent: __webpack_require__(19)
   // constants: require('./constants'),
 };
 
@@ -204,20 +204,32 @@ module.exports = config;
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("@bem-react/classname");
+module.exports = require("react-dom");
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("@fortawesome/react-fontawesome");
+module.exports = require("@bem-react/classname");
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/react-fontawesome");
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("@fortawesome/free-solid-svg-icons");
+
+/***/ }),
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
 /* global window */
 
 
@@ -236,10 +248,10 @@ if (typeof self !== 'undefined') {
 var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10), __webpack_require__(41)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(12), __webpack_require__(43)(module)))
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 var g;
@@ -265,13 +277,13 @@ module.exports = g;
 
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports) {
 
-module.exports = require("@fortawesome/free-solid-svg-icons");
+module.exports = require("@fortawesome/free-regular-svg-icons");
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -296,7 +308,7 @@ function symbolObservablePonyfill(root) {
 
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /** @module config.app
@@ -319,7 +331,7 @@ module.exports = { // Common-used app variables...
 };
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /** @module config.build
@@ -337,11 +349,13 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.6-201211-0117-build-prod-default",
+  buildTag: "v.0.1.6-201219-0338-build-prod-default",
+  timestamp: "2020.12.19, 03:38",
+  timetag: "201219-0338",
   version: "0.1.6" };
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /** @module config.css
@@ -352,7 +366,7 @@ module.exports = { // Common-used build variables...
 
 // Theme...
 var THEME = "default";
-var theme = __webpack_require__(16);
+var theme = __webpack_require__(18);
 
 // Some reusable parameters...
 var defaultFontSize = theme.defaultFontSize || 16;
@@ -556,14 +570,16 @@ Object.assign(cssConfig, { // Form properties...
   // tableBorderWidth: 2,
 
   defaultIconSize: 24,
-  smallIconSize: 16 });
+  smallIconSize: 16,
+
+  popupContentGap: 4 });
 
 
 
 module.exports = cssConfig;
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports) {
 
 /** @module config.themes.default
@@ -585,7 +601,7 @@ module.exports = {
   secondaryContrastColor: '#fff' };
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** @module config.build
@@ -685,19 +701,7 @@ function detectUserAgent() {
 var userAgent = detectUserAgent();
 
 module.exports = userAgent;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(10)))
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(12)))
 
 /***/ }),
 /* 20 */
@@ -707,24 +711,6 @@ module.exports = userAgent;
 
 /***/ }),
 /* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -737,7 +723,7 @@ module.exports = userAgent;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(25);
+var ReactPropTypesSecret = __webpack_require__(22);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -795,7 +781,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 25 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -812,6 +798,24 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 26 */
@@ -905,6 +909,18 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -934,19 +950,19 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
 /* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -976,19 +992,28 @@ __webpack_require__.d(__webpack_exports__, "FormPasswordInput", function() { ret
 __webpack_require__.d(__webpack_exports__, "FormRadio", function() { return /* reexport */ forms_FormRadio_FormRadio; });
 __webpack_require__.d(__webpack_exports__, "Hello", function() { return /* reexport */ demo_Hello_Hello; });
 
+// NAMESPACE OBJECT: ./src/utils/configure.js
+var configure_namespaceObject = {};
+__webpack_require__.r(configure_namespaceObject);
+__webpack_require__.d(configure_namespaceObject, "setConfigOptions", function() { return configure_setConfigOptions; });
+__webpack_require__.d(configure_namespaceObject, "cssMapping", function() { return configure_cssMapping; });
+__webpack_require__.d(configure_namespaceObject, "cn", function() { return configure_cn; });
+
 // NAMESPACE OBJECT: ./src/utils/utils.js
 var utils_namespaceObject = {};
 __webpack_require__.r(utils_namespaceObject);
+__webpack_require__.d(utils_namespaceObject, "configure", function() { return configure_namespaceObject; });
 __webpack_require__.d(utils_namespaceObject, "setConfigOptions", function() { return configure_setConfigOptions; });
 __webpack_require__.d(utils_namespaceObject, "cssMapping", function() { return configure_cssMapping; });
 __webpack_require__.d(utils_namespaceObject, "cn", function() { return configure_cn; });
+__webpack_require__.d(utils_namespaceObject, "strings", function() { return utils_strings; });
 
 // EXTERNAL MODULE: ./src/config/config.js
 var config = __webpack_require__(6);
 var config_default = /*#__PURE__*/__webpack_require__.n(config);
 
 // EXTERNAL MODULE: external "@bem-react/classname"
-var classname_ = __webpack_require__(7);
+var classname_ = __webpack_require__(8);
 
 // CONCATENATED MODULE: ./src/utils/configure.js
 /** @module build
@@ -1048,12 +1073,26 @@ var configure_cssMapping = function cssMapping(classNames) {var _config$app =
     throw new Error('Class list must be an array!');
   }
   var resultList = classNamesList.map(function (className) {
-    var result = cssMappings[className] || className;
+    var result = cssMappings[className];
+    if (!result) {// Try to make className by similarity (eg: not found 'XXX_*', but found 'XXX')...
+      var pos = [className.indexOf('-'), className.indexOf('_')].filter(function (x) {return x !== -1;});
+      var minPos = pos && pos.length && Math.min.apply(Math, pos);
+      if (minPos) {
+        // const match = className.match(/^(\w+?)([-_].*)$/)
+        // const [, base, rest] = match
+        var base = className.substr(0, minPos);
+        var rest = className.substr(minPos);
+        var baseClassName = cssMappings[base];
+        if (baseClassName) {
+          result = baseClassName + rest;
+        }
+      }
+    }
     // if (className !== result) {
     //   console.log('WebUiCore:utils:cssMapping', className, '->', result)
     //   debugger
     // }
-    return result;
+    return result || className;
   });
   return resultList.join(' ');
 };
@@ -1076,36 +1115,161 @@ var configure_cn = function cn() {for (var _len = arguments.length, args = new A
   }
   return result;
 };
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(0);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
+// CONCATENATED MODULE: ./src/utils/strings.js
+/** @module strings
+ *  @description Objects utilities
+ *  @since 2019.04.03, 14:38
+ *  @changed 2020.05.29, 13:35
+ */
+
+
+
+var strings = {
+
+  /**
+                 * @param {string} val
+                 * @return {number}
+                 */
+  toNumber: function toNumber(val) {
+    return val && !isNaN(val) ? Number(val) : 0;
+  },
+  /**
+      * @param {string} val
+      * @return {String}
+      */
+  toString: function toString(val) {
+    return val; // String(val);
+  },
+  /**
+      * @param {string} val
+      * @return {boolean}
+      */
+  toBoolean: function toBoolean(val) {
+    return !!(val && val !== 'false' && val !== '0');
+  },
+
+  /** Returns length of common parts of two strings
+      * @param {String} a
+      * @param {String} b
+      * @return {Number}
+      */
+  getCommonLength: function getCommonLength(a, b) {
+    var maxLen = Math.min(a.length, b.length);
+    var commonLen = 0;
+    for (var len = 1; len < maxLen; len++) {
+      var s = a.substr(0, len);
+      if (b.indexOf(s) === 0) {
+        commonLen = len;
+      }
+    }
+    return commonLen;
+  },
+
+  /** Uppercase first letter of string
+      * @param {string} str
+      * @return {str}
+      */
+  ucFirst: function ucFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1); // .toLowerCase();
+  },
+
+  /** Convert string to desired type
+      * @param {string} type
+      * @param {string} val
+      * @return {*}
+      */
+  toType: function toType(type, val) {
+    var methodName = 'to' + this.ucFirst(type);
+    if ( /* this.hasOwnProperty(methodName) && */typeof this[methodName] === 'function') {
+      val = this[methodName](val);
+    }
+    return val;
+  },
+
+  /**
+      * @param {Number} length - Target hex string length
+      * @return {String}
+      */
+  randomHexString: function randomHexString(length) {
+    var result = '';
+    for (var i = 0; i < length; i++) {
+      result += Math.floor(Math.random() * 0xf).toString(16);
+    }
+    return result;
+  },
+
+  /** Convert (mostly error responses) html to text
+      * @param {String} html
+      * @return {String}
+      */
+  html2string: function html2string(html) {
+    return html && html // Process error from (html) response body
+    // .replace(/\s*<head>[\s\S]*<\/head>/m, '')
+    .replace(/\s*<style>[\s\S]*<\/style>/gm, '').
+    replace(/<title>(.+)<\/title>/gi, '$1:\n').
+    replace(/<[^<>]*>/g, ' ').
+    replace(/\r/gm, '\n') // Newlines
+    .replace(/[ \t]+\n/gm, '\n') // Hanged spaces
+    .replace(/\n[ \t]+/gm, '\n') // Hanged spaces
+    .replace(/\n{3,}/gm, '\n\n') // Extra newlines
+    .replace(/\n(.+):*[ \t\n]+\1\n/gm, '\n$1:\n') // Remove repeating titles
+    // .replace(/\n/gm, '\\n') // DEBUG: newlines
+    .trim(); // Trim
+  },
+
+  // TODO: Move to react strings helper?
+  splitMultiline: function splitMultiline(text, opt) {
+    opt = opt || {};
+    var textClassName = opt.textClassName || 'Text';
+    var lineClassName = opt.lineClassName || 'TextLine';
+    return text.split('\n\n').map(function (text, n) {
+      var lines = text.split('\n').map(function (line, n) {
+        return /*#__PURE__*/external_react_default.a.createElement('div', { key: 'line' + String(n), className: lineClassName }, line);
+      });
+      return /*#__PURE__*/external_react_default.a.createElement('div', { key: 'text' + String(n), className: textClassName }, lines);
+    });
+  } };
+
+
+
+// module.exports = strings
+/* harmony default export */ var utils_strings = (strings);
 // CONCATENATED MODULE: ./src/utils/utils.js
 /** @module build
  *  @desc Library exportable ditributive
  *  @since 2020.05.19, 17:16
- *  @changed 2020.05.27, 22:58
+ *  @changed 2020.12.15, 21:12
  */
 
+// export * as strings from './strings'
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inheritsLoose.js
 var inheritsLoose = __webpack_require__(4);
 var inheritsLoose_default = /*#__PURE__*/__webpack_require__.n(inheritsLoose);
 
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(0);
-var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
-
 // EXTERNAL MODULE: external "@fortawesome/react-fontawesome"
-var react_fontawesome_ = __webpack_require__(8);
+var react_fontawesome_ = __webpack_require__(9);
 
 // EXTERNAL MODULE: external "@fortawesome/free-solid-svg-icons"
-var free_solid_svg_icons_ = __webpack_require__(11);
+var free_solid_svg_icons_ = __webpack_require__(10);
+
+// EXTERNAL MODULE: external "@fortawesome/free-regular-svg-icons"
+var free_regular_svg_icons_ = __webpack_require__(13);
 
 // EXTERNAL MODULE: ./src/elements/InlineIcon/InlineIcon.pcss
-var InlineIcon_InlineIcon = __webpack_require__(18);
+var InlineIcon_InlineIcon = __webpack_require__(20);
 
 // CONCATENATED MODULE: ./src/elements/InlineIcon/InlineIcon.jsx
  /** @module InlineIcon
                                                                     *  @class InlineIcon
                                                                     *  @since 2020.10.07, 02:08
                                                                     *  @changed 2020.10.07, 02:08
+                                                                    *
+                                                                    *  TODO 2020.12.14, 16:39 -- Uase theme prop (as in `FormButton`, `FormRadio` etc)
                                                                     */
 
 
@@ -1115,15 +1279,18 @@ var InlineIcon_InlineIcon = __webpack_require__(18);
 
 
 
-// import * as regularIcons from '@fortawesome/free-regular-svg-icons'
-// TODO: Add optional prefix ('regular', 'solid', 'default') to icon id for choosing icons set.
+
+
+var iconGroups = {
+  solid: free_solid_svg_icons_,
+  regular: free_regular_svg_icons_ };
 
 
 
 
 var cnInlineIcon = configure_cn('InlineIcon');var
 
-InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(InlineIcon, _React$Component);function InlineIcon() {return _React$Component.apply(this, arguments) || this;}var _proto = InlineIcon.prototype;_proto.
+InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(InlineIcon, _React$PureComponent);function InlineIcon() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = InlineIcon.prototype;_proto.
 
   getClassName = function getClassName() {var
 
@@ -1133,6 +1300,21 @@ InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$Component) {inh
       id: id },
     [this.props.className]);
     return className;
+  };_proto.
+
+  getIconComponent = function getIconComponent(id) {
+    var iconId = id;
+    var icons = free_solid_svg_icons_;
+    var matchGroup = iconId.match(/^(\w+):(.*)/);
+    if (matchGroup) {var
+      groupId = matchGroup[1],nextId = matchGroup[2];
+      if (groupId && iconGroups[groupId] && nextId) {
+        icons = iconGroups[groupId];
+        iconId = nextId;
+      }
+    }
+    var component = icons && icons[iconId] || 'questionCircle';
+    return component;
   };_proto.
 
   render = function render() {var _this$props =
@@ -1147,7 +1329,7 @@ InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$Component) {inh
     this.props,id = _this$props.id,tag = _this$props.tag,title = _this$props.title,icon = _this$props.icon,onClick = _this$props.onClick;
 
     // Create fortawesome icon element if passed icon image (svg icon)
-    var iconComponent = icon && typeof icon === 'string' ? free_solid_svg_icons_[icon] : icon;
+    var iconComponent = icon && typeof icon === 'string' ? this.getIconComponent(icon) : icon;
     var content = iconComponent && iconComponent.iconName ? /*#__PURE__*/external_react_default.a.createElement(react_fontawesome_["FontAwesomeIcon"], { className: cnInlineIcon('IconImg'), icon: iconComponent }) : iconComponent;
 
     var renderProps = {
@@ -1161,7 +1343,7 @@ InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$Component) {inh
     var tagName = tag || 'span';
     var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
     return element;
-  };return InlineIcon;}(external_react_default.a.Component /** @lends @InlineIcon.prototype */);
+  };return InlineIcon;}(external_react_default.a.PureComponent /** @lends @InlineIcon.prototype */);
 
 
 
@@ -1178,220 +1360,154 @@ var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThi
 var defineProperty = __webpack_require__(2);
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty);
 
-// EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
-var Popup_Popup = __webpack_require__(19);
-
-// CONCATENATED MODULE: ./src/elements/Popup/Popup.jsx
- /** @module Popup
-                                                                                                                                                                                                                                                                                *  @class Popup
-                                                                                                                                                                                                                                                                                *  @since 2020.10.27, 00:39
-                                                                                                                                                                                                                                                                                *  @changed 2020.10.29, 03:14
-                                                                                                                                                                                                                                                                                */
-
-
-// import PropTypes from 'prop-types'
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-var cnPopup = configure_cn('Popup');
-
-var delayedClickTimeout = 200;
-var globalClickEventName = 'mousedown';var
-
-Popup_Popup_Popup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(Popup, _React$Component);var _proto = Popup.prototype;
-
-
-
-  // Helpers...
-  _proto.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  registerGlobalClickHandler = function registerGlobalClickHandler() {
-    window.addEventListener(globalClickEventName, this.globalClickHandler);
-  };_proto.
-
-  unregisterGlobalClickHandler = function unregisterGlobalClickHandler() {
-    this.clearDelayedClickTimerHandler();
-    window.removeEventListener(globalClickEventName, this.globalClickHandler);
-  };
-
-
-
-
-
-
-
-
-
-
-
-  // Lifecycle...
-
-  function Popup(props) {var _this;
-    _this = _React$Component.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "delayedClickTimerHandler", null);defineProperty_default()(assertThisInitialized_default()(_this), "delayedGlobalClickHandler", function () {// Close popup
-      console.log('Popup:delayedGlobalClickHandler');_this.setState({ show: false });});defineProperty_default()(assertThisInitialized_default()(_this), "clearDelayedClickTimerHandler", function () {console.log('Popup:clearDelayedClickTimerHandler', _this.delayedClickTimerHandler);if (_this.delayedClickTimerHandler) {clearTimeout(_this.delayedClickTimerHandler);_this.delayedClickTimerHandler = null;}});defineProperty_default()(assertThisInitialized_default()(_this), "globalClickHandler", function () {_this.clearDelayedClickTimerHandler();_this.delayedClickTimerHandler = setTimeout(_this.delayedGlobalClickHandler, delayedClickTimeout);console.log('Popup:globalClickHandler (set handler)', _this.delayedClickTimerHandler);});defineProperty_default()(assertThisInitialized_default()(_this), "updateGlobalClickHandlerByState", function (state) {var show = state.show;if (show) {_this.registerGlobalClickHandler();} else {_this.unregisterGlobalClickHandler();}});defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (_ref) {var show = _ref.show;
-      _this.clearDelayedClickTimerHandler();
-      if (show == null) {// Toggle state if no value passed
-        show = !_this.state.show;
-      }
-      _this.setState({
-        show: show,
-        wasShown: _this.state.wasShown || show });var
-
-      onControlClick = _this.props.onControlClick;
-      if (typeof onControlClick === 'function') {
-        onControlClick({ show: show });
-      }
-    });var showPopup = props.showPopup,registerHideStopper = props.registerHideStopper;_this.state = { // show: false, // Is content element displaying now?
-      // wasShown: false, // Memorized state: did content element once displayed?
-      show: showPopup, // Is content element displaying now?
-      wasShown: showPopup // Memorized state: did content element once displayed?
-    };if (typeof registerHideStopper === 'function') {// External hide canceler (FormSelect: on Menu click etc)
-      registerHideStopper(_this.clearDelayedClickTimerHandler);}return _this;}_proto.componentDidMount = function componentDidMount() {var show = this.state.show;if (show) {this.registerGlobalClickHandler();}};_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalClickHandler();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevShowPopup = prevProps.showPopup;var showPopup = this.props.showPopup;if (prevShowPopup !== showPopup) {this.setState({ show: showPopup, wasShown: this.state.wasShown || showPopup }, this.updateGlobalClickHandlerByState);} else if (prevState.show !== this.state.show) {this.updateGlobalClickHandlerByState(this.state);}} // Handlers...
-  ;_proto.getClassName = function getClassName() {var id = this.props.id;var
-    show =
-
-    this.state.show;
-    var className = cnPopup({
-      id: id,
-      show: show },
-    [this.props.className]);
-    return className;
+// EXTERNAL MODULE: ./node_modules/prop-types/index.js
+var prop_types = __webpack_require__(1);
+var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
+
+// CONCATENATED MODULE: ./node_modules/throttle-debounce/esm/index.js
+/* eslint-disable no-undefined,no-param-reassign,no-shadow */
+
+/**
+ * Throttle execution of a function. Especially useful for rate limiting
+ * execution of handlers on events like resize and scroll.
+ *
+ * @param  {number}    delay -          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {boolean}   [noTrailing] -   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+ *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+ *                                    the internal counter is reset).
+ * @param  {Function}  callback -       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    to `callback` when the throttled-function is executed.
+ * @param  {boolean}   [debounceMode] - If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ *                                    schedule `callback` to execute after `delay` ms.
+ *
+ * @returns {Function}  A new, throttled, function.
+ */
+function throttle (delay, noTrailing, callback, debounceMode) {
+  /*
+   * After wrapper has stopped being called, this timeout ensures that
+   * `callback` is executed at the proper times in `throttle` and `end`
+   * debounce modes.
+   */
+  var timeoutID;
+  var cancelled = false; // Keep track of the last time `callback` was executed.
+
+  var lastExec = 0; // Function to clear existing timeout
+
+  function clearExistingTimeout() {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+  } // Function to cancel next exec
+
+
+  function cancel() {
+    clearExistingTimeout();
+    cancelled = true;
+  } // `noTrailing` defaults to falsy.
+
+
+  if (typeof noTrailing !== 'boolean') {
+    debounceMode = callback;
+    callback = noTrailing;
+    noTrailing = undefined;
   }
-
-  // Render...
-  ;_proto.
-  renderPopupControl = function renderPopupControl() {var
-    popupControl = this.props.popupControl;var
-
-
-    show =
-
-    this.state.show;
-
-    var controlProps = popupControl && popupControl.props;
-
-    var content = extends_default()({},
-    popupControl, {
-      props: extends_default()({},
-      controlProps, {
-        onClick: /* controlProps.onControlClick || */this.onControlClick,
-        checked: show }) });
+  /*
+   * The `wrapper` function encapsulates all of the throttling / debouncing
+   * functionality and when executed will limit the rate at which `callback`
+   * is executed.
+   */
 
 
-
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", { className: cnPopup('ControlWrapper') },
-      content));
-
-
-  };_proto.
-
-  renderPopupContent = function renderPopupContent() {var
-    popupContent = this.props.popupContent;var _this$state =
-
-
-
-
-    this.state,show = _this$state.show,wasShown = _this$state.wasShown;
-
-    if (!show && !wasShown) {// Content hidden and was not initialized
-      return null;
+  function wrapper() {
+    for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+      arguments_[_key] = arguments[_key];
     }
 
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", { className: cnPopup('ContentWrapper', { show: show }) },
-      popupContent));
+    var self = this;
+    var elapsed = Date.now() - lastExec;
+
+    if (cancelled) {
+      return;
+    } // Execute `callback` and update the `lastExec` timestamp.
 
 
-  };_proto.
-
-  render = function render() {var
-
-
-    id =
-
-    this.props.id;
-
-    var renderProps = {
-      id: id,
-      className: this.getClassName() };
+    function exec() {
+      lastExec = Date.now();
+      callback.apply(self, arguments_);
+    }
+    /*
+     * If `debounceMode` is true (at begin) this is used to clear the flag
+     * to allow future `callback` executions.
+     */
 
 
-    var renderPopupControl = this.renderPopupControl();
-    var renderPopupContent = this.renderPopupContent();
+    function clear() {
+      timeoutID = undefined;
+    }
 
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", renderProps,
-      renderPopupControl,
-      renderPopupContent));
+    if (debounceMode && !timeoutID) {
+      /*
+       * Since `wrapper` is being called for the first time and
+       * `debounceMode` is true (at begin), execute `callback`.
+       */
+      exec();
+    }
+
+    clearExistingTimeout();
+
+    if (debounceMode === undefined && elapsed > delay) {
+      /*
+       * In throttle mode, if `delay` time has been exceeded, execute
+       * `callback`.
+       */
+      exec();
+    } else if (noTrailing !== true) {
+      /*
+       * In trailing throttle mode, since `delay` time has not been
+       * exceeded, schedule `callback` to execute `delay` ms after most
+       * recent execution.
+       *
+       * If `debounceMode` is true (at begin), schedule `clear` to execute
+       * after `delay` ms.
+       *
+       * If `debounceMode` is false (at end), schedule `callback` to
+       * execute after `delay` ms.
+       */
+      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+    }
+  }
+
+  wrapper.cancel = cancel; // Return the wrapper function.
+
+  return wrapper;
+}
+
+/* eslint-disable no-undefined */
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {number}   delay -         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {boolean}  [atBegin] -     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback -      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @returns {Function} A new, debounced function.
+ */
+
+function debounce (delay, atBegin, callback) {
+  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+}
 
 
-  };return Popup;}(external_react_default.a.Component /** @lends @Popup.prototype */);
+//# sourceMappingURL=index.js.map
 
-
-
-/* harmony default export */ var elements_Popup_Popup = (Popup_Popup_Popup);
 // EXTERNAL MODULE: ./src/forms/FormItemHOC/FormItemHOC.pcss
-var FormItemHOC = __webpack_require__(20);
+var FormItemHOC = __webpack_require__(23);
 
 // CONCATENATED MODULE: ./src/forms/FormItemHOC/FormItemHOC.jsx
  /** @module FormItemHOC
@@ -1425,6 +1541,9 @@ var classNameModifiers = [// Pass props/state params to class modifiers
 'disabled',
 'fill' // (???)
 ];
+var classNameExpectedModifierTypes = {
+  checked: 'boolean' };
+
 
 var defaultState = {// Default state
   // hoverable: false,
@@ -1469,9 +1588,13 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
     // Helper methods...
     _proto.
     getStateOrPropOrParam = function getStateOrPropOrParam(id) {// Get parameter from state or from props
-      return this.state[id] != null ? this.state[id] :
+      var val = this.state[id] != null ? this.state[id] :
       this.props[id] != null ? this.props[id] :
       params[id];
+      if (classNameExpectedModifierTypes[id] && typeof val !== classNameExpectedModifierTypes[id]) {
+        val = null;
+      }
+      return val;
     };_proto.
 
     createUniqId = function createUniqId() {
@@ -1588,8 +1711,12 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
       });defineProperty_default()(assertThisInitialized_default()(_this), "setDomRef",
 
       function (domRef) {// Children dom node receiver
+        var setDomRef = _this.props.setDomRef;
         _this.formItemDomRef = domRef;
-        // domRef && domRef.focus && domRef.focus()
+        if (typeof setDomRef === 'function') {
+          setDomRef(domRef);
+        }
+        // domRef && domRef.focus && domRef.focus() // ???
       });_this.state = FormItemHOC_deriveState(defaultState, params, props); // deriveStateFromProps(props, defaultState)
       _this.id = props.id || params.id; // this.formItemRef = React.createRef()
       return _this;}FormItem.getDerivedStateFromProps = function getDerivedStateFromProps(props, state) {// TODO: Update event subscriptions if `hoverable` flag changed?
@@ -1607,14 +1734,11 @@ var FormItemHOC_wrapFormItemHOC = function wrapFormItemHOC(WrappedComponent, par
                                                                                                                 * handleBlur() {
                                                                                                                 *   this.setState({ focused: false })
                                                                                                                 * }
-                                                                                                                */;_proto.render = function render() {// const id = this.getId() // this.props.id || this.id || (this.id = this.createUniqId())
-      var _this$state = this.state,hovered = _this$state.hovered,focused = _this$state.focused; // TODO: Generate unique id?
-      var renderProps = { hovered: hovered, focused: focused, className: this.getClassName(), setDomRef: this.setDomRef // Children dom node receiver
+                                                                                                                */;_proto.render = function render() {var _this$state = this.state,hovered = _this$state.hovered,focused = _this$state.focused;var renderProps = { hovered: hovered, focused: focused, className: this.getClassName(), setDomRef: this.setDomRef // Children dom node receiver
         // formItemDomRef: this.formItemDomRef,
       };var focusable = this.getStateOrPropOrParam('focusable');if (focusable) {renderProps.tabIndex = 0;}return /*#__PURE__*/external_react_default.a.createElement(WrappedComponent, extends_default()({},
       this.props,
       renderProps));
-
 
 
     };return FormItem;}(external_react_default.a.Component), _temp;};
@@ -1638,8 +1762,1027 @@ var FormItemHOC_FormItemHOC = function FormItemHOC(params) {
 };
 
 /* harmony default export */ var forms_FormItemHOC_FormItemHOC = (FormItemHOC_FormItemHOC);
+// EXTERNAL MODULE: external "react-dom"
+var external_react_dom_ = __webpack_require__(7);
+var external_react_dom_default = /*#__PURE__*/__webpack_require__.n(external_react_dom_);
+
+// CONCATENATED MODULE: ./node_modules/react-portal/es/utils.js
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+// CONCATENATED MODULE: ./node_modules/react-portal/es/Portal.js
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var Portal_Portal = function (_React$Component) {
+  _inherits(Portal, _React$Component);
+
+  function Portal() {
+    _classCallCheck(this, Portal);
+
+    return _possibleConstructorReturn(this, (Portal.__proto__ || Object.getPrototypeOf(Portal)).apply(this, arguments));
+  }
+
+  _createClass(Portal, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this.defaultNode) {
+        document.body.removeChild(this.defaultNode);
+      }
+      this.defaultNode = null;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (!canUseDOM) {
+        return null;
+      }
+      if (!this.props.node && !this.defaultNode) {
+        this.defaultNode = document.createElement('div');
+        document.body.appendChild(this.defaultNode);
+      }
+      return external_react_dom_default.a.createPortal(this.props.children, this.props.node || this.defaultNode);
+    }
+  }]);
+
+  return Portal;
+}(external_react_default.a.Component);
+
+Portal_Portal.propTypes = {
+  children: prop_types_default.a.node.isRequired,
+  node: prop_types_default.a.any
+};
+
+/* harmony default export */ var es_Portal = (Portal_Portal);
+// CONCATENATED MODULE: ./node_modules/react-portal/es/LegacyPortal.js
+var LegacyPortal_createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function LegacyPortal_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function LegacyPortal_possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function LegacyPortal_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// This file is a fallback for a consumer who is not yet on React 16
+// as createPortal was introduced in React 16
+
+
+
+
+
+var LegacyPortal_Portal = function (_React$Component) {
+  LegacyPortal_inherits(Portal, _React$Component);
+
+  function Portal() {
+    LegacyPortal_classCallCheck(this, Portal);
+
+    return LegacyPortal_possibleConstructorReturn(this, (Portal.__proto__ || Object.getPrototypeOf(Portal)).apply(this, arguments));
+  }
+
+  LegacyPortal_createClass(Portal, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.renderPortal();
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(props) {
+      this.renderPortal();
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      external_react_dom_default.a.unmountComponentAtNode(this.defaultNode || this.props.node);
+      if (this.defaultNode) {
+        document.body.removeChild(this.defaultNode);
+      }
+      this.defaultNode = null;
+      this.portal = null;
+    }
+  }, {
+    key: 'renderPortal',
+    value: function renderPortal(props) {
+      if (!this.props.node && !this.defaultNode) {
+        this.defaultNode = document.createElement('div');
+        document.body.appendChild(this.defaultNode);
+      }
+
+      var children = this.props.children;
+      // https://gist.github.com/jimfb/d99e0678e9da715ccf6454961ef04d1b
+      if (typeof this.props.children.type === 'function') {
+        children = external_react_default.a.cloneElement(this.props.children);
+      }
+
+      this.portal = external_react_dom_default.a.unstable_renderSubtreeIntoContainer(this, children, this.props.node || this.defaultNode);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return Portal;
+}(external_react_default.a.Component);
+
+/* harmony default export */ var LegacyPortal = (LegacyPortal_Portal);
+
+
+LegacyPortal_Portal.propTypes = {
+  children: prop_types_default.a.node.isRequired,
+  node: prop_types_default.a.any
+};
+// CONCATENATED MODULE: ./node_modules/react-portal/es/PortalCompat.js
+
+
+
+
+
+var PortalCompat_Portal = void 0;
+
+if (external_react_dom_default.a.createPortal) {
+  PortalCompat_Portal = es_Portal;
+} else {
+  PortalCompat_Portal = LegacyPortal;
+}
+
+/* harmony default export */ var PortalCompat = (PortalCompat_Portal);
+// CONCATENATED MODULE: ./node_modules/react-portal/es/PortalWithState.js
+var PortalWithState_createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function PortalWithState_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function PortalWithState_possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function PortalWithState_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var KEYCODES = {
+  ESCAPE: 27
+};
+
+var PortalWithState_PortalWithState = function (_React$Component) {
+  PortalWithState_inherits(PortalWithState, _React$Component);
+
+  function PortalWithState(props) {
+    PortalWithState_classCallCheck(this, PortalWithState);
+
+    var _this = PortalWithState_possibleConstructorReturn(this, (PortalWithState.__proto__ || Object.getPrototypeOf(PortalWithState)).call(this, props));
+
+    _this.portalNode = null;
+    _this.state = { active: !!props.defaultOpen };
+    _this.openPortal = _this.openPortal.bind(_this);
+    _this.closePortal = _this.closePortal.bind(_this);
+    _this.wrapWithPortal = _this.wrapWithPortal.bind(_this);
+    _this.handleOutsideMouseClick = _this.handleOutsideMouseClick.bind(_this);
+    _this.handleKeydown = _this.handleKeydown.bind(_this);
+    return _this;
+  }
+
+  PortalWithState_createClass(PortalWithState, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (this.props.closeOnEsc) {
+        document.addEventListener('keydown', this.handleKeydown);
+      }
+      if (this.props.closeOnOutsideClick) {
+        document.addEventListener('click', this.handleOutsideMouseClick);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEsc) {
+        document.removeEventListener('keydown', this.handleKeydown);
+      }
+      if (this.props.closeOnOutsideClick) {
+        document.removeEventListener('click', this.handleOutsideMouseClick);
+      }
+    }
+  }, {
+    key: 'openPortal',
+    value: function openPortal(e) {
+      if (this.state.active) {
+        return;
+      }
+      if (e && e.nativeEvent) {
+        e.nativeEvent.stopImmediatePropagation();
+      }
+      this.setState({ active: true }, this.props.onOpen);
+    }
+  }, {
+    key: 'closePortal',
+    value: function closePortal() {
+      if (!this.state.active) {
+        return;
+      }
+      this.setState({ active: false }, this.props.onClose);
+    }
+  }, {
+    key: 'wrapWithPortal',
+    value: function wrapWithPortal(children) {
+      var _this2 = this;
+
+      if (!this.state.active) {
+        return null;
+      }
+      return external_react_default.a.createElement(
+        PortalCompat,
+        {
+          node: this.props.node,
+          key: 'react-portal',
+          ref: function ref(portalNode) {
+            return _this2.portalNode = portalNode;
+          }
+        },
+        children
+      );
+    }
+  }, {
+    key: 'handleOutsideMouseClick',
+    value: function handleOutsideMouseClick(e) {
+      if (!this.state.active) {
+        return;
+      }
+      var root = this.portalNode && (this.portalNode.props.node || this.portalNode.defaultNode);
+      if (!root || root.contains(e.target) || e.button && e.button !== 0) {
+        return;
+      }
+      this.closePortal();
+    }
+  }, {
+    key: 'handleKeydown',
+    value: function handleKeydown(e) {
+      if (e.keyCode === KEYCODES.ESCAPE && this.state.active) {
+        this.closePortal();
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return this.props.children({
+        openPortal: this.openPortal,
+        closePortal: this.closePortal,
+        portal: this.wrapWithPortal,
+        isOpen: this.state.active
+      });
+    }
+  }]);
+
+  return PortalWithState;
+}(external_react_default.a.Component);
+
+PortalWithState_PortalWithState.propTypes = {
+  children: prop_types_default.a.func.isRequired,
+  defaultOpen: prop_types_default.a.bool,
+  node: prop_types_default.a.any,
+  closeOnEsc: prop_types_default.a.bool,
+  closeOnOutsideClick: prop_types_default.a.bool,
+  onOpen: prop_types_default.a.func,
+  onClose: prop_types_default.a.func
+};
+
+PortalWithState_PortalWithState.defaultProps = {
+  onOpen: function onOpen() {},
+  onClose: function onClose() {}
+};
+
+/* harmony default export */ var es_PortalWithState = (PortalWithState_PortalWithState);
+// EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
+var Popup_Popup = __webpack_require__(24);
+
+// CONCATENATED MODULE: ./src/elements/Popup/Popup.jsx
+ /** @module Popup
+                                                                                                                                                                                                                                                                                *  @class Popup
+                                                                                                                                                                                                                                                                                *  @since 2020.10.27, 00:39
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.18, 02:34
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.18, 01:50 -- Popup: Reset both `storedContentSize` if content changed (use registrable handler)?
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.18, 02:15 -- Popup: Use static `PopupStack` component and close same-level (from stack end to first `Modal` or stack begin) popups
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.19, 03:35 -- Popup: Use nearest scrollable container ancestor as popup base? Or clip to it bounds? Or hide popup if countrol is (partially) out of this bounds?
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  External methods:
+                                                                                                                                                                                                                                                                                *  - close
+                                                                                                                                                                                                                                                                                *  - open
+                                                                                                                                                                                                                                                                                *  - updateGeometry
+                                                                                                                                                                                                                                                                                */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+// import withOnClickOutside from 'react-onclickoutside' // To use?
+
+
+
+
+
+
+
+
+
+var cnPopup = configure_cn('Popup');
+var cnPopupControl = configure_cn('PopupControl');
+
+var popupsContainerId = 'Popups'; // Id of dom node which contains all popups (`<div id="Popups"></div>`). TODO: Store in config?
+
+var doDebug = false; // DEBUG!
+
+// Debounce delay
+var debouncedUpdateGeometryTimeout = //DEBUG//doDebug ? 500 :
+10;
+
+// Update by timer (0 - disabled), must be above than debounce delay (`debouncedUpdateGeometryTimeout`, above)
+var updateGeometryTimerDelay = //DEBUG//doDebug ? 0 :
+20; // 0
+
+var domNodeGeometryKeys = [
+/* // controlBouningBox sample:
+                            * bottom: 642.8125
+                            * height: 32
+                            * left: 223.921875
+                            * right: 551.515625
+                            * top: 610.8125
+                            * width: 327.59375
+                            * x: 223.921875
+                            * y: 610.8125
+                            */
+'left',
+'top',
+'width',
+'height'
+/* // Old values (for `node.style` keys)
+          * 'offsetLeft',
+          * 'offsetTop',
+          * 'offsetWidth',
+          * 'offsetHeight',
+          */];
+
+var verticalGeometryKeys = [
+'contentHeight',
+'contentTop',
+'controlHeight',
+'controlTop',
+'scrollY',
+'viewHeight'];
+
+var horizontalGeometryKeys = [
+'contentWidth',
+'contentLeft',
+'controlWidth',
+'controlLeft',
+'scrollX',
+'viewWidth'];
+
+
+var globalGeometryKeys = {
+  viewWidth: { obj: window, key: 'innerWidth' },
+  viewHeight: { obj: window, key: 'innerHeight' },
+  scrollX: { obj: window, key: 'pageXOffset' },
+  scrollY: { obj: window, key: 'pageYOffset' } };
+
+
+var axisKeys = { // Used in `updateOneAxisContentPos`
+  // Regexp to convert vertical axis keys to horizontal:
+  // '<,'>S/top/left/g | '<,'>S/bottom/right/g | '<,'>S/height/width/g | '<,'>S/vertical/horizontal/g
+  vertical: {
+    viewSize: 'viewHeight',
+    controlPos: 'controlTop',
+    controlSize: 'controlHeight',
+    scroll: 'scrollY',
+    contentPos: 'contentTop',
+    contentSize: 'contentHeight',
+    contentStylePos: 'top',
+    contentStyleSize: 'height',
+    contentStyleMaxSize: 'maxHeight',
+    // contentStyleMaxSize: 'max-height',
+    storedContentSize: 'storedContentHeight' // Stored in dom node
+  },
+  horizontal: {
+    viewSize: 'viewWidth',
+    controlPos: 'controlLeft',
+    controlSize: 'controlWidth',
+    scroll: 'scrollY',
+    contentPos: 'contentLeft',
+    contentSize: 'contentWidth',
+    contentStylePos: 'left',
+    contentStyleSize: 'width',
+    contentStyleMaxSize: 'maxWidth',
+    // contentStyleMaxSize: 'max-width',
+    storedContentSize: 'storedContentWidth' // Stored in dom node
+  } };
+
+
+// const globalClickEventName = 'mousedown'
+// const globalKeyPressEventName = 'keydown'
+var globalScrollEventName = 'scroll';
+var globalResizeEventName = 'resize';
+
+/* // DEBUG: Demo for prevent closing underlaying popups. (Can be used for modal windows. See crrsp styles & html layout.)
+                                       * const debugHide = document.getElementById('DebugHide')
+                                       * setTimeout(() => {
+                                       *   if (debugHide) {
+                                       *     debugHide.style.display = 'block'
+                                       *   }
+                                       * }, 3000)
+                                       * const debugHideListener = (ev) => {
+                                       *   // ev.stopImmediatePropagation()
+                                       *   ev.stopPropagation()
+                                       * }
+                                       * debugHide && debugHide.addEventListener('click', debugHideListener)
+                                       */var
+
+Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(Popup, _React$PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Lifecycle...
+
+  function Popup(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "delayedClickTimerHandler", null);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "controlDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "contentDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "geometry", {});defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometryInstant",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {// UNUSED? TODO? Update geometry
+      if (!_this.isOpen) {// Do nothing if popup is closed
+        return;
+      }var
+      fullWidth = _this.props.fullWidth;
+      // TODO: Call `updateGeometryInstant` on content update? How? Use timer?
+      var controlGeometry = _this.getDomNodeGeometry(_this.controlDomNode, 'control');
+      var contentGeometry = _this.getDomNodeGeometry(_this.contentDomNode, 'content');
+      var globalGeometry = _this.getGlobalGeometry();
+      var geometry = extends_default()({}, globalGeometry, controlGeometry, contentGeometry);
+      /* Sample geometry keys:
+                                                                                      * contentHeight
+                                                                                      * contentLeft
+                                                                                      * contentTop
+                                                                                      * contentWidth
+                                                                                      * controlHeight
+                                                                                      * controlLeft
+                                                                                      * controlTop
+                                                                                      * controlWidth
+                                                                                      * scrollX
+                                                                                      * scrollY
+                                                                                      * viewHeight
+                                                                                      * viewWidth
+                                                                                      */
+      var updatedGeometryKeys = _this.getUpdatedGeometryKeys(geometry);
+      var changedHorizontalKeys = horizontalGeometryKeys.some(function (key) {return updatedGeometryKeys.includes(key);});
+      var changedVerticalKeys = verticalGeometryKeys.some(function (key) {return updatedGeometryKeys.includes(key);});
+      /* // DEBUG (use doDebug?)...
+                                                                                                                        * console.log('Popup:updateGeometryInstant', {
+                                                                                                                        *   updatedGeometryKeys,
+                                                                                                                        *   changedHorizontalKeys,
+                                                                                                                        *   changedVerticalKeys,
+                                                                                                                        *   // geometry,
+                                                                                                                        *   // 'this.geometry': this.geometry,
+                                                                                                                        *   'changed geometry': Object.entries(geometry).reduce((result, [key, val]) => {
+                                                                                                                        *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+                                                                                                                        *   }, {}),
+                                                                                                                        *   'changed this.geometry': Object.entries(this.geometry).reduce((result, [key, val]) => {
+                                                                                                                        *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+                                                                                                                        *   }, {}),
+                                                                                                                        * })
+                                                                                                                        */
+      if (!updatedGeometryKeys.length) {// Do nothing if no changes found
+        return;
+      }
+      if (changedVerticalKeys) {
+        _this.updateOneAxisContentPos('vertical', geometry, updatedGeometryKeys); // Update vertical position & size...
+      }
+      if (changedHorizontalKeys) {
+        if (fullWidth) {// TODO?
+          _this.updateContentWidth(geometry, updatedGeometryKeys);
+        }
+        _this.updateOneAxisContentPos('horizontal', geometry, updatedGeometryKeys); // Update horizontal position & size...
+      }
+      _this.geometry = geometry;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "close",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {// External method for using in `PopupStack`
+      var _assertThisInitialize = assertThisInitialized_default()(_this),isOpen = _assertThisInitialize.isOpen,closePortal = _assertThisInitialize.closePortal;
+      if (isOpen && typeof closePortal === 'function') {
+        closePortal();
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "open",
+
+    function () {// External method for using in `PopupStack`
+      var _assertThisInitialize2 = assertThisInitialized_default()(_this),isOpen = _assertThisInitialize2.isOpen,openPortal = _assertThisInitialize2.openPortal;
+      if (!isOpen && typeof openPortal === 'function') {
+        openPortal();
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setControlRef",
+
+
+
+    function (domNode) {
+      _this.controlDomNode = domNode;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setContentRef",
+
+    function (domNode) {
+      _this.contentDomNode = domNode;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "handlePortalOpen",
+
+
+
+
+
+
+
+
+
+    function () {
+      // TODO: Register/unregister popup in `PopupStack`
+      _this.updateGeometryInstant();
+      _this.registerGlobalHandlers();
+      _this.isOpen = true;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "handlePortalClose",
+
+    function () {
+      // TODO: Register/unregister popup in `PopupStack`
+      _this.wasOpen = true;
+      _this.unregisterGlobalHandlers();
+      _this.isOpen = false;
+      _this.clearContentGeometry(); // Due to content is destroyed when hidden
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
+
+    function () /* event */{var _assertThisInitialize3 = assertThisInitialized_default()(_this),
+      isOpen = _assertThisInitialize3.isOpen,openPortal = _assertThisInitialize3.openPortal,closePortal = _assertThisInitialize3.closePortal;
+      var method = isOpen ? closePortal : openPortal;
+      if (typeof method === 'function') {
+        // method(event)
+        // setTimeout(method, 0)
+        var fakeEvent = {
+          nativeEvent: {
+            stopImmediatePropagation: function stopImmediatePropagation() {} } };
+
+
+        setTimeout(function () {return method(fakeEvent);}, 0);
+      }
+      // TODO: Notify `PopupStack` when popup opens for closing all other popups from same level (before first modal in popups stack). (Now user can open several popups at the same time.
+      var onControlClick = _this.props.onControlClick;
+      if (typeof onControlClick === 'function') {
+        onControlClick({ open: !isOpen });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "renderPortalContent",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (portalParams) {
+      return /*#__PURE__*/(
+        external_react_default.a.createElement(external_react_default.a.Fragment, null,
+        _this.renderPopupControl(portalParams),
+        _this.renderPopupContent(portalParams)));
+
+
+    });var open = props.open;_this.updateGeometry = debounce(debouncedUpdateGeometryTimeout, _this.updateGeometryInstant);_this.state = {};if (open) {_this.handlePortalOpen();} // // NOTE: Example of callback register
+    // if (typeof props.registerCallback === 'function') { // External hide canceler (FormSelect: on Menu click etc)
+    //   props.registerCallback(this.someMethod)
+    // }
+    return _this;}var _proto = Popup.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
+  ;_proto.getDomNodeGeometry = function getDomNodeGeometry(domNode, id) {id = id || 'default';var rect = domNode && domNode.getBoundingClientRect(); /* // controlBouningBox sample:
+                                                                                                                                                      * bottom: 642.8125
+                                                                                                                                                      * height: 32
+                                                                                                                                                      * left: 223.921875
+                                                                                                                                                      * right: 551.515625
+                                                                                                                                                      * top: 610.8125
+                                                                                                                                                      * width: 327.59375
+                                                                                                                                                      * x: 223.921875
+                                                                                                                                                      * y: 610.8125
+                                                                                                                                                      */var geometry = rect && domNodeGeometryKeys.reduce(function (geometry, key) {// const val = domNode && domNode[key]
+      var val = rect && rect[key];if (val != null) {var resultKey = id + utils_strings.ucFirst(key);geometry[resultKey] = val;}return geometry;}, {});return geometry || {};};_proto.getGlobalGeometry = function getGlobalGeometry() {var geometry = Object.entries(globalGeometryKeys).reduce(function (geometry, _ref) {var _extends2;var id = _ref[0],descr = _ref[1];var obj = descr.obj;var key = descr.key || id;var val = obj[key];return extends_default()({}, geometry, (_extends2 = {}, _extends2[id] = val, _extends2));}, {});return geometry;};_proto.getUpdatedGeometryKeys = function getUpdatedGeometryKeys(geometry) {var origGeometry = this.geometry;var updatedKeys = [];Object.entries(geometry).forEach(function (_ref2) {var key = _ref2[0],val = _ref2[1];if (val !== origGeometry[key]) {updatedKeys.push(key);}});return updatedKeys;};_proto.updateContentWidth = function updateContentWidth(geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
+    // if (updatedGeometryKeys.includes('controlWidth') || updatedGeometryKeys.includes('contentWidth')) {
+    var width = geometry.controlWidth;var domNode = this.contentDomNode;var setWidth = width + 'px'; /* // DEBUG
+                                                                                                      * console.log('Popup:updateContentWidth', {
+                                                                                                      *   width,
+                                                                                                      *   'geometry.contentWidth': geometry.contentWidth,
+                                                                                                      *   // geometry,
+                                                                                                      *   updatedGeometryKeys,
+                                                                                                      * })
+                                                                                                      * debugger
+                                                                                                      */if (domNode.style.width !== setWidth) {geometry.contentWidth = width;domNode.storedContentWidth = null; // Reset stored width
+      domNode.style.width = setWidth;} // }
+  } /** updateOneAxisContentPos -- Calculate content position/size for one axis (horizontal, vertical)
+     * @param {String('horizontal'|'vertical')} axis
+     * @param {Object} geometry
+     * @param {String[]} updatedGeometryKeys
+     */;_proto.updateOneAxisContentPos = function updateOneAxisContentPos(axis, geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
+    var domNode = this.contentDomNode;if (!domNode) {// Error?
+      return;}var popupContentGap = config_default.a.css.popupContentGap; // const doubleContentPopupGap = popupContentGap * 2 // UNUSED
+    var keys = axisKeys[axis];var isVertical = axis === 'vertical'; // Get coordinates...
+    var viewSize = geometry[keys.viewSize]; // viewHeight
+    var controlPos = geometry[keys.controlPos]; // controlTop
+    var controlSize = geometry[keys.controlSize]; // controlHeight
+    // const scroll = geometry[keys.scroll] // scrollY
+    var contentPos = geometry[keys.contentPos]; // contentTop
+    var contentSize = geometry[keys.contentSize]; // contentClientHeight
+    var storedContentSize = domNode[keys.storedContentSize];var contentMaxSize = storedContentSize || contentSize;if (!storedContentSize || contentSize > storedContentSize) {// Save (maximum) height
+      domNode[keys.storedContentSize] = contentSize;}var viewStart = popupContentGap;var viewEnd = viewSize - popupContentGap; // Calculate control coordinates...
+    var controlScreenPos = controlPos; // - scroll
+    var controlScreenEnd = controlScreenPos + controlSize;var posNormal = isVertical ? controlScreenEnd + popupContentGap : controlScreenPos;var posReverted = isVertical ? controlScreenPos - popupContentGap : controlScreenEnd;var spaceAfter = viewEnd - posNormal;var spaceBefore = posReverted - viewStart; // Is it better to show content above control?
+    // TODO: Alternative calculations for horizontal axis
+    // const spaceBefore = isVertical ? controlScreenPos : controlScreenEnd
+    // // const spaceEnd = isVertical ? controlScreenAfter : controlScreenPos
+    // const spaceAfter = isVertical ? controlScreenAfter : controlScreenPos
+    var isntFitBefore = contentMaxSize > spaceBefore;var isntFitAfter = contentMaxSize > spaceAfter;var isMoreSpaceBefore = spaceBefore > spaceAfter;var placeBefore = isMoreSpaceBefore && isntFitAfter;var isntFit = placeBefore ? isntFitBefore : isntFitAfter;var fitSize = placeBefore ? spaceBefore : spaceAfter; // - doubleContentPopupGap
+    // Calculate `contentPos`...
+    var contentPosValue;if (placeBefore) {// Down-up position: from control top -> up
+      var fitContentSize = isntFit ? fitSize : contentMaxSize;contentPosValue = posReverted - fitContentSize; // contentPosValue = (controlScreenPos - fitContentSize - popupContentGap)
+    } else {// Normal position: from control bottom -> down
+      contentPosValue = posNormal; // contentPosValue = (controlScreenEnd + popupContentGap)
+    }var cssContentPos = contentPosValue + 'px';var isContentPosChanged = contentPosValue !== contentPos; // Is position changed?
+    // Calculate `contentStyleMaxSize`...
+    var cssContentStyleMaxSize = isntFit ? fitSize + 'px' : ''; // New value: pixels or auto (empty)
+    var origContentStyleMaxSize = domNode.style[keys.contentStyleMaxSize]; // Old value
+    var isContentStyleMaxSizeChanged = cssContentStyleMaxSize !== origContentStyleMaxSize; // Is maxsize changed?
+    if (isContentPosChanged || isContentStyleMaxSizeChanged) {// Pos or size changed
+      domNode.style[keys.contentStylePos] = cssContentPos; // Update dom node css style
+      geometry[keys.contentPos] = contentPosValue; // Update geometry object
+      domNode.style[keys.contentStyleMaxSize] = cssContentStyleMaxSize; // Update dom node css style
+    } /* // DEBUG (use doDebug?)...
+       * console.log('Popup:updateOneAxisContentPos', {
+       *   // Parameters...
+       *   axis,
+       *   placeBefore,
+       *   isntFit,
+       *   // Coordinates...
+       *   fitSize,
+       *   contentPos,
+       *   cssContentPos,
+       *   cssContentStyleMaxSize,
+       *   // controlScreenPos,
+       *   // controlScreenEnd,
+       *   // controlScreenAfter,
+       *   // General...
+       *   updatedGeometryKeys,
+       *   geometry: geometry,
+       *   'this.geometry': this.geometry,
+       *   'changed geometry': Object.entries(geometry).reduce((result, [key, val]) => {
+       *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+       *   }, {}),
+       *   'changed this.geometry': Object.entries(this.geometry).reduce((result, [key, val]) => {
+       *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+       *   }, {}),
+       * })
+       */};_proto.registerGlobalHandlers = function registerGlobalHandlers() {if (!this.globalHandlersRegistered) {this.globalHandlersRegistered = true;document.addEventListener(globalScrollEventName, this.updateGeometry);window.addEventListener(globalResizeEventName, this.updateGeometry);if (!this.updateGeometryTimer && updateGeometryTimerDelay) {this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay);}}};_proto.unregisterGlobalHandlers = function unregisterGlobalHandlers() {if (this.globalHandlersRegistered) {this.globalHandlersRegistered = false;document.removeEventListener(globalScrollEventName, this.updateGeometry);window.removeEventListener(globalResizeEventName, this.updateGeometry);if (this.updateGeometryTimer) {clearInterval(this.updateGeometryTimer);this.updateGeometryTimer = null;}}} // Render helpers...
+  ;_proto.getClassName = function getClassName(params) {var isOpen = params.isOpen,cnCtx = params.cnCtx,className = params.className;var _this$props = this.props,id = _this$props.id,fullWidth = _this$props.fullWidth;return cnCtx && cnCtx({ id: id, open: isOpen, fullWidth: fullWidth }, [/* this.props. */className]);} // External methods...
+  ;_proto.clearContentGeometry = function clearContentGeometry() {var _this2 = this; // UNUSED? Must be used on content update (using registrable callback; see example in constructor).
+    Object.keys(this.geometry).forEach(function (key) {if (key.startsWith('content')) {_this2.geometry[key] = null;}});}; // Render...
+  _proto.renderPopupControl = function renderPopupControl(portalParams) {var isOpen = portalParams.isOpen,openPortal = portalParams.openPortal,closePortal = portalParams.closePortal;var _this$props2 = this.props,id = _this$props2.id,popupControl = _this$props2.popupControl,className = _this$props2.className;this.openPortal = openPortal;this.closePortal = closePortal;var controlProps = popupControl && popupControl.props;var content = extends_default()({}, popupControl, { props: extends_default()({}, controlProps, { onClick: this.onControlClick, // onClick: isOpen ? closePortal : openPortal,
+        // onClick: [> controlProps.onControlClick || <] this.onControlClick,
+        checked: isOpen, setDomRef: this.setControlRef }) });var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopupControl, className: className }, portalParams)), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderPopupContent = function renderPopupContent(portalParams) {var portal = portalParams.portal;var _this$props3 = this.props,id = _this$props3.id,popupContent = _this$props3.popupContent,className = _this$props3.contentClassName;var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopup, className: className }, portalParams)), ref: this.setContentRef };return portal( /*#__PURE__*/external_react_default.a.createElement("div", renderProps, popupContent));};_proto.render = function render() {var _this$props4 = this.props,closeOnClickOutside = _this$props4.closeOnClickOutside,closeOnEscPressed = _this$props4.closeOnEscPressed,open = _this$props4.open;var node = document.getElementById(popupsContainerId);return /*#__PURE__*/external_react_default.a.createElement(es_PortalWithState, { node: node, onOpen: this.handlePortalOpen, onClose: this.handlePortalClose, closeOnOutsideClick: closeOnClickOutside, closeOnEsc: closeOnEscPressed, defaultOpen: open }, this.renderPortalContent);};return Popup;}(external_react_default.a.PureComponent /** @lends @Popup.prototype */);defineProperty_default()(Popup_Popup_Popup, "propTypes", { // onEscPressed: PropTypes.func,
+  // onKeyPress: PropTypes.func,
+  // registerCallback: PropTypes.func, // registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
+  className: prop_types_default.a.string, closeOnClickOutside: prop_types_default.a.bool, closeOnEscPressed: prop_types_default.a.bool, id: prop_types_default.a.string, onControlClick: prop_types_default.a.func, open: prop_types_default.a.bool, popupContent: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, popupControl: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, setPopupNodeRef: prop_types_default.a.func });defineProperty_default()(Popup_Popup_Popup, "defaultProps", { // onEscPressed: null,
+  // onKeyPress: null,
+  // popupContent: null,
+  // popupControl: null,
+  // registerCallback: null,
+  className: null, closeOnClickOutside: true, closeOnEscPressed: true, id: null, onControlClick: null, open: false, setPopupNodeRef: null });/* harmony default export */ var elements_Popup_Popup = (Popup_Popup_Popup);var FormItemPopup = forms_FormItemHOC_FormItemHOC(Popup_Popup_Popup); // export default withOnClickOutside(Popup) // To use?
 // EXTERNAL MODULE: ./src/elements/MenuItem/MenuItem.pcss
-var MenuItem_MenuItem = __webpack_require__(21);
+var MenuItem_MenuItem = __webpack_require__(25);
 
 // CONCATENATED MODULE: ./src/elements/MenuItem/MenuItem.jsx
  /** @module MenuItem
@@ -1661,7 +2804,7 @@ var MenuItem_MenuItem = __webpack_require__(21);
 
 var cnMenuItem = configure_cn('MenuItem');var
 
-MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(MenuItem, _React$Component);function MenuItem() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(MenuItem, _React$PureComponent);function MenuItem() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
 
 
 
@@ -1715,7 +2858,7 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsL
 
     this.props,children = _this$props4.children,text = _this$props4.text;
     return /*#__PURE__*/(
-      external_react_default.a.createElement("span", { className: cnMenuItem('Text') },
+      external_react_default.a.createElement("div", { className: cnMenuItem('Text') },
       children || text));
 
 
@@ -1726,9 +2869,7 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsL
 
 
 
-
-
-    this.props,val = _this$props5.val,htmlId = _this$props5.htmlId,setDomRef = _this$props5.setDomRef;
+    this.props,htmlId = _this$props5.htmlId,setDomRef = _this$props5.setDomRef;
 
     var renderProps = {
       // id,
@@ -1749,19 +2890,19 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$Component) {inheritsL
       textContent));
 
 
-  };return MenuItem;}(external_react_default.a.Component /** @lends @MenuItem.prototype */);
+  };return MenuItem;}(external_react_default.a.PureComponent /** @lends @MenuItem.prototype */);
 
 
 
-/* harmony default export */ var elements_MenuItem_MenuItem = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(MenuItem_MenuItem_MenuItem));
+/* harmony default export */ var elements_MenuItem_MenuItem = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true })(MenuItem_MenuItem_MenuItem));
 // EXTERNAL MODULE: ./src/elements/Menu/Menu.pcss
-var Menu_Menu = __webpack_require__(22);
+var Menu_Menu = __webpack_require__(26);
 
 // CONCATENATED MODULE: ./src/elements/Menu/Menu.jsx
  /** @module Menu
                                                                                                                                                                                                                                                                                 *  @class Menu
                                                                                                                                                                                                                                                                                 *  @since 2020.10.27, 02:58
-                                                                                                                                                                                                                                                                                *  @changed 2020.10.27, 21:16
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.16, 20:21
                                                                                                                                                                                                                                                                                 */
 
 
@@ -1778,7 +2919,7 @@ var cnMenu = configure_cn('Menu');
 // Unique id counter
 var Menu_uniqIdCount = 1;var
 
-Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(Menu, _React$Component);var _proto = Menu.prototype;
+Menu_Menu_Menu = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(Menu, _React$PureComponent);var _proto = Menu.prototype;
 
   // Helper fuctions...
   _proto.
@@ -1803,10 +2944,12 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
     // console.log('Menu:setChildrenItemsFromProps', {
     //   children,
     // })
-    // debugger
     var children = this.props.children;
-    var valChecked = {};
-    if (Array.isArray(children)) {
+    var checkedList = [];
+    if (Array.isArray(children)) {var
+      singleChoice = this.props.singleChoice;var _this$props2 =
+      this.props,value = _this$props2.value,checked = _this$props2.checked;
+      var propsChecked = singleChoice && value != null ? [value] : checked;
       children = children.map(function (item) {
         var isArray = !!item && Array.isArray(item);
         var isObject = !!item && typeof item === 'object' && !isArray; // Array.isArray(item)
@@ -1820,19 +2963,19 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
         //   isObject,
         //   isMenuItem,
         // })
-        // debugger
         if (isRawObject || isMenuItem) {
           var itemProps = isRawObject ? item : item.props;
           // Construct unique key values...
           var val = itemProps.val;
+          var _checked = Array.isArray(propsChecked) ? propsChecked.includes(val) : itemProps.checked;
           // const checked = checkedValStates && checkedValStates[val] != null ? checkedValStates[val] : itemProps.checked
           var checkable = itemProps.checkable != null ? itemProps.checkable : _this2.props.checkable;
           var newProps = extends_default()({},
           itemProps, {
             onClick: itemProps.onClick || _this2.onMenuItemClick,
-            checkable: checkable
-            // checked,
-          });
+            checkable: checkable,
+            checked: _checked });
+
           if (isRawObject) {// Raw object -> create MenuItem
             var key = item && item.key || _this2.getId() + '_Item_' + (itemProps.id || itemProps.val);
             item = /*#__PURE__*/external_react_default.a.createElement(elements_MenuItem_MenuItem, extends_default()({}, newProps, { key: key }));
@@ -1841,8 +2984,8 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
           if (isMenuItem) {// MenuItem -> Add onClick handler if handler is not defined
             item = extends_default()({}, item, { props: newProps });
           }
-          if (item.props.checked) {
-            valChecked[val] = true;
+          if (item.props.checked && (!singleChoice || !checkedList.length)) {
+            checkedList.push(val);
           }
         }
         // TODO: Process arrays (subitems/groups)?
@@ -1851,14 +2994,15 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
     }
     this.setState({
       items: children,
-      valChecked: valChecked });
+      checkedList: checkedList });
 
     // return children
   };_proto.
 
-  updateChildrenItems = function updateChildrenItems(checkedValStates) {var _this$props2 =
-    this.props,singleChoice = _this$props2.singleChoice,onChange = _this$props2.onChange;var _this$state =
-    this.state,valChecked = _this$state.valChecked,items = _this$state.items;
+  updateChildrenItems = function updateChildrenItems(checkedValStates) {var _this$props3 =
+    this.props,singleChoice = _this$props3.singleChoice,onChange = _this$props3.onChange;var
+    items = this.state.items;
+    var checkedList = [];
     if (Array.isArray(items)) {
       items = items.map(function (item) {
         var isObject = !!item && typeof item === 'object';
@@ -1867,16 +3011,15 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
         if (isMenuItem) {
           var itemProps = item.props;var
           val = itemProps.val,checked = itemProps.checked;
-          var setChecked = checkedValStates[val];
-          if (setChecked != null) {
-            if (setChecked !== checked) {
-              item = extends_default()({}, item, { props: extends_default()({}, itemProps, { checked: setChecked }) });
-              valChecked[val] = setChecked;
-            }
-          } else
-          if (singleChoice && itemProps.checked) {
-            item = extends_default()({}, item, { props: extends_default()({}, itemProps, { checked: false }) });
-            valChecked[val] = false;
+          var checkedVal = checkedValStates[val];
+          if (checkedVal == null) {// Check out all other items if single mode
+            checkedVal = singleChoice ? false : checked;
+          }
+          if (checkedVal !== checked) {
+            item = extends_default()({}, item, { props: extends_default()({}, itemProps, { checked: checkedVal }) });
+          }
+          if (checkedVal) {// && (!singleChoice || !checkedList.length)) {
+            checkedList.push(val);
           }
         }
         return item;
@@ -1884,13 +3027,14 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
     }
     this.setState({
       items: items,
-      valChecked: valChecked });
+      checkedList: checkedList });
 
     if (typeof onChange === 'function') {
-      var checkedValues = Object.entries(valChecked).
-      map(function (_ref) {var val = _ref[0],checked = _ref[1];return checked && val;}).
-      filter(Boolean);
-      onChange({ checkedValues: checkedValues });
+      var params = { checked: checkedList };
+      if (singleChoice && checkedList.length) {// Add `val` param if singleChoice mode (and has checked)
+        params.value = checkedList[0];
+      }
+      onChange(params);
     }
   };_proto.
 
@@ -1906,7 +3050,7 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
   // Lifecycle...
   ;
   function Menu(props) {var _this;
-    _this = _React$Component.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onMenuItemClick",
+    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onMenuItemClick",
 
 
 
@@ -1926,15 +3070,15 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
 
 
 
-    function (_ref2) {var _this$updateChildrenI;var val = _ref2.val;var _this$props3 =
-      _this.props,onClick = _this$props3.onClick,singleChoice = _this$props3.singleChoice;
-      if (typeof onClick === 'function') {// Invoke onClick handler
-        onClick({ val: val });
-      }var
-      valChecked = _this.state.valChecked;
-      var setChecked = !valChecked[val];
-      if (singleChoice === 'mandatory' && !setChecked) {// Don not made changes if single mode and clicked item was checked
+    function (_ref) {var _this$updateChildrenI;var val = _ref.val;var _this$props4 =
+      _this.props,onClick = _this$props4.onClick,singleChoice = _this$props4.singleChoice;var
+      checkedList = _this.state.checkedList;
+      var setChecked = !checkedList.includes(val);
+      if (singleChoice === 'forced' && !setChecked) {// Don not made changes if single mode and clicked item was checked
         return;
+      }
+      if (typeof onClick === 'function') {// Invoke onClick handler
+        onClick({ value: val });
       }
       _this.updateChildrenItems((_this$updateChildrenI = {}, _this$updateChildrenI[val] = setChecked, _this$updateChildrenI)); // Apply items changes
     });_this.state = {};return _this;}_proto.componentDidMount = function componentDidMount() {// const children = this.props.children
@@ -1946,22 +3090,24 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
     return items;
   };_proto.
 
-  render = function render() {var
-
-
-    id =
+  render = function render() {var _this$props5 =
 
 
 
 
-    this.props.id;
+
+
+
+
+    this.props,id = _this$props5.id,setDomRef = _this$props5.setDomRef;
 
     var renderProps = {
       id: id,
-      className: this.getClassName()
+      className: this.getClassName(),
       // title,
       // onClick,
       // key,
+      ref: setDomRef // Init ref for FormItemHOC
     };
 
     var content = this.renderContent();
@@ -1971,7 +3117,7 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
       content));
 
 
-  };return Menu;}(external_react_default.a.Component /** @lends @Menu.prototype */);
+  };return Menu;}(external_react_default.a.PureComponent /** @lends @Menu.prototype */);
 
 
 
@@ -1983,7 +3129,7 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$Component) {inheritsLoose_default
  *  @changed 2020.10.27, 03:03
  */
 // EXTERNAL MODULE: ./src/forms/FormItemDummy/FormItemDummy.pcss
-var FormItemDummy_FormItemDummy = __webpack_require__(23);
+var FormItemDummy_FormItemDummy = __webpack_require__(27);
 
 // CONCATENATED MODULE: ./src/forms/FormItemDummy/FormItemDummy.jsx
  /** @module FormItemDummy
@@ -2005,10 +3151,10 @@ var FormItemDummy_FormItemDummy = __webpack_require__(23);
 
 var cnFormItemDummy = configure_cn('FormItemDummy');var
 
-FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormItemDummy, _React$Component);
+FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormItemDummy, _React$PureComponent);
 
   function FormItemDummy(props) {var _this;
-    _this = _React$Component.call(this, props) || this;
+    _this = _React$PureComponent.call(this, props) || this;
     // const {
     //   hoverable,
     //   clickable,
@@ -2149,17 +3295,13 @@ FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$Compon
     var tagName = tag || 'div';
     var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
     return element;
-  };return FormItemDummy;}(external_react_default.a.Component /** @lends @FormItemDummy.prototype */);
+  };return FormItemDummy;}(external_react_default.a.PureComponent /** @lends @FormItemDummy.prototype */);
 
 
 
 /* harmony default export */ var forms_FormItemDummy_FormItemDummy = (forms_FormItemHOC_FormItemHOC(FormItemDummy_FormItemDummy_FormItemDummy));
-// EXTERNAL MODULE: ./node_modules/prop-types/index.js
-var prop_types = __webpack_require__(1);
-var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
-
 // EXTERNAL MODULE: ./src/forms/FormLabel/FormLabel.pcss
-var FormLabel_FormLabel = __webpack_require__(26);
+var FormLabel_FormLabel = __webpack_require__(28);
 
 // CONCATENATED MODULE: ./src/forms/FormLabel/FormLabel.jsx
  /** @module FormLabel
@@ -2167,6 +3309,7 @@ var FormLabel_FormLabel = __webpack_require__(26);
                                                                                                                                                                                                                           *  @since 2020.10.06, 23:45
                                                                                                                                                                                                                           *  @changed 2020.10.06, 23:46
                                                                                                                                                                                                                           */
+/* eslint-disable react/require-default-props */
 
 
 
@@ -2179,7 +3322,15 @@ var FormLabel_FormLabel = __webpack_require__(26);
 
 var cnFormLabel = configure_cn('FormLabel');var
 
-FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormLabel, _React$Component);function FormLabel() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormLabel, _React$PureComponent);function FormLabel() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+
+
+
+
+
+
+
+
 
 
 
@@ -2204,11 +3355,11 @@ FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$Component) {inheri
       if ( /* clickable && */!disabled && onClick && typeof onClick === 'function') {
         onClick(event);
       }
-    });return _this;}var _proto = FormLabel.prototype;_proto.getClassName = function getClassName() {var id = this.props.id;var classList = cnFormLabel({ id: id // clickable,
+    });return _this;}var _proto = FormLabel.prototype;_proto.getClassName = function getClassName() {var _this$props2 = this.props,id = _this$props2.id,fixed = _this$props2.fixed,firstInBlock = _this$props2.firstInBlock;var classList = cnFormLabel({ id: id, fixed: fixed, firstInBlock: firstInBlock // clickable,
     }, [this.props.className]);return classList;} // Handlers...
   ; // Render...
   _proto.
-  render = function render() {var _this$props2 =
+  render = function render() {var _this$props3 =
 
 
 
@@ -2218,7 +3369,7 @@ FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$Component) {inheri
 
 
 
-    this.props,id = _this$props2.id,name = _this$props2.name,disabled = _this$props2.disabled,htmlFor = _this$props2.htmlFor,text = _this$props2.text,children = _this$props2.children,title = _this$props2.title;
+    this.props,id = _this$props3.id,name = _this$props3.name,disabled = _this$props3.disabled,htmlFor = _this$props3.htmlFor,text = _this$props3.text,children = _this$props3.children,title = _this$props3.title;
 
     var renderProps = {
       id: id,
@@ -2230,7 +3381,7 @@ FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$Component) {inheri
     return /*#__PURE__*/(
       external_react_default.a.createElement("div", renderProps, /*#__PURE__*/
       external_react_default.a.createElement("label", {
-        className: "FormLabel-Control",
+        className: cnFormLabel('Control', ['FormItem-Control']),
         id: id,
         name: name,
         disabled: disabled,
@@ -2241,24 +3392,19 @@ FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$Component) {inheri
 
 
 
-
-  };return FormLabel;}(external_react_default.a.Component /** @lends @FormLabel.prototype */);
-
+  };return FormLabel;}(external_react_default.a.PureComponent /** @lends @FormLabel.prototype */);defineProperty_default()(FormLabel_FormLabel_FormLabel, "propTypes", { id: prop_types_default.a.string });
 
 
 
-FormLabel_FormLabel_FormLabel.propTypes = {
-  id: prop_types_default.a.string };
-
-/* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormLabel_FormLabel_FormLabel));
+/* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true, solid: true })(FormLabel_FormLabel_FormLabel));
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton.pcss
-var FormButton_FormButton = __webpack_require__(27);
+var FormButton_FormButton = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Variations.pcss
-var FormButton_Variations = __webpack_require__(28);
+var FormButton_Variations = __webpack_require__(30);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Themes.pcss
-var FormButton_Themes = __webpack_require__(29);
+var FormButton_Themes = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./src/forms/FormButton/FormButton.jsx
  /** @module FormButton
@@ -2344,6 +3490,41 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function (event) {var _this$props =
 
 
@@ -2353,12 +3534,12 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
       if (!disabled && onClick && typeof onClick === 'function') {
         onClick(event);
       }
-    });return _this;}var _proto = FormButton.prototype;_proto.hasIcon = function hasIcon() {var _this$props2 = this.props,icon = _this$props2.icon,hasIcon = _this$props2.hasIcon;return !!(hasIcon || icon);};_proto.hasText = function hasText() {var _this$props3 = this.props,hasText = _this$props3.hasText,onlyIcon = _this$props3.onlyIcon,children = _this$props3.children,text = _this$props3.text;return !onlyIcon && !!(hasText || text || children);};_proto.getClassName = function getClassName() {// TODO: Refactor properties!
+    });return _this;}var _proto = FormButton.prototype; // Helpers...
+  _proto.hasIcon = function hasIcon() {var _this$props2 = this.props,icon = _this$props2.icon,hasIcon = _this$props2.hasIcon;return !!(hasIcon || icon);};_proto.hasText = function hasText() {var _this$props3 = this.props,hasText = _this$props3.hasText,onlyIcon = _this$props3.onlyIcon,children = _this$props3.children,text = _this$props3.text;return !onlyIcon && !!(hasText || text || children);};_proto.getClassName = function getClassName() {// TODO: Refactor properties!
     var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,largeIcon = _this$props4.largeIcon,rotatedIcon = _this$props4.rotatedIcon,onlyIcon = _this$props4.onlyIcon,rightIcon = _this$props4.rightIcon,theme = _this$props4.theme,onDark = _this$props4.onDark,plain = _this$props4.plain,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
       checked: checked, fullWidth: fullWidth, id: id, largeIcon: largeIcon, rotatedIcon: rotatedIcon, onlyIcon: onlyIcon, rightIcon: rightIcon, solid: true, theme: theme, onDark: onDark, plain: plain, type: type, variation: variation };var classList = cnFormButton(extends_default()({}, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
   ; // Render...
-  _proto.renderIcon = function renderIcon() {
-    var hasIcon = this.hasIcon();
+  _proto.renderIcon = function renderIcon() {var hasIcon = this.hasIcon();
     if (hasIcon) {var
       icon = this.props.icon;
       if (icon && icon.type === elements_InlineIcon_InlineIcon) {// Already InlineIcon
@@ -2397,14 +3578,6 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
 
 
 
-
-
-
-
-
-
-
-
     this.props,id = _this$props6.id,disabled = _this$props6.disabled,tag = _this$props6.tag,type = _this$props6.type,title = _this$props6.title,setDomRef = _this$props6.setDomRef;
 
     var iconElem = this.renderIcon(); // Icon element
@@ -2422,7 +3595,6 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
       ref: setDomRef // Init ref for FormItemHOC
     };
 
-    // const content = [ iconElem, textElem ] // children || text
     var content = /*#__PURE__*/
     external_react_default.a.createElement(external_react_default.a.Fragment, null,
     iconElem,
@@ -2433,52 +3605,36 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
     var tagName = tag || 'div';
     var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
     return element;
-  };return FormButton;}(external_react_default.a.PureComponent /** @lends @FormButton.prototype */);defineProperty_default()(FormButton_FormButton_FormButton, "propTypes",
-
-{
-  id: prop_types_default.a.string,
-
-  // hoverable: PropTypes.bool, // FormItem: Allowed hovered events
+  };return FormButton;}(external_react_default.a.PureComponent /** @lends @FormButton.prototype */);defineProperty_default()(FormButton_FormButton_FormButton, "propTypes", { // TODO!!!
+  id: prop_types_default.a.string, // hoverable: PropTypes.bool, // FormItem: Allowed hovered events
   // focusable: PropTypes.bool, // FormItem: Allowed focused events
-
   // TODO: Actualize & check next properties, implement cosmos fixtures...
-
   // TODO: formId -- id for form element (passed on form submit)
   // name: PropTypes.string, // ???
-  disabled: prop_types_default.a.bool,
-  onClick: prop_types_default.a.func,
-
-  hasIcon: prop_types_default.a.bool, // Optional
+  disabled: prop_types_default.a.bool, onClick: prop_types_default.a.func, hasIcon: prop_types_default.a.bool, // Optional
   hasText: prop_types_default.a.bool, // Optional
   text: prop_types_default.a.string, // Text content (may be passed as node children)
   icon: prop_types_default.a.oneOfType([// Icon component. May be as image resource loaded with `file/url-loader` as `FontAwesomeIcon` component.
-  prop_types_default.a.string,
-  prop_types_default.a.object]),
-
-  onlyIcon: prop_types_default.a.bool, // Only icon
+  prop_types_default.a.string, prop_types_default.a.object]), onlyIcon: prop_types_default.a.bool, // Only icon
   largeIcon: prop_types_default.a.bool, // Large icon
   rightIcon: prop_types_default.a.bool, // Icon placed at right side
   // TODO: size: PropTypes.string, // Different form item sizes? (eg: md -- default, sm, xs, lg, xl, xxl)
-
   theme: prop_types_default.a.string, // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
   onDark: prop_types_default.a.bool, // On dark background
   fullWidth: prop_types_default.a.bool, // Occupies all horizontal space
   plain: prop_types_default.a.bool, // ??? Plain icon (no border & background -- if no style specified, looks as link)
-
   checked: prop_types_default.a.bool // FormItem: Checked state
-});
-
-
-/* harmony default export */ var forms_FormButton_FormButton = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormButton_FormButton_FormButton));
+});/* harmony default export */ var forms_FormButton_FormButton = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true })(FormButton_FormButton_FormButton));
 // EXTERNAL MODULE: ./src/forms/FormGroup/FormGroup.pcss
-var FormGroup_FormGroup = __webpack_require__(30);
+var FormGroup_FormGroup = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./src/forms/FormGroup/FormGroup.jsx
  /** @module FormGroup
-                                                                                                                          *  @class FormGroup
-                                                                                                                          *  @since 2020.07.20, 19:07
-                                                                                                                          *  @changed 2020.07.20, 19:07
-                                                                                                                          */
+                                                                                                                                                                                              *  @class FormGroup
+                                                                                                                                                                                              *  @since 2020.07.20, 19:07
+                                                                                                                                                                                              *  @changed 2020.07.20, 19:07
+                                                                                                                                                                                              */
+/* eslint-disable react/require-default-props, react/no-unused-prop-types */
 
 
 
@@ -2489,29 +3645,45 @@ var FormGroup_FormGroup = __webpack_require__(30);
 
 
 
-var FormGroup_classNameModifiers = [
-// Basic element properties
-'id',
-// Style-related modifiers...
-'align',
-'padded',
-'background',
-'flow'
-// 'fullWidth',
-];
-
 var cnFormGroup = configure_cn('FormGroup');var
 
-FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormGroup, _React$Component);
+FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormGroup, _React$PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   function FormGroup(props) {var _this;
-    _this = _React$Component.call(this, props) || this;
+    _this = _React$PureComponent.call(this, props) || this;
     _this.state = {};return _this;
 
   }var _proto = FormGroup.prototype;_proto.
 
   getClassName = function getClassName() {var _this2 = this;
-    var mods = FormGroup_classNameModifiers.reduce(function (mods, id) {
+    var mods = FormGroup.classNameModifiers.reduce(function (mods, id) {
       var val = _this2.state[id] != null ? _this2.state[id] : _this2.props[id];
       if (val != null) {var _extends2;
         return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
@@ -2539,20 +3711,14 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$Component) {inheri
       content || children));
 
 
-  };return FormGroup;}(external_react_default.a.Component /** @lends @FormGroup.prototype */);
-
-
-
-FormGroup_FormGroup_FormGroup.propTypes = {
-  id: prop_types_default.a.string,
-  name: prop_types_default.a.string,
-  disabled: prop_types_default.a.bool,
-  flow: prop_types_default.a.bool,
-  value: prop_types_default.a.any,
-  valueType: prop_types_default.a.string,
-  onChange: prop_types_default.a.func };
-
-/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
+  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
+  // disabled: PropTypes.bool,
+  // value: PropTypes.any,
+  // valueType: PropTypes.string,
+  // onChange: PropTypes.func,
+});defineProperty_default()(FormGroup_FormGroup_FormGroup, "classNameModifiers", [// Basic element properties
+'id', // Style-related modifiers...
+'align', 'background', 'flow', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
 // CONCATENATED MODULE: ./src/forms/FormLabeledGroup/FormLabeledGroup.jsx
 /** @module FormLabeledGroup
  *  @class FormLabeledGroup
@@ -2608,14 +3774,15 @@ var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @le
 
 /* harmony default export */ var forms_FormLabeledGroup_FormLabeledGroup = (FormLabeledGroup_FormLabeledGroup);
 // EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
-var FormButtonGroup_FormButtonGroup = __webpack_require__(31);
+var FormButtonGroup_FormButtonGroup = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.jsx
  /** @module FormButtonGroup
-                                                                                                                          *  @class FormButtonGroup
-                                                                                                                          *  @since 2020.10.21, 23:43
-                                                                                                                          *  @changed 2020.10.21, 23:43
-                                                                                                                          */
+                                                                                                                                                                                              *  @class FormButtonGroup
+                                                                                                                                                                                              *  @since 2020.10.21, 23:43
+                                                                                                                                                                                              *  @changed 2020.10.21, 23:43
+                                                                                                                                                                                              */
+/* eslint-disable react/require-default-props */
 
 
 
@@ -2629,18 +3796,23 @@ var FormButtonGroup_FormButtonGroup = __webpack_require__(31);
 
 var FormButtonGroup_classNameModifiers = [
 // Basic element properties
-'id',
+'id'
 // Style-related modifiers...
-'align',
-'padded',
-'background',
-'flow'
+// 'align',
+// 'padded',
+// 'background',
+// 'flow',
 // 'fullWidth',
 ];
 
 var cnFormButtonGroup = configure_cn('FormButtonGroup');var
 
-FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormButtonGroup, _React$Component);function FormButtonGroup() {return _React$Component.apply(this, arguments) || this;}var _proto = FormButtonGroup.prototype;_proto.
+FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormButtonGroup, _React$PureComponent);function FormButtonGroup() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormButtonGroup.prototype;_proto.
+
+
+
+
+
 
   getClassName = function getClassName() {var _this = this;
     var mods = FormButtonGroup_classNameModifiers.reduce(function (mods, id) {
@@ -2666,29 +3838,21 @@ FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$
     return /*#__PURE__*/(
       external_react_default.a.createElement(forms_FormGroup_FormGroup, extends_default()({}, this.props, { className: this.getClassName() })));
 
-  };return FormButtonGroup;}(external_react_default.a.Component /** @lends @FormButtonGroup.prototype */);
+  };return FormButtonGroup;}(external_react_default.a.PureComponent /** @lends @FormButtonGroup.prototype */);defineProperty_default()(FormButtonGroup_FormButtonGroup_FormButtonGroup, "propTypes", { id: prop_types_default.a.string // flow: PropTypes.bool,
+});
 
-
-
-FormButtonGroup_FormButtonGroup_FormButtonGroup.propTypes = {
-  id: prop_types_default.a.string,
-  name: prop_types_default.a.string,
-  disabled: prop_types_default.a.bool,
-  flow: prop_types_default.a.bool,
-  value: prop_types_default.a.any,
-  valueType: prop_types_default.a.string,
-  onChange: prop_types_default.a.func };
 
 /* harmony default export */ var forms_FormButtonGroup_FormButtonGroup = (forms_FormItemHOC_FormItemHOC(FormButtonGroup_FormButtonGroup_FormButtonGroup));
 // EXTERNAL MODULE: ./src/forms/FormInputGroup/FormInputGroup.pcss
-var FormInputGroup_FormInputGroup = __webpack_require__(32);
+var FormInputGroup_FormInputGroup = __webpack_require__(34);
 
 // CONCATENATED MODULE: ./src/forms/FormInputGroup/FormInputGroup.jsx
  /** @module FormInputGroup
-                                                                                                                          *  @class FormInputGroup
-                                                                                                                          *  @since 2020.10.21, 23:43
-                                                                                                                          *  @changed 2020.10.21, 23:43
-                                                                                                                          */
+                                                                                                                                                                                              *  @class FormInputGroup
+                                                                                                                                                                                              *  @since 2020.10.21, 23:43
+                                                                                                                                                                                              *  @changed 2020.10.21, 23:43
+                                                                                                                                                                                              */
+/* eslint-disable react/require-default-props */
 
 
 
@@ -2702,18 +3866,26 @@ var FormInputGroup_FormInputGroup = __webpack_require__(32);
 
 var FormInputGroup_classNameModifiers = [
 // Basic element properties
-'id',
+'id'
 // Style-related modifiers...
-'align',
-'padded',
-'background',
-'flow'
+// 'align',
+// 'padded',
+// 'background',
+// 'flow',
 // 'fullWidth',
 ];
 
 var cnFormInputGroup = configure_cn('FormInputGroup');var
 
-FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormInputGroup, _React$Component);function FormInputGroup() {return _React$Component.apply(this, arguments) || this;}var _proto = FormInputGroup.prototype;_proto.
+FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormInputGroup, _React$PureComponent);function FormInputGroup() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormInputGroup.prototype;_proto.
+
+
+
+
+
+
+
+
 
   getClassName = function getClassName() {var _this = this;
     var mods = FormInputGroup_classNameModifiers.reduce(function (mods, id) {
@@ -2729,32 +3901,16 @@ FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$Com
   // Render...
   ;_proto.
   render = function render() {
-    // const {
-    //   id,
-    //   // name,
-    //   // disabled,
-    //   children,
-    //   content,
-    // } = this.props
     return /*#__PURE__*/(
       external_react_default.a.createElement(forms_FormGroup_FormGroup, extends_default()({}, this.props, { className: this.getClassName() })));
 
-  };return FormInputGroup;}(external_react_default.a.Component /** @lends @FormInputGroup.prototype */);
-
-
-
-FormInputGroup_FormInputGroup_FormInputGroup.propTypes = {
-  id: prop_types_default.a.string,
-  name: prop_types_default.a.string,
-  disabled: prop_types_default.a.bool,
-  flow: prop_types_default.a.bool,
-  value: prop_types_default.a.any,
-  valueType: prop_types_default.a.string,
-  onChange: prop_types_default.a.func };
-
-/* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
+  };return FormInputGroup;}(external_react_default.a.PureComponent /** @lends @FormInputGroup.prototype */);defineProperty_default()(FormInputGroup_FormInputGroup_FormInputGroup, "propTypes", { id: prop_types_default.a.string // disabled: PropTypes.bool, // ???
+  // align: PropTypes.string,
+  // padded: PropTypes.bool,
+  // flow: PropTypes.bool,
+});/* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
 // EXTERNAL MODULE: ./src/forms/FormDelim/FormDelim.pcss
-var FormDelim_FormDelim = __webpack_require__(33);
+var FormDelim_FormDelim = __webpack_require__(35);
 
 // CONCATENATED MODULE: ./src/forms/FormDelim/FormDelim.jsx
 /** @module FormDelim
@@ -2778,7 +3934,7 @@ var FormDelim_FormDelim_FormDelim = function FormDelim(props) {var
 
 /* harmony default export */ var forms_FormDelim_FormDelim = (FormDelim_FormDelim_FormDelim);
 // EXTERNAL MODULE: ./src/forms/FormSpacer/FormSpacer.pcss
-var FormSpacer_FormSpacer = __webpack_require__(34);
+var FormSpacer_FormSpacer = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./src/forms/FormSpacer/FormSpacer.jsx
 /** @module FormSpacer
@@ -2802,7 +3958,7 @@ var FormSpacer_FormSpacer_FormSpacer = function FormSpacer(props) {var
 
 /* harmony default export */ var forms_FormSpacer_FormSpacer = (FormSpacer_FormSpacer_FormSpacer);
 // EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
-var FormText_FormText = __webpack_require__(35);
+var FormText_FormText = __webpack_require__(37);
 
 // CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
  /** @module FormText
@@ -2810,6 +3966,7 @@ var FormText_FormText = __webpack_require__(35);
                                                                                                                                                                                                                           *  @since 2020.10.29, 21:25
                                                                                                                                                                                                                           *  @changed 2020.10.29, 22:42
                                                                                                                                                                                                                           */
+/* eslint-disable react/require-default-props */
 
 
 
@@ -2822,7 +3979,11 @@ var FormText_FormText = __webpack_require__(35);
 
 var cnFormText = configure_cn('FormText');var
 
-FormText_FormText_FormText = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormText, _React$Component);function FormText() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+FormText_FormText_FormText = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormText, _React$PureComponent);function FormText() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+
+
+
+
 
 
 
@@ -2871,24 +4032,23 @@ FormText_FormText_FormText = /*#__PURE__*/function (_React$Component) {inheritsL
 
 
 
-  };return FormText;}(external_react_default.a.Component /** @lends @FormText.prototype */);
+  };return FormText;}(external_react_default.a.PureComponent /** @lends @FormText.prototype */);defineProperty_default()(FormText_FormText_FormText, "propTypes", { id: prop_types_default.a.string });
 
 
-
-
-FormText_FormText_FormText.propTypes = {
-  id: prop_types_default.a.string };
 
 /* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
 // EXTERNAL MODULE: ./src/forms/FormSelect/FormSelect.pcss
-var FormSelect_FormSelect = __webpack_require__(36);
+var FormSelect_FormSelect = __webpack_require__(38);
 
 // CONCATENATED MODULE: ./src/forms/FormSelect/FormSelect.jsx
  /** @module FormSelect
                                                                                                                                                                                                                           *  @class FormSelect
                                                                                                                                                                                                                           *  @since 2020.10.28, 22:49
                                                                                                                                                                                                                           *  @changed 2020.10.29, 03:14
+                                                                                                                                                                                                                          *
+                                                                                                                                                                                                                          *  TODO 2020.12.16, 23:07 -- Add hidden html form element (for form submission)
                                                                                                                                                                                                                           */
+/* eslint-disable react/require-default-props */
 
 
 
@@ -2900,6 +4060,7 @@ var FormSelect_FormSelect = __webpack_require__(36);
 // import FormGroup from 'forms/FormGroup'
 // import FormGroup from '../FormGroup'
 
+// import { FormItemPopup } from 'elements/Popup'
 
 
 
@@ -2909,7 +4070,43 @@ var FormSelect_FormSelect = __webpack_require__(36);
 
 var cnFormSelect = configure_cn('FormSelect');var
 
-FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormSelect, _React$Component);function FormSelect() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
+FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormSelect, _React$PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Lifecycle methods...
+
+  function FormSelect(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;
+    // this.formItemRef = React.createRef()
+    defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2931,43 +4128,45 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$Component) {inh
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "onMenuItemClick",
     function (params) {
-      if (typeof _this.hideStopper === 'function' && !_this.props.closeOnSelect) {
-        _this.hideStopper();
-      }var
-      onMenuItemClick = _this.props.onMenuItemClick;
+      // if (typeof this.hideStopper === 'function' && !this.props.closeOnSelect) {
+      //   this.hideStopper()
+      // }
+      var _this$props = _this.props,closeOnSelect = _this$props.closeOnSelect,onMenuItemClick = _this$props.onMenuItemClick;
       if (typeof onMenuItemClick === 'function') {
         onMenuItemClick(params);
       }
+      if (closeOnSelect && _this.popupNode) {
+        _this.popupNode.close();
+      }
     });defineProperty_default()(assertThisInitialized_default()(_this), "onMenuChange",
     function (params) {var
-      onMenuChange = _this.props.onMenuChange;
-      if (typeof onMenuChange === 'function') {
-        onMenuChange(params);
+      onChange = _this.props.onChange;var
+      checked = params.checked;
+      if (typeof onChange === 'function') {var _this$props2 =
+        _this.props,id = _this$props2.id,inputId = _this$props2.inputId,name = _this$props2.name,singleChoice = _this$props2.singleChoice;
+        var value = singleChoice ? checked[0] : checked;
+        var setId = id || inputId || name;
+        var setParams = { id: setId, checked: checked, value: value };
+        onChange(setParams);
       }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "registerHideStopper",
+      _this.setState({ checked: checked });
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setPopupRef",
 
-    function (hideStopper) {// Called from popup
-      _this.hideStopper = hideStopper;
-    });return _this;}var _proto = FormSelect.prototype;_proto.getClassName = function getClassName() {// TODO: Refactor properties!
-    var id = this.props.id;var classList = cnFormSelect({ id: id }, [this.props.className]);return classList;} // Handlers...
-  ; // onChange
-  // onIemClick
-  /* // onClick
-   * onClick = (event) => {
-   *   const {
-   *     disabled,
-   *     onClick,
-   *     clickable,
-   *   } = this.props
-   *   if (clickable && !disabled && onClick && typeof onClick === 'function') {
-   *     onClick(event)
-   *   }
-   * }
-   */
+    function (node) {var
+      setPopupNodeRef = _this.props.setPopupNodeRef;
+      _this.popupNode = node;
+      if (setPopupNodeRef && typeof setPopupNodeRef === 'function') {
+        setPopupNodeRef(node);
+      }
+    });_this.id = props.id || props.inputId || props.name;var _checked = props.checked,_value = props.value;_this.state = { checked: Array.isArray(_checked) ? _checked : _value && [_value] || [] };return _this;} // Helper methods...
+  var _proto = FormSelect.prototype;_proto.getClassName = function getClassName() {var id = this.id;var classList = cnFormSelect({ id: id }, [this.props.className]);return classList;};_proto.getItemsText = function getItemsText() {var checked = this.state.checked;var options = this.props.options;var text = Array.isArray(options) && Array.isArray(checked) && options.map(function (_ref) {var val = _ref.val,text = _ref.text;if (checked.includes(val)) {return text;}}).filter(Boolean).join(', ');return text;} // Handlers...
+  ; // registerHideStopper = (hideStopper) => { // Called from popup
+  //   this.hideStopper = hideStopper
+  // }
 
   // Render...
   _proto.
-  render = function render() {var _this$props =
+  renderControlContent = function renderControlContent() {var _this$props3 =
 
 
 
@@ -2975,71 +4174,89 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$Component) {inh
 
 
 
+    this.props,text = _this$props3.text,placeholder = _this$props3.placeholder,title = _this$props3.title,controlButtonTheme = _this$props3.controlButtonTheme,fullWidth = _this$props3.fullWidth,disabled = _this$props3.disabled;
+    var buttonText = this.getItemsText() || placeholder || text;
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(forms_FormButton_FormButton, {
+        icon: "faChevronDown",
+        rightIcon: true,
+        theme: controlButtonTheme || 'primary',
+        variation: "popupControl",
+        rotatedIcon: true,
+        text: buttonText,
+        title: title,
+        fullWidth: fullWidth,
+        disabled: disabled }));
+
+
+  };_proto.
+
+  renderMenuContent = function renderMenuContent() {var _this$props4 =
 
 
 
 
 
-    this.props,id = _this$props.id,disabled = _this$props.disabled,text = _this$props.text,title = _this$props.title,show = _this$props.show,singleChoice = _this$props.singleChoice,controlButtonTheme = _this$props.controlButtonTheme;
-
-    var controlContent = /*#__PURE__*/
-    external_react_default.a.createElement(forms_FormButton_FormButton, {
-      icon: "faChevronDown",
-      rightIcon: true,
-      theme: controlButtonTheme || 'primary',
-      variation: "popupControl",
-      rotatedIcon: true,
-      text: text,
-      title: title });
 
 
+    this.props,singleChoice = _this$props4.singleChoice,options = _this$props4.options,disabled = _this$props4.disabled;var
 
-    var menuContent = /*#__PURE__*/
-    external_react_default.a.createElement(elements_Menu_Menu, {
-      checkable: true,
-      singleChoice: singleChoice,
-      onChange: this.onMenuChange,
-      onClick: this.onMenuItemClick },
+    checked =
+    this.state.checked;
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(elements_Menu_Menu, {
+        checkable: true,
+        singleChoice: singleChoice,
+        onChange: this.onMenuChange,
+        onClick: this.onMenuItemClick,
+        checked: checked
+        // value={value}
+        , disabled: disabled },
 
-    [
-    { val: 1, text: 'Swimming' },
-    { val: 2, text: 'Skiing', checked: true }]);
+      options));
+
+
+  };_proto.
+
+  render = function render() {var _this$props5 =
 
 
 
 
-    // const renderProps = this.getRenderProps()
-    var renderProps = {
-      // ...basicRenderProps,
+
+
+
+    this.props,id = _this$props5.id,disabled = _this$props5.disabled,title = _this$props5.title,open = _this$props5.open,fullWidth = _this$props5.fullWidth;
+
+    var controlContent = this.renderControlContent();
+    var menuContent = this.renderMenuContent();
+
+    var popupProps = {
       id: id,
       className: this.getClassName(),
+      contentClassName: 'XXX',
       disabled: disabled,
       title: title,
-      showPopup: show,
+      open: open,
       popupControl: controlContent,
       popupContent: menuContent,
       onControlClick: this.onControlClick,
-      registerHideStopper: this.registerHideStopper
-      // onControlClick: buttonOnClick,
-      // asItem: true
-      // onClick: this.onClick, // ???
-    };
+      // registerHideStopper: this.registerHideStopper,
+      fullWidth: fullWidth,
+      ref: this.setPopupRef };
+
 
     return /*#__PURE__*/(
-      external_react_default.a.createElement(elements_Popup_Popup, renderProps));
+      external_react_default.a.createElement(elements_Popup_Popup, popupProps));
 
 
-  };return FormSelect;}(external_react_default.a.Component /** @lends @FormSelect.prototype */);
+  };return FormSelect;}(external_react_default.a.PureComponent /** @lends @FormSelect.prototype */);defineProperty_default()(FormSelect_FormSelect_FormSelect, "propTypes", { // value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number, PropTypes.arrayOf(PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])) ]),
+  checked: prop_types_default.a.arrayOf(prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.number])), disabled: prop_types_default.a.bool, fullWidth: prop_types_default.a.bool, id: prop_types_default.a.string, onChange: prop_types_default.a.func, open: prop_types_default.a.bool, options: prop_types_default.a.arrayOf(prop_types_default.a.shape({ val: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.number]), text: prop_types_default.a.string })), placeholder: prop_types_default.a.string, text: prop_types_default.a.string, value: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.number]) });
 
 
-
-
-FormSelect_FormSelect_FormSelect.propTypes = {
-  id: prop_types_default.a.string };
-
-/* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormSelect_FormSelect_FormSelect));
+/* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true })(FormSelect_FormSelect_FormSelect));
 // EXTERNAL MODULE: ./src/forms/FormTextInput/FormTextInput.pcss
-var FormTextInput_FormTextInput = __webpack_require__(37);
+var FormTextInput_FormTextInput = __webpack_require__(39);
 
 // CONCATENATED MODULE: ./src/forms/FormTextInput/FormTextInput.jsx
  /** @module FormTextInput
@@ -3108,13 +4325,14 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureCo
 
 
     function (state) {var _this$props =
-      _this.props,id = _this$props.id,onChange = _this$props.onChange,disabled = _this$props.disabled,numericValue = _this$props.numericValue;
+      _this.props,id = _this$props.id,inputId = _this$props.inputId,name = _this$props.name,onChange = _this$props.onChange,disabled = _this$props.disabled,numericValue = _this$props.numericValue;
       if (!disabled && typeof onChange === 'function') {var
         value = state.value;
         if (numericValue && !isNaN(value)) {
           value = Number(value);
         }
-        onChange({ id: id, value: value });
+        var setId = inputId || id || name;
+        onChange({ id: setId, value: value });
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "handleChange",
 
@@ -3195,7 +4413,7 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureCo
     var inputProps = {
       key: 'Input',
       type: type,
-      className: cnFormTextInput('Control'),
+      className: cnFormTextInput('Control', ['FormItem-Control']),
       id: inputId || id || name,
       name: name || inputId || id,
       disabled: disabled,
@@ -3287,9 +4505,9 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureCo
 
 
 
-/* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
+/* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
 // EXTERNAL MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.pcss
-var FormPasswordInput_FormPasswordInput = __webpack_require__(38);
+var FormPasswordInput_FormPasswordInput = __webpack_require__(40);
 
 // CONCATENATED MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.jsx
  /** @module FormPasswordInput
@@ -3304,7 +4522,7 @@ var FormPasswordInput_FormPasswordInput = __webpack_require__(38);
 
 
 // import InlineIcon from 'elements/InlineIcon'
-
+// import FormItemHOC from '../FormItemHOC'
 
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -3313,12 +4531,12 @@ var FormPasswordInput_FormPasswordInput = __webpack_require__(38);
 
 var cnFormPasswordInput = configure_cn('FormPasswordInput');var
 
-FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormPasswordInput, _React$Component);
+FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormPasswordInput, _React$PureComponent);
 
   // Lifecycle...
 
   function FormPasswordInput(props) {var _this;
-    _this = _React$Component.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onTypeIconClick",
+    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onTypeIconClick",
 
 
 
@@ -3378,18 +4596,18 @@ FormPasswordInput_FormPasswordInput_FormPasswordInput = /*#__PURE__*/function (_
 
 
 
-  };return FormPasswordInput;}(external_react_default.a.Component /** @lends @FormPasswordInput.prototype */);
+  };return FormPasswordInput;}(external_react_default.a.PureComponent /** @lends @FormPasswordInput.prototype */);
 
 
 
 /* // propTypes
-                                                                                             * FormPasswordInput.propTypes = {
-                                                                                             *   id: PropTypes.string,
-                                                                                             * }
-                                                                                             */
+                                                                                                 * FormPasswordInput.propTypes = {
+                                                                                                 *   id: PropTypes.string,
+                                                                                                 * }
+                                                                                                 */
 /* harmony default export */ var forms_FormPasswordInput_FormPasswordInput = (/* FormItemHOC({ hoverable: true, framed: true })( */FormPasswordInput_FormPasswordInput_FormPasswordInput);
 // EXTERNAL MODULE: ./node_modules/symbol-observable/es/index.js
-var es = __webpack_require__(9);
+var es = __webpack_require__(11);
 
 // CONCATENATED MODULE: ./node_modules/redux/es/redux.js
 
@@ -4056,12 +5274,6 @@ if (false) {}
 
 var cnFormBooleanHOC = configure_cn('FormBooleanHOC');
 
-var FormBooleanHOC_defaultState = {// Default state
-  // hoverable: false,
-  // focusable: false,
-};
-
-// class FormBooleanHOC extends React.PureComponent [>* @lends @FormBooleanHOC.prototype <] {
 var FormBooleanHOC_wrapFormBooleanHOC = function wrapFormBooleanHOC(WrappedComponent, params) {var _class, _temp;if (params === void 0) {params = {};}return _temp = _class = /*#__PURE__*/function (_React$Component) {inheritsLoose_default()(FormBoolean, _React$Component);
 
 
@@ -4140,10 +5352,10 @@ var FormBooleanHOC_wrapFormBooleanHOC = function wrapFormBooleanHOC(WrappedCompo
 
 
       function (state) {var _this$props =
-        _this.props,id = _this$props.id,onChange = _this$props.onChange,disabled = _this$props.disabled;
+        _this.props,onChange = _this$props.onChange,disabled = _this$props.disabled;
         if (!disabled && typeof onChange === 'function') {var
           value = state.value;
-          onChange({ id: id, value: value });
+          onChange({ id: _this.id, value: value });
         }
       });defineProperty_default()(assertThisInitialized_default()(_this), "handleChange",
 
@@ -4156,12 +5368,12 @@ var FormBooleanHOC_wrapFormBooleanHOC = function wrapFormBooleanHOC(WrappedCompo
           }
           return { value: value };
         });
-      });var _value = _this.props.value; // this.state = deriveState(defaultState, params, props) // deriveStateFromProps(props, defaultState)
-      _this.id = props.id || params.id;_this.state = { value: _value };return _this;}var _proto = FormBoolean.prototype;_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
+      });var _value = _this.props.value;_this.id = props.id || params.id || props.inputId || props.name;_this.state = { value: _value };return _this;}var _proto = FormBoolean.prototype;_proto.componentDidMount = function componentDidMount() {// const { formItemRef: { current } = {} } = this
       this.afterRender();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var prevValue = prevProps.value;var propsValue = this.props.value;var stateValue = this.state.value;if (propsValue !== prevValue && propsValue !== stateValue) {// New value from props
         this.setState({ value: propsValue }, this.updateValueWithState);} else if (stateValue !== prevState.value) {// New value from state
         this.updateValueWithState(this.state);}this.afterRender();} // Helper methods...
-    ;_proto.getClassName = function getClassName() {var id = this.props.id;var value = this.state.value;var checked = !!value;var mods = { id: id, checked: checked };var classList = cnFormBooleanHOC(mods, [this.props.className]);return classList;};_proto.focus = function focus() {// Invoke containing input focus method
+    ;_proto.getClassName = function getClassName() {var id = this.id; // const { id } = this.props
+      var value = this.state.value;var checked = !!value;var mods = { id: id, checked: checked };var classList = cnFormBooleanHOC(mods, [this.props.className]);return classList;};_proto.focus = function focus() {// Invoke containing input focus method
       // if (this.inputDomElem && typeof this.inputDomElem.focus == 'function') {
       //   this.inputDomElem.focus()
       // }
@@ -4234,10 +5446,10 @@ var FormBooleanHOC = function FormBooleanHOC(params) {
 // export default FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormBooleanHOC)
 /* harmony default export */ var FormBooleanHOC_FormBooleanHOC = (FormBooleanHOC);
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio.pcss
-var FormRadio_FormRadio = __webpack_require__(39);
+var FormRadio_FormRadio = __webpack_require__(41);
 
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio-Themes.pcss
-var FormRadio_Themes = __webpack_require__(40);
+var FormRadio_Themes = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./src/forms/FormRadio/FormRadio.jsx
  /** @module FormRadio
@@ -4326,7 +5538,7 @@ FormRadio_FormRadio_FormRadio = /*#__PURE__*/function (_React$PureComponent) {in
     return /*#__PURE__*/(
       external_react_default.a.createElement("div", renderProps, /*#__PURE__*/
       external_react_default.a.createElement("div", {
-        className: cnFormRadio('Control'),
+        className: cnFormRadio('Control', ['FormItem-Control']),
         disabled: disabled }, /*#__PURE__*/
 
       external_react_default.a.createElement("span", { className: cnFormRadio('Frame') }, /*#__PURE__*/
@@ -4365,7 +5577,7 @@ FormRadio_FormRadio_FormRadio));
 //
 // export FormPager from './FormPager'
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(42);
+var Hello_Hello = __webpack_require__(44);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -4400,7 +5612,7 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(43);
+var build = __webpack_require__(45);
 
 // CONCATENATED MODULE: ./src/build.js
 /** @module build

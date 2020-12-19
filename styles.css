@@ -1715,7 +1715,12 @@ label.FormLabel-Control[for] {
           flex-direction: column;
     }
 
-.FormGroup > .FormGroup_align_right {
+.FormGroup_flow.FormGroup_alignItems_center {
+        -ms-flex-pack: center;
+            justify-content: center;
+      }
+
+.FormGroup > .FormGroup_align_right { /* flow*/
       /* Align to right*/
       -ms-flex-pack: end;
           justify-content: flex-end;

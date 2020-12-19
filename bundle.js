@@ -349,9 +349,9 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.6-201219-0338-build-prod-default",
-  timestamp: "2020.12.19, 03:38",
-  timetag: "201219-0338",
+  buildTag: "v.0.1.6-201219-0417-build-prod-default",
+  timestamp: "2020.12.19, 04:17",
+  timetag: "201219-0417",
   version: "0.1.6" };
 
 /***/ }),
@@ -3676,6 +3676,8 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {in
 
 
 
+
+
   function FormGroup(props) {var _this;
     _this = _React$PureComponent.call(this, props) || this;
     _this.state = {};return _this;
@@ -3711,14 +3713,14 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {in
       content || children));
 
 
-  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
+  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, alignItems: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
   // disabled: PropTypes.bool,
   // value: PropTypes.any,
   // valueType: PropTypes.string,
   // onChange: PropTypes.func,
 });defineProperty_default()(FormGroup_FormGroup_FormGroup, "classNameModifiers", [// Basic element properties
 'id', // Style-related modifiers...
-'align', 'background', 'flow', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
+'align', 'alignItems', 'background', 'flow', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
 // CONCATENATED MODULE: ./src/forms/FormLabeledGroup/FormLabeledGroup.jsx
 /** @module FormLabeledGroup
  *  @class FormLabeledGroup

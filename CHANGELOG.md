@@ -1,5 +1,9 @@
 # CHANGELOG
 
+- 2020.12.23, 00:43 -- PD-3504: Modals: Close-on-click-outside mechanism (closeOnClickOutside prop), close-on-esc (closeOnEscPressed prop), rendering witch active (portal activated) and show (animation triggered) states, global & internal dom events registration, generic modal/popup interface (isVisible, close, open), improved demo fixture, basic wrapper/window & animations styles. Other minor changes (FormButton inline mod, updated PropTypes, WebUiCore RootComponent).
+- 2020.12.22, 04:54 -- PD-3504: PopupsContainer dynamic container + integrated popups/modals manager + init promise & other properties (in config.popups), Modal component + show/hide animations (in progress).
+- 2020.12.21, 19:02 -- PD-3503: Using utils modules (strings, domUtils) from WebUiCore.
+- 2020.12.19, 04:20 -- FormGroup alignItems prop added.
 - 2020.12.19, 01:23 -- Added browserlist (for autoprefixer), ixed ie11 styles (PD-3500), Menu: prevent uncheck checked items for `singleChoice=forced`, FormSelect: restored popup closing for `closeOnSelect`, Popup: adjust content width for control width if fullWidth enabled, other minor changes.
 - 2020.12.18, 16:57 -- Popup: Fixed css prop names for IE11, demo for uncloseable underlaying popups.
 - 2020.12.18, 02:40 -- Popup: Updated props types list, removed state & unused methods, cleaned up code, added external methods `close`, `open` (for using in future `PopupStack`), added (restored) `onControlClick` handler processing.
@@ -39,5 +43,5 @@
 - 2020.10.05, 20:38 -- v.0.0.15: Extracted `demoSupport.jsx` routines, fixture selection from url query (parameter `fixture`), added avaialble fixtures list if fixture to display is not specified, added DemoWrapper & demoTitle exportable ficture parameters for demo rendering.
 
 <!--
- @changed 2020.12.18, 02:45
+ @changed 2020.12.23, 01:07
 -->

@@ -84,16 +84,6 @@
  *  @changed 2020.12.18, 01:32
  */
 
-#Popups { /* Root popups element...*/
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  /* // visibility: hidden;*/
-}
-
 .PopupControl {
   /*!KEEP*/
   -webkit-box-sizing: border-box;
@@ -110,11 +100,11 @@
   /* z-index: 100; // Lift above all other regular elements*/
   position: absolute;
   /* display: none;*/
-  visibility: hidden;
   background: #fff;
   -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
           box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
   border-radius: 3px;
+  visibility: hidden;
   -webkit-animation-name: WebUiCore_Popup;
           animation-name: WebUiCore_Popup;
   -webkit-animation-duration: .3s;
@@ -209,6 +199,153 @@
     }
   }
 
+/** @module Modal.styles
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.21, 22:58
+ */
+
+.Modal, .Modal-Wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+.Modal-Wrapper, .Modal-Wrapper_theme_transparentBlack {
+      background-color: rgba(0,0,0,.5);
+    }
+
+.Modal-Wrapper_theme_opaqueGray {
+      background-color: #666;
+    }
+
+.Modal-Wrapper_theme_opaqueWhite {
+      background-color: #fff;
+    }
+
+.Modal-Wrapper_theme_transparentWhite {
+      background-color: rgba(255,255,255,.5);
+    }
+
+.Modal-Window {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    overflow: hidden;
+    /* max-width: 100%;*/
+    /* z-index: 100; // Lift above all other regular elements*/
+    background: #fff;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
+            box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* , inset 0 0 1px 1px color(#fff alpha(1));*/
+    border-radius: 3px;
+    /* border-radius: 10px;*/
+    margin: 20px auto;
+    position: fixed;
+    /* position: relative;*/
+    /* Center window:*/
+    /* v1 (using translate, blurry):*/
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); /* Blurry*/
+    -webkit-transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px));
+            transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px)); /* Workaround for modern browsers*/
+    /* TODO: Use flex?*/
+    /* // v2:*/
+    /* left: calc(-50vw + 50%);*/
+    /* right: calc(-50vw + 50%);*/
+    /* margin-left: auto;*/
+    /* margin-right: auto;*/
+  }
+
+.Modal { /* Animation transitions...*/
+    /* $windowTimeout: $(animateTime)ms; // Slow*/
+    /* $windowTimeout: $(transitionTime)ms; // Quick*/
+    /* CSSTransition styles:*/
+    /* - *-enter*/
+    /* - *-enter-active*/
+    /* - *-enter-done*/
+    /* - *-exit*/
+    /* - *-exit-active*/
+    /* - *-exit-done*/
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+.Modal .Modal-Window {
+      opacity: 0;
+      margin-top: 0;
+    }
+
+.Modal-enter {
+      /* opacity: 0;*/
+      visibility: visible;
+    }
+
+.Modal-enter .Modal-Window {
+        margin-top: -30px;
+      }
+
+.Modal-enter-active {
+      opacity: 1;
+      -webkit-transition: opacity 250ms;
+      transition: opacity 250ms;
+    }
+
+.Modal-enter-active .Modal-Window {
+        -webkit-transition: opacity 250ms, margin-top 250ms;
+        transition: opacity 250ms, margin-top 250ms;
+        opacity: 1;
+        margin-top: 0px;
+      }
+
+.Modal-enter-done {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+.Modal-enter-done .Modal-Window {
+        opacity: 1;
+      }
+
+.Modal-exit {
+      visibility: visible;
+      opacity: 1;
+    }
+
+.Modal-exit .Modal-Window {
+        opacity: 1;
+      }
+
+.Modal-exit-active {
+      opacity: 0;
+      -webkit-transition: opacity 250ms;
+      transition: opacity 250ms;
+    }
+
+.Modal-exit-active .Modal-Window {
+        -webkit-transition: opacity 250ms, margin-top 250ms;
+        transition: opacity 250ms, margin-top 250ms;
+        opacity: 0;
+        margin-top: -30px;
+      }
+
+.Modal-exit-done {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+.Modal-exit-done .Modal-Window {
+        opacity: 0;
+      }
+
 /** @module MenuItem.styles
  *  @since 2020.10.27, 03:05
  *  @changed 2020.10.27, 03:06
@@ -266,6 +403,23 @@
 .Menu:not(.Menu_layout_horizontal) .MenuItem_fullWidth {
         width: 100%;
       }
+
+/** @module PopupsContainer.pcss
+ *  @class PopupsContainer
+ *  @since 2020.12.21, 23:37
+ *  @changed 2020.12.21, 23:37
+ */
+
+.PopupsContainer {
+  /*!KEEP*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  /* // visibility: hidden;*/
+}
 
 /** @module FormItemDummy.styles
  *  @class FormItemDummy
@@ -544,6 +698,7 @@ label.FormLabel-Control[for] {
     }
 
 /** @module FormButton.styles
+ *  @desc Only basic elements geometry
  *  @since 2020.07.20, 19:24
  *  @changed 2020.10.21, 23:42
  */
@@ -554,18 +709,6 @@ label.FormLabel-Control[for] {
   padding: 0 8px;
 
   max-width: 100%;
-
-  /* &_fullWidth {*/
-  /*   display: block;*/
-  /* }*/
-  /* &_plain.FormItem_hovered {*/
-  /*   ^&-Text {*/
-  /*     text-decoration: underline;*/
-  /*   }*/
-  /*   ^&-Icon {*/
-  /*     color: color($neutralColor shade(5));*/
-  /*   }*/
-  /* }*/
 
 }
 
@@ -646,14 +789,35 @@ label.FormLabel-Control[for] {
   }
 
 /** @module FormButton-Styles.styles
+ *  @desc Additional elements variations
  *  @since 2020.07.20, 19:24
  *  @changed 2020.10.29, 03:30
  */
+
+.FormButton {
+
+  /* &_fullWidth {*/
+  /*   display: block;*/
+  /* }*/
+  /* &_plain.FormItem_hovered {*/
+  /*   ^&-Text {*/
+  /*     text-decoration: underline;*/
+  /*   }*/
+  /*   ^&-Icon {*/
+  /*     color: color($neutralColor shade(5));*/
+  /*   }*/
+  /* }*/
+
+}
 
 /* Button variations...*/
 
 .FormButton_variation_popupControl {
     }
+
+.FormButton_inline {
+    display: inline-block;
+  }
 
 .FormButton_rotatedIcon .FormButton-Icon {
       -webkit-transform: rotate(0deg);

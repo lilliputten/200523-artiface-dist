@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ 	return __webpack_require__(__webpack_require__.s = 51);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -105,7 +105,7 @@ module.exports = require("react");
 if (false) { var throwOnDirectAccess, ReactIs; } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(21)();
+  module.exports = __webpack_require__(24)();
 }
 
 
@@ -187,14 +187,15 @@ module.exports = _extends;
 /** @module config
  *  @description App config
  *  @since 2019.08.29, 10:28
- *  @changed 2020.05.17, 04:12
+ *  @changed 2020.12.22, 00:32
  */
 
 var config = {
-  app: __webpack_require__(15),
-  build: __webpack_require__(16),
-  css: __webpack_require__(17),
-  userAgent: __webpack_require__(19)
+  app: __webpack_require__(17),
+  popups: __webpack_require__(18),
+  build: __webpack_require__(19),
+  css: __webpack_require__(20),
+  userAgent: __webpack_require__(22)
   // constants: require('./constants'),
 };
 
@@ -229,7 +230,7 @@ module.exports = require("@fortawesome/free-solid-svg-icons");
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
 /* global window */
 
 
@@ -248,10 +249,11 @@ if (typeof self !== 'undefined') {
 var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(12), __webpack_require__(43)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13), __webpack_require__(48)(module)))
 
 /***/ }),
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ (function(module, exports) {
 
 var g;
@@ -277,13 +279,13 @@ module.exports = g;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 module.exports = require("@fortawesome/free-regular-svg-icons");
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -308,13 +310,14 @@ function symbolObservablePonyfill(root) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */,
+/* 17 */
 /***/ (function(module, exports) {
 
 /** @module config.app
  *  @description Core app config
  *  @since 2019.09.10, 14:25
- *  @changed 2019.09.10, 14:25
+ *  @changed 2020.12.22, 00:32
  */
 
 module.exports = { // Common-used app variables...
@@ -331,7 +334,37 @@ module.exports = { // Common-used app variables...
 };
 
 /***/ }),
-/* 16 */
+/* 18 */
+/***/ (function(module, exports) {
+
+/** @module config.app
+ *  @description Core app config
+ *  @since 2019.09.10, 14:25
+ *  @changed 2020.12.22, 00:32
+ */
+
+var popupsConfig = { // Common-used app variables...
+
+  // Id for modals & popups wrapper
+  containerId: 'PopupsContainer',
+  // containerClass: 'PopupsContainer',
+
+  containerNode: null,
+  domNode: null,
+
+  isInited: false };
+
+
+
+popupsConfig._initPromiseResolve = null;
+popupsConfig.initPromise = new Promise(function (resolve) {
+  popupsConfig._initPromiseResolve = resolve;
+});
+
+module.exports = popupsConfig;
+
+/***/ }),
+/* 19 */
 /***/ (function(module, exports) {
 
 /** @module config.build
@@ -349,31 +382,31 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.6-201219-0417-build-prod-default",
-  timestamp: "2020.12.19, 04:17",
-  timetag: "201219-0417",
+  buildTag: "v.0.1.6-201223-1810-build-prod-default",
+  timestamp: "2020.12.23, 18:10",
+  timetag: "201223-1810",
   version: "0.1.6" };
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /** @module config.css
  *  @description Global styles config
  *  @since 2019.08.29, 10:28
- *  @changed 2020.10.21, 22:52
+ *  @changed 2020.12.23, 00:20
  */
 
 // Theme...
 var THEME = "default";
-var theme = __webpack_require__(18);
+var theme = __webpack_require__(21);
 
 // Some reusable parameters...
 var defaultFontSize = theme.defaultFontSize || 16;
 var textColor = theme.textColor || '#444';
 
-var defaultTransitonTime = 250;
-var defaultAnimateTimeout = 500;
+var defaultTransitionTime = 250;
+var defaultAnimateTime = 500;
 
 var errorColor = theme.errorColor || '#c33';
 var warnColor = theme.warnColor || '#f73'; // '#f96'
@@ -529,10 +562,10 @@ var cssConfig = { // Common-used css variables...
 
   // Timeouts & delays...
 
-  transitionTime: defaultTransitonTime, // ms
-
-  animateTimeout: defaultAnimateTimeout, // ms
-  modalAnimateTimeout: defaultAnimateTimeout // ms
+  transitionTime: defaultTransitionTime, // ms
+  animateTime: defaultAnimateTime, // ms
+  modalAnimateTime: defaultTransitionTime, // defaultAnimateTime,
+  modalWindowAnimateTime: defaultTransitionTime
 
   // Parameters...
 
@@ -579,7 +612,7 @@ Object.assign(cssConfig, { // Form properties...
 module.exports = cssConfig;
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports) {
 
 /** @module config.themes.default
@@ -601,7 +634,7 @@ module.exports = {
   secondaryContrastColor: '#fff' };
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** @module config.build
@@ -701,16 +734,16 @@ function detectUserAgent() {
 var userAgent = detectUserAgent();
 
 module.exports = userAgent;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(12)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)))
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -723,7 +756,7 @@ module.exports = userAgent;
 
 
 
-var ReactPropTypesSecret = __webpack_require__(22);
+var ReactPropTypesSecret = __webpack_require__(25);
 
 function emptyFunction() {}
 function emptyFunctionWithReset() {}
@@ -781,7 +814,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -798,24 +831,6 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 26 */
@@ -921,6 +936,36 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -950,19 +995,19 @@ module.exports = function(originalModule) {
 
 
 /***/ }),
-/* 44 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 45 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
-/* 46 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -974,8 +1019,10 @@ __webpack_require__.d(__webpack_exports__, "config", function() { return /* reex
 __webpack_require__.d(__webpack_exports__, "utils", function() { return /* reexport */ utils_namespaceObject; });
 __webpack_require__.d(__webpack_exports__, "InlineIcon", function() { return /* reexport */ elements_InlineIcon_InlineIcon; });
 __webpack_require__.d(__webpack_exports__, "Popup", function() { return /* reexport */ elements_Popup_Popup; });
+__webpack_require__.d(__webpack_exports__, "Modal", function() { return /* reexport */ elements_Modal_Modal; });
 __webpack_require__.d(__webpack_exports__, "Menu", function() { return /* reexport */ elements_Menu_Menu; });
 __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return /* reexport */ elements_MenuItem_MenuItem; });
+__webpack_require__.d(__webpack_exports__, "PopupsContainer", function() { return /* reexport */ elements_PopupsContainer_PopupsContainer; });
 __webpack_require__.d(__webpack_exports__, "FormItemDummy", function() { return /* reexport */ forms_FormItemDummy_FormItemDummy; });
 __webpack_require__.d(__webpack_exports__, "FormLabel", function() { return /* reexport */ forms_FormLabel_FormLabel; });
 __webpack_require__.d(__webpack_exports__, "FormButton", function() { return /* reexport */ forms_FormButton_FormButton; });
@@ -991,6 +1038,7 @@ __webpack_require__.d(__webpack_exports__, "FormTextInput", function() { return 
 __webpack_require__.d(__webpack_exports__, "FormPasswordInput", function() { return /* reexport */ forms_FormPasswordInput_FormPasswordInput; });
 __webpack_require__.d(__webpack_exports__, "FormRadio", function() { return /* reexport */ forms_FormRadio_FormRadio; });
 __webpack_require__.d(__webpack_exports__, "Hello", function() { return /* reexport */ demo_Hello_Hello; });
+__webpack_require__.d(__webpack_exports__, "RootComponent", function() { return /* binding */ RootComponent; });
 
 // NAMESPACE OBJECT: ./src/utils/configure.js
 var configure_namespaceObject = {};
@@ -999,14 +1047,34 @@ __webpack_require__.d(configure_namespaceObject, "setConfigOptions", function() 
 __webpack_require__.d(configure_namespaceObject, "cssMapping", function() { return configure_cssMapping; });
 __webpack_require__.d(configure_namespaceObject, "cn", function() { return configure_cn; });
 
+// NAMESPACE OBJECT: ./src/utils/strings.js
+var strings_namespaceObject = {};
+__webpack_require__.r(strings_namespaceObject);
+__webpack_require__.d(strings_namespaceObject, "toNumber", function() { return toNumber; });
+__webpack_require__.d(strings_namespaceObject, "toString", function() { return strings_toString; });
+__webpack_require__.d(strings_namespaceObject, "toBoolean", function() { return toBoolean; });
+__webpack_require__.d(strings_namespaceObject, "typeTransforms", function() { return typeTransforms; });
+__webpack_require__.d(strings_namespaceObject, "getCommonLength", function() { return getCommonLength; });
+__webpack_require__.d(strings_namespaceObject, "ucFirst", function() { return ucFirst; });
+__webpack_require__.d(strings_namespaceObject, "toType", function() { return toType; });
+__webpack_require__.d(strings_namespaceObject, "randomHexString", function() { return randomHexString; });
+__webpack_require__.d(strings_namespaceObject, "html2string", function() { return html2string; });
+__webpack_require__.d(strings_namespaceObject, "splitMultiline", function() { return strings_splitMultiline; });
+
+// NAMESPACE OBJECT: ./src/utils/domUtils.js
+var domUtils_namespaceObject = {};
+__webpack_require__.r(domUtils_namespaceObject);
+__webpack_require__.d(domUtils_namespaceObject, "getDocumentDomNodeByTag", function() { return getDocumentDomNodeByTag; });
+__webpack_require__.d(domUtils_namespaceObject, "hasClassName", function() { return hasClassName; });
+__webpack_require__.d(domUtils_namespaceObject, "addClassName", function() { return addClassName; });
+__webpack_require__.d(domUtils_namespaceObject, "removeClassName", function() { return removeClassName; });
+
 // NAMESPACE OBJECT: ./src/utils/utils.js
 var utils_namespaceObject = {};
 __webpack_require__.r(utils_namespaceObject);
 __webpack_require__.d(utils_namespaceObject, "configure", function() { return configure_namespaceObject; });
-__webpack_require__.d(utils_namespaceObject, "setConfigOptions", function() { return configure_setConfigOptions; });
-__webpack_require__.d(utils_namespaceObject, "cssMapping", function() { return configure_cssMapping; });
-__webpack_require__.d(utils_namespaceObject, "cn", function() { return configure_cn; });
-__webpack_require__.d(utils_namespaceObject, "strings", function() { return utils_strings; });
+__webpack_require__.d(utils_namespaceObject, "strings", function() { return strings_namespaceObject; });
+__webpack_require__.d(utils_namespaceObject, "domUtils", function() { return domUtils_namespaceObject; });
 
 // EXTERNAL MODULE: ./src/config/config.js
 var config = __webpack_require__(6);
@@ -1120,131 +1188,186 @@ var external_react_ = __webpack_require__(0);
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
 
 // CONCATENATED MODULE: ./src/utils/strings.js
-/** @module strings
- *  @description Objects utilities
- *  @since 2019.04.03, 14:38
- *  @changed 2020.05.29, 13:35
- */
+var strings_this = undefined; /** @module strings
+                   *  @description Objects utilities
+                   *  @since 2019.04.03, 14:38
+                   *  @changed 2020.05.29, 13:35
+                   */
 
 
 
-var strings = {
+/**
+                            * @param {string} val
+                            * @return {number}
+                            */
+var toNumber = function toNumber(val) {
+  return val && !isNaN(val) ? Number(val) : 0;
+};
+/**
+    * @param {string} val
+    * @return {String}
+    */
+var strings_toString = function toString(val) {
+  return val; // String(val);
+};
+/**
+    * @param {string} val
+    * @return {boolean}
+    */
+var toBoolean = function toBoolean(val) {
+  return !!(val && val !== 'false' && val !== '0');
+};
 
-  /**
-                 * @param {string} val
-                 * @return {number}
-                 */
-  toNumber: function toNumber(val) {
-    return val && !isNaN(val) ? Number(val) : 0;
-  },
-  /**
-      * @param {string} val
-      * @return {String}
-      */
-  toString: function toString(val) {
-    return val; // String(val);
-  },
-  /**
-      * @param {string} val
-      * @return {boolean}
-      */
-  toBoolean: function toBoolean(val) {
-    return !!(val && val !== 'false' && val !== '0');
-  },
+var typeTransforms = {
+  toNumber: toNumber,
+  toString: strings_toString,
+  toBoolean: toBoolean };
 
-  /** Returns length of common parts of two strings
-      * @param {String} a
-      * @param {String} b
-      * @return {Number}
-      */
-  getCommonLength: function getCommonLength(a, b) {
-    var maxLen = Math.min(a.length, b.length);
-    var commonLen = 0;
-    for (var len = 1; len < maxLen; len++) {
-      var s = a.substr(0, len);
-      if (b.indexOf(s) === 0) {
-        commonLen = len;
-      }
+
+/** Returns length of common parts of two strings
+                           * @param {String} a
+                           * @param {String} b
+                           * @return {Number}
+                           */
+var getCommonLength = function getCommonLength(a, b) {
+  var maxLen = Math.min(a.length, b.length);
+  var commonLen = 0;
+  for (var len = 1; len < maxLen; len++) {
+    var s = a.substr(0, len);
+    if (b.indexOf(s) === 0) {
+      commonLen = len;
     }
-    return commonLen;
-  },
+  }
+  return commonLen;
+};
 
-  /** Uppercase first letter of string
-      * @param {string} str
-      * @return {str}
-      */
-  ucFirst: function ucFirst(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1); // .toLowerCase();
-  },
+/** Uppercase first letter of string
+    * @param {string} str
+    * @return {str}
+    */
+var ucFirst = function ucFirst(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1); // .toLowerCase();
+};
 
-  /** Convert string to desired type
-      * @param {string} type
-      * @param {string} val
-      * @return {*}
-      */
-  toType: function toType(type, val) {
-    var methodName = 'to' + this.ucFirst(type);
-    if ( /* this.hasOwnProperty(methodName) && */typeof this[methodName] === 'function') {
-      val = this[methodName](val);
-    }
-    return val;
-  },
+/** Convert string to desired type
+    * @param {string} type
+    * @param {string} val
+    * @return {*}
+    */
+var toType = function toType(type, val) {
+  var methodName = 'to' + ucFirst(type);
+  if ( /* typeTransforms.hasOwnProperty(methodName) && */typeof typeTransforms[methodName] === 'function') {
+    val = strings_this[methodName](val);
+  }
+  return val;
+};
 
-  /**
-      * @param {Number} length - Target hex string length
-      * @return {String}
-      */
-  randomHexString: function randomHexString(length) {
-    var result = '';
-    for (var i = 0; i < length; i++) {
-      result += Math.floor(Math.random() * 0xf).toString(16);
-    }
-    return result;
-  },
+/**
+    * @param {Number} length - Target hex string length
+    * @return {String}
+    */
+var randomHexString = function randomHexString(length) {
+  var result = '';
+  for (var i = 0; i < length; i++) {
+    result += Math.floor(Math.random() * 0xf).toString(16);
+  }
+  return result;
+};
 
-  /** Convert (mostly error responses) html to text
-      * @param {String} html
-      * @return {String}
-      */
-  html2string: function html2string(html) {
-    return html && html // Process error from (html) response body
-    // .replace(/\s*<head>[\s\S]*<\/head>/m, '')
-    .replace(/\s*<style>[\s\S]*<\/style>/gm, '').
-    replace(/<title>(.+)<\/title>/gi, '$1:\n').
-    replace(/<[^<>]*>/g, ' ').
-    replace(/\r/gm, '\n') // Newlines
-    .replace(/[ \t]+\n/gm, '\n') // Hanged spaces
-    .replace(/\n[ \t]+/gm, '\n') // Hanged spaces
-    .replace(/\n{3,}/gm, '\n\n') // Extra newlines
-    .replace(/\n(.+):*[ \t\n]+\1\n/gm, '\n$1:\n') // Remove repeating titles
-    // .replace(/\n/gm, '\\n') // DEBUG: newlines
-    .trim(); // Trim
-  },
+/** Convert (mostly error responses) html to text
+    * @param {String} html
+    * @return {String}
+    */
+var html2string = function html2string(html) {
+  return html && html // Process error from (html) response body
+  // .replace(/\s*<head>[\s\S]*<\/head>/m, '')
+  .replace(/\s*<style>[\s\S]*<\/style>/gm, '').
+  replace(/<title>(.+)<\/title>/gi, '$1:\n').
+  replace(/<[^<>]*>/g, ' ').
+  replace(/\r/gm, '\n') // Newlines
+  .replace(/[ \t]+\n/gm, '\n') // Hanged spaces
+  .replace(/\n[ \t]+/gm, '\n') // Hanged spaces
+  .replace(/\n{3,}/gm, '\n\n') // Extra newlines
+  .replace(/\n(.+):*[ \t\n]+\1\n/gm, '\n$1:\n') // Remove repeating titles
+  // .replace(/\n/gm, '\\n') // DEBUG: newlines
+  .trim(); // Trim
+};
 
-  // TODO: Move to react strings helper?
-  splitMultiline: function splitMultiline(text, opt) {
-    opt = opt || {};
-    var textClassName = opt.textClassName || 'Text';
-    var lineClassName = opt.lineClassName || 'TextLine';
-    return text.split('\n\n').map(function (text, n) {
-      var lines = text.split('\n').map(function (line, n) {
-        return /*#__PURE__*/external_react_default.a.createElement('div', { key: 'line' + String(n), className: lineClassName }, line);
-      });
-      return /*#__PURE__*/external_react_default.a.createElement('div', { key: 'text' + String(n), className: textClassName }, lines);
+// TODO: Move to react strings helper?
+var strings_splitMultiline = function splitMultiline(text, opt) {
+  opt = opt || {};
+  var textClassName = opt.textClassName || 'Text';
+  var lineClassName = opt.lineClassName || 'TextLine';
+  return text.split('\n\n').map(function (text, n) {
+    var lines = text.split('\n').map(function (line, n) {
+      return /*#__PURE__*/external_react_default.a.createElement('div', { key: 'line' + String(n), className: lineClassName }, line);
     });
-  } };
-
-
+    return /*#__PURE__*/external_react_default.a.createElement('div', { key: 'text' + String(n), className: textClassName }, lines);
+  });
+};
 
 // module.exports = strings
-/* harmony default export */ var utils_strings = (strings);
+// export default strings
+// CONCATENATED MODULE: ./src/utils/domUtils.js
+/** @module domUtils
+ *  @class domUtils
+ *  @since 2019.06.14, 12:20
+ *  @changed 2020.12.21, 18:05
+ */
+
+/** Add class name
+     * @param {String} tag
+     * @return {DOM|undefined} domNode
+     */
+function getDocumentDomNodeByTag(tag) {
+  var result = document.getElementsByTagName(tag.toUpperCase());
+  return result && result[0];
+}
+
+/** Check for class name
+   * @param {DOM} domNode
+   * @param {String} className
+   * @return {Boolean}
+   */
+function hasClassName(domNode, className) {
+  if (domNode) {var
+    classList = domNode.classList;
+    return classList.contains(className);
+  }
+}
+
+/** Add class name
+   * @param {DOM} domNode
+   * @param {String} className
+   * @return {DOM} domNode
+   */
+function addClassName(domNode, className) {
+  if (domNode && !hasClassName(domNode, className)) {var
+    classList = domNode.classList;
+    classList.add(className);
+  }
+  return domNode;
+}
+
+/** Remove class name
+   * @param {DOM} domNode
+   * @param {String} className
+   * @return {DOM} domNode
+   */
+function removeClassName(domNode, className) {
+  if (domNode && hasClassName(domNode, className)) {var
+    classList = domNode.classList;
+    classList.remove(className);
+  }
+  return domNode;
+}
 // CONCATENATED MODULE: ./src/utils/utils.js
 /** @module build
  *  @desc Library exportable ditributive
  *  @since 2020.05.19, 17:16
  *  @changed 2020.12.15, 21:12
  */
-
+// export * from './configure'
 // export * as strings from './strings'
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/inheritsLoose.js
@@ -1258,10 +1381,10 @@ var react_fontawesome_ = __webpack_require__(9);
 var free_solid_svg_icons_ = __webpack_require__(10);
 
 // EXTERNAL MODULE: external "@fortawesome/free-regular-svg-icons"
-var free_regular_svg_icons_ = __webpack_require__(13);
+var free_regular_svg_icons_ = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./src/elements/InlineIcon/InlineIcon.pcss
-var InlineIcon_InlineIcon = __webpack_require__(20);
+var InlineIcon_InlineIcon = __webpack_require__(23);
 
 // CONCATENATED MODULE: ./src/elements/InlineIcon/InlineIcon.jsx
  /** @module InlineIcon
@@ -1507,7 +1630,7 @@ function debounce (delay, atBegin, callback) {
 //# sourceMappingURL=index.js.map
 
 // EXTERNAL MODULE: ./src/forms/FormItemHOC/FormItemHOC.pcss
-var FormItemHOC = __webpack_require__(23);
+var FormItemHOC = __webpack_require__(26);
 
 // CONCATENATED MODULE: ./src/forms/FormItemHOC/FormItemHOC.jsx
  /** @module FormItemHOC
@@ -2060,7 +2183,7 @@ PortalWithState_PortalWithState.defaultProps = {
 
 /* harmony default export */ var es_PortalWithState = (PortalWithState_PortalWithState);
 // EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
-var Popup_Popup = __webpack_require__(24);
+var Popup_Popup = __webpack_require__(27);
 
 // CONCATENATED MODULE: ./src/elements/Popup/Popup.jsx
  /** @module Popup
@@ -2072,7 +2195,7 @@ var Popup_Popup = __webpack_require__(24);
                                                                                                                                                                                                                                                                                 *  TODO 2020.12.18, 02:15 -- Popup: Use static `PopupStack` component and close same-level (from stack end to first `Modal` or stack begin) popups
                                                                                                                                                                                                                                                                                 *  TODO 2020.12.19, 03:35 -- Popup: Use nearest scrollable container ancestor as popup base? Or clip to it bounds? Or hide popup if countrol is (partially) out of this bounds?
                                                                                                                                                                                                                                                                                 *
-                                                                                                                                                                                                                                                                                *  External methods:
+                                                                                                                                                                                                                                                                                *  External methods (for PopupStack):
                                                                                                                                                                                                                                                                                 *  - close
                                                                                                                                                                                                                                                                                 *  - open
                                                                                                                                                                                                                                                                                 *  - updateGeometry
@@ -2087,15 +2210,18 @@ var Popup_Popup = __webpack_require__(24);
 
 
 
-
+/* UNUSED: Transitions
+                                                 * import { // Transitions...
+                                                 *   CSSTransition,
+                                                 *   TransitionGroup,
+                                                 * } from 'react-transition-group'
+                                                 */
 
 
 
 
 var cnPopup = configure_cn('Popup');
 var cnPopupControl = configure_cn('PopupControl');
-
-var popupsContainerId = 'Popups'; // Id of dom node which contains all popups (`<div id="Popups"></div>`). TODO: Store in config?
 
 var doDebug = false; // DEBUG!
 
@@ -2244,7 +2370,7 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
   // Lifecycle...
 
   function Popup(props) {var _this;
-    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "delayedClickTimerHandler", null);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "controlDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "contentDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "geometry", {});defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometryInstant",
+    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "delayedClickTimerHandler", null);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "controlDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "contentDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "geometry", {});defineProperty_default()(assertThisInitialized_default()(_this), "setPopupsInited",
 
 
 
@@ -2262,6 +2388,30 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {
+      _this.setState({ popupsInited: true });
+    });defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometryInstant",
 
 
 
@@ -2490,62 +2640,74 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
         _this.updateOneAxisContentPos('horizontal', geometry, updatedGeometryKeys); // Update horizontal position & size...
       }
       _this.geometry = geometry;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {
+      return _this.isOpen;
     });defineProperty_default()(assertThisInitialized_default()(_this), "close",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     function () {// External method for using in `PopupStack`
-      var _assertThisInitialize = assertThisInitialized_default()(_this),isOpen = _assertThisInitialize.isOpen,closePortal = _assertThisInitialize.closePortal;
+      var _this$props = _this.props,id = _this$props.id,onClose = _this$props.onClose;var _assertThisInitialize = assertThisInitialized_default()(_this),
+      isOpen = _assertThisInitialize.isOpen,closePortal = _assertThisInitialize.closePortal;
       if (isOpen && typeof closePortal === 'function') {
         closePortal();
+        if (typeof onClose === 'function') {
+          onClose({ id: id });
+        }
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "open",
 
     function () {// External method for using in `PopupStack`
-      var _assertThisInitialize2 = assertThisInitialized_default()(_this),isOpen = _assertThisInitialize2.isOpen,openPortal = _assertThisInitialize2.openPortal;
+      var _this$props2 = _this.props,id = _this$props2.id,onOpen = _this$props2.onOpen;var _assertThisInitialize2 = assertThisInitialized_default()(_this),
+      isOpen = _assertThisInitialize2.isOpen,openPortal = _assertThisInitialize2.openPortal;
       if (!isOpen && typeof openPortal === 'function') {
         openPortal();
+        if (typeof onOpen === 'function') {
+          onOpen({ id: id });
+        }
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "setControlRef",
 
@@ -2600,7 +2762,21 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
       if (typeof onControlClick === 'function') {
         onControlClick({ open: !isOpen });
       }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "renderPortalContent",
+    });defineProperty_default()(assertThisInitialized_default()(_this), "renderPortal",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2677,11 +2853,24 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
         _this.renderPopupContent(portalParams)));
 
 
-    });var open = props.open;_this.updateGeometry = debounce(debouncedUpdateGeometryTimeout, _this.updateGeometryInstant);_this.state = {};if (open) {_this.handlePortalOpen();} // // NOTE: Example of callback register
+    });var popupsInited = config_default.a.popups.isInited;_this.state = { popupsInited: popupsInited };if (!popupsInited) {config_default.a.popups.initPromise.then(_this.setPopupsInited);}_this.updateGeometry = debounce(debouncedUpdateGeometryTimeout, _this.updateGeometryInstant);var open = props.open;if (open) {_this.handlePortalOpen();} // // NOTE: Example of callback register
     // if (typeof props.registerCallback === 'function') { // External hide canceler (FormSelect: on Menu click etc)
     //   props.registerCallback(this.someMethod)
     // }
-    return _this;}var _proto = Popup.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
+    /* // Check for element is Popup
+     * setTimeout(() => {
+     *   const node = this
+     *   const isElement = React.isValidElement(node)
+     *   const isPopup = node instanceof Popup // true for Popup and FormItemPopup
+     *   const isFormItemPopup = node instanceof FormItemPopup // Always false
+     *   console.log('debug', {
+     *     isElement,
+     *     isPopup,
+     *     isFormItemPopup,
+     *   })
+     *   debugger
+     * }, 1000)
+     */return _this;}var _proto = Popup.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
   ;_proto.getDomNodeGeometry = function getDomNodeGeometry(domNode, id) {id = id || 'default';var rect = domNode && domNode.getBoundingClientRect(); /* // controlBouningBox sample:
                                                                                                                                                       * bottom: 642.8125
                                                                                                                                                       * height: 32
@@ -2692,7 +2881,7 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
                                                                                                                                                       * x: 223.921875
                                                                                                                                                       * y: 610.8125
                                                                                                                                                       */var geometry = rect && domNodeGeometryKeys.reduce(function (geometry, key) {// const val = domNode && domNode[key]
-      var val = rect && rect[key];if (val != null) {var resultKey = id + utils_strings.ucFirst(key);geometry[resultKey] = val;}return geometry;}, {});return geometry || {};};_proto.getGlobalGeometry = function getGlobalGeometry() {var geometry = Object.entries(globalGeometryKeys).reduce(function (geometry, _ref) {var _extends2;var id = _ref[0],descr = _ref[1];var obj = descr.obj;var key = descr.key || id;var val = obj[key];return extends_default()({}, geometry, (_extends2 = {}, _extends2[id] = val, _extends2));}, {});return geometry;};_proto.getUpdatedGeometryKeys = function getUpdatedGeometryKeys(geometry) {var origGeometry = this.geometry;var updatedKeys = [];Object.entries(geometry).forEach(function (_ref2) {var key = _ref2[0],val = _ref2[1];if (val !== origGeometry[key]) {updatedKeys.push(key);}});return updatedKeys;};_proto.updateContentWidth = function updateContentWidth(geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
+      var val = rect && rect[key];if (val != null) {var resultKey = id + strings_namespaceObject.ucFirst(key);geometry[resultKey] = val;}return geometry;}, {});return geometry || {};};_proto.getGlobalGeometry = function getGlobalGeometry() {var geometry = Object.entries(globalGeometryKeys).reduce(function (geometry, _ref) {var _extends2;var id = _ref[0],descr = _ref[1];var obj = descr.obj;var key = descr.key || id;var val = obj[key];return extends_default()({}, geometry, (_extends2 = {}, _extends2[id] = val, _extends2));}, {});return geometry;};_proto.getUpdatedGeometryKeys = function getUpdatedGeometryKeys(geometry) {var origGeometry = this.geometry;var updatedKeys = [];Object.entries(geometry).forEach(function (_ref2) {var key = _ref2[0],val = _ref2[1];if (val !== origGeometry[key]) {updatedKeys.push(key);}});return updatedKeys;};_proto.updateContentWidth = function updateContentWidth(geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
     // if (updatedGeometryKeys.includes('controlWidth') || updatedGeometryKeys.includes('contentWidth')) {
     var width = geometry.controlWidth;var domNode = this.contentDomNode;var setWidth = width + 'px'; /* // DEBUG
                                                                                                       * console.log('Popup:updateContentWidth', {
@@ -2767,12 +2956,25 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
        *   }, {}),
        * })
        */};_proto.registerGlobalHandlers = function registerGlobalHandlers() {if (!this.globalHandlersRegistered) {this.globalHandlersRegistered = true;document.addEventListener(globalScrollEventName, this.updateGeometry);window.addEventListener(globalResizeEventName, this.updateGeometry);if (!this.updateGeometryTimer && updateGeometryTimerDelay) {this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay);}}};_proto.unregisterGlobalHandlers = function unregisterGlobalHandlers() {if (this.globalHandlersRegistered) {this.globalHandlersRegistered = false;document.removeEventListener(globalScrollEventName, this.updateGeometry);window.removeEventListener(globalResizeEventName, this.updateGeometry);if (this.updateGeometryTimer) {clearInterval(this.updateGeometryTimer);this.updateGeometryTimer = null;}}} // Render helpers...
-  ;_proto.getClassName = function getClassName(params) {var isOpen = params.isOpen,cnCtx = params.cnCtx,className = params.className;var _this$props = this.props,id = _this$props.id,fullWidth = _this$props.fullWidth;return cnCtx && cnCtx({ id: id, open: isOpen, fullWidth: fullWidth }, [/* this.props. */className]);} // External methods...
+  ;_proto.getClassName = function getClassName(params) {var isOpen = params.isOpen,cnCtx = params.cnCtx,className = params.className;var _this$props3 = this.props,id = _this$props3.id,fullWidth = _this$props3.fullWidth;return cnCtx && cnCtx({ id: id, open: isOpen, fullWidth: fullWidth }, [/* this.props. */className]);} // External methods...
   ;_proto.clearContentGeometry = function clearContentGeometry() {var _this2 = this; // UNUSED? Must be used on content update (using registrable callback; see example in constructor).
     Object.keys(this.geometry).forEach(function (key) {if (key.startsWith('content')) {_this2.geometry[key] = null;}});}; // Render...
-  _proto.renderPopupControl = function renderPopupControl(portalParams) {var isOpen = portalParams.isOpen,openPortal = portalParams.openPortal,closePortal = portalParams.closePortal;var _this$props2 = this.props,id = _this$props2.id,popupControl = _this$props2.popupControl,className = _this$props2.className;this.openPortal = openPortal;this.closePortal = closePortal;var controlProps = popupControl && popupControl.props;var content = extends_default()({}, popupControl, { props: extends_default()({}, controlProps, { onClick: this.onControlClick, // onClick: isOpen ? closePortal : openPortal,
+  _proto.renderPopupControl = function renderPopupControl(portalParams) {var isOpen = portalParams.isOpen,openPortal = portalParams.openPortal,closePortal = portalParams.closePortal;var _this$props4 = this.props,id = _this$props4.id,popupControl = _this$props4.popupControl,className = _this$props4.className;this.openPortal = openPortal;this.closePortal = closePortal;var controlProps = popupControl && popupControl.props;var content = extends_default()({}, popupControl, { props: extends_default()({}, controlProps, { onClick: this.onControlClick, // onClick: isOpen ? closePortal : openPortal,
         // onClick: [> controlProps.onControlClick || <] this.onControlClick,
-        checked: isOpen, setDomRef: this.setControlRef }) });var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopupControl, className: className }, portalParams)), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderPopupContent = function renderPopupContent(portalParams) {var portal = portalParams.portal;var _this$props3 = this.props,id = _this$props3.id,popupContent = _this$props3.popupContent,className = _this$props3.contentClassName;var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopup, className: className }, portalParams)), ref: this.setContentRef };return portal( /*#__PURE__*/external_react_default.a.createElement("div", renderProps, popupContent));};_proto.render = function render() {var _this$props4 = this.props,closeOnClickOutside = _this$props4.closeOnClickOutside,closeOnEscPressed = _this$props4.closeOnEscPressed,open = _this$props4.open;var node = document.getElementById(popupsContainerId);return /*#__PURE__*/external_react_default.a.createElement(es_PortalWithState, { node: node, onOpen: this.handlePortalOpen, onClose: this.handlePortalClose, closeOnOutsideClick: closeOnClickOutside, closeOnEsc: closeOnEscPressed, defaultOpen: open }, this.renderPortalContent);};return Popup;}(external_react_default.a.PureComponent /** @lends @Popup.prototype */);defineProperty_default()(Popup_Popup_Popup, "propTypes", { // onEscPressed: PropTypes.func,
+        checked: isOpen, setDomRef: this.setControlRef }) });var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopupControl, className: className }, portalParams)), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderPopupContent = function renderPopupContent(portalParams) {var portal = portalParams.portal;var _this$props5 = this.props,id = _this$props5.id,popupContent = _this$props5.popupContent,className = _this$props5.contentClassName;var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopup, className: className }, portalParams)), ref: this.setContentRef }; /* // TRY: css-transitions
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * <TransitionGroup className={cnPopup('TransitionGroup')}>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *   <CSSTransition
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     key={id}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     timeout={5000}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     // timeout={config.css.animateTime}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     classNames={cnPopup('Transition')}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *   >
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     <div {...renderProps}>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *       {popupContent}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *   </CSSTransition>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * </TransitionGroup>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */return portal( /*#__PURE__*/external_react_default.a.createElement("div", renderProps, popupContent));};_proto.render = function render() {var _this$props6 = this.props,closeOnClickOutside = _this$props6.closeOnClickOutside,closeOnEscPressed = _this$props6.closeOnEscPressed,open = _this$props6.open;var popupsInited = this.state.popupsInited;return popupsInited && /*#__PURE__*/external_react_default.a.createElement(es_PortalWithState, { node: config_default.a.popups.domNode, onOpen: this.handlePortalOpen, onClose: this.handlePortalClose, closeOnOutsideClick: closeOnClickOutside, closeOnEsc: closeOnEscPressed, defaultOpen: open }, this.renderPortal);};return Popup;}(external_react_default.a.PureComponent /** @lends @Popup.prototype */);defineProperty_default()(Popup_Popup_Popup, "propTypes", { // onEscPressed: PropTypes.func,
   // onKeyPress: PropTypes.func,
   // registerCallback: PropTypes.func, // registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
   className: prop_types_default.a.string, closeOnClickOutside: prop_types_default.a.bool, closeOnEscPressed: prop_types_default.a.bool, id: prop_types_default.a.string, onControlClick: prop_types_default.a.func, open: prop_types_default.a.bool, popupContent: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, popupControl: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, setPopupNodeRef: prop_types_default.a.func });defineProperty_default()(Popup_Popup_Popup, "defaultProps", { // onEscPressed: null,
@@ -2781,8 +2983,1244 @@ Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_
   // popupControl: null,
   // registerCallback: null,
   className: null, closeOnClickOutside: true, closeOnEscPressed: true, id: null, onControlClick: null, open: false, setPopupNodeRef: null });/* harmony default export */ var elements_Popup_Popup = (Popup_Popup_Popup);var FormItemPopup = forms_FormItemHOC_FormItemHOC(Popup_Popup_Popup); // export default withOnClickOutside(Popup) // To use?
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+// CONCATENATED MODULE: ./node_modules/dom-helpers/esm/hasClass.js
+function hasClass(element, className) {
+  if (element.classList) return !!className && element.classList.contains(className);
+  return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
+}
+// CONCATENATED MODULE: ./node_modules/dom-helpers/esm/addClass.js
+
+function addClass_addClass(element, className) {
+  if (element.classList) element.classList.add(className);else if (!hasClass(element, className)) if (typeof element.className === 'string') element.className = element.className + " " + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + " " + className);
+}
+// CONCATENATED MODULE: ./node_modules/dom-helpers/esm/removeClass.js
+function replaceClassName(origClass, classToRemove) {
+  return origClass.replace(new RegExp("(^|\\s)" + classToRemove + "(?:\\s|$)", 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
+}
+
+function removeClass_removeClass(element, className) {
+  if (element.classList) {
+    element.classList.remove(className);
+  } else if (typeof element.className === 'string') {
+    ;
+    element.className = replaceClassName(element.className, className);
+  } else {
+    element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
+  }
+}
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/config.js
+/* harmony default export */ var esm_config = ({
+  disabled: false
+});
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/TransitionGroupContext.js
+
+/* harmony default export */ var TransitionGroupContext = (external_react_default.a.createContext(null));
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/Transition.js
+
+
+
+
+
+
+
+
+var UNMOUNTED = 'unmounted';
+var EXITED = 'exited';
+var ENTERING = 'entering';
+var ENTERED = 'entered';
+var EXITING = 'exiting';
+/**
+ * The Transition component lets you describe a transition from one component
+ * state to another _over time_ with a simple declarative API. Most commonly
+ * it's used to animate the mounting and unmounting of a component, but can also
+ * be used to describe in-place transition states as well.
+ *
+ * ---
+ *
+ * **Note**: `Transition` is a platform-agnostic base component. If you're using
+ * transitions in CSS, you'll probably want to use
+ * [`CSSTransition`](https://reactcommunity.org/react-transition-group/css-transition)
+ * instead. It inherits all the features of `Transition`, but contains
+ * additional features necessary to play nice with CSS transitions (hence the
+ * name of the component).
+ *
+ * ---
+ *
+ * By default the `Transition` component does not alter the behavior of the
+ * component it renders, it only tracks "enter" and "exit" states for the
+ * components. It's up to you to give meaning and effect to those states. For
+ * example we can add styles to a component when it enters or exits:
+ *
+ * ```jsx
+ * import { Transition } from 'react-transition-group';
+ *
+ * const duration = 300;
+ *
+ * const defaultStyle = {
+ *   transition: `opacity ${duration}ms ease-in-out`,
+ *   opacity: 0,
+ * }
+ *
+ * const transitionStyles = {
+ *   entering: { opacity: 1 },
+ *   entered:  { opacity: 1 },
+ *   exiting:  { opacity: 0 },
+ *   exited:  { opacity: 0 },
+ * };
+ *
+ * const Fade = ({ in: inProp }) => (
+ *   <Transition in={inProp} timeout={duration}>
+ *     {state => (
+ *       <div style={{
+ *         ...defaultStyle,
+ *         ...transitionStyles[state]
+ *       }}>
+ *         I'm a fade Transition!
+ *       </div>
+ *     )}
+ *   </Transition>
+ * );
+ * ```
+ *
+ * There are 4 main states a Transition can be in:
+ *  - `'entering'`
+ *  - `'entered'`
+ *  - `'exiting'`
+ *  - `'exited'`
+ *
+ * Transition state is toggled via the `in` prop. When `true` the component
+ * begins the "Enter" stage. During this stage, the component will shift from
+ * its current transition state, to `'entering'` for the duration of the
+ * transition and then to the `'entered'` stage once it's complete. Let's take
+ * the following example (we'll use the
+ * [useState](https://reactjs.org/docs/hooks-reference.html#usestate) hook):
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <Transition in={inProp} timeout={500}>
+ *         {state => (
+ *           // ...
+ *         )}
+ *       </Transition>
+ *       <button onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the button is clicked the component will shift to the `'entering'` state
+ * and stay there for 500ms (the value of `timeout`) before it finally switches
+ * to `'entered'`.
+ *
+ * When `in` is `false` the same thing happens except the state moves from
+ * `'exiting'` to `'exited'`.
+ */
+
+var Transition_Transition = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(Transition, _React$Component);
+
+  function Transition(props, context) {
+    var _this;
+
+    _this = _React$Component.call(this, props, context) || this;
+    var parentGroup = context; // In the context of a TransitionGroup all enters are really appears
+
+    var appear = parentGroup && !parentGroup.isMounting ? props.enter : props.appear;
+    var initialStatus;
+    _this.appearStatus = null;
+
+    if (props.in) {
+      if (appear) {
+        initialStatus = EXITED;
+        _this.appearStatus = ENTERING;
+      } else {
+        initialStatus = ENTERED;
+      }
+    } else {
+      if (props.unmountOnExit || props.mountOnEnter) {
+        initialStatus = UNMOUNTED;
+      } else {
+        initialStatus = EXITED;
+      }
+    }
+
+    _this.state = {
+      status: initialStatus
+    };
+    _this.nextCallback = null;
+    return _this;
+  }
+
+  Transition.getDerivedStateFromProps = function getDerivedStateFromProps(_ref, prevState) {
+    var nextIn = _ref.in;
+
+    if (nextIn && prevState.status === UNMOUNTED) {
+      return {
+        status: EXITED
+      };
+    }
+
+    return null;
+  } // getSnapshotBeforeUpdate(prevProps) {
+  //   let nextStatus = null
+  //   if (prevProps !== this.props) {
+  //     const { status } = this.state
+  //     if (this.props.in) {
+  //       if (status !== ENTERING && status !== ENTERED) {
+  //         nextStatus = ENTERING
+  //       }
+  //     } else {
+  //       if (status === ENTERING || status === ENTERED) {
+  //         nextStatus = EXITING
+  //       }
+  //     }
+  //   }
+  //   return { nextStatus }
+  // }
+  ;
+
+  var _proto = Transition.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    this.updateStatus(true, this.appearStatus);
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    var nextStatus = null;
+
+    if (prevProps !== this.props) {
+      var status = this.state.status;
+
+      if (this.props.in) {
+        if (status !== ENTERING && status !== ENTERED) {
+          nextStatus = ENTERING;
+        }
+      } else {
+        if (status === ENTERING || status === ENTERED) {
+          nextStatus = EXITING;
+        }
+      }
+    }
+
+    this.updateStatus(false, nextStatus);
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.cancelNextCallback();
+  };
+
+  _proto.getTimeouts = function getTimeouts() {
+    var timeout = this.props.timeout;
+    var exit, enter, appear;
+    exit = enter = appear = timeout;
+
+    if (timeout != null && typeof timeout !== 'number') {
+      exit = timeout.exit;
+      enter = timeout.enter; // TODO: remove fallback for next major
+
+      appear = timeout.appear !== undefined ? timeout.appear : enter;
+    }
+
+    return {
+      exit: exit,
+      enter: enter,
+      appear: appear
+    };
+  };
+
+  _proto.updateStatus = function updateStatus(mounting, nextStatus) {
+    if (mounting === void 0) {
+      mounting = false;
+    }
+
+    if (nextStatus !== null) {
+      // nextStatus will always be ENTERING or EXITING.
+      this.cancelNextCallback();
+
+      if (nextStatus === ENTERING) {
+        this.performEnter(mounting);
+      } else {
+        this.performExit();
+      }
+    } else if (this.props.unmountOnExit && this.state.status === EXITED) {
+      this.setState({
+        status: UNMOUNTED
+      });
+    }
+  };
+
+  _proto.performEnter = function performEnter(mounting) {
+    var _this2 = this;
+
+    var enter = this.props.enter;
+    var appearing = this.context ? this.context.isMounting : mounting;
+
+    var _ref2 = this.props.nodeRef ? [appearing] : [external_react_dom_default.a.findDOMNode(this), appearing],
+        maybeNode = _ref2[0],
+        maybeAppearing = _ref2[1];
+
+    var timeouts = this.getTimeouts();
+    var enterTimeout = appearing ? timeouts.appear : timeouts.enter; // no enter animation skip right to ENTERED
+    // if we are mounting and running this it means appear _must_ be set
+
+    if (!mounting && !enter || esm_config.disabled) {
+      this.safeSetState({
+        status: ENTERED
+      }, function () {
+        _this2.props.onEntered(maybeNode);
+      });
+      return;
+    }
+
+    this.props.onEnter(maybeNode, maybeAppearing);
+    this.safeSetState({
+      status: ENTERING
+    }, function () {
+      _this2.props.onEntering(maybeNode, maybeAppearing);
+
+      _this2.onTransitionEnd(enterTimeout, function () {
+        _this2.safeSetState({
+          status: ENTERED
+        }, function () {
+          _this2.props.onEntered(maybeNode, maybeAppearing);
+        });
+      });
+    });
+  };
+
+  _proto.performExit = function performExit() {
+    var _this3 = this;
+
+    var exit = this.props.exit;
+    var timeouts = this.getTimeouts();
+    var maybeNode = this.props.nodeRef ? undefined : external_react_dom_default.a.findDOMNode(this); // no exit animation skip right to EXITED
+
+    if (!exit || esm_config.disabled) {
+      this.safeSetState({
+        status: EXITED
+      }, function () {
+        _this3.props.onExited(maybeNode);
+      });
+      return;
+    }
+
+    this.props.onExit(maybeNode);
+    this.safeSetState({
+      status: EXITING
+    }, function () {
+      _this3.props.onExiting(maybeNode);
+
+      _this3.onTransitionEnd(timeouts.exit, function () {
+        _this3.safeSetState({
+          status: EXITED
+        }, function () {
+          _this3.props.onExited(maybeNode);
+        });
+      });
+    });
+  };
+
+  _proto.cancelNextCallback = function cancelNextCallback() {
+    if (this.nextCallback !== null) {
+      this.nextCallback.cancel();
+      this.nextCallback = null;
+    }
+  };
+
+  _proto.safeSetState = function safeSetState(nextState, callback) {
+    // This shouldn't be necessary, but there are weird race conditions with
+    // setState callbacks and unmounting in testing, so always make sure that
+    // we can cancel any pending setState callbacks after we unmount.
+    callback = this.setNextCallback(callback);
+    this.setState(nextState, callback);
+  };
+
+  _proto.setNextCallback = function setNextCallback(callback) {
+    var _this4 = this;
+
+    var active = true;
+
+    this.nextCallback = function (event) {
+      if (active) {
+        active = false;
+        _this4.nextCallback = null;
+        callback(event);
+      }
+    };
+
+    this.nextCallback.cancel = function () {
+      active = false;
+    };
+
+    return this.nextCallback;
+  };
+
+  _proto.onTransitionEnd = function onTransitionEnd(timeout, handler) {
+    this.setNextCallback(handler);
+    var node = this.props.nodeRef ? this.props.nodeRef.current : external_react_dom_default.a.findDOMNode(this);
+    var doesNotHaveTimeoutOrListener = timeout == null && !this.props.addEndListener;
+
+    if (!node || doesNotHaveTimeoutOrListener) {
+      setTimeout(this.nextCallback, 0);
+      return;
+    }
+
+    if (this.props.addEndListener) {
+      var _ref3 = this.props.nodeRef ? [this.nextCallback] : [node, this.nextCallback],
+          maybeNode = _ref3[0],
+          maybeNextCallback = _ref3[1];
+
+      this.props.addEndListener(maybeNode, maybeNextCallback);
+    }
+
+    if (timeout != null) {
+      setTimeout(this.nextCallback, timeout);
+    }
+  };
+
+  _proto.render = function render() {
+    var status = this.state.status;
+
+    if (status === UNMOUNTED) {
+      return null;
+    }
+
+    var _this$props = this.props,
+        children = _this$props.children,
+        _in = _this$props.in,
+        _mountOnEnter = _this$props.mountOnEnter,
+        _unmountOnExit = _this$props.unmountOnExit,
+        _appear = _this$props.appear,
+        _enter = _this$props.enter,
+        _exit = _this$props.exit,
+        _timeout = _this$props.timeout,
+        _addEndListener = _this$props.addEndListener,
+        _onEnter = _this$props.onEnter,
+        _onEntering = _this$props.onEntering,
+        _onEntered = _this$props.onEntered,
+        _onExit = _this$props.onExit,
+        _onExiting = _this$props.onExiting,
+        _onExited = _this$props.onExited,
+        _nodeRef = _this$props.nodeRef,
+        childProps = _objectWithoutPropertiesLoose(_this$props, ["children", "in", "mountOnEnter", "unmountOnExit", "appear", "enter", "exit", "timeout", "addEndListener", "onEnter", "onEntering", "onEntered", "onExit", "onExiting", "onExited", "nodeRef"]);
+
+    return (
+      /*#__PURE__*/
+      // allows for nested Transitions
+      external_react_default.a.createElement(TransitionGroupContext.Provider, {
+        value: null
+      }, typeof children === 'function' ? children(status, childProps) : external_react_default.a.cloneElement(external_react_default.a.Children.only(children), childProps))
+    );
+  };
+
+  return Transition;
+}(external_react_default.a.Component);
+
+Transition_Transition.contextType = TransitionGroupContext;
+Transition_Transition.propTypes =  false ? undefined : {}; // Name the function so it is clearer in the documentation
+
+function noop() {}
+
+Transition_Transition.defaultProps = {
+  in: false,
+  mountOnEnter: false,
+  unmountOnExit: false,
+  appear: false,
+  enter: true,
+  exit: true,
+  onEnter: noop,
+  onEntering: noop,
+  onEntered: noop,
+  onExit: noop,
+  onExiting: noop,
+  onExited: noop
+};
+Transition_Transition.UNMOUNTED = UNMOUNTED;
+Transition_Transition.EXITED = EXITED;
+Transition_Transition.ENTERING = ENTERING;
+Transition_Transition.ENTERED = ENTERED;
+Transition_Transition.EXITING = EXITING;
+/* harmony default export */ var esm_Transition = (Transition_Transition);
+// CONCATENATED MODULE: ./node_modules/react-transition-group/esm/CSSTransition.js
+
+
+
+
+
+
+
+
+
+
+var _addClass = function addClass(node, classes) {
+  return node && classes && classes.split(' ').forEach(function (c) {
+    return addClass_addClass(node, c);
+  });
+};
+
+var CSSTransition_removeClass = function removeClass(node, classes) {
+  return node && classes && classes.split(' ').forEach(function (c) {
+    return removeClass_removeClass(node, c);
+  });
+};
+/**
+ * A transition component inspired by the excellent
+ * [ng-animate](https://docs.angularjs.org/api/ngAnimate) library, you should
+ * use it if you're using CSS transitions or animations. It's built upon the
+ * [`Transition`](https://reactcommunity.org/react-transition-group/transition)
+ * component, so it inherits all of its props.
+ *
+ * `CSSTransition` applies a pair of class names during the `appear`, `enter`,
+ * and `exit` states of the transition. The first class is applied and then a
+ * second `*-active` class in order to activate the CSS transition. After the
+ * transition, matching `*-done` class names are applied to persist the
+ * transition state.
+ *
+ * ```jsx
+ * function App() {
+ *   const [inProp, setInProp] = useState(false);
+ *   return (
+ *     <div>
+ *       <CSSTransition in={inProp} timeout={200} classNames="my-node">
+ *         <div>
+ *           {"I'll receive my-node-* classes"}
+ *         </div>
+ *       </CSSTransition>
+ *       <button type="button" onClick={() => setInProp(true)}>
+ *         Click to Enter
+ *       </button>
+ *     </div>
+ *   );
+ * }
+ * ```
+ *
+ * When the `in` prop is set to `true`, the child component will first receive
+ * the class `example-enter`, then the `example-enter-active` will be added in
+ * the next tick. `CSSTransition` [forces a
+ * reflow](https://github.com/reactjs/react-transition-group/blob/5007303e729a74be66a21c3e2205e4916821524b/src/CSSTransition.js#L208-L215)
+ * between before adding the `example-enter-active`. This is an important trick
+ * because it allows us to transition between `example-enter` and
+ * `example-enter-active` even though they were added immediately one after
+ * another. Most notably, this is what makes it possible for us to animate
+ * _appearance_.
+ *
+ * ```css
+ * .my-node-enter {
+ *   opacity: 0;
+ * }
+ * .my-node-enter-active {
+ *   opacity: 1;
+ *   transition: opacity 200ms;
+ * }
+ * .my-node-exit {
+ *   opacity: 1;
+ * }
+ * .my-node-exit-active {
+ *   opacity: 0;
+ *   transition: opacity 200ms;
+ * }
+ * ```
+ *
+ * `*-active` classes represent which styles you want to animate **to**, so it's
+ * important to add `transition` declaration only to them, otherwise transitions
+ * might not behave as intended! This might not be obvious when the transitions
+ * are symmetrical, i.e. when `*-enter-active` is the same as `*-exit`, like in
+ * the example above (minus `transition`), but it becomes apparent in more
+ * complex transitions.
+ *
+ * **Note**: If you're using the
+ * [`appear`](http://reactcommunity.org/react-transition-group/transition#Transition-prop-appear)
+ * prop, make sure to define styles for `.appear-*` classes as well.
+ */
+
+
+var CSSTransition_CSSTransition = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(CSSTransition, _React$Component);
+
+  function CSSTransition() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
+    _this.appliedClasses = {
+      appear: {},
+      enter: {},
+      exit: {}
+    };
+
+    _this.onEnter = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument[0],
+          appearing = _this$resolveArgument[1];
+
+      _this.removeClasses(node, 'exit');
+
+      _this.addClass(node, appearing ? 'appear' : 'enter', 'base');
+
+      if (_this.props.onEnter) {
+        _this.props.onEnter(maybeNode, maybeAppearing);
+      }
+    };
+
+    _this.onEntering = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument2 = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument2[0],
+          appearing = _this$resolveArgument2[1];
+
+      var type = appearing ? 'appear' : 'enter';
+
+      _this.addClass(node, type, 'active');
+
+      if (_this.props.onEntering) {
+        _this.props.onEntering(maybeNode, maybeAppearing);
+      }
+    };
+
+    _this.onEntered = function (maybeNode, maybeAppearing) {
+      var _this$resolveArgument3 = _this.resolveArguments(maybeNode, maybeAppearing),
+          node = _this$resolveArgument3[0],
+          appearing = _this$resolveArgument3[1];
+
+      var type = appearing ? 'appear' : 'enter';
+
+      _this.removeClasses(node, type);
+
+      _this.addClass(node, type, 'done');
+
+      if (_this.props.onEntered) {
+        _this.props.onEntered(maybeNode, maybeAppearing);
+      }
+    };
+
+    _this.onExit = function (maybeNode) {
+      var _this$resolveArgument4 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument4[0];
+
+      _this.removeClasses(node, 'appear');
+
+      _this.removeClasses(node, 'enter');
+
+      _this.addClass(node, 'exit', 'base');
+
+      if (_this.props.onExit) {
+        _this.props.onExit(maybeNode);
+      }
+    };
+
+    _this.onExiting = function (maybeNode) {
+      var _this$resolveArgument5 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument5[0];
+
+      _this.addClass(node, 'exit', 'active');
+
+      if (_this.props.onExiting) {
+        _this.props.onExiting(maybeNode);
+      }
+    };
+
+    _this.onExited = function (maybeNode) {
+      var _this$resolveArgument6 = _this.resolveArguments(maybeNode),
+          node = _this$resolveArgument6[0];
+
+      _this.removeClasses(node, 'exit');
+
+      _this.addClass(node, 'exit', 'done');
+
+      if (_this.props.onExited) {
+        _this.props.onExited(maybeNode);
+      }
+    };
+
+    _this.resolveArguments = function (maybeNode, maybeAppearing) {
+      return _this.props.nodeRef ? [_this.props.nodeRef.current, maybeNode] // here `maybeNode` is actually `appearing`
+      : [maybeNode, maybeAppearing];
+    };
+
+    _this.getClassNames = function (type) {
+      var classNames = _this.props.classNames;
+      var isStringClassNames = typeof classNames === 'string';
+      var prefix = isStringClassNames && classNames ? classNames + "-" : '';
+      var baseClassName = isStringClassNames ? "" + prefix + type : classNames[type];
+      var activeClassName = isStringClassNames ? baseClassName + "-active" : classNames[type + "Active"];
+      var doneClassName = isStringClassNames ? baseClassName + "-done" : classNames[type + "Done"];
+      return {
+        baseClassName: baseClassName,
+        activeClassName: activeClassName,
+        doneClassName: doneClassName
+      };
+    };
+
+    return _this;
+  }
+
+  var _proto = CSSTransition.prototype;
+
+  _proto.addClass = function addClass(node, type, phase) {
+    var className = this.getClassNames(type)[phase + "ClassName"];
+
+    var _this$getClassNames = this.getClassNames('enter'),
+        doneClassName = _this$getClassNames.doneClassName;
+
+    if (type === 'appear' && phase === 'done' && doneClassName) {
+      className += " " + doneClassName;
+    } // This is for to force a repaint,
+    // which is necessary in order to transition styles when adding a class name.
+
+
+    if (phase === 'active') {
+      /* eslint-disable no-unused-expressions */
+      node && node.scrollTop;
+    }
+
+    if (className) {
+      this.appliedClasses[type][phase] = className;
+
+      _addClass(node, className);
+    }
+  };
+
+  _proto.removeClasses = function removeClasses(node, type) {
+    var _this$appliedClasses$ = this.appliedClasses[type],
+        baseClassName = _this$appliedClasses$.base,
+        activeClassName = _this$appliedClasses$.active,
+        doneClassName = _this$appliedClasses$.done;
+    this.appliedClasses[type] = {};
+
+    if (baseClassName) {
+      CSSTransition_removeClass(node, baseClassName);
+    }
+
+    if (activeClassName) {
+      CSSTransition_removeClass(node, activeClassName);
+    }
+
+    if (doneClassName) {
+      CSSTransition_removeClass(node, doneClassName);
+    }
+  };
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        _ = _this$props.classNames,
+        props = _objectWithoutPropertiesLoose(_this$props, ["classNames"]);
+
+    return /*#__PURE__*/external_react_default.a.createElement(esm_Transition, _extends({}, props, {
+      onEnter: this.onEnter,
+      onEntered: this.onEntered,
+      onEntering: this.onEntering,
+      onExit: this.onExit,
+      onExiting: this.onExiting,
+      onExited: this.onExited
+    }));
+  };
+
+  return CSSTransition;
+}(external_react_default.a.Component);
+
+CSSTransition_CSSTransition.defaultProps = {
+  classNames: ''
+};
+CSSTransition_CSSTransition.propTypes =  false ? undefined : {};
+/* harmony default export */ var esm_CSSTransition = (CSSTransition_CSSTransition);
+// EXTERNAL MODULE: ./src/elements/Modal/Modal.pcss
+var Modal_Modal = __webpack_require__(28);
+
+// CONCATENATED MODULE: ./src/elements/Modal/Modal.jsx
+ /** @module Modal
+                                                                                                                                                                                                                          *  @class Modal
+                                                                                                                                                                                                                          *  @since 2020.12.21, 22:58
+                                                                                                                                                                                                                          *  @changed 2020.12.23, 00:43
+                                                                                                                                                                                                                          *
+                                                                                                                                                                                                                          *  External methods (for PopupStack):
+                                                                                                                                                                                                                          *  - close
+                                                                                                                                                                                                                          *  - open
+                                                                                                                                                                                                                          *  - updateGeometry
+                                                                                                                                                                                                                          */
+/* eslint-disable no-console */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+// import withOnClickOutside from 'react-onclickoutside' // To use?
+// import { strings } from 'utils'
+// import { debounce } from 'throttle-debounce'
+// import { PortalWithState } from 'react-portal'
+
+
+
+
+
+
+var cnModal = configure_cn('Modal');
+
+// const doDebug = false // DEBUG!
+
+var mouseDownEvent = 'mousedown';
+var mouseUpEvent = 'mouseup';
+var globalKeyPressEventName = 'keydown';
+
+// // Unused events:
+// const globalScrollEventName = 'scroll'
+// const globalResizeEventName = 'resize'
+
+/* // DEBUG: Demo for prevent closing underlaying popups. (Can be used for modal windows. See crrsp styles & html layout.)
+ * const debugHide = document.getElementById('DebugHide')
+ * setTimeout(() => {
+ *   if (debugHide) {
+ *     debugHide.style.display = 'block'
+ *   }
+ * }, 3000)
+ * const debugHideListener = (ev) => {
+ *   // ev.stopImmediatePropagation()
+ *   ev.stopPropagation()
+ * }
+ * debugHide && debugHide.addEventListener('click', debugHideListener)
+ */var
+
+Modal_Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(Modal, _React$PureComponent);
+
+  // Props...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Instance variables...
+
+
+
+
+
+
+
+  // Lifecycle...
+
+  function Modal(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;
+    // const popupsInited = config.popups.isInited
+    defineProperty_default()(assertThisInitialized_default()(_this), "waitForWrapperMouseUp", false);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "transitionTime", 0);defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {
+      return _this.state.show;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "activate",
+
+    function (cb) {var _this$props =
+      _this.props,id = _this$props.id,onActivate = _this$props.onActivate;var
+      active = _this.state.active;
+      if (!active) {
+        console.log('Modal:activate', id, active);
+        _this.setState({ active: true }, function () {
+          if (typeof cb === 'function') {
+            cb();
+          }
+          if (typeof onActivate === 'function') {
+            onActivate({ id: id });
+          }
+        });
+      } else
+      if (typeof cb === 'function') {
+        cb();
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "deactivate",
+
+    function () {var _this$props2 =
+      _this.props,id = _this$props2.id,onDeactivate = _this$props2.onDeactivate;var
+      active = _this.state.active;
+      if (active) {
+        console.log('Modal:deactivate', id);
+        _this.setState({ active: false }, function () {
+          if (typeof onDeactivate === 'function') {
+            onDeactivate({ id: id });
+          }
+        });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "toggle",
+
+    function () {// External method for using in `ModalStack`
+      var id = _this.props.id;var
+      show = _this.state.show;
+      console.log('Modal:ctoggle', id, show);
+      if (show) {
+        _this.close();
+      } else
+      {
+        _this.open();
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "close",
+
+    function () {// External method for using in `ModalStack`
+      var _this$props3 = _this.props,id = _this$props3.id,onClose = _this$props3.onClose;var
+      show = _this.state.show;
+      console.log('Modal:close', id, show);
+      if (show) {
+        _this.setState({ show: false }, function (state) {
+          _this.updateShowWithState(state);
+          setTimeout(_this.deactivate, _this.transitionTime); // TODO?
+        });
+        if (typeof onClose === 'function') {
+          onClose({ id: id });
+        }
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "open",
+
+    function () {// External method for using in `ModalStack`
+      var _this$props4 = _this.props,id = _this$props4.id,onOpen = _this$props4.onOpen;var
+      show = _this.state.show;
+      console.log('Modal:open', id, show);
+      if (!show) {
+        // First activate portal then enter into opening animation
+        _this.activate(function () {
+          _this.setState({ show: true }, function () {
+            _this.updateShowWithState();
+            if (typeof onOpen === 'function') {
+              onOpen({ id: id });
+            }
+          });
+        });
+        _this.activate(function () {return _this.setState({ show: true }, _this.updateShowWithState);});
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometry",
+
+    function () {return null;});defineProperty_default()(assertThisInitialized_default()(_this), "updateShowWithState",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (state) {var _ref =
+      state || _this.state,show = _ref.show;
+      if (show) {
+        _this.registerGlobalHandlers();
+      } else
+      {
+        _this.unregisterGlobalHandlers();
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setPopupsInited",
+
+    function () {
+      _this.setState({ popupsInited: true });var
+      show = _this.props.show;
+      _this.setState({ show: show });
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onKeyPress",
+
+
+
+    function (event) {var
+      keyCode = event.keyCode;var _this$props5 =
+
+
+
+
+
+
+      _this.props,id = _this$props5.id,onEscPressed = _this$props5.onEscPressed,closeOnEscPressed = _this$props5.closeOnEscPressed;
+      var isEscPressed = keyCode === 27;
+      var cbProps = { event: event, id: id, keyCode: keyCode };
+      // onKeyPress && onKeyPress(cbProps)
+      if (isEscPressed) {
+        onEscPressed && onEscPressed(cbProps);
+        if (closeOnEscPressed) {
+          _this.close();
+        }
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onWindowMouseUp",
+
+    function () {// Mouse released on window --> cancel waiting for mouse up on wrapper (don't close modal)
+      var _assertThisInitialize = assertThisInitialized_default()(_this),wrapperDomNode = _assertThisInitialize.wrapperDomNode;
+      console.log('onWindowMouseUp');
+      if (wrapperDomNode && _this.waitForWrapperMouseUp) {
+        wrapperDomNode.removeEventListener(mouseUpEvent, _this.onWrapperMouseUp);
+        _this.waitForWrapperMouseUp = false;
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onWrapperMouseDown",
+    function () {// Start waiting for mouse up on wrapper (close modal) or window (continue working)
+      var _assertThisInitialize2 = assertThisInitialized_default()(_this),wrapperDomNode = _assertThisInitialize2.wrapperDomNode;
+      console.log('onWrapperMouseDown');
+      if (wrapperDomNode) {// Start waiting for
+        _this.waitForWrapperMouseUp = true;
+        wrapperDomNode.addEventListener(mouseUpEvent, _this.onWrapperMouseUp);
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onWrapperMouseUp",
+    function () {// Mouse released on wrapper --> close modal
+      var _this$props6 = _this.props,id = _this$props6.id,onClickOutside = _this$props6.onClickOutside;
+      console.log('onWrapperMouseUp');var
+      closeOnClickOutside = _this.props.closeOnClickOutside;
+      if (closeOnClickOutside) {
+        _this.close();
+      }
+      if (typeof onClickOutside === 'function') {
+        onClickOutside({ id: id });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setWindowDomRef",
+
+    function (domNode) {
+      _this.windowDomNode = domNode;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setWrapperDomRef",
+
+    function (domNode) {
+      _this.wrapperDomNode = domNode;
+    });_this.state = { popupsInited: false, active: false, show: false };config_default.a.popups.initPromise.then(_this.setPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;return _this;}var _proto = Modal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state;if (props.show !== prevProps.show && props.show !== state.show) {// New show from props
+      if (props.show) {this.activate(function () {return _this2.setState({ show: true });});} else {this.setState({ show: false });}} else if (state.show !== prevState.show) {// New show from state
+      if (!state.active) {// Is it real case (changing `show` on inactive modal?
+        this.activate();}this.updateShowWithState();}} // External methods...
+  ; // External method stub
+  // Helpers...
+  _proto.registerGlobalHandlers = function registerGlobalHandlers() {var windowDomNode = this.windowDomNode,wrapperDomNode = this.wrapperDomNode; // const { closeOnClickOutside } = this.props
+    if (!this.globalHandlersRegistered) {this.globalHandlersRegistered = true; // Set flag
+      console.log('registerGlobalHandlers');if (!windowDomNode || !wrapperDomNode) {var error = new Error('Modal: dom nodes is undefined on registerGlobalHandlers');console.error(error); // eslint-disable-line no-console
+        debugger; // eslint-disable-line no-debugger
+        throw error; // ???
+      } /* // Update geometry (UNUSED)
+         * document.addEventListener(globalScrollEventName, this.updateGeometry)
+         * window.addEventListener(globalResizeEventName, this.updateGeometry)
+         * if (!this.updateGeometryTimer && updateGeometryTimerDelay) {
+         *   this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay)
+         * }
+         */document.addEventListener(globalKeyPressEventName, this.onKeyPress);if (windowDomNode && wrapperDomNode) {wrapperDomNode.addEventListener(mouseDownEvent, this.onWrapperMouseDown);windowDomNode.addEventListener(mouseUpEvent, this.onWindowMouseUp);}}};_proto.unregisterGlobalHandlers = function unregisterGlobalHandlers() {var windowDomNode = this.windowDomNode,wrapperDomNode = this.wrapperDomNode; // TODO: Check for dom nodes exists during close process
+    // const { closeOnClickOutside } = this.props
+    if (this.globalHandlersRegistered) {this.globalHandlersRegistered = false; // Reset flag
+      console.log('unregisterGlobalHandlers');if (!windowDomNode || !wrapperDomNode) {var error = new Error('Modal: dom nodes is undefined on unregisterGlobalHandlers');console.error(error); // eslint-disable-line no-console
+        debugger; // eslint-disable-line no-debugger
+        throw error; // ???
+      } /* // Update geometry (UNUSED)
+         * document.removeEventListener(globalScrollEventName, this.updateGeometry)
+         * window.removeEventListener(globalResizeEventName, this.updateGeometry)
+         * if (!this.updateGeometryTimer && updateGeometryTimerDelay) {
+         *   this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay)
+         * }
+         */document.removeEventListener(globalKeyPressEventName, this.onKeyPress);if (windowDomNode && wrapperDomNode) {if (this.waitForWrapperMouseUp) {wrapperDomNode.removeEventListener(mouseUpEvent, this.onWrapperMouseUp);this.waitForWrapperMouseUp = false;}wrapperDomNode.removeEventListener(mouseDownEvent, this.onWrapperMouseDown);windowDomNode.removeEventListener(mouseUpEvent, this.onWindowMouseUp);}}}; // Render helpers...
+  // Render...
+  _proto.renderModalWindow = function renderModalWindow() {var _this$props7 = this.props,id = _this$props7.id,windowTheme = _this$props7.windowTheme,windowClassName = _this$props7.windowClassName; // const { show } = this.state
+    return /*#__PURE__*/external_react_default.a.createElement("div", { id: id, className: cnModal('Window', { theme: windowTheme }, [windowClassName]), ref: this.setWindowDomRef }, "Modal ", id);};_proto.renderModal = function renderModal() {var _this$props8 = this.props,id = _this$props8.id,wrapperTheme = _this$props8.wrapperTheme,className = _this$props8.className,wrapperClassName = _this$props8.wrapperClassName;var show = this.state.show;console.log('Modal:renderModal', { id: id, show: show });return /*#__PURE__*/external_react_default.a.createElement(esm_CSSTransition, { key: id, id: id, timeout: this.transitionTime, in: show, classNames: cnModal() }, /*#__PURE__*/external_react_default.a.createElement("div", {
+      className: cnModal({ id: id }, [className]),
+      ref: this.setRootDomRef }, /*#__PURE__*/
+
+    external_react_default.a.createElement("div", {
+      className: cnModal('Wrapper', { theme: wrapperTheme }, [wrapperClassName]),
+      ref: this.setWrapperDomRef },
+
+    this.renderModalWindow())));
+
+
+
+
+
+  };_proto.
+
+  render = function render() {var
+    id = this.props.id;var _this$state =
+    this.state,popupsInited = _this$state.popupsInited,active = _this$state.active,show = _this$state.show;
+    var toDisplay = popupsInited && active;
+    console.log('Modal:render', { id: id, popupsInited: popupsInited, active: active, show: show });
+    return toDisplay && /*#__PURE__*/
+    external_react_default.a.createElement(PortalCompat, { node: config_default.a.popups.domNode },
+    this.renderModal());
+
+
+  };return Modal;}(external_react_default.a.PureComponent /** @lends @Modal.prototype */);defineProperty_default()(Modal_Modal_Modal, "propTypes", { // actions: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
+  // loading: PropTypes.bool, // Show Loader flashback
+  // onAction: PropTypes.func,
+  // onKeyPress: PropTypes.func,
+  // registerCallback: PropTypes.func, // registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
+  // setModalNodeRef: PropTypes.func,
+  // title: PropTypes.string,
+  className: prop_types_default.a.string, closeOnClickOutside: prop_types_default.a.bool, closeOnEscPressed: prop_types_default.a.bool, id: prop_types_default.a.string, onActivate: prop_types_default.a.func, onClickOutside: prop_types_default.a.func, onClose: prop_types_default.a.func, onDeactivate: prop_types_default.a.func, onEscPressed: prop_types_default.a.func, onOpen: prop_types_default.a.func, show: prop_types_default.a.bool, windowClassName: prop_types_default.a.string, windowTheme: prop_types_default.a.string, wrapperClassName: prop_types_default.a.string, wrapperTheme: prop_types_default.a.string });defineProperty_default()(Modal_Modal_Modal, "defaultProps", { // actions: null,
+  // className: null,
+  // loading: false,
+  // onKeyPress: null,
+  // popupContent: null,
+  // popupControl: null,
+  // registerCallback: null,
+  // setModalNodeRef: null,
+  // title: null,
+  className: null, closeOnClickOutside: true, closeOnEscPressed: true, id: null, onActivate: null, onClickOutside: null, onClose: null, onDeactivate: null, onEscPressed: null, onOpen: null, show: false, windowClassName: null, windowTheme: null, wrapperClassName: null, wrapperTheme: null });/* harmony default export */ var elements_Modal_Modal = (Modal_Modal_Modal);
 // EXTERNAL MODULE: ./src/elements/MenuItem/MenuItem.pcss
-var MenuItem_MenuItem = __webpack_require__(25);
+var MenuItem_MenuItem = __webpack_require__(29);
 
 // CONCATENATED MODULE: ./src/elements/MenuItem/MenuItem.jsx
  /** @module MenuItem
@@ -2896,7 +4334,7 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$PureComponent) {inher
 
 /* harmony default export */ var elements_MenuItem_MenuItem = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true })(MenuItem_MenuItem_MenuItem));
 // EXTERNAL MODULE: ./src/elements/Menu/Menu.pcss
-var Menu_Menu = __webpack_require__(26);
+var Menu_Menu = __webpack_require__(30);
 
 // CONCATENATED MODULE: ./src/elements/Menu/Menu.jsx
  /** @module Menu
@@ -3122,14 +4560,143 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_def
 
 
 /* harmony default export */ var elements_Menu_Menu = (Menu_Menu_Menu);
+// EXTERNAL MODULE: ./src/elements/PopupsContainer/PopupsContainer.pcss
+var PopupsContainer_PopupsContainer = __webpack_require__(31);
+
+// CONCATENATED MODULE: ./src/elements/PopupsContainer/PopupsContainer.jsx
+ /** @module PopupsContainer
+                                                                    *  @class PopupsContainer
+                                                                    *  @since 2020.12.21, 23:37
+                                                                    *  @changed 2020.12.21, 23:37
+                                                                    */
+
+
+
+
+// import { cssMapping } from 'utils/configure'
+
+// import { // Transitions...
+//   // CSSTransition,
+//   TransitionGroup,
+// } from 'react-transition-group'
+
+
+
+
+var cnPopupsContainer = configure_cn('PopupsContainer');
+
+// const doDebug = false // DEBUG!
+
+// const globalClickEventName = 'mousedown'
+// const globalKeyPressEventName = 'keydown'
+// const globalScrollEventName = 'scroll'
+// const globalResizeEventName = 'resize'
+var
+PopupsContainer_PopupsContainer_PopupsContainer = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(PopupsContainer, _React$PureComponent);function PopupsContainer() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = PopupsContainer.prototype;
+
+  // Lifecycle...
+
+  /* // UNUSED: constructor
+   * constructor(props) {
+   *   super(props)
+   *   this.ref = React.createRef()
+   *   // this.state = {}
+   *   // const initedPromise = new
+   * }
+   */_proto.
+
+  componentDidMount = function componentDidMount() {
+    // this.registerGlobalHandlers()
+    if (typeof config_default.a.popups._initPromiseResolve == 'function') {
+      config_default.a.popups._initPromiseResolve();
+      // setTimeout(config.popups._initPromiseResolve, 1000) // Delayed initializing?
+    }
+    config_default.a.popups.isInited = true;
+    config_default.a.popups.containerNode = this;
+    // eslint-disable-next-line react/no-find-dom-node
+    var domNode = external_react_dom_default.a.findDOMNode(this); // TODO: Find alternate legal method to get dom node? (refs doesn't works due to high-level element (`TransitionGroup`) rendering)
+    config_default.a.popups.domNode = domNode;
+  };_proto.
+
+  componentWillUnmount = function componentWillUnmount() {
+    // this.unregisterGlobalHandlers()
+  }
+
+  // Handlers...
+
+  /* // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
+   * setDomRef = (domNode) => {
+   *   if (typeof config.popups._initPromiseResolve == 'function') {
+   *     config.popups._initPromiseResolve()
+   *   }
+   *   config.popups.isInited = true
+   *   config.popups.containerNode = this
+   *   // eslint-disable-next-line react/no-find-dom-node
+   *   const domNode = ReactDOM.findDOMNode(domNode)
+   *   debugger
+   *   config.popups.domNode = domNode
+   * }
+   */
+
+  // Render...
+  ;_proto.
+  renderPopupsContainer = function renderPopupsContainer() {var
+    containerId = config_default.a.popups.containerId;
+    var className = cnPopupsContainer(null, [this.props.className /* , cnPopupsContainer('TransitionGroup') */]);
+    var renderProps = {
+      key: containerId || 'PopupsContainer',
+      id: containerId,
+      className: className
+      // ref: this.setDomRef, // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
+      // style: { border: '10px solid blue' }, // DEBUG
+    };
+    /* // TRY: css-transitions
+        * <TransitionGroup className={cnPopupsContainer('TransitionGroup')}>
+        *   <CSSTransition
+        *     key={id}
+        *     timeout={5000}
+        *     // timeout={config.css.animateTime}
+        *     classNames={cnPopupsContainer('Transition')}
+        *   >
+        *     <div {...renderProps}>
+        *       {popupContent}
+        *     </div>
+        *   </CSSTransition>
+        * </TransitionGroup>
+        * <TransitionGroup {...renderProps}>
+        *   <div>xxx</div>
+        * </TransitionGroup>
+        */
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("div", renderProps));
+
+
+  };_proto.
+
+  render = function render() {
+    var node = document.body;
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(PortalCompat, { node: node },
+      this.renderPopupsContainer()));
+
+
+  };return PopupsContainer;}(external_react_default.a.PureComponent /** @lends @PopupsContainer.prototype */);
+
+
+
+/* harmony default export */ var elements_PopupsContainer_PopupsContainer = (PopupsContainer_PopupsContainer_PopupsContainer);
+
+// TODO!
+// export const registerModalComponent
+// export const registerPopupComponent
 // CONCATENATED MODULE: ./src/elements/elements.js
 /** @module elements
  *  @desc Basic elements
  *  @since 2020.10.07, 02:12
- *  @changed 2020.10.27, 03:03
+ *  @changed 2020.12.22, 00:32
  */
 // EXTERNAL MODULE: ./src/forms/FormItemDummy/FormItemDummy.pcss
-var FormItemDummy_FormItemDummy = __webpack_require__(27);
+var FormItemDummy_FormItemDummy = __webpack_require__(32);
 
 // CONCATENATED MODULE: ./src/forms/FormItemDummy/FormItemDummy.jsx
  /** @module FormItemDummy
@@ -3301,7 +4868,7 @@ FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$PureCo
 
 /* harmony default export */ var forms_FormItemDummy_FormItemDummy = (forms_FormItemHOC_FormItemHOC(FormItemDummy_FormItemDummy_FormItemDummy));
 // EXTERNAL MODULE: ./src/forms/FormLabel/FormLabel.pcss
-var FormLabel_FormLabel = __webpack_require__(28);
+var FormLabel_FormLabel = __webpack_require__(33);
 
 // CONCATENATED MODULE: ./src/forms/FormLabel/FormLabel.jsx
  /** @module FormLabel
@@ -3398,13 +4965,13 @@ FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$PureComponent) {in
 
 /* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true, solid: true })(FormLabel_FormLabel_FormLabel));
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton.pcss
-var FormButton_FormButton = __webpack_require__(29);
+var FormButton_FormButton = __webpack_require__(34);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Variations.pcss
-var FormButton_Variations = __webpack_require__(30);
+var FormButton_Variations = __webpack_require__(35);
 
 // EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Themes.pcss
-var FormButton_Themes = __webpack_require__(31);
+var FormButton_Themes = __webpack_require__(36);
 
 // CONCATENATED MODULE: ./src/forms/FormButton/FormButton.jsx
  /** @module FormButton
@@ -3412,7 +4979,7 @@ var FormButton_Themes = __webpack_require__(31);
                                                                                                                                                                                                                                                                                 *  @since 2020.07.20, 19:07
                                                                                                                                                                                                                                                                                 *  @changed 2020.10.29, 03:30
                                                                                                                                                                                                                                                                                 */
-/* eslint-disable react/require-default-props */
+/* eslint-disable -react/require-default-props */
 
 
 
@@ -3525,6 +5092,17 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     function (event) {var _this$props =
 
 
@@ -3536,8 +5114,8 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
       }
     });return _this;}var _proto = FormButton.prototype; // Helpers...
   _proto.hasIcon = function hasIcon() {var _this$props2 = this.props,icon = _this$props2.icon,hasIcon = _this$props2.hasIcon;return !!(hasIcon || icon);};_proto.hasText = function hasText() {var _this$props3 = this.props,hasText = _this$props3.hasText,onlyIcon = _this$props3.onlyIcon,children = _this$props3.children,text = _this$props3.text;return !onlyIcon && !!(hasText || text || children);};_proto.getClassName = function getClassName() {// TODO: Refactor properties!
-    var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,largeIcon = _this$props4.largeIcon,rotatedIcon = _this$props4.rotatedIcon,onlyIcon = _this$props4.onlyIcon,rightIcon = _this$props4.rightIcon,theme = _this$props4.theme,onDark = _this$props4.onDark,plain = _this$props4.plain,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
-      checked: checked, fullWidth: fullWidth, id: id, largeIcon: largeIcon, rotatedIcon: rotatedIcon, onlyIcon: onlyIcon, rightIcon: rightIcon, solid: true, theme: theme, onDark: onDark, plain: plain, type: type, variation: variation };var classList = cnFormButton(extends_default()({}, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
+    var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,inline = _this$props4.inline,largeIcon = _this$props4.largeIcon,onDark = _this$props4.onDark,onlyIcon = _this$props4.onlyIcon,plain = _this$props4.plain,rightIcon = _this$props4.rightIcon,rotatedIcon = _this$props4.rotatedIcon,theme = _this$props4.theme,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
+      checked: checked, fullWidth: fullWidth, id: id, inline: inline, largeIcon: largeIcon, onDark: onDark, onlyIcon: onlyIcon, plain: plain, rightIcon: rightIcon, rotatedIcon: rotatedIcon, theme: theme, type: type, variation: variation };var staticMods = { solid: true };var classList = cnFormButton(extends_default()({}, staticMods, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
   ; // Render...
   _proto.renderIcon = function renderIcon() {var hasIcon = this.hasIcon();
     if (hasIcon) {var
@@ -3606,27 +5184,22 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
     var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
     return element;
   };return FormButton;}(external_react_default.a.PureComponent /** @lends @FormButton.prototype */);defineProperty_default()(FormButton_FormButton_FormButton, "propTypes", { // TODO!!!
-  id: prop_types_default.a.string, // hoverable: PropTypes.bool, // FormItem: Allowed hovered events
-  // focusable: PropTypes.bool, // FormItem: Allowed focused events
-  // TODO: Actualize & check next properties, implement cosmos fixtures...
-  // TODO: formId -- id for form element (passed on form submit)
-  // name: PropTypes.string, // ???
-  disabled: prop_types_default.a.bool, onClick: prop_types_default.a.func, hasIcon: prop_types_default.a.bool, // Optional
-  hasText: prop_types_default.a.bool, // Optional
-  text: prop_types_default.a.string, // Text content (may be passed as node children)
-  icon: prop_types_default.a.oneOfType([// Icon component. May be as image resource loaded with `file/url-loader` as `FontAwesomeIcon` component.
-  prop_types_default.a.string, prop_types_default.a.object]), onlyIcon: prop_types_default.a.bool, // Only icon
-  largeIcon: prop_types_default.a.bool, // Large icon
-  rightIcon: prop_types_default.a.bool, // Icon placed at right side
   // TODO: size: PropTypes.string, // Different form item sizes? (eg: md -- default, sm, xs, lg, xl, xxl)
-  theme: prop_types_default.a.string, // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
-  onDark: prop_types_default.a.bool, // On dark background
-  fullWidth: prop_types_default.a.bool, // Occupies all horizontal space
+  checked: prop_types_default.a.bool, // FormItem: Checked state
+  disabled: prop_types_default.a.bool, fullWidth: prop_types_default.a.bool, // Occupies all horizontal space
+  hasIcon: prop_types_default.a.bool, // Optional
+  hasText: prop_types_default.a.bool, // Optional
+  icon: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Icon component. May be as image resource loaded with `file/url-loader` as `FontAwesomeIcon` component.
+  id: prop_types_default.a.string, inline: prop_types_default.a.bool, largeIcon: prop_types_default.a.bool, // Large icon
+  onClick: prop_types_default.a.func, onDark: prop_types_default.a.bool, // On dark background
+  onlyIcon: prop_types_default.a.bool, // Only icon
   plain: prop_types_default.a.bool, // ??? Plain icon (no border & background -- if no style specified, looks as link)
-  checked: prop_types_default.a.bool // FormItem: Checked state
-});/* harmony default export */ var forms_FormButton_FormButton = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true })(FormButton_FormButton_FormButton));
+  rightIcon: prop_types_default.a.bool, // Icon placed at right side
+  text: prop_types_default.a.string, // Text content (may be passed as node children)
+  theme: prop_types_default.a.string // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
+});defineProperty_default()(FormButton_FormButton_FormButton, "defaultProps", { checked: null, disabled: null, fullWidth: null, hasIcon: null, hasText: null, icon: null, id: null, inline: null, largeIcon: null, onClick: null, onDark: null, onlyIcon: null, plain: null, rightIcon: null, text: null, theme: null });/* harmony default export */ var forms_FormButton_FormButton = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true })(FormButton_FormButton_FormButton));
 // EXTERNAL MODULE: ./src/forms/FormGroup/FormGroup.pcss
-var FormGroup_FormGroup = __webpack_require__(32);
+var FormGroup_FormGroup = __webpack_require__(37);
 
 // CONCATENATED MODULE: ./src/forms/FormGroup/FormGroup.jsx
  /** @module FormGroup
@@ -3729,7 +5302,7 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {in
  */
 
 
-// import { cn } from 'utils'
+// import { cn } from 'utils/configure'
 
 
 
@@ -3776,7 +5349,7 @@ var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @le
 
 /* harmony default export */ var forms_FormLabeledGroup_FormLabeledGroup = (FormLabeledGroup_FormLabeledGroup);
 // EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
-var FormButtonGroup_FormButtonGroup = __webpack_require__(33);
+var FormButtonGroup_FormButtonGroup = __webpack_require__(38);
 
 // CONCATENATED MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.jsx
  /** @module FormButtonGroup
@@ -3846,7 +5419,7 @@ FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$
 
 /* harmony default export */ var forms_FormButtonGroup_FormButtonGroup = (forms_FormItemHOC_FormItemHOC(FormButtonGroup_FormButtonGroup_FormButtonGroup));
 // EXTERNAL MODULE: ./src/forms/FormInputGroup/FormInputGroup.pcss
-var FormInputGroup_FormInputGroup = __webpack_require__(34);
+var FormInputGroup_FormInputGroup = __webpack_require__(39);
 
 // CONCATENATED MODULE: ./src/forms/FormInputGroup/FormInputGroup.jsx
  /** @module FormInputGroup
@@ -3912,7 +5485,7 @@ FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$Pur
   // flow: PropTypes.bool,
 });/* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
 // EXTERNAL MODULE: ./src/forms/FormDelim/FormDelim.pcss
-var FormDelim_FormDelim = __webpack_require__(35);
+var FormDelim_FormDelim = __webpack_require__(40);
 
 // CONCATENATED MODULE: ./src/forms/FormDelim/FormDelim.jsx
 /** @module FormDelim
@@ -3936,7 +5509,7 @@ var FormDelim_FormDelim_FormDelim = function FormDelim(props) {var
 
 /* harmony default export */ var forms_FormDelim_FormDelim = (FormDelim_FormDelim_FormDelim);
 // EXTERNAL MODULE: ./src/forms/FormSpacer/FormSpacer.pcss
-var FormSpacer_FormSpacer = __webpack_require__(36);
+var FormSpacer_FormSpacer = __webpack_require__(41);
 
 // CONCATENATED MODULE: ./src/forms/FormSpacer/FormSpacer.jsx
 /** @module FormSpacer
@@ -3960,7 +5533,7 @@ var FormSpacer_FormSpacer_FormSpacer = function FormSpacer(props) {var
 
 /* harmony default export */ var forms_FormSpacer_FormSpacer = (FormSpacer_FormSpacer_FormSpacer);
 // EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
-var FormText_FormText = __webpack_require__(37);
+var FormText_FormText = __webpack_require__(42);
 
 // CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
  /** @module FormText
@@ -4040,7 +5613,7 @@ FormText_FormText_FormText = /*#__PURE__*/function (_React$PureComponent) {inher
 
 /* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
 // EXTERNAL MODULE: ./src/forms/FormSelect/FormSelect.pcss
-var FormSelect_FormSelect = __webpack_require__(38);
+var FormSelect_FormSelect = __webpack_require__(43);
 
 // CONCATENATED MODULE: ./src/forms/FormSelect/FormSelect.jsx
  /** @module FormSelect
@@ -4258,7 +5831,7 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$PureComponent) 
 
 /* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true })(FormSelect_FormSelect_FormSelect));
 // EXTERNAL MODULE: ./src/forms/FormTextInput/FormTextInput.pcss
-var FormTextInput_FormTextInput = __webpack_require__(39);
+var FormTextInput_FormTextInput = __webpack_require__(44);
 
 // CONCATENATED MODULE: ./src/forms/FormTextInput/FormTextInput.jsx
  /** @module FormTextInput
@@ -4509,7 +6082,7 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureCo
 
 /* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
 // EXTERNAL MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.pcss
-var FormPasswordInput_FormPasswordInput = __webpack_require__(40);
+var FormPasswordInput_FormPasswordInput = __webpack_require__(45);
 
 // CONCATENATED MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.jsx
  /** @module FormPasswordInput
@@ -5448,10 +7021,10 @@ var FormBooleanHOC = function FormBooleanHOC(params) {
 // export default FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormBooleanHOC)
 /* harmony default export */ var FormBooleanHOC_FormBooleanHOC = (FormBooleanHOC);
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio.pcss
-var FormRadio_FormRadio = __webpack_require__(41);
+var FormRadio_FormRadio = __webpack_require__(46);
 
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio-Themes.pcss
-var FormRadio_Themes = __webpack_require__(42);
+var FormRadio_Themes = __webpack_require__(47);
 
 // CONCATENATED MODULE: ./src/forms/FormRadio/FormRadio.jsx
  /** @module FormRadio
@@ -5579,7 +7152,7 @@ FormRadio_FormRadio_FormRadio));
 //
 // export FormPager from './FormPager'
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(44);
+var Hello_Hello = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -5614,13 +7187,13 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(45);
+var build = __webpack_require__(50);
 
 // CONCATENATED MODULE: ./src/build.js
 /** @module build
  *  @desc Library exportable ditributive
  *  @since 2020.05.19, 17:16
- *  @changed 2020.05.27, 22:58
+ *  @changed 2020.12.22, 00:32
  */
 
 
@@ -5631,6 +7204,10 @@ var build = __webpack_require__(45);
 
 // Basic styles
 
+
+
+
+var RootComponent = elements_PopupsContainer_PopupsContainer;
 
 /***/ })
 /******/ ]);

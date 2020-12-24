@@ -1,10 +1,69 @@
 /** @module InlineIcon.styles
  *  @since 2020.10.07, 02:08
- *  @changed 2020.10.07, 02:08
+ *  @changed 2020.12.24, 04:05
  */
 
-.InlineIcon {
-}
+/* TODO: Theme styles*/
+
+.InlineIcon_theme_primary { color: #07f}
+
+.InlineIcon_theme_secondary { color: #677}
+
+/* Theme colors...*/
+
+.InlineIcon_theme_error { color: #c33}
+
+.InlineIcon_theme_warn { color: #f73}
+
+.InlineIcon_theme_success { color: #593}
+
+.InlineIcon_theme_info { color: #07f}
+
+.InlineIcon_theme_confirm { color: #891}
+
+.InlineIcon_theme_select { color: #05b}
+
+.InlineIcon_theme_maroon { color: #800000}
+
+.InlineIcon_theme_red { color: #ff0000}
+
+.InlineIcon_theme_purple { color: #800080}
+
+.InlineIcon_theme_fuchsia { color: #ff00ff}
+
+.InlineIcon_theme_green { color: #008000}
+
+.InlineIcon_theme_olive { color: #808000}
+
+.InlineIcon_theme_navy { color: #000080}
+
+.InlineIcon_theme_blue { color: #0000ff}
+
+.InlineIcon_theme_teal { color: #008080}
+
+.InlineIcon_theme_orange { color: #ffa500}
+
+.InlineIcon_theme_blueviolet { color: #8a2be2}
+
+.InlineIcon_theme_brown { color: #a52a2a}
+
+.InlineIcon_theme_cadetblue { color: #5f9ea0}
+
+.InlineIcon_theme_darkblue { color: #00008b}
+
+.InlineIcon_theme_darkcyan { color: #008b8b}
+
+.InlineIcon_theme_darkgoldenrod { color: #b8860b}
+
+.InlineIcon_theme_darkorange { color: #ff8c00}
+
+.InlineIcon_theme_darkorchid { color: #9932cc}
+
+.InlineIcon_theme_darkred { color: #8b0000}
+
+.InlineIcon_theme_darkslateblue { color: #483d8b}
+
+.InlineIcon_theme_darkslategray { color: #2f4f4f}
 
 /** @module FormItemHOC.style
  *  @since 2019.09.25, 19:18
@@ -199,508 +258,10 @@
     }
   }
 
-/** @module Modal.styles
- *  @since 2020.12.21, 22:58
- *  @changed 2020.12.21, 22:58
- */
-
-.Modal, .Modal-Wrapper {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-  }
-
-.Modal-Wrapper, .Modal-Wrapper_theme_transparentBlack {
-      background-color: rgba(0,0,0,.5);
-    }
-
-.Modal-Wrapper_theme_opaqueGray {
-      background-color: #666;
-    }
-
-.Modal-Wrapper_theme_opaqueWhite {
-      background-color: #fff;
-    }
-
-.Modal-Wrapper_theme_transparentWhite {
-      background-color: rgba(255,255,255,.5);
-    }
-
-.Modal-Window {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    overflow: hidden;
-    /* max-width: 100%;*/
-    /* z-index: 100; // Lift above all other regular elements*/
-    background: #fff;
-    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
-            box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* , inset 0 0 1px 1px color(#fff alpha(1));*/
-    border-radius: 3px;
-    /* border-radius: 10px;*/
-    margin: 20px auto;
-    position: fixed;
-    /* position: relative;*/
-    /* Center window:*/
-    /* v1 (using translate, blurry):*/
-    top: 40%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); /* Blurry*/
-    -webkit-transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px));
-            transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px)); /* Workaround for modern browsers*/
-    /* TODO: Use flex?*/
-    /* // v2:*/
-    /* left: calc(-50vw + 50%);*/
-    /* right: calc(-50vw + 50%);*/
-    /* margin-left: auto;*/
-    /* margin-right: auto;*/
-  }
-
-.Modal { /* Animation transitions...*/
-    /* $windowTimeout: $(animateTime)ms; // Slow*/
-    /* $windowTimeout: $(transitionTime)ms; // Quick*/
-    /* CSSTransition styles:*/
-    /* - *-enter*/
-    /* - *-enter-active*/
-    /* - *-enter-done*/
-    /* - *-exit*/
-    /* - *-exit-active*/
-    /* - *-exit-done*/
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
-.Modal .Modal-Window {
-      opacity: 0;
-      margin-top: 0;
-    }
-
-.Modal-enter {
-      /* opacity: 0;*/
-      visibility: visible;
-    }
-
-.Modal-enter .Modal-Window {
-        margin-top: -30px;
-      }
-
-.Modal-enter-active {
-      opacity: 1;
-      -webkit-transition: opacity 250ms;
-      transition: opacity 250ms;
-    }
-
-.Modal-enter-active .Modal-Window {
-        -webkit-transition: opacity 250ms, margin-top 250ms;
-        transition: opacity 250ms, margin-top 250ms;
-        opacity: 1;
-        margin-top: 0px;
-      }
-
-.Modal-enter-done {
-      visibility: visible;
-      opacity: 1;
-      pointer-events: all;
-    }
-
-.Modal-enter-done .Modal-Window {
-        opacity: 1;
-      }
-
-.Modal-exit {
-      visibility: visible;
-      opacity: 1;
-    }
-
-.Modal-exit .Modal-Window {
-        opacity: 1;
-      }
-
-.Modal-exit-active {
-      opacity: 0;
-      -webkit-transition: opacity 250ms;
-      transition: opacity 250ms;
-    }
-
-.Modal-exit-active .Modal-Window {
-        -webkit-transition: opacity 250ms, margin-top 250ms;
-        transition: opacity 250ms, margin-top 250ms;
-        opacity: 0;
-        margin-top: -30px;
-      }
-
-.Modal-exit-done {
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-.Modal-exit-done .Modal-Window {
-        opacity: 0;
-      }
-
-/** @module MenuItem.styles
- *  @since 2020.10.27, 03:05
- *  @changed 2020.10.27, 03:06
- */
-
-.MenuItem {
-  padding: 2px 6px;
-}
-
-.MenuItem:not(.MenuItem_disabled) {
-    cursor: pointer;
-  }
-
-.MenuItem.FormItem_hovered {
-      /* TODO: Use themes (via `themeColors`)?*/
-      background-color: #07f;
-      color: #fff;
-    }
-
-.MenuItem_checkable,
-  .MenuItem_withIcon {
-    position: relative;
-  }
-
-.MenuItem_checkable .MenuItem-Icon, .MenuItem_withIcon .MenuItem-Icon {
-      position: absolute;
-      left: 8px;
-      opacity: .5; /* ???*/
-      /* color: $(primaryColor);*/
-    }
-
-.MenuItem_checkable .MenuItem-Text, .MenuItem_withIcon .MenuItem-Text {
-      padding-left: 25px;
-    }
-
-.MenuItem-Text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-/** @module Menu.styles
- *  @since 2020.10.27, 02:58
- *  @changed 2020.10.27, 02:58
- */
-
-.Menu:not(.Menu_layout_horizontal) {
-    max-width: 100%;
-  }
-
-.Menu:not(.Menu_layout_horizontal) .MenuItem {
-      display: block;
-    }
-
-.Menu:not(.Menu_layout_horizontal) .MenuItem_fullWidth {
-        width: 100%;
-      }
-
-/** @module PopupsContainer.pcss
- *  @class PopupsContainer
- *  @since 2020.12.21, 23:37
- *  @changed 2020.12.21, 23:37
- */
-
-.PopupsContainer {
-  /*!KEEP*/
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  /* // visibility: hidden;*/
-}
-
-/** @module FormItemDummy.styles
- *  @class FormItemDummy
- *  @since 2020.07.20, 19:24
- *  @changed 2020.07.20, 19:24
- */
-
-.FormItemDummy {
-
-  display: block;
-
-  -webkit-box-sizing: border-box;
-
-          box-sizing: border-box;
-
-  /* @mixin debug; */ /* Hide default css frame for `button` tags (if applied)*/
-
-  /* &_plain.FormItem_hovered {*/
-  /*   ^&-Text {*/
-  /*     text-decoration: underline;*/
-  /*   }*/
-  /*   ^&-Icon {*/
-  /*     color: color($neutralColor shade(5));*/
-  /*   }*/
-  /* }*/
-
-  /* &:before {*/
-  /*   border-radius: @calc($formItemBorderRadius - 1)px;*/
-  /*   position: absolute;*/
-  /*   display: block;*/
-  /*   left: 1px;*/
-  /*   top: 1px;*/
-
-  /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
-
-}
-
-.FormItemDummy_solid {
-    height: 32px;
-    line-height: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-.FormItemDummy {
-
-  border: 1px solid transparent;
-  border-radius: 3px;
-  padding: 0 8px;
-
-  position: relative;
-
-  cursor: default;
-
-}
-
-/* }*/
-
-.FormItemDummy.FormItem_hoverable:not(.FormItem_disabled) {
-    cursor: pointer;
-  }
-
-/*   display: block;*/
-
-.FormItemDummy-Icon {
-    color: #ccc; /* Default icon color*/
-  }
-
-/* &_fullWidth {*/
-
-.FormItemDummy-Text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* max-width: 100%;*/
-  }
-
-/* display: inline-block;*/
-
-.FormItemDummy-Icon + .FormItemDummy-Text { /* Spacing between icon and text*/
-    margin-left: 8px;
-  }
-
-/* }*/
-
-.FormItemDummy-Text, .FormItemDummy-Icon {
-    display: block;
-    display: inline-block;
-    position: relative;
-    /* z-index: 1;*/
-  }
-
-/*   // z-index: 0;*/
-
-.FormItemDummy_hasIcon {
-    min-width: 32px;
-  }
-
-/*   content: '';*/
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Icon {
-      position: absolute;
-    }
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Text {
-      margin-left: 24px;
-    }
-
-/*   bottom: 1px;*/
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Text {
-      margin-right: 24px;
-      margin-left: 0;
-    }
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Icon {
-      position: absolute;
-      right: 0;
-      right: 8px;
-    }
-
-/*   right: 1px;*/
-
-.FormItemDummy_style {
-
-    /* TODO: styles: error, warn, success, info*/
-  }
-
-/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
-
-.FormItemDummy_style_default {
-      border-color: #ccc;
-      background-color: rgb(227, 227, 227);
-    }
-
-/* box-shadow: inset 0 0 0 1px $borderColor;*/
-
-.FormItemDummy_style_default .FormItemDummy-Text {
-        color: #000;
-      }
-
-.FormItemDummy_style_default .FormItemDummy-Icon {
-        color: #aaa;
-      }
-
-.FormItemDummy_style_default.FormItem_hovered {
-        border-color: rgb(184, 184, 184);
-        background-color: rgb(211, 211, 211);
-        /* ^^^&-Icon {*/
-        /*   // color: color($iconColor shade(10));*/
-        /* }*/
-      }
-
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
-
-.FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Text {
-          opacity: .9;
-        }
-
-/* Button styles...*/
-
-.FormItemDummy_style_primary {
-      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
-      border-color: rgb(0, 107, 230);
-      background-color: #07f;
-    }
-
-/* box-shadow: inset 0 0 0 1px $borderColor;*/
-
-.FormItemDummy_style_primary .FormItemDummy-Text {
-        color: #fff;
-      }
-
-.FormItemDummy_style_primary .FormItemDummy-Icon {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-.FormItemDummy_style_primary.FormItem_hovered {
-        border-color: rgb(0, 96, 207);
-        background-color: rgb(0, 111, 237);
-        /* ^^^&-Icon {*/
-        /*   // color: color($iconColor shade(10));*/
-        /* }*/
-      }
-
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
-
-.FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Text {
-          opacity: .9;
-        }
-
-.FormItemDummy_style_secondary { /* $formItemBorderColor;*/
-      border-color: rgb(92, 107, 107);
-      background-color: #677;
-    }
-
-/* box-shadow: inset 0 0 0 1px $borderColor;*/
-
-.FormItemDummy_style_secondary .FormItemDummy-Text {
-        color: #fff;
-      }
-
-.FormItemDummy_style_secondary .FormItemDummy-Icon {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-.FormItemDummy_style_secondary.FormItem_hovered {
-        border-color: rgb(83, 96, 96);
-        background-color: rgb(95, 111, 111);
-        /* ^^^&-Icon {*/
-        /*   // color: color($iconColor shade(10));*/
-        /* }*/
-      }
-
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
-
-.FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Text {
-          opacity: .9;
-        }
-
-/** @module FormLabel.styles
- *  @since 2020.10.06, 23:45
- *  @changed 2020.10.06, 23:46
- */
-
-.FormLabel {
-  /* &_fixed, &_firstInBlock {*/
-  /*   [>!KEEP<]*/
-  /* }*/
-}
-
-/*!KEEP*/
-
-label.FormLabel-Control {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    /* border-radius: $(formItemBorderRadius)px; */
-    padding: 0 8px;
-    width: 100%;
-    height: 32px;
-    line-height: 32px;
-    background: none;
-    border: none;
-    outline: 0;
-    display: inline-block;
-    color: #444;
-  }
-
-label.FormLabel-Control:focus {
-    outline: 0;
-  }
-
-label.FormLabel-Control:placeholder {
-    color: red;
-    /* color: $formItemPlaceholderColor; */
-  }
-
-label.FormLabel-Control:-ms-clear {
-    display: none;
-  }
-
-label.FormLabel-Control {
-    margin-bottom: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Override bootstrap styles*/
-
-.FormLabel_firstInBlock label.FormLabel-Control { /* First label in block-level (non-flow) group: indent by left side*/
-      padding-left: 0;
-    }
-
-label.FormLabel-Control[for] {
-      cursor: pointer;
-    }
-
 /** @module FormButton.styles
  *  @desc Only basic elements geometry
  *  @since 2020.07.20, 19:24
- *  @changed 2020.10.21, 23:42
+ *  @changed 2020.12.24, 04:30
  */
 
 .FormButton {
@@ -744,7 +305,6 @@ label.FormLabel-Control[for] {
 
 .FormButton-Icon {
     color: #ccc; /* Default icon color*/
-    left: 8px;
   }
 
 /* border-width: 1px;*/
@@ -767,6 +327,7 @@ label.FormLabel-Control[for] {
 
 .FormButton_hasText.FormButton_hasIcon .FormButton-Icon {
       position: absolute;
+      left: 8px;
     }
 
 .FormButton_hasText.FormButton_hasIcon .FormButton-Text {
@@ -784,14 +345,19 @@ label.FormLabel-Control[for] {
       left: auto;
     }
 
+.FormButton_hasIcon:not(.FormButton_hasText),
+  .FormButton_onlyIcon {
+    text-align: center;
+  }
+
 .FormButton.FormItem_hovered {
-    z-index: 10; /* Lift active item up*/
+    z-index: 10; /* Lift active item up (m.b. used in button-groups? Don't forget to lift modals, popups etc.)*/
   }
 
 /** @module FormButton-Styles.styles
  *  @desc Additional elements variations
  *  @since 2020.07.20, 19:24
- *  @changed 2020.10.29, 03:30
+ *  @changed 2020.12.24, 04:09
  */
 
 .FormButton {
@@ -816,8 +382,14 @@ label.FormLabel-Control[for] {
     }
 
 .FormButton_inline {
-    display: inline-block;
+    /* display: inline-block;*/
+    float: left;
   }
+
+.FormButton_largeIcon .FormButton-Icon svg {
+        font-size: 20px; /* 20px;*/
+        margin-top: 5px;
+      }
 
 .FormButton_rotatedIcon .FormButton-Icon {
       -webkit-transform: rotate(0deg);
@@ -884,7 +456,7 @@ label.FormLabel-Control[for] {
 
 /** @module FormButton-Styles.styles
  *  @since 2020.07.20, 19:24
- *  @changed 2020.10.21, 22:52
+ *  @changed 2020.12.24, 04:09
  */
 
 .FormButton {
@@ -892,6 +464,46 @@ label.FormLabel-Control[for] {
   /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
 
 }
+
+/* @mixin buttonStyle $bgColor, $borderColor, $iconColor, $textColor;*/
+
+.FormButton_plain .FormButton-Text,
+    .FormButton_plain .FormButton-Icon {
+      color: #000;
+    }
+
+/* $neutralDarkColor;*/
+
+.FormButton_plain .FormButton-Icon {
+      opacity: .8;
+    }
+
+/* $borderColor: transparent; // $formItemBorderColor;*/
+
+.FormButton_plain .FormButton-Icon {
+      opacity: .3;
+    }
+
+/* $bgColor: transparent; // color($neutralLightColor tint(10));*/
+
+.FormButton_plain.FormItem_hovered {
+      border-color: transparent;
+    }
+
+.FormButton_plain.FormItem_hovered .FormButton-Text {
+        opacity: 1;
+      }
+
+.FormButton_plain.FormItem_hovered .FormButton-Icon {
+        opacity: .5;
+      }
+
+/* $neutralDarkColor;*/
+
+.FormButton_plain.FormButton_onDark .FormButton-Icon,
+      .FormButton_plain.FormButton_onDark .FormButton-Text {
+        color: #fff;
+      }
 
 .FormButton_theme {
 
@@ -939,12 +551,6 @@ label.FormLabel-Control[for] {
   }
 
 /* ... ???*/
-
-.FormButton_theme_plain.FormButton_onDark .FormButton-Text {
-          color: #fff;
-        }
-
-/* @define-mixin styledDarkButton $bgColor, $textColor: $specialContrastColor {*/
 
 .FormButton_theme_default {
       border-color: #ccc;
@@ -1153,7 +759,7 @@ label.FormLabel-Control[for] {
 
 /*   $iconColor: $neutralTintedDarkColor;*/
 
-.FormButton_theme_info { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(31, 138, 153); background-color: #29a;}
+.FormButton_theme_info { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(0, 107, 230); background-color: #07f;}
 
 /* box-shadow: inset 0 0 0 1px $borderColor;*/
 
@@ -1166,8 +772,8 @@ label.FormLabel-Control[for] {
       }
 
 .FormButton_theme_info.FormItem_hovered {
-        border-color: rgb(28, 124, 138);
-        background-color: rgb(32, 142, 158);
+        border-color: rgb(0, 96, 207);
+        background-color: rgb(0, 111, 237);
         /* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
         /* .FormButton-Icon {*/
         /*   // color: color($iconColor shade(10));*/
@@ -1267,7 +873,7 @@ label.FormLabel-Control[for] {
           opacity: .9;
         }
 
-/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+/* @define-mixin styledDarkButton $bgColor, $textColor: $specialContrastColor {*/
 
 .FormButton_theme_red { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 0, 0); background-color: #ff0000;}
 
@@ -1296,7 +902,7 @@ label.FormLabel-Control[for] {
           opacity: .9;
         }
 
-/* Button styles...*/
+/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
 
 .FormButton_theme_purple { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(115, 0, 115); background-color: #800080;}
 
@@ -1324,6 +930,8 @@ label.FormLabel-Control[for] {
 .FormButton_theme_purple.FormItem_hovered .FormButton-Icon, .FormButton_theme_purple.FormItem_hovered .FormButton-Text {
           opacity: .9;
         }
+
+/* Button themes...*/
 
 .FormButton_theme_fuchsia { /* $bgColor: $secondaryColor;*/ /* $formItemBorderColor;*/ /* $textColor: $secondaryContrastColor;*/ border-color: rgb(230, 0, 230); background-color: #ff00ff;}
 
@@ -1810,6 +1418,724 @@ label.FormLabel-Control[for] {
 .FormButton_theme_darkslategray.FormItem_hovered .FormButton-Icon, .FormButton_theme_darkslategray.FormItem_hovered .FormButton-Text {
           opacity: .9;
         }
+
+/** @module Modal.styles
+ *  @desc Basic modal layout styles
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.24, 02:43
+ */
+
+.Modal, .Modal-Wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+.Modal-Wrapper {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+
+.Modal-Window {
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    overflow: hidden;
+    margin: 20px auto; /* Auto size & center window horizontally*/
+    /* Center window vertically:*/
+    top: 40%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+
+/* Default ('auto') size...*/
+
+.Modal-Window {
+    min-width: 300px;
+  }
+
+@media (max-width: 340px) {
+
+.Modal-Window {
+      margin: 20px;
+      min-width: auto
+  }
+    }
+
+/* Window widths (based on `config.css.modalSizes`)...*/
+
+.Modal-Window_width_xs {
+        margin: 20px;
+      }
+
+@media (min-width: 240px) {
+
+.Modal-Window_width_xs {
+          margin: 20px auto;
+          width: 200px
+      }
+        }
+
+.Modal-Window_width_sm {
+        margin: 20px;
+      }
+
+@media (min-width: 440px) {
+
+.Modal-Window_width_sm {
+          margin: 20px auto;
+          width: 400px
+      }
+        }
+
+.Modal-Window_width_md {
+        margin: 20px;
+      }
+
+@media (min-width: 640px) {
+
+.Modal-Window_width_md {
+          margin: 20px auto;
+          width: 600px
+      }
+        }
+
+.Modal-Window_width_lg {
+        margin: 20px;
+      }
+
+@media (min-width: 840px) {
+
+.Modal-Window_width_lg {
+          margin: 20px auto;
+          width: 800px
+      }
+        }
+
+.Modal-Window_width_xl {
+        margin: 20px;
+      }
+
+@media (min-width: 1040px) {
+
+.Modal-Window_width_xl {
+          margin: 20px auto;
+          width: 1000px
+      }
+        }
+
+.Modal-Window_width_xxl {
+        margin: 20px;
+      }
+
+@media (min-width: 1240px) {
+
+.Modal-Window_width_xxl {
+          margin: 20px auto;
+          width: 1200px
+      }
+        }
+
+/* Layout items: Window, Header, Container, Content, Layout, LayoutMain, Actions*/
+
+.Modal-Window,
+  .Modal-Header,
+  .Modal-Container,
+  .Modal-Content,
+  .Modal-Layout,
+  .Modal-LayoutMain {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-align: stretch;
+        align-items: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    /* align-items: center;*/
+    /* align-content: center;*/
+  }
+
+/* Sizes...*/
+
+.Modal-Window {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    /* border: 1px solid blue;*/
+  }
+
+.Modal-Header {
+    /* border: 1px solid green;*/
+    -ms-flex-align: center;
+        align-items: center;
+    background-color: #e0e0e0;
+    padding: 8px 10px;
+  }
+
+.Modal-HeaderIcon,
+  .Modal-HeaderTitle,
+  .Modal-HeaderCloseButton {
+    padding: 0 5px;
+  }
+
+.Modal-HeaderIcon {
+    padding-left: 7px; /* Depends on icon shape & thickness?*/
+  }
+
+.Modal-HeaderCloseButton {
+    padding-right: 0;
+  }
+
+.Modal-HeaderIcon {
+    width: 32px;
+    text-align: center;
+    color: #999;
+  }
+
+/* color: #000; // $neutralColor;*/
+
+.Modal-HeaderIcon .InlineIcon {
+      display: inline-block;
+      position: relative;
+      vertical-align: bottom;
+    }
+
+.Modal-HeaderIcon .InlineIcon svg {
+        font-size: 28px; /* $(fontSizeXl)px; // 20px;*/
+        margin-top: 2px;
+      }
+
+.Modal-HeaderTitle {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    /* border: 1px solid blue;*/
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24px;
+    /* font-weight: 400;*/
+    color: #999;
+    margin-bottom: 3px;
+  }
+
+.Modal-Layout {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    /* border: 1px solid purple;*/
+    /* align-items: center;*/
+    padding: 10px;
+  }
+
+.Modal-LayoutMain {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    /* border: 1px solid red;*/
+  }
+
+.Modal-Container {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    /* align-self: center;*/
+    /* border: 1px solid blue;*/
+    padding: 10px;
+  }
+
+.Modal-LeftContent {
+    -ms-flex-item-align: center;
+        align-self: center;
+    /* border: 1px solid green;*/
+    padding: 10px;
+  }
+
+.Modal-Actions {
+    padding: 10px;
+  }
+
+/** @module Modal-Themes.styles
+ *  @desc Themes
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.24, 02:43
+ */
+
+.Modal-Wrapper, .Modal-Wrapper_theme_transparentBlack {
+      background-color: rgba(0,0,0,.5);
+    }
+
+.Modal-Wrapper_theme_opaqueGray {
+      background-color: #666;
+    }
+
+.Modal-Wrapper_theme_opaqueWhite {
+      background-color: #fff;
+    }
+
+.Modal-Wrapper_theme_transparentWhite {
+      background-color: rgba(255,255,255,.5);
+    }
+
+.Modal-Window {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);*/
+    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* , inset 0 0 1px 1px color(#fff alpha(1));*/
+    /* border-radius: $(formItemBorderRadius)px;*/
+    border-radius: 5px;
+  }
+
+/** @module Modal-Transitions.styles
+ *  @desc Modal show/hide transitions
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.24, 02:43
+ */
+
+.Modal { /* Animation transitions...*/
+  /* $windowTimeout: $(animateTime)ms; // Slow*/
+  /* $windowTimeout: $(transitionTime)ms; // Quick*/
+  /* CSSTransition styles:*/
+  /* - *-enter*/
+  /* - *-enter-active*/
+  /* - *-enter-done*/
+  /* - *-exit*/
+  /* - *-exit-active*/
+  /* - *-exit-done*/
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.Modal .Modal-Window {
+    opacity: 0;
+    margin-top: 0;
+  }
+
+.Modal-enter {
+    /* opacity: 0;*/
+    visibility: visible;
+  }
+
+.Modal-enter .Modal-Window {
+      margin-top: -30px;
+    }
+
+.Modal-enter-active {
+    opacity: 1;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms;
+  }
+
+.Modal-enter-active .Modal-Window {
+      -webkit-transition: opacity 250ms, margin-top 250ms;
+      transition: opacity 250ms, margin-top 250ms;
+      opacity: 1;
+      margin-top: 0px;
+    }
+
+.Modal-enter-done {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+.Modal-enter-done .Modal-Window {
+      opacity: 1;
+    }
+
+.Modal-exit {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.Modal-exit .Modal-Window {
+      opacity: 1;
+    }
+
+.Modal-exit-active {
+    opacity: 0;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms;
+  }
+
+.Modal-exit-active .Modal-Window {
+      -webkit-transition: opacity 250ms, margin-top 250ms;
+      transition: opacity 250ms, margin-top 250ms;
+      opacity: 0;
+      margin-top: -30px;
+    }
+
+.Modal-exit-done {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+.Modal-exit-done .Modal-Window {
+      opacity: 0;
+    }
+
+/** @module MenuItem.styles
+ *  @since 2020.10.27, 03:05
+ *  @changed 2020.10.27, 03:06
+ */
+
+.MenuItem {
+  padding: 2px 6px;
+}
+
+.MenuItem:not(.MenuItem_disabled) {
+    cursor: pointer;
+  }
+
+.MenuItem.FormItem_hovered {
+      /* TODO: Use themes (via `themeColors`)?*/
+      background-color: #07f;
+      color: #fff;
+    }
+
+.MenuItem_checkable,
+  .MenuItem_withIcon {
+    position: relative;
+  }
+
+.MenuItem_checkable .MenuItem-Icon, .MenuItem_withIcon .MenuItem-Icon {
+      position: absolute;
+      left: 8px;
+      opacity: .5; /* ???*/
+      /* color: $(primaryColor);*/
+    }
+
+.MenuItem_checkable .MenuItem-Text, .MenuItem_withIcon .MenuItem-Text {
+      padding-left: 25px;
+    }
+
+.MenuItem-Text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+/** @module Menu.styles
+ *  @since 2020.10.27, 02:58
+ *  @changed 2020.10.27, 02:58
+ */
+
+.Menu:not(.Menu_layout_horizontal) {
+    max-width: 100%;
+  }
+
+.Menu:not(.Menu_layout_horizontal) .MenuItem {
+      display: block;
+    }
+
+.Menu:not(.Menu_layout_horizontal) .MenuItem_fullWidth {
+        width: 100%;
+      }
+
+/** @module PopupsContainer.pcss
+ *  @class PopupsContainer
+ *  @since 2020.12.21, 23:37
+ *  @changed 2020.12.24, 04:30
+ */
+
+.PopupsContainer {
+  z-index: 500; /* Lift ip to top-most level*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+/** @module FormItemDummy.styles
+ *  @class FormItemDummy
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.07.20, 19:24
+ */
+
+.FormItemDummy {
+
+  display: block;
+
+  -webkit-box-sizing: border-box;
+
+          box-sizing: border-box;
+
+  /* @mixin debug; */ /* Hide default css frame for `button` tags (if applied)*/
+
+  /* &_plain.FormItem_hovered {*/
+  /*   ^&-Text {*/
+  /*     text-decoration: underline;*/
+  /*   }*/
+  /*   ^&-Icon {*/
+  /*     color: color($neutralColor shade(5));*/
+  /*   }*/
+  /* }*/
+
+  /* &:before {*/
+  /*   border-radius: @calc($formItemBorderRadius - 1)px;*/
+  /*   position: absolute;*/
+  /*   display: block;*/
+  /*   left: 1px;*/
+  /*   top: 1px;*/
+
+  /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
+
+}
+
+.FormItemDummy_solid {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+.FormItemDummy {
+
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0 8px;
+
+  position: relative;
+
+  cursor: default;
+
+}
+
+/* }*/
+
+.FormItemDummy.FormItem_hoverable:not(.FormItem_disabled) {
+    cursor: pointer;
+  }
+
+/*   display: block;*/
+
+.FormItemDummy-Icon {
+    color: #ccc; /* Default icon color*/
+  }
+
+/* &_fullWidth {*/
+
+.FormItemDummy-Text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* max-width: 100%;*/
+  }
+
+/* display: inline-block;*/
+
+.FormItemDummy-Icon + .FormItemDummy-Text { /* Spacing between icon and text*/
+    margin-left: 8px;
+  }
+
+/* }*/
+
+.FormItemDummy-Text, .FormItemDummy-Icon {
+    display: block;
+    display: inline-block;
+    position: relative;
+    /* z-index: 1;*/
+  }
+
+/*   // z-index: 0;*/
+
+.FormItemDummy_hasIcon {
+    min-width: 32px;
+  }
+
+/*   content: '';*/
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Icon {
+      position: absolute;
+    }
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Text {
+      margin-left: 24px;
+    }
+
+/*   bottom: 1px;*/
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Text {
+      margin-right: 24px;
+      margin-left: 0;
+    }
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Icon {
+      position: absolute;
+      right: 0;
+      right: 8px;
+    }
+
+/*   right: 1px;*/
+
+.FormItemDummy_style {
+
+    /* TODO: styles: error, warn, success, info*/
+  }
+
+/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+
+.FormItemDummy_style_default {
+      border-color: #ccc;
+      background-color: rgb(227, 227, 227);
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_default .FormItemDummy-Text {
+        color: #000;
+      }
+
+.FormItemDummy_style_default .FormItemDummy-Icon {
+        color: #aaa;
+      }
+
+.FormItemDummy_style_default.FormItem_hovered {
+        border-color: rgb(184, 184, 184);
+        background-color: rgb(211, 211, 211);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+/* Button styles...*/
+
+.FormItemDummy_style_primary {
+      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
+      border-color: rgb(0, 107, 230);
+      background-color: #07f;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_primary .FormItemDummy-Text {
+        color: #fff;
+      }
+
+.FormItemDummy_style_primary .FormItemDummy-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormItemDummy_style_primary.FormItem_hovered {
+        border-color: rgb(0, 96, 207);
+        background-color: rgb(0, 111, 237);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+.FormItemDummy_style_secondary { /* $formItemBorderColor;*/
+      border-color: rgb(92, 107, 107);
+      background-color: #677;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_secondary .FormItemDummy-Text {
+        color: #fff;
+      }
+
+.FormItemDummy_style_secondary .FormItemDummy-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormItemDummy_style_secondary.FormItem_hovered {
+        border-color: rgb(83, 96, 96);
+        background-color: rgb(95, 111, 111);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+/** @module FormLabel.styles
+ *  @since 2020.10.06, 23:45
+ *  @changed 2020.10.06, 23:46
+ */
+
+.FormLabel {
+  /* &_fixed, &_firstInBlock {*/
+  /*   [>!KEEP<]*/
+  /* }*/
+}
+
+/*!KEEP*/
+
+label.FormLabel-Control {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    /* border-radius: $(formItemBorderRadius)px; */
+    padding: 0 8px;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: #444;
+  }
+
+label.FormLabel-Control:focus {
+    outline: 0;
+  }
+
+label.FormLabel-Control:placeholder {
+    color: red;
+    /* color: $formItemPlaceholderColor; */
+  }
+
+label.FormLabel-Control:-ms-clear {
+    display: none;
+  }
+
+label.FormLabel-Control {
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Override bootstrap styles*/
+
+.FormLabel_firstInBlock label.FormLabel-Control { /* First label in block-level (non-flow) group: indent by left side*/
+      padding-left: 0;
+    }
+
+label.FormLabel-Control[for] {
+      cursor: pointer;
+    }
 
 /** @module FormGroup.styles
  *  @class FormGroup
@@ -2447,40 +2773,40 @@ input.FormTextInput-Control::-ms-clear {
 /* Styles. For basic geometry look for `FormRadio.pcss`*/
 
 .FormRadio_theme_info .FormRadio-Frame {
-      -webkit-box-shadow: 0 0 0 2px #29a;
-              box-shadow: 0 0 0 2px #29a;
+      -webkit-box-shadow: 0 0 0 2px #07f;
+              box-shadow: 0 0 0 2px #07f;
       background-color: #fff; /* Actor outer frame ('background' color). Used?*/
     }
 
 .FormRadio_theme_info .FormRadio-Actor {
-      background-color: #29a;
+      background-color: #07f;
     }
 
 .FormItem_hovered.FormRadio_theme_info .FormRadio-Frame {
-        -webkit-box-shadow: 0 0 0 3px rgb(31, 138, 153);
-                box-shadow: 0 0 0 3px rgb(31, 138, 153);
+        -webkit-box-shadow: 0 0 0 3px rgb(0, 107, 230);
+                box-shadow: 0 0 0 3px rgb(0, 107, 230);
       }
 
 .FormItem_hovered.FormRadio_theme_info .FormRadio-Actor {
-        background-color: rgb(31, 138, 153);
+        background-color: rgb(0, 107, 230);
       }
 
 .FormItem_focused.FormRadio_theme_info .FormRadio-Frame {
-        -webkit-box-shadow: 0 0 0 3px rgb(31, 138, 153);
-                box-shadow: 0 0 0 3px rgb(31, 138, 153);
+        -webkit-box-shadow: 0 0 0 3px rgb(0, 107, 230);
+                box-shadow: 0 0 0 3px rgb(0, 107, 230);
       }
 
 .FormItem_focused.FormRadio_theme_info .FormRadio-Actor {
-        background-color: rgb(31, 138, 153);
+        background-color: rgb(0, 107, 230);
       }
 
 .FormItem_hovered.FormItem_focused.FormRadio_theme_info .FormRadio-Frame {
-        -webkit-box-shadow: 0 0 0 3px rgb(27, 122, 136);
-                box-shadow: 0 0 0 3px rgb(27, 122, 136);
+        -webkit-box-shadow: 0 0 0 3px rgb(0, 95, 204);
+                box-shadow: 0 0 0 3px rgb(0, 95, 204);
       }
 
 .FormItem_hovered.FormItem_focused.FormRadio_theme_info .FormRadio-Actor {
-        background-color: rgb(27, 122, 136);
+        background-color: rgb(0, 95, 204);
       }
 
 .FormRadio_theme_confirm .FormRadio-Frame {

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+- 2020.12.24, 21:25 -- v.0.1.7
+- 2020.12.24, 21:13 -- (DONE TODO from 2020.12.24, 04:23) Modal: Using `autoClose` prop (self-close on any action), calling `onAction` handlers on modal deactivating.
+- 2020.12.24, 20:45 -- (DONE TODO from 2020.12.24, 04:18) ActionsContext + Catching actions events from child of `actions` sub-component in Modals.
+- 2020.12.24, 19:00 -- Added ActionsContext module (provides actions context for throwing up actions event throught components tree)
+- 2020.12.24, 18:21 -- Predefined modal sizes (based on `config.css.modalSizes`: xs, sm, md, lg, xl, xxl, using prop `width`).
+- 2020.12.24, 04:31 -- Lift PopupsContainer to topmost level with `z-index`.
+- 2020.12.24, 04:17 -- PD-3504: Modal: window layout (Window, Header, Container, Content, Layout, LayoutMain, Actions), styles, blurry-less window geometry (flex-based), improved click-outside processing (catch mouseleave to cancel click waiting), correct activating on popupInited event in show:true state, firing `onCancel` event on close by click-outside, esc-press, close-button, extra logging disabled; InclineIcon theming (via `config.css.themeColors`), FormButton mods: plain, largeIcon, onlyIcon.
 - 2020.12.23, 00:43 -- PD-3504: Modals: Close-on-click-outside mechanism (closeOnClickOutside prop), close-on-esc (closeOnEscPressed prop), rendering witch active (portal activated) and show (animation triggered) states, global & internal dom events registration, generic modal/popup interface (isVisible, close, open), improved demo fixture, basic wrapper/window & animations styles. Other minor changes (FormButton inline mod, updated PropTypes, WebUiCore RootComponent).
 - 2020.12.22, 04:54 -- PD-3504: PopupsContainer dynamic container + integrated popups/modals manager + init promise & other properties (in config.popups), Modal component + show/hide animations (in progress).
 - 2020.12.21, 19:02 -- PD-3503: Using utils modules (strings, domUtils) from WebUiCore.
@@ -43,5 +50,5 @@
 - 2020.10.05, 20:38 -- v.0.0.15: Extracted `demoSupport.jsx` routines, fixture selection from url query (parameter `fixture`), added avaialble fixtures list if fixture to display is not specified, added DemoWrapper & demoTitle exportable ficture parameters for demo rendering.
 
 <!--
- @changed 2020.12.23, 01:07
+ @changed 2020.12.24, 21:20
 -->

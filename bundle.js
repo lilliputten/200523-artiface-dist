@@ -353,9 +353,9 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.8-201228-0114-build-prod-default",
-  timestamp: "2020.12.28, 01:14",
-  timetag: "201228-0114",
+  buildTag: "v.0.1.8-201228-0117-build-prod-default",
+  timestamp: "2020.12.28, 01:17",
+  timetag: "201228-0117",
   version: "0.1.8" };
 
 /***/ }),
@@ -1626,12 +1626,12 @@ InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$PureComponent) 
     this.props,id = _this$props2.id,tag = _this$props2.tag,title = _this$props2.title,icon = _this$props2.icon,onClick = _this$props2.onClick;
 
     var iconType = typeof icon;
-    if (iconType !== 'string') {
-      debugger;
-    }
+    // if (iconType !== 'string') {
+    //   debugger
+    // }
 
     // Create fortawesome icon element if passed icon image (svg icon)
-    var iconComponent = icon && typeof icon === 'string' ? this.getIconComponent(icon) : icon;
+    var iconComponent = icon && iconType === 'string' ? this.getIconComponent(icon) : icon;
     var content = iconComponent && iconComponent.iconName ? /*#__PURE__*/external_react_default.a.createElement(react_fontawesome_["FontAwesomeIcon"], { className: cnInlineIcon('IconImg'), icon: iconComponent }) : iconComponent;
 
     var renderProps = {

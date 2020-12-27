@@ -138,125 +138,281 @@
           flex: 2 1;
     }
 
-/** @module Popup.styles
- *  @since 2020.10.27, 00:39
- *  @changed 2020.12.18, 01:32
+/** @module FormItemDummy.styles
+ *  @class FormItemDummy
+ *  @since 2020.07.20, 19:24
+ *  @changed 2020.07.20, 19:24
  */
 
-.PopupControl {
-  /*!KEEP*/
+.FormItemDummy {
+
+  display: block;
+
   -webkit-box-sizing: border-box;
+
           box-sizing: border-box;
-  overflow: hidden;
+
+  /* @mixin debug; */ /* Hide default css frame for `button` tags (if applied)*/
+
+  /* &_plain.FormItem_hovered {*/
+  /*   ^&-Text {*/
+  /*     text-decoration: underline;*/
+  /*   }*/
+  /*   ^&-Icon {*/
+  /*     color: color($neutralColor shade(5));*/
+  /*   }*/
+  /* }*/
+
+  /* &:before {*/
+  /*   border-radius: @calc($formItemBorderRadius - 1)px;*/
+  /*   position: absolute;*/
+  /*   display: block;*/
+  /*   left: 1px;*/
+  /*   top: 1px;*/
+
+  /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
+
 }
 
-.Popup {
-  /*!KEEP*/
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  overflow: hidden;
-  /* max-width: 100%;*/
-  /* z-index: 100; // Lift above all other regular elements*/
-  position: absolute;
-  /* display: none;*/
-  background: #fff;
-  -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
-          box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
+.FormItemDummy_solid {
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+.FormItemDummy {
+
+  border: 1px solid transparent;
   border-radius: 3px;
-  visibility: hidden;
-  -webkit-animation-name: WebUiCore_Popup;
-          animation-name: WebUiCore_Popup;
-  -webkit-animation-duration: .3s;
-          animation-duration: .3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  padding: 0 8px;
+
+  position: relative;
+
+  cursor: default;
+
 }
 
-.Popup_open {
-    /* display: block;*/
-    visibility: visible;
-    -webkit-animation-name: WebUiCore_Popup_visible;
-            animation-name: WebUiCore_Popup_visible;
-    pointer-events: all;
+/* }*/
+
+.FormItemDummy.FormItem_hoverable:not(.FormItem_disabled) {
+    cursor: pointer;
   }
 
-@-webkit-keyframes WebUiCore_Popup_visible {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-    20% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-    }
+/*   display: block;*/
+
+.FormItemDummy-Icon {
+    color: #ccc; /* Default icon color*/
   }
 
-@keyframes WebUiCore_Popup_visible {
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-    20% {
-      opacity: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-    }
+/* &_fullWidth {*/
+
+.FormItemDummy-Text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* max-width: 100%;*/
   }
 
-@-webkit-keyframes WebUiCore_Popup {
-    0% {
-      visibility: visible;
-      margin: 0;
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-      opacity: 1;
-    }
-    99% {
-      margin: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-    100% {
-      visibility: hidden;
-      margin: -9999px 0 0 -9999px;
-      opacity: 0;
-    }
+/* display: inline-block;*/
+
+.FormItemDummy-Icon + .FormItemDummy-Text { /* Spacing between icon and text*/
+    margin-left: 8px;
   }
 
-@keyframes WebUiCore_Popup {
-    0% {
-      visibility: visible;
-      margin: 0;
-      -webkit-transform: translateY(0px);
-              transform: translateY(0px);
-      opacity: 1;
-    }
-    99% {
-      margin: 0;
-      -webkit-transform: translateY(10px);
-              transform: translateY(10px);
-    }
-    100% {
-      visibility: hidden;
-      margin: -9999px 0 0 -9999px;
-      opacity: 0;
-    }
+/* }*/
+
+.FormItemDummy-Text, .FormItemDummy-Icon {
+    display: block;
+    display: inline-block;
+    position: relative;
+    /* z-index: 1;*/
   }
+
+/*   // z-index: 0;*/
+
+.FormItemDummy_hasIcon {
+    min-width: 32px;
+  }
+
+/*   content: '';*/
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Icon {
+      position: absolute;
+    }
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Text {
+      margin-left: 24px;
+    }
+
+/*   bottom: 1px;*/
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Text {
+      margin-right: 24px;
+      margin-left: 0;
+    }
+
+.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Icon {
+      position: absolute;
+      right: 0;
+      right: 8px;
+    }
+
+/*   right: 1px;*/
+
+.FormItemDummy_style {
+
+    /* TODO: styles: error, warn, success, info*/
+  }
+
+/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
+
+.FormItemDummy_style_default {
+      border-color: #ccc;
+      background-color: rgb(227, 227, 227);
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_default .FormItemDummy-Text {
+        color: #000;
+      }
+
+.FormItemDummy_style_default .FormItemDummy-Icon {
+        color: #aaa;
+      }
+
+.FormItemDummy_style_default.FormItem_hovered {
+        border-color: rgb(184, 184, 184);
+        background-color: rgb(211, 211, 211);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+/* Button styles...*/
+
+.FormItemDummy_style_primary {
+      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
+      border-color: rgb(0, 107, 230);
+      background-color: #07f;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_primary .FormItemDummy-Text {
+        color: #fff;
+      }
+
+.FormItemDummy_style_primary .FormItemDummy-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormItemDummy_style_primary.FormItem_hovered {
+        border-color: rgb(0, 96, 207);
+        background-color: rgb(0, 111, 237);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+.FormItemDummy_style_secondary { /* $formItemBorderColor;*/
+      border-color: rgb(92, 107, 107);
+      background-color: #677;
+    }
+
+/* box-shadow: inset 0 0 0 1px $borderColor;*/
+
+.FormItemDummy_style_secondary .FormItemDummy-Text {
+        color: #fff;
+      }
+
+.FormItemDummy_style_secondary .FormItemDummy-Icon {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+.FormItemDummy_style_secondary.FormItem_hovered {
+        border-color: rgb(83, 96, 96);
+        background-color: rgb(95, 111, 111);
+        /* ^^^&-Icon {*/
+        /*   // color: color($iconColor shade(10));*/
+        /* }*/
+      }
+
+/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
+
+.FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Text {
+          opacity: .9;
+        }
+
+/** @module FormLabel.styles
+ *  @since 2020.10.06, 23:45
+ *  @changed 2020.10.06, 23:46
+ */
+
+.FormLabel {
+  /* &_fixed, &_firstInBlock {*/
+  /*   [>!KEEP<]*/
+  /* }*/
+}
+
+/*!KEEP*/
+
+label.FormLabel-Control {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    /* border-radius: $(formItemBorderRadius)px; */
+    padding: 0 8px;
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+    background: none;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: #444;
+  }
+
+label.FormLabel-Control:focus {
+    outline: 0;
+  }
+
+label.FormLabel-Control:placeholder {
+    color: red;
+    /* color: $formItemPlaceholderColor; */
+  }
+
+label.FormLabel-Control:-ms-clear {
+    display: none;
+  }
+
+label.FormLabel-Control {
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Override bootstrap styles*/
+
+.FormLabel_firstInBlock label.FormLabel-Control { /* First label in block-level (non-flow) group: indent by left side*/
+      padding-left: 0;
+    }
+
+label.FormLabel-Control[for] {
+      cursor: pointer;
+    }
 
 /** @module FormButton.styles
  *  @desc Only basic elements geometry
@@ -474,8 +630,8 @@
 
 /* $neutralDarkColor;*/
 
-.FormButton_plain .FormButton-Icon {
-      opacity: .8;
+.FormButton_plain .FormButton-Text {
+      opacity: .5;
     }
 
 /* $borderColor: transparent; // $formItemBorderColor;*/
@@ -491,7 +647,7 @@
     }
 
 .FormButton_plain.FormItem_hovered .FormButton-Text {
-        opacity: 1;
+        opacity: .8;
       }
 
 .FormButton_plain.FormItem_hovered .FormButton-Icon {
@@ -1419,724 +1575,6 @@
           opacity: .9;
         }
 
-/** @module Modal.styles
- *  @desc Basic modal layout styles
- *  @since 2020.12.21, 22:58
- *  @changed 2020.12.24, 02:43
- */
-
-.Modal, .Modal-Wrapper {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    overflow: hidden;
-  }
-
-.Modal-Wrapper {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-  }
-
-.Modal-Window {
-    position: relative;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    overflow: hidden;
-    margin: 20px auto; /* Auto size & center window horizontally*/
-    /* Center window vertically:*/
-    top: 40%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-  }
-
-/* Default ('auto') size...*/
-
-.Modal-Window {
-    min-width: 300px;
-  }
-
-@media (max-width: 340px) {
-
-.Modal-Window {
-      margin: 20px;
-      min-width: auto
-  }
-    }
-
-/* Window widths (based on `config.css.modalSizes`)...*/
-
-.Modal-Window_width_xs {
-        margin: 20px;
-      }
-
-@media (min-width: 240px) {
-
-.Modal-Window_width_xs {
-          margin: 20px auto;
-          width: 200px
-      }
-        }
-
-.Modal-Window_width_sm {
-        margin: 20px;
-      }
-
-@media (min-width: 440px) {
-
-.Modal-Window_width_sm {
-          margin: 20px auto;
-          width: 400px
-      }
-        }
-
-.Modal-Window_width_md {
-        margin: 20px;
-      }
-
-@media (min-width: 640px) {
-
-.Modal-Window_width_md {
-          margin: 20px auto;
-          width: 600px
-      }
-        }
-
-.Modal-Window_width_lg {
-        margin: 20px;
-      }
-
-@media (min-width: 840px) {
-
-.Modal-Window_width_lg {
-          margin: 20px auto;
-          width: 800px
-      }
-        }
-
-.Modal-Window_width_xl {
-        margin: 20px;
-      }
-
-@media (min-width: 1040px) {
-
-.Modal-Window_width_xl {
-          margin: 20px auto;
-          width: 1000px
-      }
-        }
-
-.Modal-Window_width_xxl {
-        margin: 20px;
-      }
-
-@media (min-width: 1240px) {
-
-.Modal-Window_width_xxl {
-          margin: 20px auto;
-          width: 1200px
-      }
-        }
-
-/* Layout items: Window, Header, Container, Content, Layout, LayoutMain, Actions*/
-
-.Modal-Window,
-  .Modal-Header,
-  .Modal-Container,
-  .Modal-Content,
-  .Modal-Layout,
-  .Modal-LayoutMain {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -ms-flex-align: stretch;
-        align-items: stretch;
-    -ms-flex-line-pack: stretch;
-        align-content: stretch;
-    /* align-items: center;*/
-    /* align-content: center;*/
-  }
-
-/* Sizes...*/
-
-.Modal-Window {
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-line-pack: stretch;
-        align-content: stretch;
-    /* border: 1px solid blue;*/
-  }
-
-.Modal-Header {
-    /* border: 1px solid green;*/
-    -ms-flex-align: center;
-        align-items: center;
-    background-color: #e0e0e0;
-    padding: 8px 10px;
-  }
-
-.Modal-HeaderIcon,
-  .Modal-HeaderTitle,
-  .Modal-HeaderCloseButton {
-    padding: 0 5px;
-  }
-
-.Modal-HeaderIcon {
-    padding-left: 7px; /* Depends on icon shape & thickness?*/
-  }
-
-.Modal-HeaderCloseButton {
-    padding-right: 0;
-  }
-
-.Modal-HeaderIcon {
-    width: 32px;
-    text-align: center;
-    color: #999;
-  }
-
-/* color: #000; // $neutralColor;*/
-
-.Modal-HeaderIcon .InlineIcon {
-      display: inline-block;
-      position: relative;
-      vertical-align: bottom;
-    }
-
-.Modal-HeaderIcon .InlineIcon svg {
-        font-size: 28px; /* $(fontSizeXl)px; // 20px;*/
-        margin-top: 2px;
-      }
-
-.Modal-HeaderTitle {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    /* border: 1px solid blue;*/
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 24px;
-    /* font-weight: 400;*/
-    color: #999;
-    margin-bottom: 3px;
-  }
-
-.Modal-Layout {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    /* border: 1px solid purple;*/
-    /* align-items: center;*/
-    padding: 10px;
-  }
-
-.Modal-LayoutMain {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    /* border: 1px solid red;*/
-  }
-
-.Modal-Container {
-    -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    /* align-self: center;*/
-    /* border: 1px solid blue;*/
-    padding: 10px;
-  }
-
-.Modal-LeftContent {
-    -ms-flex-item-align: center;
-        align-self: center;
-    /* border: 1px solid green;*/
-    padding: 10px;
-  }
-
-.Modal-Actions {
-    padding: 10px;
-  }
-
-/** @module Modal-Themes.styles
- *  @desc Themes
- *  @since 2020.12.21, 22:58
- *  @changed 2020.12.24, 02:43
- */
-
-.Modal-Wrapper, .Modal-Wrapper_theme_transparentBlack {
-      background-color: rgba(0,0,0,.5);
-    }
-
-.Modal-Wrapper_theme_opaqueGray {
-      background-color: #666;
-    }
-
-.Modal-Wrapper_theme_opaqueWhite {
-      background-color: #fff;
-    }
-
-.Modal-Wrapper_theme_transparentWhite {
-      background-color: rgba(255,255,255,.5);
-    }
-
-.Modal-Window {
-    background: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    /* box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);*/
-    -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* , inset 0 0 1px 1px color(#fff alpha(1));*/
-    /* border-radius: $(formItemBorderRadius)px;*/
-    border-radius: 5px;
-  }
-
-/** @module Modal-Transitions.styles
- *  @desc Modal show/hide transitions
- *  @since 2020.12.21, 22:58
- *  @changed 2020.12.24, 02:43
- */
-
-.Modal { /* Animation transitions...*/
-  /* $windowTimeout: $(animateTime)ms; // Slow*/
-  /* $windowTimeout: $(transitionTime)ms; // Quick*/
-  /* CSSTransition styles:*/
-  /* - *-enter*/
-  /* - *-enter-active*/
-  /* - *-enter-done*/
-  /* - *-exit*/
-  /* - *-exit-active*/
-  /* - *-exit-done*/
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.Modal .Modal-Window {
-    opacity: 0;
-    margin-top: 0;
-  }
-
-.Modal-enter {
-    /* opacity: 0;*/
-    visibility: visible;
-  }
-
-.Modal-enter .Modal-Window {
-      margin-top: -30px;
-    }
-
-.Modal-enter-active {
-    opacity: 1;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
-  }
-
-.Modal-enter-active .Modal-Window {
-      -webkit-transition: opacity 250ms, margin-top 250ms;
-      transition: opacity 250ms, margin-top 250ms;
-      opacity: 1;
-      margin-top: 0px;
-    }
-
-.Modal-enter-done {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: all;
-  }
-
-.Modal-enter-done .Modal-Window {
-      opacity: 1;
-    }
-
-.Modal-exit {
-    visibility: visible;
-    opacity: 1;
-  }
-
-.Modal-exit .Modal-Window {
-      opacity: 1;
-    }
-
-.Modal-exit-active {
-    opacity: 0;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
-  }
-
-.Modal-exit-active .Modal-Window {
-      -webkit-transition: opacity 250ms, margin-top 250ms;
-      transition: opacity 250ms, margin-top 250ms;
-      opacity: 0;
-      margin-top: -30px;
-    }
-
-.Modal-exit-done {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-.Modal-exit-done .Modal-Window {
-      opacity: 0;
-    }
-
-/** @module MenuItem.styles
- *  @since 2020.10.27, 03:05
- *  @changed 2020.10.27, 03:06
- */
-
-.MenuItem {
-  padding: 2px 6px;
-}
-
-.MenuItem:not(.MenuItem_disabled) {
-    cursor: pointer;
-  }
-
-.MenuItem.FormItem_hovered {
-      /* TODO: Use themes (via `themeColors`)?*/
-      background-color: #07f;
-      color: #fff;
-    }
-
-.MenuItem_checkable,
-  .MenuItem_withIcon {
-    position: relative;
-  }
-
-.MenuItem_checkable .MenuItem-Icon, .MenuItem_withIcon .MenuItem-Icon {
-      position: absolute;
-      left: 8px;
-      opacity: .5; /* ???*/
-      /* color: $(primaryColor);*/
-    }
-
-.MenuItem_checkable .MenuItem-Text, .MenuItem_withIcon .MenuItem-Text {
-      padding-left: 25px;
-    }
-
-.MenuItem-Text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-/** @module Menu.styles
- *  @since 2020.10.27, 02:58
- *  @changed 2020.10.27, 02:58
- */
-
-.Menu:not(.Menu_layout_horizontal) {
-    max-width: 100%;
-  }
-
-.Menu:not(.Menu_layout_horizontal) .MenuItem {
-      display: block;
-    }
-
-.Menu:not(.Menu_layout_horizontal) .MenuItem_fullWidth {
-        width: 100%;
-      }
-
-/** @module PopupsContainer.pcss
- *  @class PopupsContainer
- *  @since 2020.12.21, 23:37
- *  @changed 2020.12.24, 04:30
- */
-
-.PopupsContainer {
-  z-index: 500; /* Lift ip to top-most level*/
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-}
-
-/** @module FormItemDummy.styles
- *  @class FormItemDummy
- *  @since 2020.07.20, 19:24
- *  @changed 2020.07.20, 19:24
- */
-
-.FormItemDummy {
-
-  display: block;
-
-  -webkit-box-sizing: border-box;
-
-          box-sizing: border-box;
-
-  /* @mixin debug; */ /* Hide default css frame for `button` tags (if applied)*/
-
-  /* &_plain.FormItem_hovered {*/
-  /*   ^&-Text {*/
-  /*     text-decoration: underline;*/
-  /*   }*/
-  /*   ^&-Icon {*/
-  /*     color: color($neutralColor shade(5));*/
-  /*   }*/
-  /* }*/
-
-  /* &:before {*/
-  /*   border-radius: @calc($formItemBorderRadius - 1)px;*/
-  /*   position: absolute;*/
-  /*   display: block;*/
-  /*   left: 1px;*/
-  /*   top: 1px;*/
-
-  /* TODO: States: `clicked`, `rightIcon`, `onlyIcon`, `largeIcon` (+large button), large sizes (`xl`, `xxl`?)*/
-
-}
-
-.FormItemDummy_solid {
-    height: 32px;
-    line-height: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-.FormItemDummy {
-
-  border: 1px solid transparent;
-  border-radius: 3px;
-  padding: 0 8px;
-
-  position: relative;
-
-  cursor: default;
-
-}
-
-/* }*/
-
-.FormItemDummy.FormItem_hoverable:not(.FormItem_disabled) {
-    cursor: pointer;
-  }
-
-/*   display: block;*/
-
-.FormItemDummy-Icon {
-    color: #ccc; /* Default icon color*/
-  }
-
-/* &_fullWidth {*/
-
-.FormItemDummy-Text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* max-width: 100%;*/
-  }
-
-/* display: inline-block;*/
-
-.FormItemDummy-Icon + .FormItemDummy-Text { /* Spacing between icon and text*/
-    margin-left: 8px;
-  }
-
-/* }*/
-
-.FormItemDummy-Text, .FormItemDummy-Icon {
-    display: block;
-    display: inline-block;
-    position: relative;
-    /* z-index: 1;*/
-  }
-
-/*   // z-index: 0;*/
-
-.FormItemDummy_hasIcon {
-    min-width: 32px;
-  }
-
-/*   content: '';*/
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Icon {
-      position: absolute;
-    }
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon .FormItemDummy-Text {
-      margin-left: 24px;
-    }
-
-/*   bottom: 1px;*/
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Text {
-      margin-right: 24px;
-      margin-left: 0;
-    }
-
-.FormItemDummy_hasText.FormItemDummy_hasIcon.FormItemDummy_rightIcon .FormItemDummy-Icon {
-      position: absolute;
-      right: 0;
-      right: 8px;
-    }
-
-/*   right: 1px;*/
-
-.FormItemDummy_style {
-
-    /* TODO: styles: error, warn, success, info*/
-  }
-
-/* Mixin params: $bgColor, $borderColor, $iconColor, $textColor*/
-
-.FormItemDummy_style_default {
-      border-color: #ccc;
-      background-color: rgb(227, 227, 227);
-    }
-
-/* box-shadow: inset 0 0 0 1px $borderColor;*/
-
-.FormItemDummy_style_default .FormItemDummy-Text {
-        color: #000;
-      }
-
-.FormItemDummy_style_default .FormItemDummy-Icon {
-        color: #aaa;
-      }
-
-.FormItemDummy_style_default.FormItem_hovered {
-        border-color: rgb(184, 184, 184);
-        background-color: rgb(211, 211, 211);
-        /* ^^^&-Icon {*/
-        /*   // color: color($iconColor shade(10));*/
-        /* }*/
-      }
-
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
-
-.FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_default.FormItem_hovered .FormItemDummy-Text {
-          opacity: .9;
-        }
-
-/* Button styles...*/
-
-.FormItemDummy_style_primary {
-      /* $borderColor: $formItemBorderColor;*/ /* $formItemBorderColor;*/
-      border-color: rgb(0, 107, 230);
-      background-color: #07f;
-    }
-
-/* box-shadow: inset 0 0 0 1px $borderColor;*/
-
-.FormItemDummy_style_primary .FormItemDummy-Text {
-        color: #fff;
-      }
-
-.FormItemDummy_style_primary .FormItemDummy-Icon {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-.FormItemDummy_style_primary.FormItem_hovered {
-        border-color: rgb(0, 96, 207);
-        background-color: rgb(0, 111, 237);
-        /* ^^^&-Icon {*/
-        /*   // color: color($iconColor shade(10));*/
-        /* }*/
-      }
-
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
-
-.FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_primary.FormItem_hovered .FormItemDummy-Text {
-          opacity: .9;
-        }
-
-.FormItemDummy_style_secondary { /* $formItemBorderColor;*/
-      border-color: rgb(92, 107, 107);
-      background-color: #677;
-    }
-
-/* box-shadow: inset 0 0 0 1px $borderColor;*/
-
-.FormItemDummy_style_secondary .FormItemDummy-Text {
-        color: #fff;
-      }
-
-.FormItemDummy_style_secondary .FormItemDummy-Icon {
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-.FormItemDummy_style_secondary.FormItem_hovered {
-        border-color: rgb(83, 96, 96);
-        background-color: rgb(95, 111, 111);
-        /* ^^^&-Icon {*/
-        /*   // color: color($iconColor shade(10));*/
-        /* }*/
-      }
-
-/* box-shadow: inset 0 0 0 1px $hoveredBorderColor, 0 0 2px 2px color($borderColor alpha(50%));*/
-
-.FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Icon, .FormItemDummy_style_secondary.FormItem_hovered .FormItemDummy-Text {
-          opacity: .9;
-        }
-
-/** @module FormLabel.styles
- *  @since 2020.10.06, 23:45
- *  @changed 2020.10.06, 23:46
- */
-
-.FormLabel {
-  /* &_fixed, &_firstInBlock {*/
-  /*   [>!KEEP<]*/
-  /* }*/
-}
-
-/*!KEEP*/
-
-label.FormLabel-Control {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    /* border-radius: $(formItemBorderRadius)px; */
-    padding: 0 8px;
-    width: 100%;
-    height: 32px;
-    line-height: 32px;
-    background: none;
-    border: none;
-    outline: 0;
-    display: inline-block;
-    color: #444;
-  }
-
-label.FormLabel-Control:focus {
-    outline: 0;
-  }
-
-label.FormLabel-Control:placeholder {
-    color: red;
-    /* color: $formItemPlaceholderColor; */
-  }
-
-label.FormLabel-Control:-ms-clear {
-    display: none;
-  }
-
-label.FormLabel-Control {
-    margin-bottom: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Override bootstrap styles*/
-
-.FormLabel_firstInBlock label.FormLabel-Control { /* First label in block-level (non-flow) group: indent by left side*/
-      padding-left: 0;
-    }
-
-label.FormLabel-Control[for] {
-      cursor: pointer;
-    }
-
 /** @module FormGroup.styles
  *  @class FormGroup
  *  @since 2020.07.20, 19:24
@@ -2325,6 +1763,306 @@ label.FormLabel-Control[for] {
   /* height: $(formItemHeight)px;*/
   line-height: 32px;
 }
+
+/** @module ModalPortal.styles
+ *  @desc Basic modal layout styles
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.26, 21:31
+ */
+
+.ModalPortal, .ModalPortal-Wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+/** @module ModalPortal-Themes.styles
+ *  @desc Themes
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.26, 21:31
+ */
+
+/* See for example `Loader` themes definitions in `Loader-themes.pcss`*/
+
+.ModalPortal-Wrapper, .ModalPortal-Wrapper_theme_Transparent {
+      /* background-color: transparent;*/
+    }
+
+.ModalPortal-Wrapper_theme_SubtleDark {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+
+.ModalPortal-Wrapper_theme_Dark {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+.ModalPortal-Wrapper_theme_OpaqueMediumDark {
+      background-color: #666;
+    }
+
+.ModalPortal-Wrapper_theme_OpaqueLight {
+      background-color: #fff;
+    }
+
+.ModalPortal-Wrapper_theme_Light {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+/** @module ModalPortal-Transitions.styles
+ *  @desc ModalPortal show/hide transitions
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.26, 21:31
+ */
+
+/* CSSTransition styles:
+ *
+ * - *-enter
+ * - *-enter-active
+ * - *-enter-done
+ * - *-exit
+ * - *-exit-active
+ * - *-exit-done
+ */
+
+.ModalPortal_type_Popup.ModalPortal { /* Animation transitions...*/
+  /* Animation transitions...*/
+  /* $descent: 10px;*/
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ModalPortal_type_Popup.ModalPortal .ModalPortal-Window {
+    opacity: 0;
+    margin-top: 0;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-enter {
+    visibility: visible;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-enter .ModalPortal-Window {
+      margin-top: 20px;
+    }
+
+.ModalPortal_type_Popup.ModalPortal-enter-active {
+    opacity: 1;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-enter-active .ModalPortal-Window {
+      -webkit-transition: opacity 250ms, margin-top 250ms;
+      transition: opacity 250ms, margin-top 250ms;
+      opacity: 1;
+      margin-top: 0px;
+    }
+
+.ModalPortal_type_Popup.ModalPortal-enter-done {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-enter-done .ModalPortal-Window {
+      opacity: 1;
+    }
+
+.ModalPortal_type_Popup.ModalPortal-exit {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-exit .ModalPortal-Window {
+      opacity: 1;
+    }
+
+.ModalPortal_type_Popup.ModalPortal-exit-active {
+    opacity: 0;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-exit-active .ModalPortal-Window {
+      -webkit-transition: opacity 250ms, margin-top 250ms;
+      transition: opacity 250ms, margin-top 250ms;
+      opacity: 0;
+      margin-top: 20px;
+    }
+
+.ModalPortal_type_Popup.ModalPortal-exit-done {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+.ModalPortal_type_Popup.ModalPortal-exit-done .ModalPortal-Window {
+      opacity: 0;
+    }
+
+.ModalPortal_type_Window.ModalPortal { /* Animation transitions...*/
+  /* Animation transitions...*/
+  /* $descent: 10px;*/
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ModalPortal_type_Window.ModalPortal .ModalPortal-Window {
+    opacity: 0;
+    margin-top: 0;
+  }
+
+.ModalPortal_type_Window.ModalPortal-enter {
+    visibility: visible;
+  }
+
+.ModalPortal_type_Window.ModalPortal-enter .ModalPortal-Window {
+      margin-top: -30px;
+    }
+
+.ModalPortal_type_Window.ModalPortal-enter-active {
+    opacity: 1;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms;
+  }
+
+.ModalPortal_type_Window.ModalPortal-enter-active .ModalPortal-Window {
+      -webkit-transition: opacity 250ms, margin-top 250ms;
+      transition: opacity 250ms, margin-top 250ms;
+      opacity: 1;
+      margin-top: 0px;
+    }
+
+.ModalPortal_type_Window.ModalPortal-enter-done {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+.ModalPortal_type_Window.ModalPortal-enter-done .ModalPortal-Window {
+      opacity: 1;
+    }
+
+.ModalPortal_type_Window.ModalPortal-exit {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.ModalPortal_type_Window.ModalPortal-exit .ModalPortal-Window {
+      opacity: 1;
+    }
+
+.ModalPortal_type_Window.ModalPortal-exit-active {
+    opacity: 0;
+    -webkit-transition: opacity 250ms;
+    transition: opacity 250ms;
+  }
+
+.ModalPortal_type_Window.ModalPortal-exit-active .ModalPortal-Window {
+      -webkit-transition: opacity 250ms, margin-top 250ms;
+      transition: opacity 250ms, margin-top 250ms;
+      opacity: 0;
+      margin-top: -30px;
+    }
+
+.ModalPortal_type_Window.ModalPortal-exit-done {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+.ModalPortal_type_Window.ModalPortal-exit-done .ModalPortal-Window {
+      opacity: 0;
+    }
+
+/** @module ModalPopup.styles
+ *  @since 2020.10.27, 00:39
+ *  @changed 2020.12.18, 01:32
+ */
+
+.ModalPortal_type_Popup .ModalPortal-Wrapper {
+    }
+
+.ModalPortal_type_Popup .ModalPortal-Window {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      overflow: hidden;
+      /* max-width: 100%;*/
+      /* z-index: 100; // Lift above all other regular elements*/
+      position: absolute;
+      /* display: none;*/
+      background: #fff;
+      -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
+              box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);
+      border-radius: 3px;
+      pointer-events: all;
+    }
+
+.ModalPopup {
+  /*!KEEP*/
+}
+
+/** @module MenuItem.styles
+ *  @since 2020.10.27, 03:05
+ *  @changed 2020.10.27, 03:06
+ */
+
+.MenuItem {
+  padding: 2px 6px;
+}
+
+.MenuItem:not(.MenuItem_disabled) {
+    cursor: pointer;
+  }
+
+.MenuItem.FormItem_hovered {
+      /* TODO: Use themes (via `themeColors`)?*/
+      background-color: #07f;
+      color: #fff;
+    }
+
+.MenuItem_checkable,
+  .MenuItem_withIcon {
+    position: relative;
+  }
+
+.MenuItem_checkable .MenuItem-Icon, .MenuItem_withIcon .MenuItem-Icon {
+      position: absolute;
+      left: 8px;
+      opacity: .5; /* ???*/
+      /* color: $(primaryColor);*/
+    }
+
+.MenuItem_checkable .MenuItem-Text, .MenuItem_withIcon .MenuItem-Text {
+      padding-left: 25px;
+    }
+
+.MenuItem-Text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+/** @module Menu.styles
+ *  @since 2020.10.27, 02:58
+ *  @changed 2020.10.27, 02:58
+ */
+
+.Menu:not(.Menu_layout_horizontal) {
+    max-width: 100%;
+  }
+
+.Menu:not(.Menu_layout_horizontal) .MenuItem {
+      display: block;
+    }
+
+.Menu:not(.Menu_layout_horizontal) .MenuItem_fullWidth {
+        width: 100%;
+      }
 
 /** @module FormSelect.styles
  *  @since 2020.10.28, 22:49
@@ -3659,6 +3397,531 @@ input.FormTextInput-Control::-ms-clear {
 .FormItem_hovered.FormItem_focused.FormRadio_theme_darkslategray .FormRadio-Actor {
         background-color: rgb(38, 63, 63);
       }
+
+/** @module Loader.pcss
+ *  @since 2020.12.24, 22:38
+ *  @changed 2020.12.24, 22:38
+ */
+
+.Loader {
+  text-align: center;
+  -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.Loader_show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+.Loader-Container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+  }
+
+.Loader-Spinner,
+  .Loader-Text,
+  .Loader-Actions {
+    margin: 5px;
+  }
+
+.Loader-Actions {
+    margin-bottom: -5px;
+  }
+
+.Loader-Spinner {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+  }
+
+.Loader-Spinner:after {
+      border: 3px solid #fff;
+      content: " ";
+      display: block;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+
+/** @module Loader-animation.pcss
+ *  @since 2020.12.24, 22:38
+ *  @changed 2020.12.24, 22:38
+ */
+
+.Loader-Spinner:after {
+    -webkit-animation: Loader-Spinner-Animation 1.5s linear infinite;
+            animation: Loader-Spinner-Animation 1.5s linear infinite;
+  }
+
+@-webkit-keyframes Loader-Spinner-Animation {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+
+@keyframes Loader-Spinner-Animation {
+      0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+      }
+    }
+
+/** @module Loader-animation.pcss
+ *  @since 2020.12.24, 22:38
+ *  @changed 2020.12.24, 22:38
+ */
+
+.Loader_mode_local { /* Loader overlaps closest relative positioned container*/
+    position: absolute;
+  }
+
+.Loader_mode_block { /* Loader overlaps entire page*/
+    position: fixed;
+  }
+
+.Loader-Container {
+    width: 100%;
+  }
+
+.Loader_mode_local, .Loader_mode_block {
+    z-index: 250; /* Below footer, but above header?*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Center vertically with flexbox*/
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    /* & ^&-Container {*/
+    /*   // // Mode 1: with `translate`*/
+    /*   // position: absolute;*/
+    /*   // top: 50%;*/
+    /*   // transform: translate(0, -50%);*/
+    /*   // // Mode 2: without `translate` but not excactly centered vertically*/
+    /*   // position: relative;*/
+    /*   // top: 45%;*/
+    /*   // margin-top: -50px;*/
+    /* }*/
+  }
+
+.Loader_mode_inplace { /* Regular location (regular block element)*/
+    /* & ^&-Container {*/
+    /*   position: relative;*/
+    /*   // top: initial; // ???*/
+    /*   // left: initial; // ???*/
+    /*   // transform: none;*/
+    /* }*/
+  }
+
+/** @module Loader-animation.pcss
+ *  @since 2020.12.24, 22:38
+ *  @changed 2020.12.24, 22:38
+ */
+
+.Loader {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.Loader-Spinner::after {
+    border-color: #fff transparent #fff transparent;
+  }
+
+/* Override hardcoded in `styles.css` colors (Ruslan's LESS PhpStorm solution)*/
+
+.Loader_theme_Light { /* Light loader theme (white background, dark text)*/
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+.Loader_theme_Light .Loader-Text {
+      color: #666;
+    }
+
+.Loader_theme_Light .Loader-Spinner::after {
+      border-top-color: #aaa;
+      border-bottom-color: #aaa;
+    }
+
+.Loader_theme_Dark { /* Dark loader theme*/
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+
+.Loader_theme_Dark .Loader-Text {
+      color: #fff;
+    }
+
+.Loader_theme_Dark .Loader-Spinner::after {
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+.Loader_theme_MediumDark { /* MediumDark loader theme*/
+    /* $bgColor: $neutralExtraDarkColor;*/
+    background-color: rgba(85, 85, 85, 0.9);
+  }
+
+.Loader_theme_MediumDark .Loader-Text {
+      color: #fff;
+    }
+
+.Loader_theme_MediumDark .Loader-Spinner::after {
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+/* TODO: OpaqueLight, OpaqueDark, OpaqueMediumDark*/
+
+.Loader_theme_OpaqueLight { /* Light loader theme (white background, dark text)*/
+    background-color: #fff;
+  }
+
+.Loader_theme_OpaqueLight .Loader-Text {
+      color: #666;
+    }
+
+.Loader_theme_OpaqueLight .Loader-Spinner::after {
+      border-top-color: #aaa;
+      border-bottom-color: #aaa;
+    }
+
+.Loader_theme_OpaqueDark { /* Dark loader theme*/
+    background-color: #333;
+  }
+
+.Loader_theme_OpaqueDark .Loader-Text {
+      color: #fff;
+    }
+
+.Loader_theme_OpaqueDark .Loader-Spinner::after {
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+.Loader_theme_OpaqueMediumDark { /* MediumDark loader theme*/ /* $neutralExtraDarkColor;*/
+    background-color: #666;
+  }
+
+.Loader_theme_OpaqueMediumDark .Loader-Text {
+      color: #fff;
+    }
+
+.Loader_theme_OpaqueMediumDark .Loader-Spinner::after {
+      border-top-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+/** @module ModalWindow.styles
+ *  @desc Basic modal layout styles
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.24, 02:43
+ */
+
+.ModalPortal_type_Window .ModalPortal-Wrapper {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+    }
+
+.ModalPortal_type_Window .ModalPortal-Window {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+      position: relative;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      overflow: hidden;
+      margin: 20px auto; /* Auto size & center window horizontally*/
+      /* Center window vertically:*/
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+      /* Default ('auto') size...*/
+      min-width: 300px;
+    }
+
+@media (max-width: 340px) {
+
+.ModalPortal_type_Window .ModalPortal-Window {
+        margin: 20px;
+        min-width: auto
+    }
+      }
+
+/* Window widths (based on `config.css.modalSizes`)...*/
+
+.ModalPortal_type_Window .ModalPortal-Window_width_xs {
+            margin: 20px;
+          }
+
+@media (min-width: 240px) {
+
+.ModalPortal_type_Window .ModalPortal-Window_width_xs {
+              margin: 20px auto;
+              width: 200px
+          }
+            }
+
+.ModalPortal_type_Window .ModalPortal-Window_width_sm {
+            margin: 20px;
+          }
+
+@media (min-width: 440px) {
+
+.ModalPortal_type_Window .ModalPortal-Window_width_sm {
+              margin: 20px auto;
+              width: 400px
+          }
+            }
+
+.ModalPortal_type_Window .ModalPortal-Window_width_md {
+            margin: 20px;
+          }
+
+@media (min-width: 640px) {
+
+.ModalPortal_type_Window .ModalPortal-Window_width_md {
+              margin: 20px auto;
+              width: 600px
+          }
+            }
+
+.ModalPortal_type_Window .ModalPortal-Window_width_lg {
+            margin: 20px;
+          }
+
+@media (min-width: 840px) {
+
+.ModalPortal_type_Window .ModalPortal-Window_width_lg {
+              margin: 20px auto;
+              width: 800px
+          }
+            }
+
+.ModalPortal_type_Window .ModalPortal-Window_width_xl {
+            margin: 20px;
+          }
+
+@media (min-width: 1040px) {
+
+.ModalPortal_type_Window .ModalPortal-Window_width_xl {
+              margin: 20px auto;
+              width: 1000px
+          }
+            }
+
+.ModalPortal_type_Window .ModalPortal-Window_width_xxl {
+            margin: 20px;
+          }
+
+@media (min-width: 1240px) {
+
+.ModalPortal_type_Window .ModalPortal-Window_width_xxl {
+              margin: 20px auto;
+              width: 1200px
+          }
+            }
+
+/* Layout items: Header, Container, Content, Layout, Main, Actions*/
+
+.ModalWindow-Header,
+  
+  .ModalWindow-Content,
+  
+  .ModalWindow-Layout,
+  
+  .ModalWindow-Main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-align: stretch;
+        align-items: stretch;
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    /* align-items: center;*/
+    /* align-content: center;*/
+  }
+
+/* }*/
+
+.ModalWindow-Header {
+    /* border: 1px solid green;*/
+    -ms-flex-align: center;
+        align-items: center;
+    background-color: #e0e0e0;
+    padding: 8px 10px;
+  }
+
+/*   // border: 1px solid blue;*/
+
+.ModalWindow-HeaderIcon,
+  .ModalWindow-HeaderTitle,
+  .ModalWindow-HeaderCloseButton {
+    padding: 0 5px;
+  }
+
+/*   align-content: stretch;*/
+
+.ModalWindow-HeaderIcon {
+    padding-left: 7px; /* Depends on icon shape & thickness?*/
+  }
+
+/*   flex-direction: column;*/
+
+.ModalWindow-HeaderCloseButton {
+    padding-right: 0;
+  }
+
+/* &-Window {*/
+
+.ModalWindow-HeaderIcon {
+    width: 32px;
+    text-align: center;
+    color: #999;
+  }
+
+/* color: #000; // $neutralColor;*/
+
+.ModalWindow-HeaderIcon .InlineIcon {
+      display: inline-block;
+      position: relative;
+      vertical-align: bottom;
+    }
+
+.ModalWindow-HeaderIcon .InlineIcon svg {
+        font-size: 28px; /* $(fontSizeXl)px; // 20px;*/
+        margin-top: 2px;
+      }
+
+.ModalWindow-HeaderTitle {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    /* border: 1px solid blue;*/
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 24px;
+    /* font-weight: 400;*/
+    color: #999;
+    margin-bottom: 3px;
+  }
+
+.ModalWindow-Layout {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    /* border: 1px solid purple;*/
+    /* align-items: center;*/
+    padding: 10px;
+  }
+
+.ModalWindow-Main {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    /* border: 1px solid red;*/
+    overflow: hidden;
+  }
+
+/* &-Container {*/
+
+.ModalWindow-Content {
+    -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    /* align-self: center;*/
+    /* border: 1px solid blue;*/
+    padding: 10px;
+    overflow: hidden;
+  }
+
+.ModalWindow-Content_scrollable {
+      overflow: auto;
+    }
+
+.ModalWindow-LeftContent {
+    -ms-flex-item-align: center;
+        align-self: center;
+    /* border: 1px solid green;*/
+    padding: 10px;
+  }
+
+.ModalWindow-Actions {
+    padding: 10px;
+  }
+
+/** @module ModalWindow-Themes.styles
+ *  @desc Themes
+ *  @since 2020.12.21, 22:58
+ *  @changed 2020.12.24, 02:43
+ */
+
+.ModalPortal_type_Window .ModalPortal-Wrapper {
+    }
+
+.ModalPortal_type_Window .ModalPortal-Window {
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      /* box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 10px 20px -5px rgba(0,0,0,.4);*/
+      -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+              box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* , inset 0 0 1px 1px color(#fff alpha(1));*/
+      /* border-radius: $(formItemBorderRadius)px;*/
+      border-radius: 5px;
+    }
+
+/** @module ModalsContainer.pcss
+ *  @class ModalsContainer
+ *  @since 2020.12.21, 23:37
+ *  @changed 2020.12.24, 04:30
+ */
+
+.ModalsContainer {
+  z-index: 500; /* Lift ip to top-most level TODO: Pay attemtion to target app header/footer z-indices?*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
 
 .Hello {
   /* @mixin debug;*/

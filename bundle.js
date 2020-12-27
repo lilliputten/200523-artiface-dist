@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 55);
+/******/ 	return __webpack_require__(__webpack_require__.s = 61);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -195,7 +195,7 @@ var config = {
   build: __webpack_require__(18),
   constants: __webpack_require__(19),
   css: __webpack_require__(20),
-  popups: __webpack_require__(22),
+  modals: __webpack_require__(22),
   ui: __webpack_require__(23),
   userAgent: __webpack_require__(24) };
 
@@ -212,26 +212,20 @@ module.exports = require("react-dom");
 /* 8 */
 /***/ (function(module, exports) {
 
-module.exports = require("@bem-react/classname");
+module.exports = require("@fortawesome/react-fontawesome");
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-module.exports = require("@fortawesome/react-fontawesome");
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
 module.exports = require("@fortawesome/free-solid-svg-icons");
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
 /* global window */
 
 
@@ -250,11 +244,10 @@ if (typeof self !== 'undefined') {
 var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(root);
 /* harmony default export */ __webpack_exports__["a"] = (result);
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13), __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11), __webpack_require__(34)(module)))
 
 /***/ }),
-/* 12 */,
-/* 13 */
+/* 11 */
 /***/ (function(module, exports) {
 
 var g;
@@ -280,13 +273,19 @@ module.exports = g;
 
 
 /***/ }),
-/* 14 */
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = require("@bem-react/classname");
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = require("@fortawesome/free-regular-svg-icons");
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -311,6 +310,7 @@ function symbolObservablePonyfill(root) {
 
 
 /***/ }),
+/* 15 */,
 /* 16 */,
 /* 17 */
 /***/ (function(module, exports) {
@@ -353,10 +353,10 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.7-201224-2126-build-prod-default",
-  timestamp: "2020.12.24, 21:26",
-  timetag: "201224-2126",
-  version: "0.1.7" };
+  buildTag: "v.0.1.8-201228-0114-build-prod-default",
+  timestamp: "2020.12.28, 01:14",
+  timetag: "201228-0114",
+  version: "0.1.8" };
 
 /***/ }),
 /* 19 */
@@ -645,17 +645,17 @@ module.exports = {
 /* 22 */
 /***/ (function(module, exports) {
 
-/** @module config.app
+/** @module config.modals
  *  @description Core app config
  *  @since 2019.09.10, 14:25
  *  @changed 2020.12.22, 00:32
  */
 
-var popupsConfig = { // Common-used app variables...
+var modalsConfig = { // Common-used app variables...
 
-  // Id for modals & popups wrapper
-  containerId: 'PopupsContainer',
-  // containerClass: 'PopupsContainer',
+  // Id for modals & modals wrapper
+  containerId: 'ModalsContainer',
+  // containerClass: 'ModalsContainer',
 
   containerNode: null,
   domNode: null,
@@ -664,12 +664,12 @@ var popupsConfig = { // Common-used app variables...
 
 
 
-popupsConfig._initPromiseResolve = null;
-popupsConfig.initPromise = new Promise(function (resolve) {
-  popupsConfig._initPromiseResolve = resolve;
+modalsConfig._initPromiseResolve = null;
+modalsConfig.initPromise = new Promise(function (resolve) {
+  modalsConfig._initPromiseResolve = resolve;
 });
 
-module.exports = popupsConfig;
+module.exports = modalsConfig;
 
 /***/ }),
 /* 23 */
@@ -793,7 +793,7 @@ function detectUserAgent() {
 var userAgent = detectUserAgent();
 
 module.exports = userAgent;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(13)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)))
 
 /***/ }),
 /* 25 */
@@ -923,6 +923,12 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 /* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = function(originalModule) {
@@ -950,12 +956,6 @@ module.exports = function(originalModule) {
 	return module;
 };
 
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 /* 35 */
@@ -1079,6 +1079,42 @@ module.exports = function(originalModule) {
 
 /***/ }),
 /* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1090,11 +1126,13 @@ __webpack_require__.d(__webpack_exports__, "config", function() { return /* reex
 __webpack_require__.d(__webpack_exports__, "utils", function() { return /* reexport */ utils_namespaceObject; });
 __webpack_require__.d(__webpack_exports__, "helpers", function() { return /* reexport */ helpers_namespaceObject; });
 __webpack_require__.d(__webpack_exports__, "InlineIcon", function() { return /* reexport */ elements_InlineIcon_InlineIcon; });
-__webpack_require__.d(__webpack_exports__, "Popup", function() { return /* reexport */ elements_Popup_Popup; });
-__webpack_require__.d(__webpack_exports__, "Modal", function() { return /* reexport */ Modal_Modal; });
+__webpack_require__.d(__webpack_exports__, "Loader", function() { return /* reexport */ elements_Loader_Loader; });
 __webpack_require__.d(__webpack_exports__, "Menu", function() { return /* reexport */ elements_Menu_Menu; });
 __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return /* reexport */ elements_MenuItem_MenuItem; });
-__webpack_require__.d(__webpack_exports__, "PopupsContainer", function() { return /* reexport */ elements_PopupsContainer_PopupsContainer; });
+__webpack_require__.d(__webpack_exports__, "ModalWindow", function() { return /* reexport */ ModalWindow_ModalWindow; });
+__webpack_require__.d(__webpack_exports__, "ModalPopup", function() { return /* reexport */ elements_ModalPopup_ModalPopup; });
+__webpack_require__.d(__webpack_exports__, "ModalPortal", function() { return /* reexport */ ModalPortal_ModalPortal; });
+__webpack_require__.d(__webpack_exports__, "ModalsContainer", function() { return /* reexport */ elements_ModalsContainer_ModalsContainer; });
 __webpack_require__.d(__webpack_exports__, "FormItemDummy", function() { return /* reexport */ forms_FormItemDummy_FormItemDummy; });
 __webpack_require__.d(__webpack_exports__, "FormLabel", function() { return /* reexport */ forms_FormLabel_FormLabel; });
 __webpack_require__.d(__webpack_exports__, "FormButton", function() { return /* reexport */ forms_FormButton_FormButton; });
@@ -1110,7 +1148,6 @@ __webpack_require__.d(__webpack_exports__, "FormTextInput", function() { return 
 __webpack_require__.d(__webpack_exports__, "FormPasswordInput", function() { return /* reexport */ forms_FormPasswordInput_FormPasswordInput; });
 __webpack_require__.d(__webpack_exports__, "FormRadio", function() { return /* reexport */ forms_FormRadio_FormRadio; });
 __webpack_require__.d(__webpack_exports__, "Hello", function() { return /* reexport */ demo_Hello_Hello; });
-__webpack_require__.d(__webpack_exports__, "RootComponent", function() { return /* binding */ RootComponent; });
 
 // NAMESPACE OBJECT: ./src/utils/configure.js
 var configure_namespaceObject = {};
@@ -1161,12 +1198,16 @@ var helpers_namespaceObject = {};
 __webpack_require__.r(helpers_namespaceObject);
 __webpack_require__.d(helpers_namespaceObject, "ActionsContext", function() { return ActionsContext_namespaceObject; });
 
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(1);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
 // EXTERNAL MODULE: ./src/config/config.js
 var config = __webpack_require__(6);
 var config_default = /*#__PURE__*/__webpack_require__.n(config);
 
 // EXTERNAL MODULE: external "@bem-react/classname"
-var classname_ = __webpack_require__(8);
+var classname_ = __webpack_require__(12);
 
 // CONCATENATED MODULE: ./src/utils/configure.js
 /** @module build
@@ -1268,10 +1309,6 @@ var configure_cn = function cn() {for (var _len = arguments.length, args = new A
   }
   return result;
 };
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(1);
-var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
-
 // CONCATENATED MODULE: ./src/utils/strings.js
 var strings_this = undefined; /** @module strings
                    *  @description Objects utilities
@@ -1503,13 +1540,13 @@ var prop_types = __webpack_require__(0);
 var prop_types_default = /*#__PURE__*/__webpack_require__.n(prop_types);
 
 // EXTERNAL MODULE: external "@fortawesome/react-fontawesome"
-var react_fontawesome_ = __webpack_require__(9);
+var react_fontawesome_ = __webpack_require__(8);
 
 // EXTERNAL MODULE: external "@fortawesome/free-solid-svg-icons"
-var free_solid_svg_icons_ = __webpack_require__(10);
+var free_solid_svg_icons_ = __webpack_require__(9);
 
 // EXTERNAL MODULE: external "@fortawesome/free-regular-svg-icons"
-var free_regular_svg_icons_ = __webpack_require__(14);
+var free_regular_svg_icons_ = __webpack_require__(13);
 
 // EXTERNAL MODULE: ./src/elements/InlineIcon/InlineIcon.pcss
 var InlineIcon_InlineIcon = __webpack_require__(27);
@@ -1616,148 +1653,6 @@ InlineIcon_InlineIcon_InlineIcon = /*#__PURE__*/function (_React$PureComponent) 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/assertThisInitialized.js
 var assertThisInitialized = __webpack_require__(3);
 var assertThisInitialized_default = /*#__PURE__*/__webpack_require__.n(assertThisInitialized);
-
-// CONCATENATED MODULE: ./node_modules/throttle-debounce/esm/index.js
-/* eslint-disable no-undefined,no-param-reassign,no-shadow */
-
-/**
- * Throttle execution of a function. Especially useful for rate limiting
- * execution of handlers on events like resize and scroll.
- *
- * @param  {number}    delay -          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {boolean}   [noTrailing] -   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
- *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
- *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
- *                                    the internal counter is reset).
- * @param  {Function}  callback -       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                    to `callback` when the throttled-function is executed.
- * @param  {boolean}   [debounceMode] - If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
- *                                    schedule `callback` to execute after `delay` ms.
- *
- * @returns {Function}  A new, throttled, function.
- */
-function throttle (delay, noTrailing, callback, debounceMode) {
-  /*
-   * After wrapper has stopped being called, this timeout ensures that
-   * `callback` is executed at the proper times in `throttle` and `end`
-   * debounce modes.
-   */
-  var timeoutID;
-  var cancelled = false; // Keep track of the last time `callback` was executed.
-
-  var lastExec = 0; // Function to clear existing timeout
-
-  function clearExistingTimeout() {
-    if (timeoutID) {
-      clearTimeout(timeoutID);
-    }
-  } // Function to cancel next exec
-
-
-  function cancel() {
-    clearExistingTimeout();
-    cancelled = true;
-  } // `noTrailing` defaults to falsy.
-
-
-  if (typeof noTrailing !== 'boolean') {
-    debounceMode = callback;
-    callback = noTrailing;
-    noTrailing = undefined;
-  }
-  /*
-   * The `wrapper` function encapsulates all of the throttling / debouncing
-   * functionality and when executed will limit the rate at which `callback`
-   * is executed.
-   */
-
-
-  function wrapper() {
-    for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
-      arguments_[_key] = arguments[_key];
-    }
-
-    var self = this;
-    var elapsed = Date.now() - lastExec;
-
-    if (cancelled) {
-      return;
-    } // Execute `callback` and update the `lastExec` timestamp.
-
-
-    function exec() {
-      lastExec = Date.now();
-      callback.apply(self, arguments_);
-    }
-    /*
-     * If `debounceMode` is true (at begin) this is used to clear the flag
-     * to allow future `callback` executions.
-     */
-
-
-    function clear() {
-      timeoutID = undefined;
-    }
-
-    if (debounceMode && !timeoutID) {
-      /*
-       * Since `wrapper` is being called for the first time and
-       * `debounceMode` is true (at begin), execute `callback`.
-       */
-      exec();
-    }
-
-    clearExistingTimeout();
-
-    if (debounceMode === undefined && elapsed > delay) {
-      /*
-       * In throttle mode, if `delay` time has been exceeded, execute
-       * `callback`.
-       */
-      exec();
-    } else if (noTrailing !== true) {
-      /*
-       * In trailing throttle mode, since `delay` time has not been
-       * exceeded, schedule `callback` to execute `delay` ms after most
-       * recent execution.
-       *
-       * If `debounceMode` is true (at begin), schedule `clear` to execute
-       * after `delay` ms.
-       *
-       * If `debounceMode` is false (at end), schedule `callback` to
-       * execute after `delay` ms.
-       */
-      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
-    }
-  }
-
-  wrapper.cancel = cancel; // Return the wrapper function.
-
-  return wrapper;
-}
-
-/* eslint-disable no-undefined */
-/**
- * Debounce execution of a function. Debouncing, unlike throttling,
- * guarantees that a function is only executed a single time, either at the
- * very beginning of a series of calls, or at the very end.
- *
- * @param  {number}   delay -         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
- * @param  {boolean}  [atBegin] -     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
- *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
- *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
- * @param  {Function} callback -      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
- *                                  to `callback` when the debounced-function is executed.
- *
- * @returns {Function} A new, debounced function.
- */
-
-function debounce (delay, atBegin, callback) {
-  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
-}
-
-
-//# sourceMappingURL=index.js.map
 
 // EXTERNAL MODULE: ./src/forms/FormItemHOC/FormItemHOC.pcss
 var FormItemHOC = __webpack_require__(28);
@@ -2015,6 +1910,1714 @@ var FormItemHOC_FormItemHOC = function FormItemHOC(params) {
 };
 
 /* harmony default export */ var forms_FormItemHOC_FormItemHOC = (FormItemHOC_FormItemHOC);
+// EXTERNAL MODULE: ./src/forms/FormItemDummy/FormItemDummy.pcss
+var FormItemDummy_FormItemDummy = __webpack_require__(29);
+
+// CONCATENATED MODULE: ./src/forms/FormItemDummy/FormItemDummy.jsx
+ /** @module FormItemDummy
+                                                                                                                                                                                                                          *  @class FormItemDummy
+                                                                                                                                                                                                                          *  @desc Demo form item
+                                                                                                                                                                                                                          *  @since 2020.07.20, 19:07
+                                                                                                                                                                                                                          *  @changed 2020.07.20, 19:07
+                                                                                                                                                                                                                          */
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+
+
+var cnFormItemDummy = configure_cn('FormItemDummy');var
+
+FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormItemDummy, _React$PureComponent);
+
+  function FormItemDummy(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;
+    // const {
+    //   hoverable,
+    //   clickable,
+    //   checked,
+    // } = props
+    defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (event) {var _this$props =
+
+
+
+
+      _this.props,disabled = _this$props.disabled,onClick = _this$props.onClick,clickable = _this$props.clickable;
+      if (clickable && !disabled && onClick && typeof onClick === 'function') {
+        onClick(event);
+      }
+    });_this.state = {// // FormItem states...
+      // solid: true,
+      // hoverable: (hoverable != null) ? hoverable : true,
+      // clickable: (clickable != null) ? clickable : true,
+      // checked,
+      // framed: true,
+    };return _this;}FormItemDummy.getDerivedStateFromProps = function getDerivedStateFromProps(props /* , state */) {// ???
+    var hasIcon = props.hasIcon,hasText = props.hasText,onlyIcon = props.onlyIcon,text = props.text,icon = props.icon,children = props.children;return { // hoverable: (hoverable != null) ? hoverable : true,
+      // clickable: (clickable != null) ? clickable : true,
+      // checked,
+      hasIcon: !!(hasIcon || icon), hasText: !onlyIcon && !!(hasText || text || children) };};var _proto = FormItemDummy.prototype;_proto.getClassName = function getClassName() {// TODO: Refactor properties!
+    var _this$props2 = this.props,id = _this$props2.id,onlyIcon = _this$props2.onlyIcon,largeIcon = _this$props2.largeIcon,rightIcon = _this$props2.rightIcon,theme = _this$props2.theme,fullWidth = _this$props2.fullWidth,type = _this$props2.type;var _this$state = this.state,hasIcon = _this$state.hasIcon,hasText = _this$state.hasText;var classList = cnFormItemDummy({ id: id, theme: theme, fullWidth: fullWidth, // checked,
+      // plain,
+      hasIcon: hasIcon, hasText: hasText, onlyIcon: onlyIcon, largeIcon: largeIcon, rightIcon: rightIcon, type: type, solid: true }, [this.props.className]);return classList;} // Handlers...
+  ; // Render...
+  _proto.render = function render() {var _this$props3 =
+
+
+
+
+    this.props,id = _this$props3.id,children = _this$props3.children,text = _this$props3.text,tag = _this$props3.tag,type = _this$props3.type,title = _this$props3.title,icon = _this$props3.icon,setDomRef = _this$props3.setDomRef;var _this$state2 =
+
+
+
+    this.state,hasIcon = _this$state2.hasIcon,hasText = _this$state2.hasText;
+
+    // Create fortawesome icon element if passed icon image (svg icon)
+    var iconImg = icon && icon.iconName ? /*#__PURE__*/external_react_default.a.createElement(react_fontawesome_["FontAwesomeIcon"], { className: cnFormItemDummy('IconImg'), icon: icon }) : icon;
+    var iconElem = hasIcon && /*#__PURE__*/
+    external_react_default.a.createElement("span", { key: "Icon", className: cnFormItemDummy('Icon') },
+    iconImg);
+
+
+
+    // Text element
+    var textElem = hasText && /*#__PURE__*/
+    external_react_default.a.createElement("span", { key: "Text", className: cnFormItemDummy('Text') },
+    text || children);
+
+
+
+    // const basicRenderProps = this.getRenderProps() // Get from props not from overrided `super`
+    var renderProps = {
+      // ...basicRenderProps,
+      id: id,
+      className: this.getClassName(),
+      title: title,
+      type: type,
+      onClick: this.onClick,
+      ref: setDomRef };
+
+
+    var content = [iconElem, textElem]; // children || text
+
+    var tagName = tag || 'div';
+    var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
+    return element;
+  };return FormItemDummy;}(external_react_default.a.PureComponent /** @lends @FormItemDummy.prototype */);
+
+
+
+/* harmony default export */ var forms_FormItemDummy_FormItemDummy = (forms_FormItemHOC_FormItemHOC(FormItemDummy_FormItemDummy_FormItemDummy));
+// EXTERNAL MODULE: ./src/forms/FormLabel/FormLabel.pcss
+var FormLabel_FormLabel = __webpack_require__(30);
+
+// CONCATENATED MODULE: ./src/forms/FormLabel/FormLabel.jsx
+ /** @module FormLabel
+                                                                                                                                                                                                                          *  @class FormLabel
+                                                                                                                                                                                                                          *  @since 2020.10.06, 23:45
+                                                                                                                                                                                                                          *  @changed 2020.10.06, 23:46
+                                                                                                                                                                                                                          */
+/* eslint-disable react/require-default-props */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+var cnFormLabel = configure_cn('FormLabel');var
+
+FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormLabel, _React$PureComponent);function FormLabel() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (event) {var _this$props =
+
+
+
+
+      _this.props,disabled = _this$props.disabled,onClick = _this$props.onClick;
+      if ( /* clickable && */!disabled && onClick && typeof onClick === 'function') {
+        onClick(event);
+      }
+    });return _this;}var _proto = FormLabel.prototype;_proto.getClassName = function getClassName() {var _this$props2 = this.props,id = _this$props2.id,fixed = _this$props2.fixed,firstInBlock = _this$props2.firstInBlock;var classList = cnFormLabel({ id: id, fixed: fixed, firstInBlock: firstInBlock // clickable,
+    }, [this.props.className]);return classList;} // Handlers...
+  ; // Render...
+  _proto.
+  render = function render() {var _this$props3 =
+
+
+
+
+
+
+
+
+
+    this.props,id = _this$props3.id,name = _this$props3.name,disabled = _this$props3.disabled,htmlFor = _this$props3.htmlFor,text = _this$props3.text,children = _this$props3.children,title = _this$props3.title;
+
+    var renderProps = {
+      id: id,
+      className: this.getClassName(),
+      disabled: disabled,
+      title: title };
+
+
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("div", renderProps, /*#__PURE__*/
+      external_react_default.a.createElement("label", {
+        className: cnFormLabel('Control', ['FormItem-Control']),
+        id: id,
+        name: name,
+        disabled: disabled,
+        htmlFor: htmlFor,
+        title: title },
+
+      children || text || title)));
+
+
+
+  };return FormLabel;}(external_react_default.a.PureComponent /** @lends @FormLabel.prototype */);defineProperty_default()(FormLabel_FormLabel_FormLabel, "propTypes", { id: prop_types_default.a.string });
+
+
+
+/* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true, solid: true })(FormLabel_FormLabel_FormLabel));
+// EXTERNAL MODULE: ./node_modules/symbol-observable/es/index.js
+var es = __webpack_require__(10);
+
+// CONCATENATED MODULE: ./node_modules/redux/es/redux.js
+
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+var randomString = function randomString() {
+  return Math.random().toString(36).substring(7).split('').join('.');
+};
+
+var ActionTypes = {
+  INIT: "@@redux/INIT" + randomString(),
+  REPLACE: "@@redux/REPLACE" + randomString(),
+  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
+    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
+  }
+};
+
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+function isPlainObject(obj) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  var proto = obj;
+
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto);
+  }
+
+  return Object.getPrototypeOf(obj) === proto;
+}
+
+/**
+ * Creates a Redux store that holds the state tree.
+ * The only way to change the data in the store is to call `dispatch()` on it.
+ *
+ * There should only be a single store in your app. To specify how different
+ * parts of the state tree respond to actions, you may combine several reducers
+ * into a single reducer function by using `combineReducers`.
+ *
+ * @param {Function} reducer A function that returns the next state tree, given
+ * the current state tree and the action to handle.
+ *
+ * @param {any} [preloadedState] The initial state. You may optionally specify it
+ * to hydrate the state from the server in universal apps, or to restore a
+ * previously serialized user session.
+ * If you use `combineReducers` to produce the root reducer function, this must be
+ * an object with the same shape as `combineReducers` keys.
+ *
+ * @param {Function} [enhancer] The store enhancer. You may optionally specify it
+ * to enhance the store with third-party capabilities such as middleware,
+ * time travel, persistence, etc. The only store enhancer that ships with Redux
+ * is `applyMiddleware()`.
+ *
+ * @returns {Store} A Redux store that lets you read the state, dispatch actions
+ * and subscribe to changes.
+ */
+
+function createStore(reducer, preloadedState, enhancer) {
+  var _ref2;
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
+    throw new Error('It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function.');
+  }
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloadedState;
+    preloadedState = undefined;
+  }
+
+  if (typeof enhancer !== 'undefined') {
+    if (typeof enhancer !== 'function') {
+      throw new Error('Expected the enhancer to be a function.');
+    }
+
+    return enhancer(createStore)(reducer, preloadedState);
+  }
+
+  if (typeof reducer !== 'function') {
+    throw new Error('Expected the reducer to be a function.');
+  }
+
+  var currentReducer = reducer;
+  var currentState = preloadedState;
+  var currentListeners = [];
+  var nextListeners = currentListeners;
+  var isDispatching = false;
+  /**
+   * This makes a shallow copy of currentListeners so we can use
+   * nextListeners as a temporary list while dispatching.
+   *
+   * This prevents any bugs around consumers calling
+   * subscribe/unsubscribe in the middle of a dispatch.
+   */
+
+  function ensureCanMutateNextListeners() {
+    if (nextListeners === currentListeners) {
+      nextListeners = currentListeners.slice();
+    }
+  }
+  /**
+   * Reads the state tree managed by the store.
+   *
+   * @returns {any} The current state tree of your application.
+   */
+
+
+  function getState() {
+    if (isDispatching) {
+      throw new Error('You may not call store.getState() while the reducer is executing. ' + 'The reducer has already received the state as an argument. ' + 'Pass it down from the top reducer instead of reading it from the store.');
+    }
+
+    return currentState;
+  }
+  /**
+   * Adds a change listener. It will be called any time an action is dispatched,
+   * and some part of the state tree may potentially have changed. You may then
+   * call `getState()` to read the current state tree inside the callback.
+   *
+   * You may call `dispatch()` from a change listener, with the following
+   * caveats:
+   *
+   * 1. The subscriptions are snapshotted just before every `dispatch()` call.
+   * If you subscribe or unsubscribe while the listeners are being invoked, this
+   * will not have any effect on the `dispatch()` that is currently in progress.
+   * However, the next `dispatch()` call, whether nested or not, will use a more
+   * recent snapshot of the subscription list.
+   *
+   * 2. The listener should not expect to see all state changes, as the state
+   * might have been updated multiple times during a nested `dispatch()` before
+   * the listener is called. It is, however, guaranteed that all subscribers
+   * registered before the `dispatch()` started will be called with the latest
+   * state by the time it exits.
+   *
+   * @param {Function} listener A callback to be invoked on every dispatch.
+   * @returns {Function} A function to remove this change listener.
+   */
+
+
+  function subscribe(listener) {
+    if (typeof listener !== 'function') {
+      throw new Error('Expected the listener to be a function.');
+    }
+
+    if (isDispatching) {
+      throw new Error('You may not call store.subscribe() while the reducer is executing. ' + 'If you would like to be notified after the store has been updated, subscribe from a ' + 'component and invoke store.getState() in the callback to access the latest state. ' + 'See https://redux.js.org/api-reference/store#subscribelistener for more details.');
+    }
+
+    var isSubscribed = true;
+    ensureCanMutateNextListeners();
+    nextListeners.push(listener);
+    return function unsubscribe() {
+      if (!isSubscribed) {
+        return;
+      }
+
+      if (isDispatching) {
+        throw new Error('You may not unsubscribe from a store listener while the reducer is executing. ' + 'See https://redux.js.org/api-reference/store#subscribelistener for more details.');
+      }
+
+      isSubscribed = false;
+      ensureCanMutateNextListeners();
+      var index = nextListeners.indexOf(listener);
+      nextListeners.splice(index, 1);
+      currentListeners = null;
+    };
+  }
+  /**
+   * Dispatches an action. It is the only way to trigger a state change.
+   *
+   * The `reducer` function, used to create the store, will be called with the
+   * current state tree and the given `action`. Its return value will
+   * be considered the **next** state of the tree, and the change listeners
+   * will be notified.
+   *
+   * The base implementation only supports plain object actions. If you want to
+   * dispatch a Promise, an Observable, a thunk, or something else, you need to
+   * wrap your store creating function into the corresponding middleware. For
+   * example, see the documentation for the `redux-thunk` package. Even the
+   * middleware will eventually dispatch plain object actions using this method.
+   *
+   * @param {Object} action A plain object representing “what changed”. It is
+   * a good idea to keep actions serializable so you can record and replay user
+   * sessions, or use the time travelling `redux-devtools`. An action must have
+   * a `type` property which may not be `undefined`. It is a good idea to use
+   * string constants for action types.
+   *
+   * @returns {Object} For convenience, the same action object you dispatched.
+   *
+   * Note that, if you use a custom middleware, it may wrap `dispatch()` to
+   * return something else (for example, a Promise you can await).
+   */
+
+
+  function dispatch(action) {
+    if (!isPlainObject(action)) {
+      throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
+    }
+
+    if (typeof action.type === 'undefined') {
+      throw new Error('Actions may not have an undefined "type" property. ' + 'Have you misspelled a constant?');
+    }
+
+    if (isDispatching) {
+      throw new Error('Reducers may not dispatch actions.');
+    }
+
+    try {
+      isDispatching = true;
+      currentState = currentReducer(currentState, action);
+    } finally {
+      isDispatching = false;
+    }
+
+    var listeners = currentListeners = nextListeners;
+
+    for (var i = 0; i < listeners.length; i++) {
+      var listener = listeners[i];
+      listener();
+    }
+
+    return action;
+  }
+  /**
+   * Replaces the reducer currently used by the store to calculate the state.
+   *
+   * You might need this if your app implements code splitting and you want to
+   * load some of the reducers dynamically. You might also need this if you
+   * implement a hot reloading mechanism for Redux.
+   *
+   * @param {Function} nextReducer The reducer for the store to use instead.
+   * @returns {void}
+   */
+
+
+  function replaceReducer(nextReducer) {
+    if (typeof nextReducer !== 'function') {
+      throw new Error('Expected the nextReducer to be a function.');
+    }
+
+    currentReducer = nextReducer; // This action has a similiar effect to ActionTypes.INIT.
+    // Any reducers that existed in both the new and old rootReducer
+    // will receive the previous state. This effectively populates
+    // the new state tree with any relevant data from the old one.
+
+    dispatch({
+      type: ActionTypes.REPLACE
+    });
+  }
+  /**
+   * Interoperability point for observable/reactive libraries.
+   * @returns {observable} A minimal observable of state changes.
+   * For more information, see the observable proposal:
+   * https://github.com/tc39/proposal-observable
+   */
+
+
+  function observable() {
+    var _ref;
+
+    var outerSubscribe = subscribe;
+    return _ref = {
+      /**
+       * The minimal observable subscription method.
+       * @param {Object} observer Any object that can be used as an observer.
+       * The observer object should have a `next` method.
+       * @returns {subscription} An object with an `unsubscribe` method that can
+       * be used to unsubscribe the observable from the store, and prevent further
+       * emission of values from the observable.
+       */
+      subscribe: function subscribe(observer) {
+        if (typeof observer !== 'object' || observer === null) {
+          throw new TypeError('Expected the observer to be an object.');
+        }
+
+        function observeState() {
+          if (observer.next) {
+            observer.next(getState());
+          }
+        }
+
+        observeState();
+        var unsubscribe = outerSubscribe(observeState);
+        return {
+          unsubscribe: unsubscribe
+        };
+      }
+    }, _ref[es["a" /* default */]] = function () {
+      return this;
+    }, _ref;
+  } // When a store is created, an "INIT" action is dispatched so that every
+  // reducer returns their initial state. This effectively populates
+  // the initial state tree.
+
+
+  dispatch({
+    type: ActionTypes.INIT
+  });
+  return _ref2 = {
+    dispatch: dispatch,
+    subscribe: subscribe,
+    getState: getState,
+    replaceReducer: replaceReducer
+  }, _ref2[es["a" /* default */]] = observable, _ref2;
+}
+
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+
+function getUndefinedStateErrorMessage(key, action) {
+  var actionType = action && action.type;
+  var actionDescription = actionType && "action \"" + String(actionType) + "\"" || 'an action';
+  return "Given " + actionDescription + ", reducer \"" + key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.";
+}
+
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject(inputState)) {
+    return "The " + argumentName + " has unexpected type of \"" + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+  if (action && action.type === ActionTypes.REPLACE) return;
+
+  if (unexpectedKeys.length > 0) {
+    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
+  }
+}
+
+function assertReducerShape(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, {
+      type: ActionTypes.INIT
+    });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
+    }
+
+    if (typeof reducer(undefined, {
+      type: ActionTypes.PROBE_UNKNOWN_ACTION()
+    }) === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle " + ActionTypes.INIT + " or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
+    }
+  });
+}
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
+
+function combineReducers(reducers) {
+  var reducerKeys = Object.keys(reducers);
+  var finalReducers = {};
+
+  for (var i = 0; i < reducerKeys.length; i++) {
+    var key = reducerKeys[i];
+
+    if (false) {}
+
+    if (typeof reducers[key] === 'function') {
+      finalReducers[key] = reducers[key];
+    }
+  }
+
+  var finalReducerKeys = Object.keys(finalReducers); // This is used to make sure we don't warn about the same
+  // keys multiple times.
+
+  var unexpectedKeyCache;
+
+  if (false) {}
+
+  var shapeAssertionError;
+
+  try {
+    assertReducerShape(finalReducers);
+  } catch (e) {
+    shapeAssertionError = e;
+  }
+
+  return function combination(state, action) {
+    if (state === void 0) {
+      state = {};
+    }
+
+    if (shapeAssertionError) {
+      throw shapeAssertionError;
+    }
+
+    if (false) { var warningMessage; }
+
+    var hasChanged = false;
+    var nextState = {};
+
+    for (var _i = 0; _i < finalReducerKeys.length; _i++) {
+      var _key = finalReducerKeys[_i];
+      var reducer = finalReducers[_key];
+      var previousStateForKey = state[_key];
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if (typeof nextStateForKey === 'undefined') {
+        var errorMessage = getUndefinedStateErrorMessage(_key, action);
+        throw new Error(errorMessage);
+      }
+
+      nextState[_key] = nextStateForKey;
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+    }
+
+    hasChanged = hasChanged || finalReducerKeys.length !== Object.keys(state).length;
+    return hasChanged ? nextState : state;
+  };
+}
+
+function bindActionCreator(actionCreator, dispatch) {
+  return function () {
+    return dispatch(actionCreator.apply(this, arguments));
+  };
+}
+/**
+ * Turns an object whose values are action creators, into an object with the
+ * same keys, but with every function wrapped into a `dispatch` call so they
+ * may be invoked directly. This is just a convenience method, as you can call
+ * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
+ *
+ * For convenience, you can also pass an action creator as the first argument,
+ * and get a dispatch wrapped function in return.
+ *
+ * @param {Function|Object} actionCreators An object whose values are action
+ * creator functions. One handy way to obtain it is to use ES6 `import * as`
+ * syntax. You may also pass a single function.
+ *
+ * @param {Function} dispatch The `dispatch` function available on your Redux
+ * store.
+ *
+ * @returns {Function|Object} The object mimicking the original object, but with
+ * every action creator wrapped into the `dispatch` call. If you passed a
+ * function as `actionCreators`, the return value will also be a single
+ * function.
+ */
+
+
+function bindActionCreators(actionCreators, dispatch) {
+  if (typeof actionCreators === 'function') {
+    return bindActionCreator(actionCreators, dispatch);
+  }
+
+  if (typeof actionCreators !== 'object' || actionCreators === null) {
+    throw new Error("bindActionCreators expected an object or a function, instead received " + (actionCreators === null ? 'null' : typeof actionCreators) + ". " + "Did you write \"import ActionCreators from\" instead of \"import * as ActionCreators from\"?");
+  }
+
+  var boundActionCreators = {};
+
+  for (var key in actionCreators) {
+    var actionCreator = actionCreators[key];
+
+    if (typeof actionCreator === 'function') {
+      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
+    }
+  }
+
+  return boundActionCreators;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    keys.push.apply(keys, Object.getOwnPropertySymbols(object));
+  }
+
+  if (enumerableOnly) keys = keys.filter(function (sym) {
+    return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+  });
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+function compose() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce(function (a, b) {
+    return function () {
+      return a(b.apply(void 0, arguments));
+    };
+  });
+}
+
+/**
+ * Creates a store enhancer that applies middleware to the dispatch method
+ * of the Redux store. This is handy for a variety of tasks, such as expressing
+ * asynchronous actions in a concise manner, or logging every action payload.
+ *
+ * See `redux-thunk` package as an example of the Redux middleware.
+ *
+ * Because middleware is potentially asynchronous, this should be the first
+ * store enhancer in the composition chain.
+ *
+ * Note that each middleware will be given the `dispatch` and `getState` functions
+ * as named arguments.
+ *
+ * @param {...Function} middlewares The middleware chain to be applied.
+ * @returns {Function} A store enhancer applying the middleware.
+ */
+
+function applyMiddleware() {
+  for (var _len = arguments.length, middlewares = new Array(_len), _key = 0; _key < _len; _key++) {
+    middlewares[_key] = arguments[_key];
+  }
+
+  return function (createStore) {
+    return function () {
+      var store = createStore.apply(void 0, arguments);
+
+      var _dispatch = function dispatch() {
+        throw new Error('Dispatching while constructing your middleware is not allowed. ' + 'Other middleware would not be applied to this dispatch.');
+      };
+
+      var middlewareAPI = {
+        getState: store.getState,
+        dispatch: function dispatch() {
+          return _dispatch.apply(void 0, arguments);
+        }
+      };
+      var chain = middlewares.map(function (middleware) {
+        return middleware(middlewareAPI);
+      });
+      _dispatch = compose.apply(void 0, chain)(store.dispatch);
+      return _objectSpread2({}, store, {
+        dispatch: _dispatch
+      });
+    };
+  };
+}
+
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+function isCrushed() {}
+
+if (false) {}
+
+
+
+// EXTERNAL MODULE: ./src/forms/FormButton/FormButton.pcss
+var FormButton_FormButton = __webpack_require__(31);
+
+// EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Variations.pcss
+var FormButton_Variations = __webpack_require__(32);
+
+// EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Themes.pcss
+var FormButton_Themes = __webpack_require__(33);
+
+// CONCATENATED MODULE: ./src/forms/FormButton/FormButton.jsx
+ /** @module FormButton
+                                                                                                                                                                                                                                                                                *  @class FormButton
+                                                                                                                                                                                                                                                                                *  @since 2020.07.20, 19:07
+                                                                                                                                                                                                                                                                                *  @changed 2020.10.29, 03:30
+                                                                                                                                                                                                                                                                                */
+
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+
+
+
+
+
+var cnFormButton = configure_cn('FormButton');var
+
+FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormButton, _React$PureComponent);function FormButton() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (event) {var _this$props =
+
+
+
+
+
+
+      _this.props,id = _this$props.id,actionsContextNode = _this$props.actionsContextNode,disabled = _this$props.disabled,onClick = _this$props.onClick;
+      if (!disabled && onClick && typeof onClick === 'function') {
+        onClick(event);
+      }
+      if (actionsContextNode && typeof actionsContextNode.onAction) {
+        actionsContextNode.onAction({ id: id });
+      }
+    });return _this;}var _proto = FormButton.prototype; // static defaultProps = {
+  // }
+  // Helpers...
+  _proto.hasIcon = function hasIcon() {var _this$props2 = this.props,icon = _this$props2.icon,hasIcon = _this$props2.hasIcon;return !!(hasIcon || icon);};_proto.hasText = function hasText() {var _this$props3 = this.props,hasText = _this$props3.hasText,onlyIcon = _this$props3.onlyIcon,children = _this$props3.children,text = _this$props3.text;return !onlyIcon && !!(hasText || text || children);};_proto.getClassName = function getClassName() {// TODO: Refactor properties!
+    var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,inline = _this$props4.inline,largeIcon = _this$props4.largeIcon,onDark = _this$props4.onDark,onlyIcon = _this$props4.onlyIcon,plain = _this$props4.plain,rightIcon = _this$props4.rightIcon,rotatedIcon = _this$props4.rotatedIcon,theme = _this$props4.theme,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
+      checked: checked, fullWidth: fullWidth, id: id, inline: inline, largeIcon: largeIcon, onDark: onDark, onlyIcon: onlyIcon, plain: plain, rightIcon: rightIcon, rotatedIcon: rotatedIcon, theme: theme, type: type, variation: variation };var staticMods = { solid: true };var classList = cnFormButton(extends_default()({}, staticMods, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
+  ; // Render...
+  _proto.renderIcon = function renderIcon() {var hasIcon = this.hasIcon();if (hasIcon) {var icon = this.props.icon;
+      if (icon && icon.type === elements_InlineIcon_InlineIcon) {// Already InlineIcon
+        // Extend with updated `className` props
+        var props = extends_default()({},
+        icon.props, {
+          className: cnFormButton('Icon', [icon.props.className]) });
+
+        var newIcon = extends_default()({}, icon, { props: props });
+        return newIcon;
+      }
+      return /*#__PURE__*/(
+        external_react_default.a.createElement(elements_InlineIcon_InlineIcon, { icon: icon, className: cnFormButton('Icon') }));
+
+    }
+  };_proto.
+
+  renderText = function renderText() {
+    var hasText = this.hasText(); // !onlyIcon && !!(hasText || text || children
+    if (hasText) {var _this$props5 =
+      this.props,text = _this$props5.text,children = _this$props5.children;
+      return hasText && /*#__PURE__*/
+      external_react_default.a.createElement("span", { className: cnFormButton('Text') },
+      text || children);
+
+
+    }
+  };_proto.
+
+  render = function render() {var _this$props6 =
+
+
+
+
+
+
+
+
+
+    this.props,id = _this$props6.id,disabled = _this$props6.disabled,tag = _this$props6.tag,type = _this$props6.type,title = _this$props6.title,setDomRef = _this$props6.setDomRef,actionsContextNode = _this$props6.actionsContextNode;
+
+    var iconElem = this.renderIcon(); // Icon element
+    var textElem = this.renderText(); // Text element
+
+    // const basicRenderProps = this.getRenderProps() // Get from props not from overrided `super`
+    var renderProps = {
+      // ...basicRenderProps,
+      id: id,
+      className: this.getClassName(),
+      disabled: disabled,
+      title: title,
+      type: type,
+      onClick: this.onClick,
+      ref: setDomRef // Init ref for FormItemHOC
+    };
+
+    var content = /*#__PURE__*/
+    external_react_default.a.createElement(external_react_default.a.Fragment, null,
+    iconElem,
+    textElem);
+
+
+
+    var tagName = tag || 'div';
+    var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
+    return element;
+  };return FormButton;}(external_react_default.a.PureComponent /** @lends @FormButton.prototype */);
+
+
+
+// export default FormItemHOC({ solid: true, hoverable: true, framed: true })(FormButton)
+defineProperty_default()(FormButton_FormButton_FormButton, "propTypes", { // TODO!!!
+  // TODO: size: PropTypes.string, // Different form item sizes? (eg: md -- default, sm, xs, lg, xl, xxl)
+  checked: prop_types_default.a.bool, // FormItem: Checked state
+  disabled: prop_types_default.a.bool, fullWidth: prop_types_default.a.bool, // Occupies all horizontal space
+  hasIcon: prop_types_default.a.bool, // Optional
+  hasText: prop_types_default.a.bool, // Optional
+  icon: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Icon component. May be as image resource loaded with `file/url-loader` as `FontAwesomeIcon` component.
+  id: prop_types_default.a.string, inline: prop_types_default.a.bool, largeIcon: prop_types_default.a.bool, // Large icon
+  onClick: prop_types_default.a.func, onDark: prop_types_default.a.bool, // On dark background
+  onlyIcon: prop_types_default.a.bool, // Only icon
+  plain: prop_types_default.a.bool, // ??? Plain icon (no border & background -- if no style specified, looks as link)
+  rightIcon: prop_types_default.a.bool, // Icon placed at right side
+  text: prop_types_default.a.string, // Text content (may be passed as node children)
+  theme: prop_types_default.a.string // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
+});/* harmony default export */ var forms_FormButton_FormButton = (compose(ActionsContext_withActionsContext, forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true }))(FormButton_FormButton_FormButton));
+// EXTERNAL MODULE: ./src/forms/FormGroup/FormGroup.pcss
+var FormGroup_FormGroup = __webpack_require__(35);
+
+// CONCATENATED MODULE: ./src/forms/FormGroup/FormGroup.jsx
+ /** @module FormGroup
+                                                                                                                                                                                              *  @class FormGroup
+                                                                                                                                                                                              *  @since 2020.07.20, 19:07
+                                                                                                                                                                                              *  @changed 2020.07.20, 19:07
+                                                                                                                                                                                              */
+/* eslint-disable react/require-default-props, react/no-unused-prop-types */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+var cnFormGroup = configure_cn('FormGroup');var
+
+FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormGroup, _React$PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function FormGroup(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;
+    _this.state = {};return _this;
+
+  }var _proto = FormGroup.prototype;_proto.
+
+  getClassName = function getClassName() {var _this2 = this;
+    var mods = FormGroup.classNameModifiers.reduce(function (mods, id) {
+      var val = _this2.state[id] != null ? _this2.state[id] : _this2.props[id];
+      if (val != null) {var _extends2;
+        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
+      }
+      return mods;
+    }, {});
+    return cnFormGroup(mods, [this.props.className]);
+  }
+
+  // Render...
+  ;_proto.
+  render = function render() {var _this$props =
+
+
+
+
+
+
+    this.props,id = _this$props.id,children = _this$props.children,content = _this$props.content;
+
+    // const renderProps = this.getRenderProps()
+
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("div", { id: id, className: this.getClassName() },
+      content || children));
+
+
+  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, alignItems: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
+  // disabled: PropTypes.bool,
+  // value: PropTypes.any,
+  // valueType: PropTypes.string,
+  // onChange: PropTypes.func,
+});defineProperty_default()(FormGroup_FormGroup_FormGroup, "classNameModifiers", [// Basic element properties
+'id', // Style-related modifiers...
+'align', 'alignItems', 'background', 'flow', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
+// CONCATENATED MODULE: ./src/forms/FormLabeledGroup/FormLabeledGroup.jsx
+/** @module FormLabeledGroup
+ *  @class FormLabeledGroup
+ *  @since 2020.05.10, 09:24
+ *  @changed 2020.12.10, 16:20
+ */
+
+
+// import { cn } from 'utils/configure'
+
+
+
+
+// import './FormLabeledGroup.pcss'
+
+// const cnFormLabeledGroup = cn('FormLabeledGroup')
+
+// class FormLabeledGroup extends React.PureComponent [>* @lends @FormLabeledGroup.prototype <] {
+var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @lends @FormLabeledGroup.prototype */{var
+
+
+  children =
+
+
+
+
+
+
+
+
+
+  props.children,id = props.id,fullWidth = props.fullWidth,innerFlex = props.innerFlex,htmlFor = props.htmlFor,title = props.title,text = props.text,flow = props.flow;
+  // const thisClassName = cnFormLabeledGroup({ flow, full })
+  return /*#__PURE__*/(
+    external_react_default.a.createElement(forms_FormGroup_FormGroup, {
+      fullWidth: fullWidth,
+      innerFlex: innerFlex,
+      flow: flow,
+      id: id }, /*#__PURE__*/
+
+    external_react_default.a.createElement(forms_FormLabel_FormLabel, {
+      htmlFor: htmlFor,
+      title: title,
+      text: text || title + ':',
+      fixed: flow && fullWidth,
+      firstInBlock: !flow && fullWidth }),
+
+    children));
+
+
+
+};
+
+/* harmony default export */ var forms_FormLabeledGroup_FormLabeledGroup = (FormLabeledGroup_FormLabeledGroup);
+// EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
+var FormButtonGroup_FormButtonGroup = __webpack_require__(36);
+
+// CONCATENATED MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.jsx
+ /** @module FormButtonGroup
+                                                                                                                                                                                              *  @class FormButtonGroup
+                                                                                                                                                                                              *  @since 2020.10.21, 23:43
+                                                                                                                                                                                              *  @changed 2020.10.21, 23:43
+                                                                                                                                                                                              */
+/* eslint-disable react/require-default-props */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+
+var FormButtonGroup_classNameModifiers = [
+// Basic element properties
+'id'
+// Style-related modifiers...
+// 'align',
+// 'padded',
+// 'background',
+// 'flow',
+// 'fullWidth',
+];
+
+var cnFormButtonGroup = configure_cn('FormButtonGroup');var
+
+FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormButtonGroup, _React$PureComponent);function FormButtonGroup() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormButtonGroup.prototype;_proto.
+
+
+
+
+
+
+  getClassName = function getClassName() {var _this = this;
+    var mods = FormButtonGroup_classNameModifiers.reduce(function (mods, id) {
+      var val = _this.props[id];
+      if (val != null) {var _extends2;
+        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
+      }
+      return mods;
+    }, {});
+    return cnFormButtonGroup(mods, [this.props.className]);
+  }
+
+  // Render...
+  ;_proto.
+  render = function render() {
+    // const {
+    //   id,
+    //   // name,
+    //   // disabled,
+    //   children,
+    //   content,
+    // } = this.props
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(forms_FormGroup_FormGroup, extends_default()({}, this.props, { className: this.getClassName() })));
+
+  };return FormButtonGroup;}(external_react_default.a.PureComponent /** @lends @FormButtonGroup.prototype */);defineProperty_default()(FormButtonGroup_FormButtonGroup_FormButtonGroup, "propTypes", { id: prop_types_default.a.string // flow: PropTypes.bool,
+});
+
+
+/* harmony default export */ var forms_FormButtonGroup_FormButtonGroup = (forms_FormItemHOC_FormItemHOC(FormButtonGroup_FormButtonGroup_FormButtonGroup));
+// EXTERNAL MODULE: ./src/forms/FormInputGroup/FormInputGroup.pcss
+var FormInputGroup_FormInputGroup = __webpack_require__(37);
+
+// CONCATENATED MODULE: ./src/forms/FormInputGroup/FormInputGroup.jsx
+ /** @module FormInputGroup
+                                                                                                                                                                                              *  @class FormInputGroup
+                                                                                                                                                                                              *  @since 2020.10.21, 23:43
+                                                                                                                                                                                              *  @changed 2020.10.21, 23:43
+                                                                                                                                                                                              */
+/* eslint-disable react/require-default-props */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+
+var FormInputGroup_classNameModifiers = [
+// Basic element properties
+'id'
+// Style-related modifiers...
+// 'align',
+// 'padded',
+// 'background',
+// 'flow',
+// 'fullWidth',
+];
+
+var cnFormInputGroup = configure_cn('FormInputGroup');var
+
+FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormInputGroup, _React$PureComponent);function FormInputGroup() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormInputGroup.prototype;_proto.
+
+
+
+
+
+
+
+
+
+  getClassName = function getClassName() {var _this = this;
+    var mods = FormInputGroup_classNameModifiers.reduce(function (mods, id) {
+      var val = _this.props[id];
+      if (val != null) {var _extends2;
+        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
+      }
+      return mods;
+    }, {});
+    return cnFormInputGroup(mods, [this.props.className]);
+  }
+
+  // Render...
+  ;_proto.
+  render = function render() {
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(forms_FormGroup_FormGroup, extends_default()({}, this.props, { className: this.getClassName() })));
+
+  };return FormInputGroup;}(external_react_default.a.PureComponent /** @lends @FormInputGroup.prototype */);defineProperty_default()(FormInputGroup_FormInputGroup_FormInputGroup, "propTypes", { id: prop_types_default.a.string // disabled: PropTypes.bool, // ???
+  // align: PropTypes.string,
+  // padded: PropTypes.bool,
+  // flow: PropTypes.bool,
+});/* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
+// EXTERNAL MODULE: ./src/forms/FormDelim/FormDelim.pcss
+var FormDelim_FormDelim = __webpack_require__(38);
+
+// CONCATENATED MODULE: ./src/forms/FormDelim/FormDelim.jsx
+/** @module FormDelim
+ *  @class FormDelim
+ *  @since 2020.11.27, 12:52
+ *  @changed 2020.11.27, 12:52
+ */
+
+
+
+
+
+
+var FormDelim_FormDelim_FormDelim = function FormDelim(props) {var
+  id = props.id;
+  var className = configure_cn('FormDelim')({ id: id }, [props.className]);
+  return /*#__PURE__*/(
+    external_react_default.a.createElement("div", { className: className }));
+
+};
+
+/* harmony default export */ var forms_FormDelim_FormDelim = (FormDelim_FormDelim_FormDelim);
+// EXTERNAL MODULE: ./src/forms/FormSpacer/FormSpacer.pcss
+var FormSpacer_FormSpacer = __webpack_require__(39);
+
+// CONCATENATED MODULE: ./src/forms/FormSpacer/FormSpacer.jsx
+/** @module FormSpacer
+ *  @class FormSpacer
+ *  @since 2020.11.27, 12:52
+ *  @changed 2020.11.27, 12:52
+ */
+
+
+
+
+
+
+var FormSpacer_FormSpacer_FormSpacer = function FormSpacer(props) {var
+  id = props.id;
+  var className = configure_cn('FormSpacer')({ id: id }, [props.className]);
+  return /*#__PURE__*/(
+    external_react_default.a.createElement("div", { className: className }));
+
+};
+
+/* harmony default export */ var forms_FormSpacer_FormSpacer = (FormSpacer_FormSpacer_FormSpacer);
+// EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
+var FormText_FormText = __webpack_require__(40);
+
+// CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
+ /** @module FormText
+                                                                                                                                                                                                                          *  @class FormText
+                                                                                                                                                                                                                          *  @since 2020.10.29, 21:25
+                                                                                                                                                                                                                          *  @changed 2020.10.29, 22:42
+                                                                                                                                                                                                                          */
+/* eslint-disable react/require-default-props */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+
+
+var cnFormText = configure_cn('FormText');var
+
+FormText_FormText_FormText = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormText, _React$PureComponent);function FormText() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (event) {var _this$props =
+
+
+
+      _this.props,disabled = _this$props.disabled,onClick = _this$props.onClick;
+      if (!disabled && onClick && typeof onClick === 'function') {
+        onClick(event);
+      }
+    });return _this;}var _proto = FormText.prototype;_proto.getClassName = function getClassName() {var id = this.props.id;var classList = cnFormText({ id: id }, [this.props.className]);return classList;} // Handlers...
+  ;
+  // Render...
+  _proto.
+  render = function render() {var _this$props2 =
+
+
+
+
+
+
+
+    this.props,id = _this$props2.id,disabled = _this$props2.disabled,text = _this$props2.text,children = _this$props2.children,title = _this$props2.title;
+
+    var renderProps = {
+      id: id,
+      className: this.getClassName(),
+      disabled: disabled,
+      title: title };
+
+
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("div", renderProps,
+      children || text || title));
+
+
+
+  };return FormText;}(external_react_default.a.PureComponent /** @lends @FormText.prototype */);defineProperty_default()(FormText_FormText_FormText, "propTypes", { id: prop_types_default.a.string });
+
+
+
+/* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
+// CONCATENATED MODULE: ./node_modules/throttle-debounce/esm/index.js
+/* eslint-disable no-undefined,no-param-reassign,no-shadow */
+
+/**
+ * Throttle execution of a function. Especially useful for rate limiting
+ * execution of handlers on events like resize and scroll.
+ *
+ * @param  {number}    delay -          A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {boolean}   [noTrailing] -   Optional, defaults to false. If noTrailing is true, callback will only execute every `delay` milliseconds while the
+ *                                    throttled-function is being called. If noTrailing is false or unspecified, callback will be executed one final time
+ *                                    after the last throttled-function call. (After the throttled-function has not been called for `delay` milliseconds,
+ *                                    the internal counter is reset).
+ * @param  {Function}  callback -       A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                    to `callback` when the throttled-function is executed.
+ * @param  {boolean}   [debounceMode] - If `debounceMode` is true (at begin), schedule `clear` to execute after `delay` ms. If `debounceMode` is false (at end),
+ *                                    schedule `callback` to execute after `delay` ms.
+ *
+ * @returns {Function}  A new, throttled, function.
+ */
+function throttle (delay, noTrailing, callback, debounceMode) {
+  /*
+   * After wrapper has stopped being called, this timeout ensures that
+   * `callback` is executed at the proper times in `throttle` and `end`
+   * debounce modes.
+   */
+  var timeoutID;
+  var cancelled = false; // Keep track of the last time `callback` was executed.
+
+  var lastExec = 0; // Function to clear existing timeout
+
+  function clearExistingTimeout() {
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+  } // Function to cancel next exec
+
+
+  function cancel() {
+    clearExistingTimeout();
+    cancelled = true;
+  } // `noTrailing` defaults to falsy.
+
+
+  if (typeof noTrailing !== 'boolean') {
+    debounceMode = callback;
+    callback = noTrailing;
+    noTrailing = undefined;
+  }
+  /*
+   * The `wrapper` function encapsulates all of the throttling / debouncing
+   * functionality and when executed will limit the rate at which `callback`
+   * is executed.
+   */
+
+
+  function wrapper() {
+    for (var _len = arguments.length, arguments_ = new Array(_len), _key = 0; _key < _len; _key++) {
+      arguments_[_key] = arguments[_key];
+    }
+
+    var self = this;
+    var elapsed = Date.now() - lastExec;
+
+    if (cancelled) {
+      return;
+    } // Execute `callback` and update the `lastExec` timestamp.
+
+
+    function exec() {
+      lastExec = Date.now();
+      callback.apply(self, arguments_);
+    }
+    /*
+     * If `debounceMode` is true (at begin) this is used to clear the flag
+     * to allow future `callback` executions.
+     */
+
+
+    function clear() {
+      timeoutID = undefined;
+    }
+
+    if (debounceMode && !timeoutID) {
+      /*
+       * Since `wrapper` is being called for the first time and
+       * `debounceMode` is true (at begin), execute `callback`.
+       */
+      exec();
+    }
+
+    clearExistingTimeout();
+
+    if (debounceMode === undefined && elapsed > delay) {
+      /*
+       * In throttle mode, if `delay` time has been exceeded, execute
+       * `callback`.
+       */
+      exec();
+    } else if (noTrailing !== true) {
+      /*
+       * In trailing throttle mode, since `delay` time has not been
+       * exceeded, schedule `callback` to execute `delay` ms after most
+       * recent execution.
+       *
+       * If `debounceMode` is true (at begin), schedule `clear` to execute
+       * after `delay` ms.
+       *
+       * If `debounceMode` is false (at end), schedule `callback` to
+       * execute after `delay` ms.
+       */
+      timeoutID = setTimeout(debounceMode ? clear : exec, debounceMode === undefined ? delay - elapsed : delay);
+    }
+  }
+
+  wrapper.cancel = cancel; // Return the wrapper function.
+
+  return wrapper;
+}
+
+/* eslint-disable no-undefined */
+/**
+ * Debounce execution of a function. Debouncing, unlike throttling,
+ * guarantees that a function is only executed a single time, either at the
+ * very beginning of a series of calls, or at the very end.
+ *
+ * @param  {number}   delay -         A zero-or-greater delay in milliseconds. For event callbacks, values around 100 or 250 (or even higher) are most useful.
+ * @param  {boolean}  [atBegin] -     Optional, defaults to false. If atBegin is false or unspecified, callback will only be executed `delay` milliseconds
+ *                                  after the last debounced-function call. If atBegin is true, callback will be executed only at the first debounced-function call.
+ *                                  (After the throttled-function has not been called for `delay` milliseconds, the internal counter is reset).
+ * @param  {Function} callback -      A function to be executed after delay milliseconds. The `this` context and all arguments are passed through, as-is,
+ *                                  to `callback` when the debounced-function is executed.
+ *
+ * @returns {Function} A new, debounced function.
+ */
+
+function debounce (delay, atBegin, callback) {
+  return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
+}
+
+
+//# sourceMappingURL=index.js.map
+
 // EXTERNAL MODULE: external "react-dom"
 var external_react_dom_ = __webpack_require__(7);
 var external_react_dom_default = /*#__PURE__*/__webpack_require__.n(external_react_dom_);
@@ -2168,950 +3771,6 @@ if (external_react_dom_default.a.createPortal) {
 }
 
 /* harmony default export */ var PortalCompat = (PortalCompat_Portal);
-// CONCATENATED MODULE: ./node_modules/react-portal/es/PortalWithState.js
-var PortalWithState_createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function PortalWithState_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function PortalWithState_possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function PortalWithState_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-var KEYCODES = {
-  ESCAPE: 27
-};
-
-var PortalWithState_PortalWithState = function (_React$Component) {
-  PortalWithState_inherits(PortalWithState, _React$Component);
-
-  function PortalWithState(props) {
-    PortalWithState_classCallCheck(this, PortalWithState);
-
-    var _this = PortalWithState_possibleConstructorReturn(this, (PortalWithState.__proto__ || Object.getPrototypeOf(PortalWithState)).call(this, props));
-
-    _this.portalNode = null;
-    _this.state = { active: !!props.defaultOpen };
-    _this.openPortal = _this.openPortal.bind(_this);
-    _this.closePortal = _this.closePortal.bind(_this);
-    _this.wrapWithPortal = _this.wrapWithPortal.bind(_this);
-    _this.handleOutsideMouseClick = _this.handleOutsideMouseClick.bind(_this);
-    _this.handleKeydown = _this.handleKeydown.bind(_this);
-    return _this;
-  }
-
-  PortalWithState_createClass(PortalWithState, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      if (this.props.closeOnEsc) {
-        document.addEventListener('keydown', this.handleKeydown);
-      }
-      if (this.props.closeOnOutsideClick) {
-        document.addEventListener('click', this.handleOutsideMouseClick);
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      if (this.props.closeOnEsc) {
-        document.removeEventListener('keydown', this.handleKeydown);
-      }
-      if (this.props.closeOnOutsideClick) {
-        document.removeEventListener('click', this.handleOutsideMouseClick);
-      }
-    }
-  }, {
-    key: 'openPortal',
-    value: function openPortal(e) {
-      if (this.state.active) {
-        return;
-      }
-      if (e && e.nativeEvent) {
-        e.nativeEvent.stopImmediatePropagation();
-      }
-      this.setState({ active: true }, this.props.onOpen);
-    }
-  }, {
-    key: 'closePortal',
-    value: function closePortal() {
-      if (!this.state.active) {
-        return;
-      }
-      this.setState({ active: false }, this.props.onClose);
-    }
-  }, {
-    key: 'wrapWithPortal',
-    value: function wrapWithPortal(children) {
-      var _this2 = this;
-
-      if (!this.state.active) {
-        return null;
-      }
-      return external_react_default.a.createElement(
-        PortalCompat,
-        {
-          node: this.props.node,
-          key: 'react-portal',
-          ref: function ref(portalNode) {
-            return _this2.portalNode = portalNode;
-          }
-        },
-        children
-      );
-    }
-  }, {
-    key: 'handleOutsideMouseClick',
-    value: function handleOutsideMouseClick(e) {
-      if (!this.state.active) {
-        return;
-      }
-      var root = this.portalNode && (this.portalNode.props.node || this.portalNode.defaultNode);
-      if (!root || root.contains(e.target) || e.button && e.button !== 0) {
-        return;
-      }
-      this.closePortal();
-    }
-  }, {
-    key: 'handleKeydown',
-    value: function handleKeydown(e) {
-      if (e.keyCode === KEYCODES.ESCAPE && this.state.active) {
-        this.closePortal();
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return this.props.children({
-        openPortal: this.openPortal,
-        closePortal: this.closePortal,
-        portal: this.wrapWithPortal,
-        isOpen: this.state.active
-      });
-    }
-  }]);
-
-  return PortalWithState;
-}(external_react_default.a.Component);
-
-PortalWithState_PortalWithState.propTypes = {
-  children: prop_types_default.a.func.isRequired,
-  defaultOpen: prop_types_default.a.bool,
-  node: prop_types_default.a.any,
-  closeOnEsc: prop_types_default.a.bool,
-  closeOnOutsideClick: prop_types_default.a.bool,
-  onOpen: prop_types_default.a.func,
-  onClose: prop_types_default.a.func
-};
-
-PortalWithState_PortalWithState.defaultProps = {
-  onOpen: function onOpen() {},
-  onClose: function onClose() {}
-};
-
-/* harmony default export */ var es_PortalWithState = (PortalWithState_PortalWithState);
-// EXTERNAL MODULE: ./src/elements/Popup/Popup.pcss
-var Popup_Popup = __webpack_require__(29);
-
-// CONCATENATED MODULE: ./src/elements/Popup/Popup.jsx
- /** @module Popup
-                                                                                                                                                                                                                                                                                *  @class Popup
-                                                                                                                                                                                                                                                                                *  @since 2020.10.27, 00:39
-                                                                                                                                                                                                                                                                                *  @changed 2020.12.18, 02:34
-                                                                                                                                                                                                                                                                                *
-                                                                                                                                                                                                                                                                                *  TODO 2020.12.18, 01:50 -- Popup: Reset both `storedContentSize` if content changed (use registrable handler)?
-                                                                                                                                                                                                                                                                                *  TODO 2020.12.18, 02:15 -- Popup: Use static `PopupStack` component and close same-level (from stack end to first `Modal` or stack begin) popups
-                                                                                                                                                                                                                                                                                *  TODO 2020.12.19, 03:35 -- Popup: Use nearest scrollable container ancestor as popup base? Or clip to it bounds? Or hide popup if countrol is (partially) out of this bounds?
-                                                                                                                                                                                                                                                                                *
-                                                                                                                                                                                                                                                                                *  External methods (for PopupStack):
-                                                                                                                                                                                                                                                                                *  - close
-                                                                                                                                                                                                                                                                                *  - open
-                                                                                                                                                                                                                                                                                *  - updateGeometry
-                                                                                                                                                                                                                                                                                */
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-/* UNUSED: Transitions
-                                                 * import { // Transitions...
-                                                 *   CSSTransition,
-                                                 *   TransitionGroup,
-                                                 * } from 'react-transition-group'
-                                                 */
-
-
-
-
-var cnPopup = configure_cn('Popup');
-var cnPopupControl = configure_cn('PopupControl');
-
-var doDebug = false; // DEBUG!
-
-// Debounce delay
-var debouncedUpdateGeometryTimeout = //DEBUG//doDebug ? 500 :
-10;
-
-// Update by timer (0 - disabled), must be above than debounce delay (`debouncedUpdateGeometryTimeout`, above)
-var updateGeometryTimerDelay = //DEBUG//doDebug ? 0 :
-20; // 0
-
-var domNodeGeometryKeys = [
-/* // controlBouningBox sample:
-                            * bottom: 642.8125
-                            * height: 32
-                            * left: 223.921875
-                            * right: 551.515625
-                            * top: 610.8125
-                            * width: 327.59375
-                            * x: 223.921875
-                            * y: 610.8125
-                            */
-'left',
-'top',
-'width',
-'height'
-/* // Old values (for `node.style` keys)
-          * 'offsetLeft',
-          * 'offsetTop',
-          * 'offsetWidth',
-          * 'offsetHeight',
-          */];
-
-var verticalGeometryKeys = [
-'contentHeight',
-'contentTop',
-'controlHeight',
-'controlTop',
-'scrollY',
-'viewHeight'];
-
-var horizontalGeometryKeys = [
-'contentWidth',
-'contentLeft',
-'controlWidth',
-'controlLeft',
-'scrollX',
-'viewWidth'];
-
-
-var globalGeometryKeys = {
-  viewWidth: { obj: window, key: 'innerWidth' },
-  viewHeight: { obj: window, key: 'innerHeight' },
-  scrollX: { obj: window, key: 'pageXOffset' },
-  scrollY: { obj: window, key: 'pageYOffset' } };
-
-
-var axisKeys = { // Used in `updateOneAxisContentPos`
-  // Regexp to convert vertical axis keys to horizontal:
-  // '<,'>S/top/left/g | '<,'>S/bottom/right/g | '<,'>S/height/width/g | '<,'>S/vertical/horizontal/g
-  vertical: {
-    viewSize: 'viewHeight',
-    controlPos: 'controlTop',
-    controlSize: 'controlHeight',
-    scroll: 'scrollY',
-    contentPos: 'contentTop',
-    contentSize: 'contentHeight',
-    contentStylePos: 'top',
-    contentStyleSize: 'height',
-    contentStyleMaxSize: 'maxHeight',
-    // contentStyleMaxSize: 'max-height',
-    storedContentSize: 'storedContentHeight' // Stored in dom node
-  },
-  horizontal: {
-    viewSize: 'viewWidth',
-    controlPos: 'controlLeft',
-    controlSize: 'controlWidth',
-    scroll: 'scrollY',
-    contentPos: 'contentLeft',
-    contentSize: 'contentWidth',
-    contentStylePos: 'left',
-    contentStyleSize: 'width',
-    contentStyleMaxSize: 'maxWidth',
-    // contentStyleMaxSize: 'max-width',
-    storedContentSize: 'storedContentWidth' // Stored in dom node
-  } };
-
-
-// const globalClickEventName = 'mousedown'
-// const globalKeyPressEventName = 'keydown'
-var globalScrollEventName = 'scroll';
-var globalResizeEventName = 'resize';
-
-/* // DEBUG: Demo for prevent closing underlaying popups. (Can be used for modal windows. See crrsp styles & html layout.)
-                                       * const debugHide = document.getElementById('DebugHide')
-                                       * setTimeout(() => {
-                                       *   if (debugHide) {
-                                       *     debugHide.style.display = 'block'
-                                       *   }
-                                       * }, 3000)
-                                       * const debugHideListener = (ev) => {
-                                       *   // ev.stopImmediatePropagation()
-                                       *   ev.stopPropagation()
-                                       * }
-                                       * debugHide && debugHide.addEventListener('click', debugHideListener)
-                                       */var
-
-Popup_Popup_Popup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(Popup, _React$PureComponent);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Lifecycle...
-
-  function Popup(props) {var _this;
-    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "delayedClickTimerHandler", null);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "controlDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "contentDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "geometry", {});defineProperty_default()(assertThisInitialized_default()(_this), "setPopupsInited",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function () {
-      _this.setState({ popupsInited: true });
-    });defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometryInstant",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function () {// UNUSED? TODO? Update geometry
-      if (!_this.isOpen) {// Do nothing if popup is closed
-        return;
-      }var
-      fullWidth = _this.props.fullWidth;
-      // TODO: Call `updateGeometryInstant` on content update? How? Use timer?
-      var controlGeometry = _this.getDomNodeGeometry(_this.controlDomNode, 'control');
-      var contentGeometry = _this.getDomNodeGeometry(_this.contentDomNode, 'content');
-      var globalGeometry = _this.getGlobalGeometry();
-      var geometry = extends_default()({}, globalGeometry, controlGeometry, contentGeometry);
-      /* Sample geometry keys:
-                                                                                      * contentHeight
-                                                                                      * contentLeft
-                                                                                      * contentTop
-                                                                                      * contentWidth
-                                                                                      * controlHeight
-                                                                                      * controlLeft
-                                                                                      * controlTop
-                                                                                      * controlWidth
-                                                                                      * scrollX
-                                                                                      * scrollY
-                                                                                      * viewHeight
-                                                                                      * viewWidth
-                                                                                      */
-      var updatedGeometryKeys = _this.getUpdatedGeometryKeys(geometry);
-      var changedHorizontalKeys = horizontalGeometryKeys.some(function (key) {return updatedGeometryKeys.includes(key);});
-      var changedVerticalKeys = verticalGeometryKeys.some(function (key) {return updatedGeometryKeys.includes(key);});
-      /* // DEBUG (use doDebug?)...
-                                                                                                                        * console.log('Popup:updateGeometryInstant', {
-                                                                                                                        *   updatedGeometryKeys,
-                                                                                                                        *   changedHorizontalKeys,
-                                                                                                                        *   changedVerticalKeys,
-                                                                                                                        *   // geometry,
-                                                                                                                        *   // 'this.geometry': this.geometry,
-                                                                                                                        *   'changed geometry': Object.entries(geometry).reduce((result, [key, val]) => {
-                                                                                                                        *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
-                                                                                                                        *   }, {}),
-                                                                                                                        *   'changed this.geometry': Object.entries(this.geometry).reduce((result, [key, val]) => {
-                                                                                                                        *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
-                                                                                                                        *   }, {}),
-                                                                                                                        * })
-                                                                                                                        */
-      if (!updatedGeometryKeys.length) {// Do nothing if no changes found
-        return;
-      }
-      if (changedVerticalKeys) {
-        _this.updateOneAxisContentPos('vertical', geometry, updatedGeometryKeys); // Update vertical position & size...
-      }
-      if (changedHorizontalKeys) {
-        if (fullWidth) {// TODO?
-          _this.updateContentWidth(geometry, updatedGeometryKeys);
-        }
-        _this.updateOneAxisContentPos('horizontal', geometry, updatedGeometryKeys); // Update horizontal position & size...
-      }
-      _this.geometry = geometry;
-    });defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function () {
-      return _this.isOpen;
-    });defineProperty_default()(assertThisInitialized_default()(_this), "close",
-
-    function () {// External method for using in `PopupStack`
-      var _this$props = _this.props,id = _this$props.id,onClose = _this$props.onClose;var _assertThisInitialize = assertThisInitialized_default()(_this),
-      isOpen = _assertThisInitialize.isOpen,closePortal = _assertThisInitialize.closePortal;
-      if (isOpen && typeof closePortal === 'function') {
-        closePortal();
-        if (typeof onClose === 'function') {
-          onClose({ id: id });
-        }
-      }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "open",
-
-    function () {// External method for using in `PopupStack`
-      var _this$props2 = _this.props,id = _this$props2.id,onOpen = _this$props2.onOpen;var _assertThisInitialize2 = assertThisInitialized_default()(_this),
-      isOpen = _assertThisInitialize2.isOpen,openPortal = _assertThisInitialize2.openPortal;
-      if (!isOpen && typeof openPortal === 'function') {
-        openPortal();
-        if (typeof onOpen === 'function') {
-          onOpen({ id: id });
-        }
-      }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "setControlRef",
-
-
-
-    function (domNode) {
-      _this.controlDomNode = domNode;
-    });defineProperty_default()(assertThisInitialized_default()(_this), "setContentRef",
-
-    function (domNode) {
-      _this.contentDomNode = domNode;
-    });defineProperty_default()(assertThisInitialized_default()(_this), "handlePortalOpen",
-
-
-
-
-
-
-
-
-
-    function () {
-      // TODO: Register/unregister popup in `PopupStack`
-      _this.updateGeometryInstant();
-      _this.registerGlobalHandlers();
-      _this.isOpen = true;
-    });defineProperty_default()(assertThisInitialized_default()(_this), "handlePortalClose",
-
-    function () {
-      // TODO: Register/unregister popup in `PopupStack`
-      _this.wasOpen = true;
-      _this.unregisterGlobalHandlers();
-      _this.isOpen = false;
-      _this.clearContentGeometry(); // Due to content is destroyed when hidden
-    });defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
-
-    function () /* event */{var _assertThisInitialize3 = assertThisInitialized_default()(_this),
-      isOpen = _assertThisInitialize3.isOpen,openPortal = _assertThisInitialize3.openPortal,closePortal = _assertThisInitialize3.closePortal;
-      var method = isOpen ? closePortal : openPortal;
-      if (typeof method === 'function') {
-        // method(event)
-        // setTimeout(method, 0)
-        var fakeEvent = {
-          nativeEvent: {
-            stopImmediatePropagation: function stopImmediatePropagation() {} } };
-
-
-        setTimeout(function () {return method(fakeEvent);}, 0);
-      }
-      // TODO: Notify `PopupStack` when popup opens for closing all other popups from same level (before first modal in popups stack). (Now user can open several popups at the same time.
-      var onControlClick = _this.props.onControlClick;
-      if (typeof onControlClick === 'function') {
-        onControlClick({ open: !isOpen });
-      }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "renderPortal",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (portalParams) {
-      return /*#__PURE__*/(
-        external_react_default.a.createElement(external_react_default.a.Fragment, null,
-        _this.renderPopupControl(portalParams),
-        _this.renderPopupContent(portalParams)));
-
-
-    });var popupsInited = config_default.a.popups.isInited;_this.state = { popupsInited: popupsInited };if (!popupsInited) {config_default.a.popups.initPromise.then(_this.setPopupsInited);}_this.updateGeometry = debounce(debouncedUpdateGeometryTimeout, _this.updateGeometryInstant);var open = props.open;if (open) {_this.handlePortalOpen();} // // NOTE: Example of callback register
-    // if (typeof props.registerCallback === 'function') { // External hide canceler (FormSelect: on Menu click etc)
-    //   props.registerCallback(this.someMethod)
-    // }
-    /* // Check for element is Popup
-     * setTimeout(() => {
-     *   const node = this
-     *   const isElement = React.isValidElement(node)
-     *   const isPopup = node instanceof Popup // true for Popup and FormItemPopup
-     *   const isFormItemPopup = node instanceof FormItemPopup // Always false
-     *   console.log('debug', {
-     *     isElement,
-     *     isPopup,
-     *     isFormItemPopup,
-     *   })
-     *   debugger
-     * }, 1000)
-     */return _this;}var _proto = Popup.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
-  ;_proto.getDomNodeGeometry = function getDomNodeGeometry(domNode, id) {id = id || 'default';var rect = domNode && domNode.getBoundingClientRect(); /* // controlBouningBox sample:
-                                                                                                                                                      * bottom: 642.8125
-                                                                                                                                                      * height: 32
-                                                                                                                                                      * left: 223.921875
-                                                                                                                                                      * right: 551.515625
-                                                                                                                                                      * top: 610.8125
-                                                                                                                                                      * width: 327.59375
-                                                                                                                                                      * x: 223.921875
-                                                                                                                                                      * y: 610.8125
-                                                                                                                                                      */var geometry = rect && domNodeGeometryKeys.reduce(function (geometry, key) {// const val = domNode && domNode[key]
-      var val = rect && rect[key];if (val != null) {var resultKey = id + strings_namespaceObject.ucFirst(key);geometry[resultKey] = val;}return geometry;}, {});return geometry || {};};_proto.getGlobalGeometry = function getGlobalGeometry() {var geometry = Object.entries(globalGeometryKeys).reduce(function (geometry, _ref) {var _extends2;var id = _ref[0],descr = _ref[1];var obj = descr.obj;var key = descr.key || id;var val = obj[key];return extends_default()({}, geometry, (_extends2 = {}, _extends2[id] = val, _extends2));}, {});return geometry;};_proto.getUpdatedGeometryKeys = function getUpdatedGeometryKeys(geometry) {var origGeometry = this.geometry;var updatedKeys = [];Object.entries(geometry).forEach(function (_ref2) {var key = _ref2[0],val = _ref2[1];if (val !== origGeometry[key]) {updatedKeys.push(key);}});return updatedKeys;};_proto.updateContentWidth = function updateContentWidth(geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
-    // if (updatedGeometryKeys.includes('controlWidth') || updatedGeometryKeys.includes('contentWidth')) {
-    var width = geometry.controlWidth;var domNode = this.contentDomNode;var setWidth = width + 'px'; /* // DEBUG
-                                                                                                      * console.log('Popup:updateContentWidth', {
-                                                                                                      *   width,
-                                                                                                      *   'geometry.contentWidth': geometry.contentWidth,
-                                                                                                      *   // geometry,
-                                                                                                      *   updatedGeometryKeys,
-                                                                                                      * })
-                                                                                                      * debugger
-                                                                                                      */if (domNode.style.width !== setWidth) {geometry.contentWidth = width;domNode.storedContentWidth = null; // Reset stored width
-      domNode.style.width = setWidth;} // }
-  } /** updateOneAxisContentPos -- Calculate content position/size for one axis (horizontal, vertical)
-     * @param {String('horizontal'|'vertical')} axis
-     * @param {Object} geometry
-     * @param {String[]} updatedGeometryKeys
-     */;_proto.updateOneAxisContentPos = function updateOneAxisContentPos(axis, geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
-    var domNode = this.contentDomNode;if (!domNode) {// Error?
-      return;}var popupContentGap = config_default.a.css.popupContentGap; // const doubleContentPopupGap = popupContentGap * 2 // UNUSED
-    var keys = axisKeys[axis];var isVertical = axis === 'vertical'; // Get coordinates...
-    var viewSize = geometry[keys.viewSize]; // viewHeight
-    var controlPos = geometry[keys.controlPos]; // controlTop
-    var controlSize = geometry[keys.controlSize]; // controlHeight
-    // const scroll = geometry[keys.scroll] // scrollY
-    var contentPos = geometry[keys.contentPos]; // contentTop
-    var contentSize = geometry[keys.contentSize]; // contentClientHeight
-    var storedContentSize = domNode[keys.storedContentSize];var contentMaxSize = storedContentSize || contentSize;if (!storedContentSize || contentSize > storedContentSize) {// Save (maximum) height
-      domNode[keys.storedContentSize] = contentSize;}var viewStart = popupContentGap;var viewEnd = viewSize - popupContentGap; // Calculate control coordinates...
-    var controlScreenPos = controlPos; // - scroll
-    var controlScreenEnd = controlScreenPos + controlSize;var posNormal = isVertical ? controlScreenEnd + popupContentGap : controlScreenPos;var posReverted = isVertical ? controlScreenPos - popupContentGap : controlScreenEnd;var spaceAfter = viewEnd - posNormal;var spaceBefore = posReverted - viewStart; // Is it better to show content above control?
-    // TODO: Alternative calculations for horizontal axis
-    // const spaceBefore = isVertical ? controlScreenPos : controlScreenEnd
-    // // const spaceEnd = isVertical ? controlScreenAfter : controlScreenPos
-    // const spaceAfter = isVertical ? controlScreenAfter : controlScreenPos
-    var isntFitBefore = contentMaxSize > spaceBefore;var isntFitAfter = contentMaxSize > spaceAfter;var isMoreSpaceBefore = spaceBefore > spaceAfter;var placeBefore = isMoreSpaceBefore && isntFitAfter;var isntFit = placeBefore ? isntFitBefore : isntFitAfter;var fitSize = placeBefore ? spaceBefore : spaceAfter; // - doubleContentPopupGap
-    // Calculate `contentPos`...
-    var contentPosValue;if (placeBefore) {// Down-up position: from control top -> up
-      var fitContentSize = isntFit ? fitSize : contentMaxSize;contentPosValue = posReverted - fitContentSize; // contentPosValue = (controlScreenPos - fitContentSize - popupContentGap)
-    } else {// Normal position: from control bottom -> down
-      contentPosValue = posNormal; // contentPosValue = (controlScreenEnd + popupContentGap)
-    }var cssContentPos = contentPosValue + 'px';var isContentPosChanged = contentPosValue !== contentPos; // Is position changed?
-    // Calculate `contentStyleMaxSize`...
-    var cssContentStyleMaxSize = isntFit ? fitSize + 'px' : ''; // New value: pixels or auto (empty)
-    var origContentStyleMaxSize = domNode.style[keys.contentStyleMaxSize]; // Old value
-    var isContentStyleMaxSizeChanged = cssContentStyleMaxSize !== origContentStyleMaxSize; // Is maxsize changed?
-    if (isContentPosChanged || isContentStyleMaxSizeChanged) {// Pos or size changed
-      domNode.style[keys.contentStylePos] = cssContentPos; // Update dom node css style
-      geometry[keys.contentPos] = contentPosValue; // Update geometry object
-      domNode.style[keys.contentStyleMaxSize] = cssContentStyleMaxSize; // Update dom node css style
-    } /* // DEBUG (use doDebug?)...
-       * console.log('Popup:updateOneAxisContentPos', {
-       *   // Parameters...
-       *   axis,
-       *   placeBefore,
-       *   isntFit,
-       *   // Coordinates...
-       *   fitSize,
-       *   contentPos,
-       *   cssContentPos,
-       *   cssContentStyleMaxSize,
-       *   // controlScreenPos,
-       *   // controlScreenEnd,
-       *   // controlScreenAfter,
-       *   // General...
-       *   updatedGeometryKeys,
-       *   geometry: geometry,
-       *   'this.geometry': this.geometry,
-       *   'changed geometry': Object.entries(geometry).reduce((result, [key, val]) => {
-       *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
-       *   }, {}),
-       *   'changed this.geometry': Object.entries(this.geometry).reduce((result, [key, val]) => {
-       *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
-       *   }, {}),
-       * })
-       */};_proto.registerGlobalHandlers = function registerGlobalHandlers() {if (!this.globalHandlersRegistered) {this.globalHandlersRegistered = true;document.addEventListener(globalScrollEventName, this.updateGeometry);window.addEventListener(globalResizeEventName, this.updateGeometry);if (!this.updateGeometryTimer && updateGeometryTimerDelay) {this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay);}}};_proto.unregisterGlobalHandlers = function unregisterGlobalHandlers() {if (this.globalHandlersRegistered) {this.globalHandlersRegistered = false;document.removeEventListener(globalScrollEventName, this.updateGeometry);window.removeEventListener(globalResizeEventName, this.updateGeometry);if (this.updateGeometryTimer) {clearInterval(this.updateGeometryTimer);this.updateGeometryTimer = null;}}} // Render helpers...
-  ;_proto.getClassName = function getClassName(params) {var isOpen = params.isOpen,cnCtx = params.cnCtx,className = params.className;var _this$props3 = this.props,id = _this$props3.id,fullWidth = _this$props3.fullWidth;return cnCtx && cnCtx({ id: id, open: isOpen, fullWidth: fullWidth }, [/* this.props. */className]);} // External methods...
-  ;_proto.clearContentGeometry = function clearContentGeometry() {var _this2 = this; // UNUSED? Must be used on content update (using registrable callback; see example in constructor).
-    Object.keys(this.geometry).forEach(function (key) {if (key.startsWith('content')) {_this2.geometry[key] = null;}});}; // Render...
-  _proto.renderPopupControl = function renderPopupControl(portalParams) {var isOpen = portalParams.isOpen,openPortal = portalParams.openPortal,closePortal = portalParams.closePortal;var _this$props4 = this.props,id = _this$props4.id,popupControl = _this$props4.popupControl,className = _this$props4.className;this.openPortal = openPortal;this.closePortal = closePortal;var controlProps = popupControl && popupControl.props;var content = extends_default()({}, popupControl, { props: extends_default()({}, controlProps, { onClick: this.onControlClick, // onClick: isOpen ? closePortal : openPortal,
-        // onClick: [> controlProps.onControlClick || <] this.onControlClick,
-        checked: isOpen, setDomRef: this.setControlRef }) });var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopupControl, className: className }, portalParams)), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderPopupContent = function renderPopupContent(portalParams) {var portal = portalParams.portal;var _this$props5 = this.props,id = _this$props5.id,popupContent = _this$props5.popupContent,className = _this$props5.contentClassName;var renderProps = { id: id, className: this.getClassName(extends_default()({ cnCtx: cnPopup, className: className }, portalParams)), ref: this.setContentRef }; /* // TRY: css-transitions
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * <TransitionGroup className={cnPopup('TransitionGroup')}>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *   <CSSTransition
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     key={id}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     timeout={5000}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     // timeout={config.css.animateTime}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     classNames={cnPopup('Transition')}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *   >
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     <div {...renderProps}>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *       {popupContent}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *     </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       *   </CSSTransition>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * </TransitionGroup>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */return portal( /*#__PURE__*/external_react_default.a.createElement("div", renderProps, popupContent));};_proto.render = function render() {var _this$props6 = this.props,closeOnClickOutside = _this$props6.closeOnClickOutside,closeOnEscPressed = _this$props6.closeOnEscPressed,open = _this$props6.open;var popupsInited = this.state.popupsInited;return popupsInited && /*#__PURE__*/external_react_default.a.createElement(es_PortalWithState, { node: config_default.a.popups.domNode, onOpen: this.handlePortalOpen, onClose: this.handlePortalClose, closeOnOutsideClick: closeOnClickOutside, closeOnEsc: closeOnEscPressed, defaultOpen: open }, this.renderPortal);};return Popup;}(external_react_default.a.PureComponent /** @lends @Popup.prototype */);defineProperty_default()(Popup_Popup_Popup, "propTypes", { // onEscPressed: PropTypes.func,
-  // onKeyPress: PropTypes.func,
-  // registerCallback: PropTypes.func, // registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
-  className: prop_types_default.a.string, closeOnClickOutside: prop_types_default.a.bool, closeOnEscPressed: prop_types_default.a.bool, id: prop_types_default.a.string, onControlClick: prop_types_default.a.func, open: prop_types_default.a.bool, popupContent: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, popupControl: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, setPopupNodeRef: prop_types_default.a.func });defineProperty_default()(Popup_Popup_Popup, "defaultProps", { // onEscPressed: null,
-  // onKeyPress: null,
-  // popupContent: null,
-  // popupControl: null,
-  // registerCallback: null,
-  className: null, closeOnClickOutside: true, closeOnEscPressed: true, id: null, onControlClick: null, open: false, setPopupNodeRef: null });/* harmony default export */ var elements_Popup_Popup = (Popup_Popup_Popup);var FormItemPopup = forms_FormItemHOC_FormItemHOC(Popup_Popup_Popup); // export default withOnClickOutside(Popup) // To use?
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -3898,912 +4557,34 @@ CSSTransition_CSSTransition.defaultProps = {
 };
 CSSTransition_CSSTransition.propTypes =  false ? undefined : {};
 /* harmony default export */ var esm_CSSTransition = (CSSTransition_CSSTransition);
-// EXTERNAL MODULE: ./node_modules/symbol-observable/es/index.js
-var es = __webpack_require__(11);
-
-// CONCATENATED MODULE: ./node_modules/redux/es/redux.js
-
-
-/**
- * These are private action types reserved by Redux.
- * For any unknown actions, you must return the current state.
- * If the current state is undefined, you must return the initial state.
- * Do not reference these action types directly in your code.
- */
-var randomString = function randomString() {
-  return Math.random().toString(36).substring(7).split('').join('.');
-};
-
-var ActionTypes = {
-  INIT: "@@redux/INIT" + randomString(),
-  REPLACE: "@@redux/REPLACE" + randomString(),
-  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
-    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
-  }
-};
-
-/**
- * @param {any} obj The object to inspect.
- * @returns {boolean} True if the argument appears to be a plain object.
- */
-function isPlainObject(obj) {
-  if (typeof obj !== 'object' || obj === null) return false;
-  var proto = obj;
-
-  while (Object.getPrototypeOf(proto) !== null) {
-    proto = Object.getPrototypeOf(proto);
-  }
-
-  return Object.getPrototypeOf(obj) === proto;
-}
-
-/**
- * Creates a Redux store that holds the state tree.
- * The only way to change the data in the store is to call `dispatch()` on it.
- *
- * There should only be a single store in your app. To specify how different
- * parts of the state tree respond to actions, you may combine several reducers
- * into a single reducer function by using `combineReducers`.
- *
- * @param {Function} reducer A function that returns the next state tree, given
- * the current state tree and the action to handle.
- *
- * @param {any} [preloadedState] The initial state. You may optionally specify it
- * to hydrate the state from the server in universal apps, or to restore a
- * previously serialized user session.
- * If you use `combineReducers` to produce the root reducer function, this must be
- * an object with the same shape as `combineReducers` keys.
- *
- * @param {Function} [enhancer] The store enhancer. You may optionally specify it
- * to enhance the store with third-party capabilities such as middleware,
- * time travel, persistence, etc. The only store enhancer that ships with Redux
- * is `applyMiddleware()`.
- *
- * @returns {Store} A Redux store that lets you read the state, dispatch actions
- * and subscribe to changes.
- */
-
-function createStore(reducer, preloadedState, enhancer) {
-  var _ref2;
-
-  if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
-    throw new Error('It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function.');
-  }
-
-  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
-    enhancer = preloadedState;
-    preloadedState = undefined;
-  }
-
-  if (typeof enhancer !== 'undefined') {
-    if (typeof enhancer !== 'function') {
-      throw new Error('Expected the enhancer to be a function.');
-    }
-
-    return enhancer(createStore)(reducer, preloadedState);
-  }
-
-  if (typeof reducer !== 'function') {
-    throw new Error('Expected the reducer to be a function.');
-  }
-
-  var currentReducer = reducer;
-  var currentState = preloadedState;
-  var currentListeners = [];
-  var nextListeners = currentListeners;
-  var isDispatching = false;
-  /**
-   * This makes a shallow copy of currentListeners so we can use
-   * nextListeners as a temporary list while dispatching.
-   *
-   * This prevents any bugs around consumers calling
-   * subscribe/unsubscribe in the middle of a dispatch.
-   */
-
-  function ensureCanMutateNextListeners() {
-    if (nextListeners === currentListeners) {
-      nextListeners = currentListeners.slice();
-    }
-  }
-  /**
-   * Reads the state tree managed by the store.
-   *
-   * @returns {any} The current state tree of your application.
-   */
-
-
-  function getState() {
-    if (isDispatching) {
-      throw new Error('You may not call store.getState() while the reducer is executing. ' + 'The reducer has already received the state as an argument. ' + 'Pass it down from the top reducer instead of reading it from the store.');
-    }
-
-    return currentState;
-  }
-  /**
-   * Adds a change listener. It will be called any time an action is dispatched,
-   * and some part of the state tree may potentially have changed. You may then
-   * call `getState()` to read the current state tree inside the callback.
-   *
-   * You may call `dispatch()` from a change listener, with the following
-   * caveats:
-   *
-   * 1. The subscriptions are snapshotted just before every `dispatch()` call.
-   * If you subscribe or unsubscribe while the listeners are being invoked, this
-   * will not have any effect on the `dispatch()` that is currently in progress.
-   * However, the next `dispatch()` call, whether nested or not, will use a more
-   * recent snapshot of the subscription list.
-   *
-   * 2. The listener should not expect to see all state changes, as the state
-   * might have been updated multiple times during a nested `dispatch()` before
-   * the listener is called. It is, however, guaranteed that all subscribers
-   * registered before the `dispatch()` started will be called with the latest
-   * state by the time it exits.
-   *
-   * @param {Function} listener A callback to be invoked on every dispatch.
-   * @returns {Function} A function to remove this change listener.
-   */
-
-
-  function subscribe(listener) {
-    if (typeof listener !== 'function') {
-      throw new Error('Expected the listener to be a function.');
-    }
-
-    if (isDispatching) {
-      throw new Error('You may not call store.subscribe() while the reducer is executing. ' + 'If you would like to be notified after the store has been updated, subscribe from a ' + 'component and invoke store.getState() in the callback to access the latest state. ' + 'See https://redux.js.org/api-reference/store#subscribelistener for more details.');
-    }
-
-    var isSubscribed = true;
-    ensureCanMutateNextListeners();
-    nextListeners.push(listener);
-    return function unsubscribe() {
-      if (!isSubscribed) {
-        return;
-      }
-
-      if (isDispatching) {
-        throw new Error('You may not unsubscribe from a store listener while the reducer is executing. ' + 'See https://redux.js.org/api-reference/store#subscribelistener for more details.');
-      }
-
-      isSubscribed = false;
-      ensureCanMutateNextListeners();
-      var index = nextListeners.indexOf(listener);
-      nextListeners.splice(index, 1);
-      currentListeners = null;
-    };
-  }
-  /**
-   * Dispatches an action. It is the only way to trigger a state change.
-   *
-   * The `reducer` function, used to create the store, will be called with the
-   * current state tree and the given `action`. Its return value will
-   * be considered the **next** state of the tree, and the change listeners
-   * will be notified.
-   *
-   * The base implementation only supports plain object actions. If you want to
-   * dispatch a Promise, an Observable, a thunk, or something else, you need to
-   * wrap your store creating function into the corresponding middleware. For
-   * example, see the documentation for the `redux-thunk` package. Even the
-   * middleware will eventually dispatch plain object actions using this method.
-   *
-   * @param {Object} action A plain object representing “what changed”. It is
-   * a good idea to keep actions serializable so you can record and replay user
-   * sessions, or use the time travelling `redux-devtools`. An action must have
-   * a `type` property which may not be `undefined`. It is a good idea to use
-   * string constants for action types.
-   *
-   * @returns {Object} For convenience, the same action object you dispatched.
-   *
-   * Note that, if you use a custom middleware, it may wrap `dispatch()` to
-   * return something else (for example, a Promise you can await).
-   */
-
-
-  function dispatch(action) {
-    if (!isPlainObject(action)) {
-      throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
-    }
-
-    if (typeof action.type === 'undefined') {
-      throw new Error('Actions may not have an undefined "type" property. ' + 'Have you misspelled a constant?');
-    }
-
-    if (isDispatching) {
-      throw new Error('Reducers may not dispatch actions.');
-    }
-
-    try {
-      isDispatching = true;
-      currentState = currentReducer(currentState, action);
-    } finally {
-      isDispatching = false;
-    }
-
-    var listeners = currentListeners = nextListeners;
-
-    for (var i = 0; i < listeners.length; i++) {
-      var listener = listeners[i];
-      listener();
-    }
-
-    return action;
-  }
-  /**
-   * Replaces the reducer currently used by the store to calculate the state.
-   *
-   * You might need this if your app implements code splitting and you want to
-   * load some of the reducers dynamically. You might also need this if you
-   * implement a hot reloading mechanism for Redux.
-   *
-   * @param {Function} nextReducer The reducer for the store to use instead.
-   * @returns {void}
-   */
-
-
-  function replaceReducer(nextReducer) {
-    if (typeof nextReducer !== 'function') {
-      throw new Error('Expected the nextReducer to be a function.');
-    }
-
-    currentReducer = nextReducer; // This action has a similiar effect to ActionTypes.INIT.
-    // Any reducers that existed in both the new and old rootReducer
-    // will receive the previous state. This effectively populates
-    // the new state tree with any relevant data from the old one.
-
-    dispatch({
-      type: ActionTypes.REPLACE
-    });
-  }
-  /**
-   * Interoperability point for observable/reactive libraries.
-   * @returns {observable} A minimal observable of state changes.
-   * For more information, see the observable proposal:
-   * https://github.com/tc39/proposal-observable
-   */
-
-
-  function observable() {
-    var _ref;
-
-    var outerSubscribe = subscribe;
-    return _ref = {
-      /**
-       * The minimal observable subscription method.
-       * @param {Object} observer Any object that can be used as an observer.
-       * The observer object should have a `next` method.
-       * @returns {subscription} An object with an `unsubscribe` method that can
-       * be used to unsubscribe the observable from the store, and prevent further
-       * emission of values from the observable.
-       */
-      subscribe: function subscribe(observer) {
-        if (typeof observer !== 'object' || observer === null) {
-          throw new TypeError('Expected the observer to be an object.');
-        }
-
-        function observeState() {
-          if (observer.next) {
-            observer.next(getState());
-          }
-        }
-
-        observeState();
-        var unsubscribe = outerSubscribe(observeState);
-        return {
-          unsubscribe: unsubscribe
-        };
-      }
-    }, _ref[es["a" /* default */]] = function () {
-      return this;
-    }, _ref;
-  } // When a store is created, an "INIT" action is dispatched so that every
-  // reducer returns their initial state. This effectively populates
-  // the initial state tree.
-
-
-  dispatch({
-    type: ActionTypes.INIT
-  });
-  return _ref2 = {
-    dispatch: dispatch,
-    subscribe: subscribe,
-    getState: getState,
-    replaceReducer: replaceReducer
-  }, _ref2[es["a" /* default */]] = observable, _ref2;
-}
-
-/**
- * Prints a warning in the console if it exists.
- *
- * @param {String} message The warning message.
- * @returns {void}
- */
-function warning(message) {
-  /* eslint-disable no-console */
-  if (typeof console !== 'undefined' && typeof console.error === 'function') {
-    console.error(message);
-  }
-  /* eslint-enable no-console */
-
-
-  try {
-    // This error was thrown as a convenience so that if you enable
-    // "break on all exceptions" in your console,
-    // it would pause the execution at this line.
-    throw new Error(message);
-  } catch (e) {} // eslint-disable-line no-empty
-
-}
-
-function getUndefinedStateErrorMessage(key, action) {
-  var actionType = action && action.type;
-  var actionDescription = actionType && "action \"" + String(actionType) + "\"" || 'an action';
-  return "Given " + actionDescription + ", reducer \"" + key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.";
-}
-
-function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
-  var reducerKeys = Object.keys(reducers);
-  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
-
-  if (reducerKeys.length === 0) {
-    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
-  }
-
-  if (!isPlainObject(inputState)) {
-    return "The " + argumentName + " has unexpected type of \"" + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
-  }
-
-  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
-    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
-  });
-  unexpectedKeys.forEach(function (key) {
-    unexpectedKeyCache[key] = true;
-  });
-  if (action && action.type === ActionTypes.REPLACE) return;
-
-  if (unexpectedKeys.length > 0) {
-    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
-  }
-}
-
-function assertReducerShape(reducers) {
-  Object.keys(reducers).forEach(function (key) {
-    var reducer = reducers[key];
-    var initialState = reducer(undefined, {
-      type: ActionTypes.INIT
-    });
-
-    if (typeof initialState === 'undefined') {
-      throw new Error("Reducer \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
-    }
-
-    if (typeof reducer(undefined, {
-      type: ActionTypes.PROBE_UNKNOWN_ACTION()
-    }) === 'undefined') {
-      throw new Error("Reducer \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle " + ActionTypes.INIT + " or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
-    }
-  });
-}
-/**
- * Turns an object whose values are different reducer functions, into a single
- * reducer function. It will call every child reducer, and gather their results
- * into a single state object, whose keys correspond to the keys of the passed
- * reducer functions.
- *
- * @param {Object} reducers An object whose values correspond to different
- * reducer functions that need to be combined into one. One handy way to obtain
- * it is to use ES6 `import * as reducers` syntax. The reducers may never return
- * undefined for any action. Instead, they should return their initial state
- * if the state passed to them was undefined, and the current state for any
- * unrecognized action.
- *
- * @returns {Function} A reducer function that invokes every reducer inside the
- * passed object, and builds a state object with the same shape.
- */
-
-
-function combineReducers(reducers) {
-  var reducerKeys = Object.keys(reducers);
-  var finalReducers = {};
-
-  for (var i = 0; i < reducerKeys.length; i++) {
-    var key = reducerKeys[i];
-
-    if (false) {}
-
-    if (typeof reducers[key] === 'function') {
-      finalReducers[key] = reducers[key];
-    }
-  }
-
-  var finalReducerKeys = Object.keys(finalReducers); // This is used to make sure we don't warn about the same
-  // keys multiple times.
-
-  var unexpectedKeyCache;
-
-  if (false) {}
-
-  var shapeAssertionError;
-
-  try {
-    assertReducerShape(finalReducers);
-  } catch (e) {
-    shapeAssertionError = e;
-  }
-
-  return function combination(state, action) {
-    if (state === void 0) {
-      state = {};
-    }
-
-    if (shapeAssertionError) {
-      throw shapeAssertionError;
-    }
-
-    if (false) { var warningMessage; }
-
-    var hasChanged = false;
-    var nextState = {};
-
-    for (var _i = 0; _i < finalReducerKeys.length; _i++) {
-      var _key = finalReducerKeys[_i];
-      var reducer = finalReducers[_key];
-      var previousStateForKey = state[_key];
-      var nextStateForKey = reducer(previousStateForKey, action);
-
-      if (typeof nextStateForKey === 'undefined') {
-        var errorMessage = getUndefinedStateErrorMessage(_key, action);
-        throw new Error(errorMessage);
-      }
-
-      nextState[_key] = nextStateForKey;
-      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
-    }
-
-    hasChanged = hasChanged || finalReducerKeys.length !== Object.keys(state).length;
-    return hasChanged ? nextState : state;
-  };
-}
-
-function bindActionCreator(actionCreator, dispatch) {
-  return function () {
-    return dispatch(actionCreator.apply(this, arguments));
-  };
-}
-/**
- * Turns an object whose values are action creators, into an object with the
- * same keys, but with every function wrapped into a `dispatch` call so they
- * may be invoked directly. This is just a convenience method, as you can call
- * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
- *
- * For convenience, you can also pass an action creator as the first argument,
- * and get a dispatch wrapped function in return.
- *
- * @param {Function|Object} actionCreators An object whose values are action
- * creator functions. One handy way to obtain it is to use ES6 `import * as`
- * syntax. You may also pass a single function.
- *
- * @param {Function} dispatch The `dispatch` function available on your Redux
- * store.
- *
- * @returns {Function|Object} The object mimicking the original object, but with
- * every action creator wrapped into the `dispatch` call. If you passed a
- * function as `actionCreators`, the return value will also be a single
- * function.
- */
-
-
-function bindActionCreators(actionCreators, dispatch) {
-  if (typeof actionCreators === 'function') {
-    return bindActionCreator(actionCreators, dispatch);
-  }
-
-  if (typeof actionCreators !== 'object' || actionCreators === null) {
-    throw new Error("bindActionCreators expected an object or a function, instead received " + (actionCreators === null ? 'null' : typeof actionCreators) + ". " + "Did you write \"import ActionCreators from\" instead of \"import * as ActionCreators from\"?");
-  }
-
-  var boundActionCreators = {};
-
-  for (var key in actionCreators) {
-    var actionCreator = actionCreators[key];
-
-    if (typeof actionCreator === 'function') {
-      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
-    }
-  }
-
-  return boundActionCreators;
-}
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    keys.push.apply(keys, Object.getOwnPropertySymbols(object));
-  }
-
-  if (enumerableOnly) keys = keys.filter(function (sym) {
-    return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-  });
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i] != null ? arguments[i] : {};
-
-    if (i % 2) {
-      ownKeys(source, true).forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
-    } else if (Object.getOwnPropertyDescriptors) {
-      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-      ownKeys(source).forEach(function (key) {
-        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-      });
-    }
-  }
-
-  return target;
-}
-
-/**
- * Composes single-argument functions from right to left. The rightmost
- * function can take multiple arguments as it provides the signature for
- * the resulting composite function.
- *
- * @param {...Function} funcs The functions to compose.
- * @returns {Function} A function obtained by composing the argument functions
- * from right to left. For example, compose(f, g, h) is identical to doing
- * (...args) => f(g(h(...args))).
- */
-function compose() {
-  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
-    funcs[_key] = arguments[_key];
-  }
-
-  if (funcs.length === 0) {
-    return function (arg) {
-      return arg;
-    };
-  }
-
-  if (funcs.length === 1) {
-    return funcs[0];
-  }
-
-  return funcs.reduce(function (a, b) {
-    return function () {
-      return a(b.apply(void 0, arguments));
-    };
-  });
-}
-
-/**
- * Creates a store enhancer that applies middleware to the dispatch method
- * of the Redux store. This is handy for a variety of tasks, such as expressing
- * asynchronous actions in a concise manner, or logging every action payload.
- *
- * See `redux-thunk` package as an example of the Redux middleware.
- *
- * Because middleware is potentially asynchronous, this should be the first
- * store enhancer in the composition chain.
- *
- * Note that each middleware will be given the `dispatch` and `getState` functions
- * as named arguments.
- *
- * @param {...Function} middlewares The middleware chain to be applied.
- * @returns {Function} A store enhancer applying the middleware.
- */
-
-function applyMiddleware() {
-  for (var _len = arguments.length, middlewares = new Array(_len), _key = 0; _key < _len; _key++) {
-    middlewares[_key] = arguments[_key];
-  }
-
-  return function (createStore) {
-    return function () {
-      var store = createStore.apply(void 0, arguments);
-
-      var _dispatch = function dispatch() {
-        throw new Error('Dispatching while constructing your middleware is not allowed. ' + 'Other middleware would not be applied to this dispatch.');
-      };
-
-      var middlewareAPI = {
-        getState: store.getState,
-        dispatch: function dispatch() {
-          return _dispatch.apply(void 0, arguments);
-        }
-      };
-      var chain = middlewares.map(function (middleware) {
-        return middleware(middlewareAPI);
-      });
-      _dispatch = compose.apply(void 0, chain)(store.dispatch);
-      return _objectSpread2({}, store, {
-        dispatch: _dispatch
-      });
-    };
-  };
-}
-
-/*
- * This is a dummy function to check if the function name has been altered by minification.
- * If the function has been minified and NODE_ENV !== 'production', warn the user.
- */
-
-function isCrushed() {}
-
-if (false) {}
-
-
-
-// EXTERNAL MODULE: ./src/forms/FormButton/FormButton.pcss
-var FormButton_FormButton = __webpack_require__(30);
-
-// EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Variations.pcss
-var FormButton_Variations = __webpack_require__(31);
-
-// EXTERNAL MODULE: ./src/forms/FormButton/FormButton-Themes.pcss
-var FormButton_Themes = __webpack_require__(32);
-
-// CONCATENATED MODULE: ./src/forms/FormButton/FormButton.jsx
- /** @module FormButton
-                                                                                                                                                                                                                                                                                *  @class FormButton
-                                                                                                                                                                                                                                                                                *  @since 2020.07.20, 19:07
-                                                                                                                                                                                                                                                                                *  @changed 2020.10.29, 03:30
+// EXTERNAL MODULE: ./src/elements/ModalPortal/ModalPortal-Geometry.pcss
+var ModalPortal_Geometry = __webpack_require__(41);
+
+// EXTERNAL MODULE: ./src/elements/ModalPortal/ModalPortal-Themes.pcss
+var ModalPortal_Themes = __webpack_require__(42);
+
+// EXTERNAL MODULE: ./src/elements/ModalPortal/ModalPortal-Transitions.pcss
+var ModalPortal_Transitions = __webpack_require__(43);
+
+// CONCATENATED MODULE: ./src/elements/ModalPortal/ModalPortal.jsx
+ /** @module ModalPortal
+                                                                                                                                                                                                                                                                                *  @class ModalPortal
+                                                                                                                                                                                                                                                                                *  @since 2020.12.21, 22:58
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.26, 23:11
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  External methods (for PopupStack, ModalWindow etc):
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  - activate
+                                                                                                                                                                                                                                                                                *  - close
+                                                                                                                                                                                                                                                                                *  - deactivate
+                                                                                                                                                                                                                                                                                *  - isVisible
+                                                                                                                                                                                                                                                                                *  - open
+                                                                                                                                                                                                                                                                                *  - toggle
+                                                                                                                                                                                                                                                                                *  - updateGeometry
                                                                                                                                                                                                                                                                                 */
-
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-// import { cn } from '@bem-react/classname'
-
-
-
-
-
-
-
-
-
-
-
-var cnFormButton = configure_cn('FormButton');var
-
-FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormButton, _React$PureComponent);function FormButton() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (event) {var _this$props =
-
-
-
-
-
-
-      _this.props,id = _this$props.id,actionsContextNode = _this$props.actionsContextNode,disabled = _this$props.disabled,onClick = _this$props.onClick;
-      if (!disabled && onClick && typeof onClick === 'function') {
-        onClick(event);
-      }
-      if (actionsContextNode && typeof actionsContextNode.onAction) {
-        actionsContextNode.onAction({ id: id });
-      }
-    });return _this;}var _proto = FormButton.prototype; // static defaultProps = {
-  // }
-  // Helpers...
-  _proto.hasIcon = function hasIcon() {var _this$props2 = this.props,icon = _this$props2.icon,hasIcon = _this$props2.hasIcon;return !!(hasIcon || icon);};_proto.hasText = function hasText() {var _this$props3 = this.props,hasText = _this$props3.hasText,onlyIcon = _this$props3.onlyIcon,children = _this$props3.children,text = _this$props3.text;return !onlyIcon && !!(hasText || text || children);};_proto.getClassName = function getClassName() {// TODO: Refactor properties!
-    var _this$props4 = this.props,checked = _this$props4.checked,fullWidth = _this$props4.fullWidth,id = _this$props4.id,inline = _this$props4.inline,largeIcon = _this$props4.largeIcon,onDark = _this$props4.onDark,onlyIcon = _this$props4.onlyIcon,plain = _this$props4.plain,rightIcon = _this$props4.rightIcon,rotatedIcon = _this$props4.rotatedIcon,theme = _this$props4.theme,type = _this$props4.type,variation = _this$props4.variation;var mods = { // plain,
-      checked: checked, fullWidth: fullWidth, id: id, inline: inline, largeIcon: largeIcon, onDark: onDark, onlyIcon: onlyIcon, plain: plain, rightIcon: rightIcon, rotatedIcon: rotatedIcon, theme: theme, type: type, variation: variation };var staticMods = { solid: true };var classList = cnFormButton(extends_default()({}, staticMods, mods, { hasIcon: this.hasIcon(), hasText: this.hasText() }), [this.props.className]);return classList;} // Handlers...
-  ; // Render...
-  _proto.renderIcon = function renderIcon() {var hasIcon = this.hasIcon();if (hasIcon) {var icon = this.props.icon;
-      if (icon && icon.type === elements_InlineIcon_InlineIcon) {// Already InlineIcon
-        // Extend with updated `className` props
-        var props = extends_default()({},
-        icon.props, {
-          className: cnFormButton('Icon', [icon.props.className]) });
-
-        var newIcon = extends_default()({}, icon, { props: props });
-        return newIcon;
-      }
-      return /*#__PURE__*/(
-        external_react_default.a.createElement(elements_InlineIcon_InlineIcon, { icon: icon, className: cnFormButton('Icon') }));
-
-    }
-  };_proto.
-
-  renderText = function renderText() {
-    var hasText = this.hasText(); // !onlyIcon && !!(hasText || text || children
-    if (hasText) {var _this$props5 =
-      this.props,text = _this$props5.text,children = _this$props5.children;
-      return hasText && /*#__PURE__*/
-      external_react_default.a.createElement("span", { className: cnFormButton('Text') },
-      text || children);
-
-
-    }
-  };_proto.
-
-  render = function render() {var _this$props6 =
-
-
-
-
-
-
-
-
-
-    this.props,id = _this$props6.id,disabled = _this$props6.disabled,tag = _this$props6.tag,type = _this$props6.type,title = _this$props6.title,setDomRef = _this$props6.setDomRef,actionsContextNode = _this$props6.actionsContextNode;
-
-    var iconElem = this.renderIcon(); // Icon element
-    var textElem = this.renderText(); // Text element
-
-    // const basicRenderProps = this.getRenderProps() // Get from props not from overrided `super`
-    var renderProps = {
-      // ...basicRenderProps,
-      id: id,
-      className: this.getClassName(),
-      disabled: disabled,
-      title: title,
-      type: type,
-      onClick: this.onClick,
-      ref: setDomRef // Init ref for FormItemHOC
-    };
-
-    var content = /*#__PURE__*/
-    external_react_default.a.createElement(external_react_default.a.Fragment, null,
-    iconElem,
-    textElem);
-
-
-
-    var tagName = tag || 'div';
-    var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
-    return element;
-  };return FormButton;}(external_react_default.a.PureComponent /** @lends @FormButton.prototype */);
-
-
-
-// export default FormItemHOC({ solid: true, hoverable: true, framed: true })(FormButton)
-defineProperty_default()(FormButton_FormButton_FormButton, "propTypes", { // TODO!!!
-  // TODO: size: PropTypes.string, // Different form item sizes? (eg: md -- default, sm, xs, lg, xl, xxl)
-  checked: prop_types_default.a.bool, // FormItem: Checked state
-  disabled: prop_types_default.a.bool, fullWidth: prop_types_default.a.bool, // Occupies all horizontal space
-  hasIcon: prop_types_default.a.bool, // Optional
-  hasText: prop_types_default.a.bool, // Optional
-  icon: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Icon component. May be as image resource loaded with `file/url-loader` as `FontAwesomeIcon` component.
-  id: prop_types_default.a.string, inline: prop_types_default.a.bool, largeIcon: prop_types_default.a.bool, // Large icon
-  onClick: prop_types_default.a.func, onDark: prop_types_default.a.bool, // On dark background
-  onlyIcon: prop_types_default.a.bool, // Only icon
-  plain: prop_types_default.a.bool, // ??? Plain icon (no border & background -- if no style specified, looks as link)
-  rightIcon: prop_types_default.a.bool, // Icon placed at right side
-  text: prop_types_default.a.string, // Text content (may be passed as node children)
-  theme: prop_types_default.a.string // Button style (plain, default, primary, secondary, error, warn, success, info, etc -- some are in progress -- see styles file)
-});/* harmony default export */ var forms_FormButton_FormButton = (compose(ActionsContext_withActionsContext, forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true }))(FormButton_FormButton_FormButton));
-// EXTERNAL MODULE: ./src/elements/Modal/Modal-Geometry.pcss
-var Modal_Geometry = __webpack_require__(34);
-
-// EXTERNAL MODULE: ./src/elements/Modal/Modal-Themes.pcss
-var Modal_Themes = __webpack_require__(35);
-
-// EXTERNAL MODULE: ./src/elements/Modal/Modal-Transitions.pcss
-var Modal_Transitions = __webpack_require__(36);
-
-// CONCATENATED MODULE: ./src/elements/Modal/Modal.jsx
- /** @module Modal
-                                                                                                                                                                                                                          *  @class Modal
-                                                                                                                                                                                                                          *  @since 2020.12.21, 22:58
-                                                                                                                                                                                                                          *  @changed 2020.12.24, 21:24
-                                                                                                                                                                                                                          *
-                                                                                                                                                                                                                          *  External methods (for PopupStack):
-                                                                                                                                                                                                                          *  - close
-                                                                                                                                                                                                                          *  - open
-                                                                                                                                                                                                                          *  - updateGeometry
-                                                                                                                                                                                                                          */
 /* --eslint-disable no-console */
 
+// TODO: Use ModalContext
 
 
 
@@ -4812,15 +4593,17 @@ var Modal_Transitions = __webpack_require__(36);
 
 
 
+// import InlineIcon from 'elements/InlineIcon'
+
+// import FormButton from 'forms/FormButton'
+
+// import { ActionsContextProvider } from 'helpers/ActionsContext' // TODO?
 
 
 
 
 
-
-
-
-var cnModal = configure_cn('Modal');
+var cnModalPortal = configure_cn('ModalPortal');
 
 // const doDebug = false // DEBUG!
 
@@ -4829,21 +4612,37 @@ var mouseUpEvent = 'mouseup';
 var mouseLeaveEvent = 'mouseleave';
 var globalKeyPressEventName = 'keydown';
 
-var selfCloseActionId = '--modal-self-close--';
-var externalCloseActionId = '--modal-external-close--';var
+var passModalPortalProps = [
+'id',
+'className',
+'closeOnClickOutside',
+'closeOnEscPressed',
+'handleLoaderCancel',
+'useLoader',
+'loaderTheme',
+'loading',
+'onAction',
+'onClickOutside',
+'onCloseButtonClick',
+'onEscPressed',
+'onOpen',
+'onClose',
+'onActivate',
+'onDeactivate',
+'open',
+'theme',
+'windowClassName',
+'windowWidth',
+'wrapperClassName',
+'wrapperTheme'];
 
-Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(Modal, _React$PureComponent);
+
+var selfCloseActionId = '--modal-portal-self-close--';
+var externalCloseActionId = '--modal-portal-external-close--';var
+
+ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalPortal, _React$PureComponent);
 
   // Props...
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4890,10 +4689,17 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
 
   // Lifecycle...
 
-  function Modal(props) {var _this;
+  // typeId = 'ModalPortal'
+
+  function ModalPortal(props) {var _this;
     _this = _React$PureComponent.call(this, props) || this;
-    // const popupsInited = config.popups.isInited
-    defineProperty_default()(assertThisInitialized_default()(_this), "isOutsideClickWaiting", false);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "transitionTime", 0);defineProperty_default()(assertThisInitialized_default()(_this), "resolvingAction", null);defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+    // const popupsInited = config.modals.isInited
+    defineProperty_default()(assertThisInitialized_default()(_this), "isOutsideClickWaiting", false);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "transitionTime", 0);defineProperty_default()(assertThisInitialized_default()(_this), "resolvingResult", null);defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+
+
+
+
+
 
 
 
@@ -4933,11 +4739,11 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
 
     function (cb) {var _this$props =
       _this.props,id = _this$props.id,onActivate = _this$props.onActivate;var
-      active = _this.state.active;
-      if (!active) {
-        // this.resolvingAction = null // Activating in `open` method
-        // console.log('Modal:activate', id, active)
-        _this.setState({ active: true }, function () {
+      activated = _this.state.activated;
+      if (!activated) {
+        // this.resolvingResult = null // Activating in `open` method
+        // console.log('ModalPortal:activate', id, activated)
+        _this.setState({ activated: true }, function () {
           if (typeof cb === 'function') {
             cb();
           }
@@ -4953,21 +4759,26 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
 
     function () {var _this$props2 =
       _this.props,id = _this$props2.id,onDeactivate = _this$props2.onDeactivate;var
-      active = _this.state.active;
-      if (active) {
-        // console.log('Modal:deactivate', id)
-        _this.resolveAction(); // `resolvingAction` must be defined?
+      activated = _this.state.activated;
+      if (activated) {
+        // console.log('ModalPortal:deactivate', id)
+        _this.resolveResult(); // `resolvingResult` must be defined?
         if (typeof onDeactivate === 'function') {
           onDeactivate({ id: id });
         }
-        _this.setState({ active: false });
+        _this.setState({ activated: false });
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "toggle",
 
-    function () {// External method for using in `ModalStack`
+    function (open) {// External method for using in `ModalPortalStack`
       // const { id } = this.props
-      var open = _this.state.open;
-      // console.log('Modal:ctoggle', id, open)
+      // console.log('ModalPortal:toggle', this.props.id, open)
+      if (open == null) {
+        open = !_this.state.open;
+      } else
+      if (open === _this.state.open) {
+        return false;
+      }
       if (open) {
         _this.close();
       } else
@@ -4976,43 +4787,25 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "close",
 
-    function () {// External method for using in `ModalStack`
-      var _this$props3 = _this.props,id = _this$props3.id,onClose = _this$props3.onClose,handleOpenState = _this$props3.handleOpenState;var
-      open = _this.state.open;
-      // console.log('Modal:close', id, open)
-      if (open) {
-        _this.setState({ open: false }, function (state) {
-          _this.updateShowWithState(state);
-          setTimeout(_this.deactivate, _this.transitionTime); // TODO?
-        });
-        if (typeof onClose === 'function') {
-          onClose({ id: id });
-        }
-        if (typeof handleOpenState === 'function') {
-          handleOpenState({ id: id, open: false });
-        }
+    function () {// External method for using in `ModalPortalStack`
+      var prevOpen = _this.state.open;
+      // console.log('ModalPortal:close', this.props.id, prevOpen)
+      if (prevOpen) {
+        _this.setState({ open: false }, _this.updateShowWithState);
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "open",
 
-    function () {// External method for using in `ModalStack`
-      var _this$props4 = _this.props,id = _this$props4.id,onOpen = _this$props4.onOpen,handleOpenState = _this$props4.handleOpenState;var
-      open = _this.state.open;
-      // console.log('Modal:open', id, open)
-      if (!open) {
-        _this.resolvingAction = null; // Reset resolving action
+    function () {// External method for using in `ModalPortalStack`
+      var prevOpen = _this.state.open;
+      // console.log('ModalPortal:open', this.props.id, prevOpen)
+      if (!prevOpen) {
+        var open = true;
+        _this.resolvingResult = null; // Reset resolving action
         // First activate portal then enter into opening animation
         _this.activate(function () {
-          _this.setState({ open: true }, function () {
-            _this.updateShowWithState();
-            if (typeof onOpen === 'function') {
-              onOpen({ id: id });
-            }
-            if (typeof handleOpenState === 'function') {
-              handleOpenState({ id: id, open: true });
-            }
-          });
+          _this.setState({ open: open }, _this.updateShowWithState);
         });
-        _this.activate(function () {return _this.setState({ open: true }, _this.updateShowWithState);});
+        _this.activate(function () {return _this.setState({ open: open }, _this.updateShowWithState);});
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometry",
 
@@ -5077,20 +4870,32 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
 
 
     function (state) {var _ref =
-      state || _this.state,open = _ref.open;
+      state || _this.state,open = _ref.open;var _this$props3 =
+      _this.props,id = _this$props3.id,onOpen = _this$props3.onOpen,onClose = _this$props3.onClose,handleOpenState = _this$props3.handleOpenState;
       if (open) {
         _this.registerGlobalHandlers();
+        if (typeof onOpen === 'function') {
+          onOpen({ id: id });
+        }
       } else
       {
         _this.unregisterGlobalHandlers();
+        if (typeof onClose === 'function') {
+          onClose({ id: id });
+        }
+        setTimeout(_this.deactivate, _this.transitionTime); // TODO?
       }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "setPopupsInited",
+      if (typeof handleOpenState === 'function') {
+        handleOpenState({ id: id, open: open });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onPopupsInited",
 
     function () {
       _this.setState({ popupsInited: true });var
       open = _this.props.open;
       if (open) {// Immediately open if passed open status
-        _this.activate(function () {return _this.setState({ open: true });});
+        // this.activate(() => this.setState({ open: true }))
+        _this.activate(function () {return _this.setState({ open: true });}, _this.updateShowWithState);
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "onAction",
 
@@ -5113,38 +4918,45 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
 
 
 
+
+
+
+
     function (actionProps) {// Event handler for ActionContext consumed children
-      var actionId = actionProps.id;var _this$props5 =
-      _this.props,actionsContextNode = _this$props5.actionsContextNode,autoClose = _this$props5.autoClose,closeOnCancelAction = _this$props5.closeOnCancelAction;
-      _this.resolvingAction = actionId;
-      // console.log('Modal:onAction', id, actionId)
-      if (autoClose || closeOnCancelAction && actionId === 'cancel') {// Close and call `resolveAction` when window is closed
+      var actionId = actionProps.id;var _this$props4 =
+      _this.props,id = _this$props4.id,actionsContextNode = _this$props4.actionsContextNode,autoClose = _this$props4.autoClose,closeOnCancelAction = _this$props4.closeOnCancelAction;
+      _this.setResult(actionId);
+      // console.log('ModalPortal:ModalPortal:onAction', id, actionId)
+      if (autoClose || closeOnCancelAction && actionId === 'cancel') {// Close and call `resolveResult` when window is closed
         _this.close();
       } else
-      {// ...Or all `resolveAction` immediatelly
-        _this.resolveAction();
+      {// ...Or all `resolveResult` immediatelly
+        _this.resolveResult();
       }
-      if (actionsContextNode && typeof actionsContextNode.onAction) {
-        actionsContextNode.onAction(actionProps);
+      if (actionsContextNode && typeof actionsContextNode.onAction) {// Use chaining ActionsContext?
+        actionsContextNode.onAction(extends_default()({}, actionProps, { modalPortalId: id }));
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "onKeyPress",
 
-    function (event) {var
-      keyCode = event.keyCode;var _this$props6 =
+    function (event) {var _this$props5 =
 
 
 
 
-      _this.props,id = _this$props6.id,onEscPressed = _this$props6.onEscPressed,closeOnEscPressed = _this$props6.closeOnEscPressed;
-      var isEscPressed = keyCode === 27;
-      var cbProps = { event: event, id: id, keyCode: keyCode };
-      if (isEscPressed) {
-        if (closeOnEscPressed) {
-          _this.resolvingAction = selfCloseActionId;
-          _this.close();
-        }
-        if (typeof onEscPressed === 'function') {
-          onEscPressed(cbProps);
+
+      _this.props,id = _this$props5.id,onEscPressed = _this$props5.onEscPressed,closeOnEscPressed = _this$props5.closeOnEscPressed,loading = _this$props5.loading;
+      if (!loading) {var
+        keyCode = event.keyCode;
+        var isEscPressed = keyCode === 27;
+        var cbProps = { event: event, id: id, keyCode: keyCode };
+        if (isEscPressed) {
+          if (closeOnEscPressed) {
+            _this.setResult(selfCloseActionId);
+            _this.close();
+          }
+          if (typeof onEscPressed === 'function') {
+            onEscPressed(cbProps);
+          }
         }
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "stopOutsideClickWaiting",
@@ -5152,29 +4964,30 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
     function () /* ev */{// Mouse released on window --> cancel waiting for mouse up on wrapper (don't close modal)
       var _assertThisInitialize = assertThisInitialized_default()(_this),wrapperDomNode = _assertThisInitialize.wrapperDomNode,windowDomNode = _assertThisInitialize.windowDomNode;
       if (_this.isOutsideClickWaiting && wrapperDomNode && windowDomNode) {
-        // const type  = ev && ev.type
-        // const target  = ev && ev.target
-        // console.log('stopOutsideClickWaiting', type, target)
-        wrapperDomNode.removeEventListener(mouseUpEvent, _this.onOutsideClickDone);
+        // console.log('ModalPortal:stopOutsideClickWaiting', ev && ev.type, ev && ev.currentTarget)
+        wrapperDomNode.removeEventListener(mouseUpEvent, _this.onOutsideClickCatched);
         windowDomNode.removeEventListener(mouseLeaveEvent, _this.stopOutsideClickWaiting);
         _this.isOutsideClickWaiting = false;
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "startOutsideClickWaiting",
     function () {// Start waiting for mouse up on wrapper (close modal) or window (continue working)
-      var _assertThisInitialize2 = assertThisInitialized_default()(_this),wrapperDomNode = _assertThisInitialize2.wrapperDomNode,windowDomNode = _assertThisInitialize2.windowDomNode;
-      // console.log('startOutsideClickWaiting')
-      if (!_this.isOutsideClickWaiting && wrapperDomNode && windowDomNode) {// Start waiting for
-        _this.isOutsideClickWaiting = true;
-        wrapperDomNode.addEventListener(mouseUpEvent, _this.onOutsideClickDone);
-        windowDomNode.addEventListener(mouseLeaveEvent, _this.stopOutsideClickWaiting);
+      var loading = _this.props.loading;
+      if (!loading) {var _assertThisInitialize2 = assertThisInitialized_default()(_this),
+        wrapperDomNode = _assertThisInitialize2.wrapperDomNode,windowDomNode = _assertThisInitialize2.windowDomNode;
+        // console.log('ModalPortal:startOutsideClickWaiting')
+        if (!_this.isOutsideClickWaiting && wrapperDomNode && windowDomNode) {// Start waiting for
+          _this.isOutsideClickWaiting = true;
+          wrapperDomNode.addEventListener(mouseUpEvent, _this.onOutsideClickCatched);
+          windowDomNode.addEventListener(mouseLeaveEvent, _this.stopOutsideClickWaiting);
+        }
       }
-    });defineProperty_default()(assertThisInitialized_default()(_this), "onOutsideClickDone",
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onOutsideClickCatched",
     function () {// Mouse released on wrapper --> close modal
-      var _this$props7 = _this.props,id = _this$props7.id,closeOnClickOutside = _this$props7.closeOnClickOutside,onClickOutside = _this$props7.onClickOutside;
-      // console.log('onOutsideClickDone')
+      var _this$props6 = _this.props,id = _this$props6.id,closeOnClickOutside = _this$props6.closeOnClickOutside,onClickOutside = _this$props6.onClickOutside;
+      // console.log('ModalPortal:onOutsideClickCatched')
       _this.stopOutsideClickWaiting();
       if (closeOnClickOutside) {
-        _this.resolvingAction = selfCloseActionId;
+        _this.setResult(selfCloseActionId);
         _this.close();
       }
       if (typeof onClickOutside === 'function') {
@@ -5183,10 +4996,10 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
     });defineProperty_default()(assertThisInitialized_default()(_this), "onCloseButtonClick",
 
     function () {// Mouse released on wrapper --> close modal
-      var _this$props8 = _this.props,id = _this$props8.id,closeWithCloseButton = _this$props8.closeWithCloseButton,onCloseButtonClick = _this$props8.onCloseButtonClick;
-      // console.log('onCloseButtonClick')
+      var _this$props7 = _this.props,id = _this$props7.id,closeWithCloseButton = _this$props7.closeWithCloseButton,onCloseButtonClick = _this$props7.onCloseButtonClick;
+      // console.log('ModalPortal:onCloseButtonClick')
       if (closeWithCloseButton) {
-        _this.resolvingAction = selfCloseActionId;
+        _this.setResult(selfCloseActionId);
         _this.close();
       }
       if (typeof onCloseButtonClick === 'function') {
@@ -5200,17 +5013,21 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
 
     function (domNode) {
       _this.wrapperDomNode = domNode;
-    });_this.state = { popupsInited: false, active: false, open: false };config_default.a.popups.initPromise.then(_this.setPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;return _this;}var _proto = Modal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state;if (props.open !== prevProps.open && props.open !== state.open) {// New open from props
+    });_this.state = { popupsInited: false, activated: false, open: false };config_default.a.modals.initPromise.then(_this.onPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;_this.modalType = props.type;return _this;}var _proto = ModalPortal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state; // console.log('ModalPortal:componentDidUpdate', {
+    //   'props.open': props.open,
+    //   'state.open': state.open,
+    // })
+    if (props.open !== prevProps.open && props.open !== state.open) {// New open from props
       if (props.open) {this.activate(function () {return _this2.setState({ open: true });});} else {this.setState({ open: false });}} else if (state.open !== prevState.open) {// New open from state
-      if (!state.active) {// Is it real case (changing `open` on inactive modal?
+      if (!state.activated) {// Is it real case (changing `open` on inactive modal?
         this.activate();}this.updateShowWithState();}} // External methods...
-  ; // External method stub
+  ; // External method stub? (For popups only?)
   // Helpers...
   _proto.registerGlobalHandlers = function registerGlobalHandlers() {var windowDomNode = this.windowDomNode,wrapperDomNode = this.wrapperDomNode; // const { closeOnClickOutside } = this.props
     if (!this.globalHandlersRegistered) {this.globalHandlersRegistered = true; // Set flag
-      // console.log('registerGlobalHandlers')
-      if (!windowDomNode || !wrapperDomNode) {var error = new Error('Modal: dom nodes is undefined on registerGlobalHandlers');console.error(error); // eslint-disable-line no-console
-        debugger; // eslint-disable-line no-debugger
+      // console.log('ModalPortal:registerGlobalHandlers')
+      if (!windowDomNode || !wrapperDomNode) {var error = new Error('ModalPortal: dom nodes is undefined on registerGlobalHandlers');console.error(error); // eslint-disable-line no-console
+        //DEBUG//debugger; // eslint-disable-line no-debugger
         throw error; // ???
       } /* // Update geometry (UNUSED)
          * document.addEventListener(globalScrollEventName, this.updateGeometry)
@@ -5221,9 +5038,9 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
          */document.addEventListener(globalKeyPressEventName, this.onKeyPress);if (windowDomNode && wrapperDomNode) {wrapperDomNode.addEventListener(mouseDownEvent, this.startOutsideClickWaiting);windowDomNode.addEventListener(mouseUpEvent, this.stopOutsideClickWaiting);}}};_proto.unregisterGlobalHandlers = function unregisterGlobalHandlers() {var windowDomNode = this.windowDomNode,wrapperDomNode = this.wrapperDomNode; // TODO: Check for dom nodes exists during close process
     // const { closeOnClickOutside } = this.props
     if (this.globalHandlersRegistered) {this.globalHandlersRegistered = false; // Reset flag
-      // console.log('unregisterGlobalHandlers')
-      if (!windowDomNode || !wrapperDomNode) {var error = new Error('Modal: dom nodes is undefined on unregisterGlobalHandlers');console.error(error); // eslint-disable-line no-console
-        debugger; // eslint-disable-line no-debugger
+      // console.log('ModalPortal:unregisterGlobalHandlers')
+      if (!windowDomNode || !wrapperDomNode) {var error = new Error('ModalPortal: dom nodes is undefined on unregisterGlobalHandlers');console.error(error); // eslint-disable-line no-console
+        //DEBUG//debugger; // eslint-disable-line no-debugger
         throw error; // ???
       } /* // Update geometry (UNUSED)
          * document.removeEventListener(globalScrollEventName, this.updateGeometry)
@@ -5231,130 +5048,57 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
          * if (!this.updateGeometryTimer && updateGeometryTimerDelay) {
          *   this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay)
          * }
-         */document.removeEventListener(globalKeyPressEventName, this.onKeyPress);if (windowDomNode && wrapperDomNode) {this.stopOutsideClickWaiting();wrapperDomNode.removeEventListener(mouseDownEvent, this.startOutsideClickWaiting);windowDomNode.removeEventListener(mouseUpEvent, this.stopOutsideClickWaiting);}}};_proto.resolveAction = function resolveAction() {// Final method on close or on action event with autoClose mode
-    var actionId = this.resolvingAction || externalCloseActionId; /* // UNUSED: Throw an error if actionId is undefined
+         */document.removeEventListener(globalKeyPressEventName, this.onKeyPress);if (windowDomNode && wrapperDomNode) {this.stopOutsideClickWaiting();wrapperDomNode.removeEventListener(mouseDownEvent, this.startOutsideClickWaiting);windowDomNode.removeEventListener(mouseUpEvent, this.stopOutsideClickWaiting);}}};_proto.setResult = function setResult(result) {this.resolvingResult = result;};_proto.resolveResult = function resolveResult() {// Final method on close or on action event with autoClose mode
+    var actionId = this.resolvingResult || externalCloseActionId; /* // UNUSED: Throw an error if actionId is undefined
                                                                    * if (!actionId) {
-                                                                   *   const error = new Error('Modal: resolving action is undefined')
+                                                                   *   const error = new Error('ModalPortal: resolving action is undefined')
                                                                    *   console.error(error) // eslint-disable-line no-console
                                                                    *   debugger // eslint-disable-line no-debugger
                                                                    *   throw error // ???
                                                                    * }
-                                                                   */var _this$props9 = this.props,id = _this$props9.id,onAction = _this$props9.onAction;if (typeof onAction === 'function') {onAction({ id: actionId, modalId: id });}this.resolvingAction = null; // Reset action back
+                                                                   */var _this$props8 = this.props,id = _this$props8.id,onAction = _this$props8.onAction;if (typeof onAction === 'function') {onAction({ id: actionId, modalId: id });}this.resolvingResult = null; // Reset action back
   } // Handlers...
   ; // Render helpers...
   // Render...
-  _proto.renderHeaderTitle = function renderHeaderTitle() {var title = this.props.title;return title && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModal('HeaderTitle') }, title);};_proto.renderHeaderCloseButton = function renderHeaderCloseButton() {var showCloseButton = this.props.showCloseButton;return showCloseButton && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModal('HeaderCloseButton') }, /*#__PURE__*/external_react_default.a.createElement(forms_FormButton_FormButton, { icon: "faTimes", largeIcon: true, plain: true, title: "Close window" // TODO; Translate?
-      , onClick: this.onCloseButtonClick }));};_proto.renderHeaderIcon = function renderHeaderIcon() {var _this$props10 = this.props,icon = _this$props10.icon,iconTheme = _this$props10.iconTheme;var theme = iconTheme || this.props.theme;var showIcon = icon || theme && config_default.a.ui.defaultIcons[theme];return showIcon && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModal('HeaderIcon', { theme: theme }) }, /*#__PURE__*/external_react_default.a.createElement(elements_InlineIcon_InlineIcon, { theme: theme, icon: showIcon }));};_proto.renderHeader = function renderHeader() {var _this$props11 = this.props,headerTheme = _this$props11.headerTheme,theme = _this$props11.theme;return /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModal('Header', { theme: headerTheme || theme }) }, this.renderHeaderIcon(),
-    this.renderHeaderTitle(),
-    this.renderHeaderCloseButton());
+  _proto.renderWindow = function renderWindow() {var _this$props9 = this.props,windowWidth = _this$props9.windowWidth,windowTheme = _this$props9.windowTheme,theme = _this$props9.theme,windowClassName = _this$props9.windowClassName,children = _this$props9.children;var windowDomNode = this.windowDomNode,wrapperDomNode = this.wrapperDomNode; // console.log('ModalPortal:renderWindow', { windowWidth })
+    // TODO: Pass windowDomNode to children?
+    var childrenProps = { ModalPortal: this, windowDomNode: windowDomNode, wrapperDomNode: wrapperDomNode };var isElement = /*#__PURE__*/external_react_default.a.isValidElement(children);var childrenType = typeof children;var isFunction = childrenType === 'function'; // Extend element or call function with children' props
+    var content = isElement ? /*#__PURE__*/external_react_default.a.cloneElement(children, childrenProps) : isFunction ? children(childrenProps) : children;return /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal('Window', { width: windowWidth, theme: windowTheme || theme }, [windowClassName]), ref: this.setWindowDomRef }, content);};_proto.renderLoader = function renderLoader() {var _this$props10 = this.props,loading = _this$props10.loading,loaderTheme = _this$props10.loaderTheme,handleLoaderCancel = _this$props10.handleLoaderCancel;return /*#__PURE__*/external_react_default.a.createElement(elements_Loader_Loader, { mode: "local", theme: loaderTheme, show: loading, onCancel: handleLoaderCancel });};_proto.renderModalPortal = function renderModalPortal() {var _this$props11 = this.props,type = _this$props11.type,id = _this$props11.id,theme = _this$props11.theme,wrapperTheme = _this$props11.wrapperTheme,className = _this$props11.className,wrapperClassName = _this$props11.wrapperClassName,useLoader = _this$props11.useLoader;var open = this.state.open; // console.log('ModalPortal:renderModalPortal', { id, open })
+    return /*#__PURE__*/external_react_default.a.createElement(esm_CSSTransition, { key: id // id={id}
+      , timeout: this.transitionTime, in: open, classNames: cnModalPortal() // Generate animation classes
+    }, /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal({ type: type, id: id }, [className]) // Root node
+      , ref: this.setRootDomRef }, /*#__PURE__*/
+    external_react_default.a.createElement("div", {
+      className: cnModalPortal('Wrapper', { theme: wrapperTheme || theme }, [wrapperClassName]),
+      ref: this.setWrapperDomRef },
 
-
-  };_proto.
-
-  renderLeftContent = function renderLeftContent() {var
-    leftContent = this.props.leftContent;
-    return leftContent && /*#__PURE__*/
-    external_react_default.a.createElement("div", { className: cnModal('LeftContent') },
-    leftContent);
-
-
-  };_proto.
-
-  renderContent = function renderContent() {var
-    content = this.props.content;
-    return content && /*#__PURE__*/
-    external_react_default.a.createElement("div", { className: cnModal('Container') }, /*#__PURE__*/
-    external_react_default.a.createElement("div", { className: cnModal('Content') },
-    content));
-
-
-
-  };_proto.
-
-  renderActions = function renderActions() {var
-    actions = this.props.actions;
-    return actions && /*#__PURE__*/
-    external_react_default.a.createElement("div", { className: cnModal('Actions') }, /*#__PURE__*/
-    external_react_default.a.createElement(ActionsContextProvider, { value: this },
-    actions));
-
-
-
-  };_proto.
-
-  renderWindow = function renderWindow() {var _this$props12 =
-    this.props,width = _this$props12.width,windowTheme = _this$props12.windowTheme,theme = _this$props12.theme,windowClassName = _this$props12.windowClassName;
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", {
-        className: cnModal('Window', { width: width, theme: windowTheme || theme }, [windowClassName]),
-        ref: this.setWindowDomRef },
-
-      this.renderHeader(), /*#__PURE__*/
-      external_react_default.a.createElement("div", { className: cnModal('Layout') },
-      this.renderLeftContent(), /*#__PURE__*/
-      external_react_default.a.createElement("div", { className: cnModal('LayoutMain') },
-      this.renderContent(),
-      this.renderActions()))));
-
+    this.renderWindow(),
+    useLoader && this.renderLoader())));
 
 
 
 
   };_proto.
 
-  renderModal = function renderModal() {var _this$props13 =
-    this.props,id = _this$props13.id,theme = _this$props13.theme,wrapperTheme = _this$props13.wrapperTheme,className = _this$props13.className,wrapperClassName = _this$props13.wrapperClassName;var
-    open = this.state.open;
-    // console.log('Modal:renderModal', { id, open })
-    return /*#__PURE__*/(
-      external_react_default.a.createElement(esm_CSSTransition, {
-        key: id
-        // id={id}
-        , timeout: this.transitionTime,
-        in: open,
-        classNames: cnModal() }, /*#__PURE__*/
-
-      external_react_default.a.createElement("div", {
-        className: cnModal({ id: id }, [className]),
-        ref: this.setRootDomRef }, /*#__PURE__*/
-
-      external_react_default.a.createElement("div", {
-        className: cnModal('Wrapper', { theme: wrapperTheme || theme }, [wrapperClassName]),
-        ref: this.setWrapperDomRef },
-
-      this.renderWindow()))));
-
-
-
-
-
-  };_proto.
-
-  render = function render() {
-    // const { id } = this.props
-    var _this$state = this.state,popupsInited = _this$state.popupsInited,active = _this$state.active;
-    var toDisplay = popupsInited && active;
-    // console.log('Modal:render', { id, popupsInited, active, open })
+  render = function render() {var _this$state =
+    this.state,popupsInited = _this$state.popupsInited,activated = _this$state.activated;
+    var toDisplay = popupsInited && activated;
     return toDisplay && /*#__PURE__*/
-    external_react_default.a.createElement(PortalCompat, { node: config_default.a.popups.domNode },
-    this.renderModal());
+    external_react_default.a.createElement(PortalCompat, { node: config_default.a.modals.domNode },
+    this.renderModalPortal());
 
 
-  };return Modal;}(external_react_default.a.PureComponent /** @lends @Modal.prototype */);defineProperty_default()(Modal_Modal, "propTypes", { // loading: PropTypes.bool, // Show Loader flashback
+  };return ModalPortal;}(external_react_default.a.PureComponent /** @lends @ModalPortal.prototype */);defineProperty_default()(ModalPortal_ModalPortal, "propTypes", { useLoader: prop_types_default.a.bool, // Use loader (see `loading`)
+  loading: prop_types_default.a.bool, // Show Loader flashback
   onAction: prop_types_default.a.func, // Event fired on action invoked (see `actions` prop)
   // registerCallback: PropTypes.func, // ??? registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
-  // setModalNodeRef: PropTypes.func, // ??? Demo?
-  width: prop_types_default.a.string, // Modal window width (predefined variants: xs, sm, md, lg, xl, xxl)
-  actions: prop_types_default.a.oneOfType([prop_types_default.a.array, prop_types_default.a.object]), // Actions component(s) (TODO: `ActionsContext` must be used)
-  className: prop_types_default.a.string, // Modal class name
-  closeOnCancelAction: prop_types_default.a.bool, // Auto-close on `cancel` action event
+  // setModalPortalNodeRef: PropTypes.func, // ??? Demo?
+  windowWidth: prop_types_default.a.string, // (ModalWindow only?) ModalPortal window width (predefined variants: xs, sm, md, lg, xl, xxl)
+  handleLoaderCancel: prop_types_default.a.func, // Loader onCancel event handler
   closeOnClickOutside: prop_types_default.a.bool, // Close (cancel) modal by click outside modal window (on 'curtain')
   closeOnEscPressed: prop_types_default.a.bool, // Close (cancel) modal on esc key pressed
   closeWithCloseButton: prop_types_default.a.bool, // Close (cancel) modal by click on header 'Close' button
-  content: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Main modal content
-  icon: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Show icon in header
-  id: prop_types_default.a.string, // Modal id
-  leftContent: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Content at left of main content and actions (ideal place for large visual icon)
+  id: prop_types_default.a.string, // ModalPortal id
   onActivate: prop_types_default.a.func, // Event fired on activate (before open)
   onClickOutside: prop_types_default.a.func, // Event fired on click outside modal
   onCloseButtonClick: prop_types_default.a.func, // Event fired on header 'Close' button click
@@ -5364,22 +5108,765 @@ Modal_Modal = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_defaul
   onClose: prop_types_default.a.func, // Event fired on modal close
   handleOpenState: prop_types_default.a.func, // Event fired on modal open state change (update external open/close state) ({ open, id } => void)
   open: prop_types_default.a.bool, // Show modal by default
-  showCloseButton: prop_types_default.a.bool, // Display close button in header
-  title: prop_types_default.a.string, // Modal title
-  windowClassName: prop_types_default.a.string, // Modal window class name
-  wrapperClassName: prop_types_default.a.string, // Modal wrapper class name
-  theme: prop_types_default.a.string, // Modal theme (default theme for all other themed elements, see `*Theme`)
-  iconTheme: prop_types_default.a.string, // Icon theme (using `theme` if not specified)
+  className: prop_types_default.a.string, // ModalPortal class name
+  windowClassName: prop_types_default.a.string, // ModalPortal window class name
+  wrapperClassName: prop_types_default.a.string, // ModalPortal wrapper class name
+  theme: prop_types_default.a.string, // ModalPortal theme (default theme for all other themed elements, see `*Theme`)
   windowTheme: prop_types_default.a.string, // Window theme (using `theme` if not specified)
-  headerTheme: prop_types_default.a.string, // Header theme (using `theme` if not specified)
-  wrapperTheme: prop_types_default.a.string // Wrapper (back-curtain) theme (using `theme` if not specified)
-});defineProperty_default()(Modal_Modal, "defaultProps", { closeOnClickOutside: true, // Close (with `selfCloseActionId` action id) modal by outisde-click.
-  closeOnEscPressed: true, // Close (with `selfCloseActionId` action id) modal by esc-key.
-  closeWithCloseButton: true, // Close (with `selfCloseActionId` action id) with 'Close button' (if present in layout -- see `showCloseButton`)
-  showCloseButton: false // Display 'Close button'?
-});
+  wrapperTheme: prop_types_default.a.string, // Wrapper (back-curtain) theme (using `theme` if not specified)
+  loaderTheme: prop_types_default.a.string // Loader theme ('MediumDark' is default)
+});defineProperty_default()(ModalPortal_ModalPortal, "defaultProps", { loaderTheme: 'Transparent' });
+// EXTERNAL MODULE: ./src/elements/ModalPopup/ModalPopup.pcss
+var ModalPopup_ModalPopup = __webpack_require__(44);
+
+// CONCATENATED MODULE: ./src/elements/ModalPopup/ModalPopup.jsx
+ /** @module ModalPopup
+                                                                                                                                                                                                                                                                                *  @class ModalPopup
+                                                                                                                                                                                                                                                                                *  @since 2020.10.27, 00:39
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.18, 02:34
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.18, 01:50 -- ModalPopup: Reset both `storedContentSize` if content changed (use registrable handler)?
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.18, 02:15 -- ModalPopup: Use static `ModalPopupStack` component and close same-level (from stack end to first `Modal` or stack begin) popups
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.19, 03:35 -- ModalPopup: Use nearest scrollable container ancestor as popup base? Or clip to it bounds? Or hide popup if countrol is (partially) out of this bounds?
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  External methods (for ModalPopupStack):
+                                                                                                                                                                                                                                                                                *  - close
+                                                                                                                                                                                                                                                                                *  - open
+                                                                                                                                                                                                                                                                                *  - updateGeometry
+                                                                                                                                                                                                                                                                                */
+
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+
+// import { PortalWithState } from 'react-portal'
+// import { Portal } from 'react-portal'
+
+/* UNUSED: Transitions
+                                                                                 * import { // Transitions...
+                                                                                 *   CSSTransition,
+                                                                                 *   TransitionGroup,
+                                                                                 * } from 'react-transition-group'
+                                                                                 */
+
+
+
+
+var cnModalPopup = configure_cn('ModalPopup');
+var cnModalPopupControl = configure_cn('ModalPopupControl');
+
+var doDebug = //DEBUG// false || // DEBUG!
+false;
+
+// Debounce delay
+var debouncedUpdateGeometryTimeout = //DEBUG//doDebug ? 500 :
+15;
+
+// Update by timer (0 - disabled), must be above than debounce delay (`debouncedUpdateGeometryTimeout`, above)
+var updateGeometryTimerDelay = //DEBUG//doDebug ? 0 :
+50; // 0
+
+var domNodeGeometryKeys = [
+/* // controlBouningBox sample:
+                            * bottom: 642.8125
+                            * height: 32
+                            * left: 223.921875
+                            * right: 551.515625
+                            * top: 610.8125
+                            * width: 327.59375
+                            * x: 223.921875
+                            * y: 610.8125
+                            */
+'left',
+'top',
+'width',
+'height'
+/* // Old values (for `node.style` keys)
+          * 'offsetLeft',
+          * 'offsetTop',
+          * 'offsetWidth',
+          * 'offsetHeight',
+          */];
+
+var verticalGeometryKeys = [
+'contentHeight',
+'contentTop',
+'controlHeight',
+'controlTop',
+'scrollY',
+'viewHeight'];
+
+var horizontalGeometryKeys = [
+'contentWidth',
+'contentLeft',
+'controlWidth',
+'controlLeft',
+'scrollX',
+'viewWidth'];
+
+
+var globalGeometryKeys = {
+  viewWidth: { obj: window, key: 'innerWidth' },
+  viewHeight: { obj: window, key: 'innerHeight' },
+  scrollX: { obj: window, key: 'pageXOffset' },
+  scrollY: { obj: window, key: 'pageYOffset' } };
+
+
+var axisKeys = { // Used in `updateOneAxisContentPos`
+  // Regexp to convert vertical axis keys to horizontal:
+  // '<,'>S/top/left/g | '<,'>S/bottom/right/g | '<,'>S/height/width/g | '<,'>S/vertical/horizontal/g
+  vertical: {
+    viewSize: 'viewHeight',
+    controlPos: 'controlTop',
+    controlSize: 'controlHeight',
+    scroll: 'scrollY',
+    contentPos: 'contentTop',
+    contentSize: 'contentHeight',
+    contentStylePos: 'top',
+    contentStyleSize: 'height',
+    contentStyleMaxSize: 'maxHeight',
+    // contentStyleMaxSize: 'max-height',
+    storedContentSize: 'storedContentHeight' // Stored in dom node
+  },
+  horizontal: {
+    viewSize: 'viewWidth',
+    controlPos: 'controlLeft',
+    controlSize: 'controlWidth',
+    scroll: 'scrollY',
+    contentPos: 'contentLeft',
+    contentSize: 'contentWidth',
+    contentStylePos: 'left',
+    contentStyleSize: 'width',
+    contentStyleMaxSize: 'maxWidth',
+    // contentStyleMaxSize: 'max-width',
+    storedContentSize: 'storedContentWidth' // Stored in dom node
+  } };
+
+
+// const globalClickEventName = 'mousedown'
+// const globalKeyPressEventName = 'keydown'
+var globalScrollEventName = 'scroll';
+var globalResizeEventName = 'resize';
+
+/* // DEBUG: Demo for prevent closing underlaying popups. (Can be used for modal windows. See crrsp styles & html layout.)
+                                       * const debugHide = document.getElementById('DebugHide')
+                                       * setTimeout(() => {
+                                       *   if (debugHide) {
+                                       *     debugHide.style.display = 'block'
+                                       *   }
+                                       * }, 3000)
+                                       * const debugHideListener = (ev) => {
+                                       *   // ev.stopImmediatePropagation()
+                                       *   ev.stopPropagation()
+                                       * }
+                                       * debugHide && debugHide.addEventListener('click', debugHideListener)
+                                       */var
+
+ModalPopup_ModalPopup_ModalPopup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalPopup, _React$PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // From ModalPortal:
+
+
+
+
+  // Lifecycle...
+
+  function ModalPopup(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;defineProperty_default()(assertThisInitialized_default()(_this), "delayedClickTimerHandler", null);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "controlDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "contentDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "geometry", {});defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "ModalPortal", null);defineProperty_default()(assertThisInitialized_default()(_this), "updateGeometryInstant",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {// UNUSED? TODO? Update geometry
+      var open = _this.state.open;
+      if (!open) {// Do nothing if popup is closed
+        // console.log('ModalPopup:updateGeometryInstant: SKIPED (closed)')
+        return;
+      }var
+      fullWidth = _this.props.fullWidth;
+      // TODO: Call `updateGeometryInstant` on content update? How? Use timer?
+      var controlGeometry = _this.getDomNodeGeometry(_this.controlDomNode, 'control');
+      var contentGeometry = _this.getDomNodeGeometry(_this.windowDomNode, 'content');
+      // const contentGeometry = this.getDomNodeGeometry(this.contentDomNode, 'content')
+      // const windowGeometry = this.getDomNodeGeometry(this.windowDomNode, 'window')
+      var globalGeometry = _this.getGlobalGeometry();
+      var geometry = extends_default()({},
+      globalGeometry,
+      controlGeometry,
+      contentGeometry);
+
+
+      /* Sample geometry keys:
+                         * contentHeight
+                         * contentLeft
+                         * contentTop
+                         * contentWidth
+                         * controlHeight
+                         * controlLeft
+                         * controlTop
+                         * controlWidth
+                         * scrollX
+                         * scrollY
+                         * viewHeight
+                         * viewWidth
+                         */
+      var updatedGeometryKeys = _this.getUpdatedGeometryKeys(geometry);
+      var changedHorizontalKeys = horizontalGeometryKeys.some(function (key) {return updatedGeometryKeys.includes(key);});
+      var changedVerticalKeys = verticalGeometryKeys.some(function (key) {return updatedGeometryKeys.includes(key);});
+      /* // DEBUG (use doDebug?)...
+                                                                                                                        * console.log('ModalPopup:updateGeometryInstant', {
+                                                                                                                        *   controlGeometry,
+                                                                                                                        *   contentGeometry,
+                                                                                                                        *   updatedGeometryKeys,
+                                                                                                                        *   changedHorizontalKeys,
+                                                                                                                        *   changedVerticalKeys,
+                                                                                                                        *   // geometry,
+                                                                                                                        *   // 'this.geometry': this.geometry,
+                                                                                                                        *   'changed geometry': Object.entries(geometry).reduce((result, [key, val]) => {
+                                                                                                                        *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+                                                                                                                        *   }, {}),
+                                                                                                                        *   'changed this.geometry': Object.entries(this.geometry).reduce((result, [key, val]) => {
+                                                                                                                        *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+                                                                                                                        *   }, {}),
+                                                                                                                        * })
+                                                                                                                        * // if (id === 'withMenu') {
+                                                                                                                        * //   debugger
+                                                                                                                        * // }
+                                                                                                                        */
+      if (!updatedGeometryKeys.length) {// Do nothing if no changes detected
+        return;
+      }
+      if (changedVerticalKeys) {
+        _this.updateOneAxisContentPos('vertical', geometry, updatedGeometryKeys); // Update vertical position & size...
+      }
+      if (changedHorizontalKeys) {
+        if (fullWidth) {// TODO?
+          _this.updateContentWidth(geometry, updatedGeometryKeys);
+        }
+        _this.updateOneAxisContentPos('horizontal', geometry, updatedGeometryKeys); // Update horizontal position & size...
+      }
+      _this.geometry = geometry;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "open",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function () {return _this.ModalPortal && _this.ModalPortal.open();});defineProperty_default()(assertThisInitialized_default()(_this), "close",
+    function () {return _this.ModalPortal && _this.ModalPortal.close();});defineProperty_default()(assertThisInitialized_default()(_this), "toggle",
+    function (open) {return _this.ModalPortal && _this.ModalPortal.toggle(open);});defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+    function () {return _this.ModalPortal && _this.ModalPortal.isVisible();});defineProperty_default()(assertThisInitialized_default()(_this), "onActivate",
+
+
+
+    function () {
+      // console.log('ModalPopup:onActivate')
+      setTimeout(_this.updateGeometryInstant, 0);
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onDeactivate",
+    function () {
+      // console.log('ModalPopup:onDeactivate')
+      _this.clearContentGeometry(); // Due to content is destroyed when hidden
+    });defineProperty_default()(assertThisInitialized_default()(_this), "handleOpenState",
+
+    function (_ref) {var open = _ref.open;
+      // console.log('ModalPopup:handleOpenState', open)
+      _this.setState({ open: open }, _this.updateOpenOrCloseWithState); // Update own open state
+      var _this$props = _this.props,id = _this$props.id,handleOpenState = _this$props.handleOpenState;
+      if (typeof handleOpenState === 'function') {
+        handleOpenState({ id: id, open: open });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setControlRef",
+
+    function (domNode) {
+      _this.controlDomNode = domNode;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setContentRef",
+
+    function (domNode) {
+      _this.contentDomNode = domNode;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "handlePortalOpen",
+
+
+
+
+
+
+
+
+
+    function () {
+      // TODO: Register/unregister popup in `ModalPopupStack`
+      // this.updateGeometry()
+      _this.registerGlobalHandlers();
+    });defineProperty_default()(assertThisInitialized_default()(_this), "handlePortalClose",
+
+    function () {
+      // TODO: Register/unregister popup in `ModalPopupStack`
+      _this.unregisterGlobalHandlers();
+      // this.clearContentGeometry() // Due to content is destroyed when hidden
+    });defineProperty_default()(assertThisInitialized_default()(_this), "updateOpenOrCloseWithState",
+
+    function () {
+      if (_this.state.open) {
+        _this.handlePortalOpen();
+      } else
+      {
+        _this.handlePortalClose();
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onControlClick",
+
+    function () /* event */{var
+      id = _this.props.id;var
+      open = _this.state.open;
+      var nextOpen = !open;
+      // console.log('ModalPopup:onControlClick', id, nextOpen, open)
+      _this.setState({ open: nextOpen }, _this.updateOpenOrCloseWithState); // Update own open state
+      // TODO: Notify `ModalModalsContainer` when popup opens for closing all other popups from same level (before first modal in popups stack). (Now user can open several popups at the same time.
+      var onControlClick = _this.props.onControlClick;
+      if (typeof onControlClick === 'function') {
+        onControlClick({ id: id, open: nextOpen });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "renderPortalContent",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (portalProps) {var
+      ModalPortal = portalProps.ModalPortal,windowDomNode = portalProps.windowDomNode,wrapperDomNode = portalProps.wrapperDomNode;
+      if (ModalPortal) {// Save wrapping ModalPortal instance refernce
+        // console.log('ModalPopup:renderPortalContent: updated ModalPortal')
+        _this.ModalPortal = ModalPortal; // Save ModalPortal handler (TODO)
+        _this.windowDomNode = windowDomNode;
+        _this.wrapperDomNode = wrapperDomNode;
+      }
+      // debugger
+      var _this$props2 =
+
+
+
+      _this.props,id = _this$props2.id,popupContent = _this$props2.popupContent,className = _this$props2.contentClassName;
+      var renderProps = {
+        id: id,
+        className: _this.getClassName({ cnCtx: cnModalPopup, className: className }),
+        ref: _this.setContentRef // Will be used windowDomNode from ModalPortal
+      };
+      return /*#__PURE__*/(
+        external_react_default.a.createElement("div", renderProps,
+        popupContent));
+
+
+    });_this.state = { open: null // null -- uninitialized
+    };_this.updateGeometry = debounce(debouncedUpdateGeometryTimeout, _this.updateGeometryInstant);return _this;}var _proto = ModalPopup.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
+  ;_proto.getDomNodeGeometry = function getDomNodeGeometry(domNode, id) {id = id || 'default';var rect = domNode && domNode.getBoundingClientRect(); /* // controlBouningBox sample:
+                                                                                                                                                      * bottom: 642.8125
+                                                                                                                                                      * height: 32
+                                                                                                                                                      * left: 223.921875
+                                                                                                                                                      * right: 551.515625
+                                                                                                                                                      * top: 610.8125
+                                                                                                                                                      * width: 327.59375
+                                                                                                                                                      * x: 223.921875
+                                                                                                                                                      * y: 610.8125
+                                                                                                                                                      */var geometry = rect && domNodeGeometryKeys.reduce(function (geometry, key) {// const val = domNode && domNode[key]
+      var val = rect && rect[key];if (val != null) {var resultKey = id + strings_namespaceObject.ucFirst(key);geometry[resultKey] = val;}return geometry;}, {}); // if (this.props.id === 'withMenu' && id === 'control') {
+    //   console.log(domNode, rect, domNodeGeometryKeys, geometry)
+    //   debugger
+    // }
+    return geometry || {};};_proto.getGlobalGeometry = function getGlobalGeometry() {var geometry = Object.entries(globalGeometryKeys).reduce(function (geometry, _ref2) {var _extends2;var id = _ref2[0],descr = _ref2[1];var obj = descr.obj;var key = descr.key || id;var val = obj[key];return extends_default()({}, geometry, (_extends2 = {}, _extends2[id] = val, _extends2));}, {});return geometry;};_proto.getUpdatedGeometryKeys = function getUpdatedGeometryKeys(geometry) {var origGeometry = this.geometry;var updatedKeys = [];Object.entries(geometry).forEach(function (_ref3) {var key = _ref3[0],val = _ref3[1];if (val !== origGeometry[key]) {updatedKeys.push(key);}});return updatedKeys;};_proto.updateContentWidth = function updateContentWidth(geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
+    // if (updatedGeometryKeys.includes('controlWidth') || updatedGeometryKeys.includes('contentWidth')) {
+    var width = geometry.controlWidth;var domNode = this.windowDomNode; // contentDomNode
+    if (!domNode) {// Error?
+      var error = new Error('ModalPopup:updateContentWidth: target dom node is undefined');console.error(error); // eslint-disable-line no-console
+      debugger; // eslint-disable-line no-debugger
+      // throw error
+      return;}var setWidth = width + 'px'; /* // DEBUG
+                                            * console.log('ModalPopup:updateContentWidth', {
+                                            *   width,
+                                            *   'geometry.contentWidth': geometry.contentWidth,
+                                            *   // geometry,
+                                            *   updatedGeometryKeys,
+                                            * })
+                                            * debugger
+                                            */if (domNode && domNode.style.width !== setWidth) {geometry.contentWidth = width;domNode.storedContentWidth = null; // Reset stored width
+      domNode.style.width = setWidth;} // }
+  } /** updateOneAxisContentPos -- Calculate content position/size for one axis (horizontal, vertical)
+     * @param {String('horizontal'|'vertical')} axis
+     * @param {Object} geometry
+     * @param {String[]} updatedGeometryKeys
+     */;_proto.updateOneAxisContentPos = function updateOneAxisContentPos(axis, geometry, updatedGeometryKeys) {// eslint-disable-line no-unused-vars
+    var domNode = this.windowDomNode; // contentDomNode
+    if (!domNode) {// Error?
+      var error = new Error('ModalPopup:updateOneAxisContentPos: target dom node is undefined');console.error(error); // eslint-disable-line no-console
+      debugger; // eslint-disable-line no-debugger
+      // throw error
+      return;}var popupContentGap = config_default.a.css.popupContentGap; // const doubleContentModalPopupGap = popupContentGap * 2 // UNUSED
+    var keys = axisKeys[axis];var isVertical = axis === 'vertical'; // Get coordinates...
+    var viewSize = geometry[keys.viewSize]; // viewHeight
+    var controlPos = geometry[keys.controlPos]; // controlTop
+    var controlSize = geometry[keys.controlSize]; // controlHeight
+    // const scroll = geometry[keys.scroll] // scrollY
+    var contentPos = geometry[keys.contentPos]; // contentTop
+    var contentSize = geometry[keys.contentSize]; // contentClientHeight
+    var storedContentSize = domNode[keys.storedContentSize];var contentMaxSize = storedContentSize || contentSize;if (!storedContentSize || contentSize > storedContentSize) {// Save (maximum) height
+      domNode[keys.storedContentSize] = contentSize;}var viewStart = popupContentGap;var viewEnd = viewSize - popupContentGap; // Calculate control coordinates...
+    var controlScreenPos = controlPos; // - scroll
+    var controlScreenEnd = controlScreenPos + controlSize;var posNormal = isVertical ? controlScreenEnd + popupContentGap : controlScreenPos;var posReverted = isVertical ? controlScreenPos - popupContentGap : controlScreenEnd;var spaceAfter = viewEnd - posNormal;var spaceBefore = posReverted - viewStart; // Is it better to show content above control?
+    // TODO: Alternative calculations for horizontal axis
+    // const spaceBefore = isVertical ? controlScreenPos : controlScreenEnd
+    // // const spaceEnd = isVertical ? controlScreenAfter : controlScreenPos
+    // const spaceAfter = isVertical ? controlScreenAfter : controlScreenPos
+    var isntFitBefore = contentMaxSize > spaceBefore;var isntFitAfter = contentMaxSize > spaceAfter;var isMoreSpaceBefore = spaceBefore > spaceAfter;var placeBefore = isMoreSpaceBefore && isntFitAfter;var isntFit = placeBefore ? isntFitBefore : isntFitAfter;var fitSize = placeBefore ? spaceBefore : spaceAfter; // - doubleContentModalPopupGap
+    // Calculate `contentPos`...
+    var contentPosValue;if (placeBefore) {// Down-up position: from control top -> up
+      var fitContentSize = isntFit ? fitSize : contentMaxSize;contentPosValue = posReverted - fitContentSize; // contentPosValue = (controlScreenPos - fitContentSize - popupContentGap)
+    } else {// Normal position: from control bottom -> down
+      contentPosValue = posNormal; // contentPosValue = (controlScreenEnd + popupContentGap)
+    }var cssContentPos = contentPosValue + 'px';var isContentPosChanged = contentPosValue !== contentPos; // Is position changed?
+    // Calculate `contentStyleMaxSize`...
+    var cssContentStyleMaxSize = isntFit ? fitSize + 'px' : ''; // New value: pixels or auto (empty)
+    var origContentStyleMaxSize = domNode.style[keys.contentStyleMaxSize]; // Old value
+    var isContentStyleMaxSizeChanged = cssContentStyleMaxSize !== origContentStyleMaxSize; // Is maxsize changed?
+    if (isContentPosChanged || isContentStyleMaxSizeChanged) {// Pos or size changed
+      domNode.style[keys.contentStylePos] = cssContentPos; // Update dom node css style
+      geometry[keys.contentPos] = contentPosValue; // Update geometry object
+      domNode.style[keys.contentStyleMaxSize] = cssContentStyleMaxSize; // Update dom node css style
+    } /* // DEBUG (use doDebug?)...
+       * console.log('ModalPopup:updateOneAxisContentPos', {
+       *   // Parameters...
+       *   axis,
+       *   placeBefore,
+       *   isntFit,
+       *   // Coordinates...
+       *   fitSize,
+       *   contentPos,
+       *   cssContentPos,
+       *   cssContentStyleMaxSize,
+       *   // controlScreenPos,
+       *   // controlScreenEnd,
+       *   // controlScreenAfter,
+       *   // General...
+       *   updatedGeometryKeys,
+       *   geometry: geometry,
+       *   'this.geometry': this.geometry,
+       *   'changed geometry': Object.entries(geometry).reduce((result, [key, val]) => {
+       *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+       *   }, {}),
+       *   'changed this.geometry': Object.entries(this.geometry).reduce((result, [key, val]) => {
+       *     return updatedGeometryKeys.includes(key) ? { ...result, [key]: val } : result
+       *   }, {}),
+       * })
+       */};_proto.registerGlobalHandlers = function registerGlobalHandlers() {if (!this.globalHandlersRegistered) {this.globalHandlersRegistered = true;document.addEventListener(globalScrollEventName, this.updateGeometry);window.addEventListener(globalResizeEventName, this.updateGeometry);if (!this.updateGeometryTimer && updateGeometryTimerDelay) {this.updateGeometryTimer = setInterval(this.updateGeometry, updateGeometryTimerDelay);}}};_proto.unregisterGlobalHandlers = function unregisterGlobalHandlers() {if (this.globalHandlersRegistered) {this.globalHandlersRegistered = false;document.removeEventListener(globalScrollEventName, this.updateGeometry);window.removeEventListener(globalResizeEventName, this.updateGeometry);if (this.updateGeometryTimer) {clearInterval(this.updateGeometryTimer);this.updateGeometryTimer = null;}}} // Render helpers...
+  ;_proto.getClassName = function getClassName(params) {var cnCtx = params.cnCtx,className = params.className;var _this$props3 = this.props,id = _this$props3.id,fullWidth = _this$props3.fullWidth;var open = this.state.open;return cnCtx && cnCtx({ id: id, open: open, fullWidth: fullWidth }, [/* this.props. */className]);} // External methods...
+  // Provide ModalPortal public methods...
+  ;_proto.clearContentGeometry = function clearContentGeometry() {var _this2 = this; // UNUSED? Must be used on content update (using registrable callback; see example in constructor).
+    Object.keys(this.geometry).forEach(function (key) {if (key.startsWith('content')) {_this2.geometry[key] = null;}});}; // Render...
+  _proto.renderControl = function renderControl() {var _this$props4 = this.props,id = _this$props4.id,popupControl = _this$props4.popupControl,className = _this$props4.className;var open = this.state.open; // TODO: Cache modified `popupControl` in state?
+    var content = /*#__PURE__*/external_react_default.a.cloneElement(popupControl, { onClick: this.onControlClick, checked: open, setDomRef: this.setControlRef });var renderProps = { id: id, className: this.getClassName({ cnCtx: cnModalPopupControl, className: className }), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderContent = function renderContent() {var _this3 = this;var portalProps = passModalPortalProps.reduce(function (data, id) {var _extends3;return extends_default()({}, data, (_extends3 = {}, _extends3[id] = _this3.props[id], _extends3));}, {});if (this.state.open != null) {portalProps.open = this.state.open;}Object.assign(portalProps, { handleOpenState: this.handleOpenState, onActivate: this.onActivate, onDeactivate: this.onDeactivate, wrapperTheme: 'SubtleDark' });return /*#__PURE__*/external_react_default.a.createElement(ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Popup" }), this.renderPortalContent);};_proto.render = function render() {return /*#__PURE__*/external_react_default.a.createElement(external_react_default.a.Fragment, null, this.renderControl(), this.renderContent());};return ModalPopup;}(external_react_default.a.PureComponent /** @lends @ModalPopup.prototype */);defineProperty_default()(ModalPopup_ModalPopup_ModalPopup, "propTypes", { // onEscPressed: PropTypes.func,
+  // onKeyPress: PropTypes.func,
+  // registerCallback: PropTypes.func, // registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
+  className: prop_types_default.a.string, closeOnClickOutside: prop_types_default.a.bool, closeOnEscPressed: prop_types_default.a.bool, id: prop_types_default.a.string, onControlClick: prop_types_default.a.func, open: prop_types_default.a.bool, popupContent: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, popupControl: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, setModalPopupNodeRef: prop_types_default.a.func });defineProperty_default()(ModalPopup_ModalPopup_ModalPopup, "defaultProps", { // onEscPressed: null,
+  // onKeyPress: null,
+  // popupContent: null,
+  // popupControl: null,
+  // registerCallback: null,
+  closeOnClickOutside: true, closeOnEscPressed: true, open: false });/* harmony default export */ var elements_ModalPopup_ModalPopup = (ModalPopup_ModalPopup_ModalPopup);var FormItemModalPopup = forms_FormItemHOC_FormItemHOC(ModalPopup_ModalPopup_ModalPopup);
 // EXTERNAL MODULE: ./src/elements/MenuItem/MenuItem.pcss
-var MenuItem_MenuItem = __webpack_require__(37);
+var MenuItem_MenuItem = __webpack_require__(45);
 
 // CONCATENATED MODULE: ./src/elements/MenuItem/MenuItem.jsx
  /** @module MenuItem
@@ -5493,7 +5980,7 @@ MenuItem_MenuItem_MenuItem = /*#__PURE__*/function (_React$PureComponent) {inher
 
 /* harmony default export */ var elements_MenuItem_MenuItem = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true })(MenuItem_MenuItem_MenuItem));
 // EXTERNAL MODULE: ./src/elements/Menu/Menu.pcss
-var Menu_Menu = __webpack_require__(38);
+var Menu_Menu = __webpack_require__(46);
 
 // CONCATENATED MODULE: ./src/elements/Menu/Menu.jsx
  /** @module Menu
@@ -5719,826 +6206,8 @@ Menu_Menu_Menu = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_def
 
 
 /* harmony default export */ var elements_Menu_Menu = (Menu_Menu_Menu);
-// EXTERNAL MODULE: ./src/elements/PopupsContainer/PopupsContainer.pcss
-var PopupsContainer_PopupsContainer = __webpack_require__(39);
-
-// CONCATENATED MODULE: ./src/elements/PopupsContainer/PopupsContainer.jsx
- /** @module PopupsContainer
-                                                                    *  @class PopupsContainer
-                                                                    *  @since 2020.12.21, 23:37
-                                                                    *  @changed 2020.12.21, 23:37
-                                                                    */
-
-
-
-
-// import { cssMapping } from 'utils/configure'
-
-// import { // Transitions...
-//   // CSSTransition,
-//   TransitionGroup,
-// } from 'react-transition-group'
-
-
-
-
-var cnPopupsContainer = configure_cn('PopupsContainer');
-
-// const doDebug = false // DEBUG!
-
-// const globalClickEventName = 'mousedown'
-// const globalKeyPressEventName = 'keydown'
-// const globalScrollEventName = 'scroll'
-// const globalResizeEventName = 'resize'
-var
-PopupsContainer_PopupsContainer_PopupsContainer = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(PopupsContainer, _React$PureComponent);function PopupsContainer() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = PopupsContainer.prototype;
-
-  // Lifecycle...
-
-  /* // UNUSED: constructor
-   * constructor(props) {
-   *   super(props)
-   *   this.ref = React.createRef()
-   *   // this.state = {}
-   *   // const initedPromise = new
-   * }
-   */_proto.
-
-  componentDidMount = function componentDidMount() {
-    // this.registerGlobalHandlers()
-    if (typeof config_default.a.popups._initPromiseResolve == 'function') {
-      config_default.a.popups._initPromiseResolve();
-      // setTimeout(config.popups._initPromiseResolve, 1000) // Delayed initializing?
-    }
-    config_default.a.popups.isInited = true;
-    config_default.a.popups.containerNode = this;
-    // eslint-disable-next-line react/no-find-dom-node
-    var domNode = external_react_dom_default.a.findDOMNode(this); // TODO: Find alternate legal method to get dom node? (refs doesn't works due to high-level element (`TransitionGroup`) rendering)
-    config_default.a.popups.domNode = domNode;
-  };_proto.
-
-  componentWillUnmount = function componentWillUnmount() {
-    // this.unregisterGlobalHandlers()
-  }
-
-  // Handlers...
-
-  /* // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
-   * setDomRef = (domNode) => {
-   *   if (typeof config.popups._initPromiseResolve == 'function') {
-   *     config.popups._initPromiseResolve()
-   *   }
-   *   config.popups.isInited = true
-   *   config.popups.containerNode = this
-   *   // eslint-disable-next-line react/no-find-dom-node
-   *   const domNode = ReactDOM.findDOMNode(domNode)
-   *   debugger
-   *   config.popups.domNode = domNode
-   * }
-   */
-
-  // Render...
-  ;_proto.
-  renderPopupsContainer = function renderPopupsContainer() {var
-    containerId = config_default.a.popups.containerId;
-    var className = cnPopupsContainer(null, [this.props.className /* , cnPopupsContainer('TransitionGroup') */]);
-    var renderProps = {
-      key: containerId || 'PopupsContainer',
-      id: containerId,
-      className: className
-      // ref: this.setDomRef, // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
-      // style: { border: '10px solid blue' }, // DEBUG
-    };
-    /* // TRY: css-transitions
-        * <TransitionGroup className={cnPopupsContainer('TransitionGroup')}>
-        *   <CSSTransition
-        *     key={id}
-        *     timeout={5000}
-        *     // timeout={config.css.animateTime}
-        *     classNames={cnPopupsContainer('Transition')}
-        *   >
-        *     <div {...renderProps}>
-        *       {popupContent}
-        *     </div>
-        *   </CSSTransition>
-        * </TransitionGroup>
-        * <TransitionGroup {...renderProps}>
-        *   <div>xxx</div>
-        * </TransitionGroup>
-        */
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", renderProps));
-
-
-  };_proto.
-
-  render = function render() {
-    var node = document.body;
-    return /*#__PURE__*/(
-      external_react_default.a.createElement(PortalCompat, { node: node },
-      this.renderPopupsContainer()));
-
-
-  };return PopupsContainer;}(external_react_default.a.PureComponent /** @lends @PopupsContainer.prototype */);
-
-
-
-/* harmony default export */ var elements_PopupsContainer_PopupsContainer = (PopupsContainer_PopupsContainer_PopupsContainer);
-
-// TODO!
-// export const registerModalComponent
-// export const registerPopupComponent
-// CONCATENATED MODULE: ./src/elements/elements.js
-/** @module elements
- *  @desc Basic elements
- *  @since 2020.10.07, 02:12
- *  @changed 2020.12.22, 00:32
- */
-// EXTERNAL MODULE: ./src/forms/FormItemDummy/FormItemDummy.pcss
-var FormItemDummy_FormItemDummy = __webpack_require__(40);
-
-// CONCATENATED MODULE: ./src/forms/FormItemDummy/FormItemDummy.jsx
- /** @module FormItemDummy
-                                                                                                                                                                                                                          *  @class FormItemDummy
-                                                                                                                                                                                                                          *  @desc Demo form item
-                                                                                                                                                                                                                          *  @since 2020.07.20, 19:07
-                                                                                                                                                                                                                          *  @changed 2020.07.20, 19:07
-                                                                                                                                                                                                                          */
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-
-
-
-var cnFormItemDummy = configure_cn('FormItemDummy');var
-
-FormItemDummy_FormItemDummy_FormItemDummy = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormItemDummy, _React$PureComponent);
-
-  function FormItemDummy(props) {var _this;
-    _this = _React$PureComponent.call(this, props) || this;
-    // const {
-    //   hoverable,
-    //   clickable,
-    //   checked,
-    // } = props
-    defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (event) {var _this$props =
-
-
-
-
-      _this.props,disabled = _this$props.disabled,onClick = _this$props.onClick,clickable = _this$props.clickable;
-      if (clickable && !disabled && onClick && typeof onClick === 'function') {
-        onClick(event);
-      }
-    });_this.state = {// // FormItem states...
-      // solid: true,
-      // hoverable: (hoverable != null) ? hoverable : true,
-      // clickable: (clickable != null) ? clickable : true,
-      // checked,
-      // framed: true,
-    };return _this;}FormItemDummy.getDerivedStateFromProps = function getDerivedStateFromProps(props /* , state */) {// ???
-    var hasIcon = props.hasIcon,hasText = props.hasText,onlyIcon = props.onlyIcon,text = props.text,icon = props.icon,children = props.children;return { // hoverable: (hoverable != null) ? hoverable : true,
-      // clickable: (clickable != null) ? clickable : true,
-      // checked,
-      hasIcon: !!(hasIcon || icon), hasText: !onlyIcon && !!(hasText || text || children) };};var _proto = FormItemDummy.prototype;_proto.getClassName = function getClassName() {// TODO: Refactor properties!
-    var _this$props2 = this.props,id = _this$props2.id,onlyIcon = _this$props2.onlyIcon,largeIcon = _this$props2.largeIcon,rightIcon = _this$props2.rightIcon,theme = _this$props2.theme,fullWidth = _this$props2.fullWidth,type = _this$props2.type;var _this$state = this.state,hasIcon = _this$state.hasIcon,hasText = _this$state.hasText;var classList = cnFormItemDummy({ id: id, theme: theme, fullWidth: fullWidth, // checked,
-      // plain,
-      hasIcon: hasIcon, hasText: hasText, onlyIcon: onlyIcon, largeIcon: largeIcon, rightIcon: rightIcon, type: type, solid: true }, [this.props.className]);return classList;} // Handlers...
-  ; // Render...
-  _proto.render = function render() {var _this$props3 =
-
-
-
-
-    this.props,id = _this$props3.id,children = _this$props3.children,text = _this$props3.text,tag = _this$props3.tag,type = _this$props3.type,title = _this$props3.title,icon = _this$props3.icon,setDomRef = _this$props3.setDomRef;var _this$state2 =
-
-
-
-    this.state,hasIcon = _this$state2.hasIcon,hasText = _this$state2.hasText;
-
-    // Create fortawesome icon element if passed icon image (svg icon)
-    var iconImg = icon && icon.iconName ? /*#__PURE__*/external_react_default.a.createElement(react_fontawesome_["FontAwesomeIcon"], { className: cnFormItemDummy('IconImg'), icon: icon }) : icon;
-    var iconElem = hasIcon && /*#__PURE__*/
-    external_react_default.a.createElement("span", { key: "Icon", className: cnFormItemDummy('Icon') },
-    iconImg);
-
-
-
-    // Text element
-    var textElem = hasText && /*#__PURE__*/
-    external_react_default.a.createElement("span", { key: "Text", className: cnFormItemDummy('Text') },
-    text || children);
-
-
-
-    // const basicRenderProps = this.getRenderProps() // Get from props not from overrided `super`
-    var renderProps = {
-      // ...basicRenderProps,
-      id: id,
-      className: this.getClassName(),
-      title: title,
-      type: type,
-      onClick: this.onClick,
-      ref: setDomRef };
-
-
-    var content = [iconElem, textElem]; // children || text
-
-    var tagName = tag || 'div';
-    var element = /*#__PURE__*/external_react_default.a.createElement(tagName, renderProps, content);
-    return element;
-  };return FormItemDummy;}(external_react_default.a.PureComponent /** @lends @FormItemDummy.prototype */);
-
-
-
-/* harmony default export */ var forms_FormItemDummy_FormItemDummy = (forms_FormItemHOC_FormItemHOC(FormItemDummy_FormItemDummy_FormItemDummy));
-// EXTERNAL MODULE: ./src/forms/FormLabel/FormLabel.pcss
-var FormLabel_FormLabel = __webpack_require__(41);
-
-// CONCATENATED MODULE: ./src/forms/FormLabel/FormLabel.jsx
- /** @module FormLabel
-                                                                                                                                                                                                                          *  @class FormLabel
-                                                                                                                                                                                                                          *  @since 2020.10.06, 23:45
-                                                                                                                                                                                                                          *  @changed 2020.10.06, 23:46
-                                                                                                                                                                                                                          */
-/* eslint-disable react/require-default-props */
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-
-var cnFormLabel = configure_cn('FormLabel');var
-
-FormLabel_FormLabel_FormLabel = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormLabel, _React$PureComponent);function FormLabel() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (event) {var _this$props =
-
-
-
-
-      _this.props,disabled = _this$props.disabled,onClick = _this$props.onClick;
-      if ( /* clickable && */!disabled && onClick && typeof onClick === 'function') {
-        onClick(event);
-      }
-    });return _this;}var _proto = FormLabel.prototype;_proto.getClassName = function getClassName() {var _this$props2 = this.props,id = _this$props2.id,fixed = _this$props2.fixed,firstInBlock = _this$props2.firstInBlock;var classList = cnFormLabel({ id: id, fixed: fixed, firstInBlock: firstInBlock // clickable,
-    }, [this.props.className]);return classList;} // Handlers...
-  ; // Render...
-  _proto.
-  render = function render() {var _this$props3 =
-
-
-
-
-
-
-
-
-
-    this.props,id = _this$props3.id,name = _this$props3.name,disabled = _this$props3.disabled,htmlFor = _this$props3.htmlFor,text = _this$props3.text,children = _this$props3.children,title = _this$props3.title;
-
-    var renderProps = {
-      id: id,
-      className: this.getClassName(),
-      disabled: disabled,
-      title: title };
-
-
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", renderProps, /*#__PURE__*/
-      external_react_default.a.createElement("label", {
-        className: cnFormLabel('Control', ['FormItem-Control']),
-        id: id,
-        name: name,
-        disabled: disabled,
-        htmlFor: htmlFor,
-        title: title },
-
-      children || text || title)));
-
-
-
-  };return FormLabel;}(external_react_default.a.PureComponent /** @lends @FormLabel.prototype */);defineProperty_default()(FormLabel_FormLabel_FormLabel, "propTypes", { id: prop_types_default.a.string });
-
-
-
-/* harmony default export */ var forms_FormLabel_FormLabel = (forms_FormItemHOC_FormItemHOC({ hoverable: true, solid: true })(FormLabel_FormLabel_FormLabel));
-// EXTERNAL MODULE: ./src/forms/FormGroup/FormGroup.pcss
-var FormGroup_FormGroup = __webpack_require__(42);
-
-// CONCATENATED MODULE: ./src/forms/FormGroup/FormGroup.jsx
- /** @module FormGroup
-                                                                                                                                                                                              *  @class FormGroup
-                                                                                                                                                                                              *  @since 2020.07.20, 19:07
-                                                                                                                                                                                              *  @changed 2020.07.20, 19:07
-                                                                                                                                                                                              */
-/* eslint-disable react/require-default-props, react/no-unused-prop-types */
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-
-var cnFormGroup = configure_cn('FormGroup');var
-
-FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormGroup, _React$PureComponent);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  function FormGroup(props) {var _this;
-    _this = _React$PureComponent.call(this, props) || this;
-    _this.state = {};return _this;
-
-  }var _proto = FormGroup.prototype;_proto.
-
-  getClassName = function getClassName() {var _this2 = this;
-    var mods = FormGroup.classNameModifiers.reduce(function (mods, id) {
-      var val = _this2.state[id] != null ? _this2.state[id] : _this2.props[id];
-      if (val != null) {var _extends2;
-        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
-      }
-      return mods;
-    }, {});
-    return cnFormGroup(mods, [this.props.className]);
-  }
-
-  // Render...
-  ;_proto.
-  render = function render() {var _this$props =
-
-
-
-
-
-
-    this.props,id = _this$props.id,children = _this$props.children,content = _this$props.content;
-
-    // const renderProps = this.getRenderProps()
-
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", { id: id, className: this.getClassName() },
-      content || children));
-
-
-  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, alignItems: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
-  // disabled: PropTypes.bool,
-  // value: PropTypes.any,
-  // valueType: PropTypes.string,
-  // onChange: PropTypes.func,
-});defineProperty_default()(FormGroup_FormGroup_FormGroup, "classNameModifiers", [// Basic element properties
-'id', // Style-related modifiers...
-'align', 'alignItems', 'background', 'flow', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
-// CONCATENATED MODULE: ./src/forms/FormLabeledGroup/FormLabeledGroup.jsx
-/** @module FormLabeledGroup
- *  @class FormLabeledGroup
- *  @since 2020.05.10, 09:24
- *  @changed 2020.12.10, 16:20
- */
-
-
-// import { cn } from 'utils/configure'
-
-
-
-
-// import './FormLabeledGroup.pcss'
-
-// const cnFormLabeledGroup = cn('FormLabeledGroup')
-
-// class FormLabeledGroup extends React.PureComponent [>* @lends @FormLabeledGroup.prototype <] {
-var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @lends @FormLabeledGroup.prototype */{var
-
-
-  children =
-
-
-
-
-
-
-
-
-
-  props.children,id = props.id,fullWidth = props.fullWidth,innerFlex = props.innerFlex,htmlFor = props.htmlFor,title = props.title,text = props.text,flow = props.flow;
-  // const thisClassName = cnFormLabeledGroup({ flow, full })
-  return /*#__PURE__*/(
-    external_react_default.a.createElement(forms_FormGroup_FormGroup, {
-      fullWidth: fullWidth,
-      innerFlex: innerFlex,
-      flow: flow,
-      id: id }, /*#__PURE__*/
-
-    external_react_default.a.createElement(forms_FormLabel_FormLabel, {
-      htmlFor: htmlFor,
-      title: title,
-      text: text || title + ':',
-      fixed: flow && fullWidth,
-      firstInBlock: !flow && fullWidth }),
-
-    children));
-
-
-
-};
-
-/* harmony default export */ var forms_FormLabeledGroup_FormLabeledGroup = (FormLabeledGroup_FormLabeledGroup);
-// EXTERNAL MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.pcss
-var FormButtonGroup_FormButtonGroup = __webpack_require__(43);
-
-// CONCATENATED MODULE: ./src/forms/FormButtonGroup/FormButtonGroup.jsx
- /** @module FormButtonGroup
-                                                                                                                                                                                              *  @class FormButtonGroup
-                                                                                                                                                                                              *  @since 2020.10.21, 23:43
-                                                                                                                                                                                              *  @changed 2020.10.21, 23:43
-                                                                                                                                                                                              */
-/* eslint-disable react/require-default-props */
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-
-
-var FormButtonGroup_classNameModifiers = [
-// Basic element properties
-'id'
-// Style-related modifiers...
-// 'align',
-// 'padded',
-// 'background',
-// 'flow',
-// 'fullWidth',
-];
-
-var cnFormButtonGroup = configure_cn('FormButtonGroup');var
-
-FormButtonGroup_FormButtonGroup_FormButtonGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormButtonGroup, _React$PureComponent);function FormButtonGroup() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormButtonGroup.prototype;_proto.
-
-
-
-
-
-
-  getClassName = function getClassName() {var _this = this;
-    var mods = FormButtonGroup_classNameModifiers.reduce(function (mods, id) {
-      var val = _this.props[id];
-      if (val != null) {var _extends2;
-        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
-      }
-      return mods;
-    }, {});
-    return cnFormButtonGroup(mods, [this.props.className]);
-  }
-
-  // Render...
-  ;_proto.
-  render = function render() {
-    // const {
-    //   id,
-    //   // name,
-    //   // disabled,
-    //   children,
-    //   content,
-    // } = this.props
-    return /*#__PURE__*/(
-      external_react_default.a.createElement(forms_FormGroup_FormGroup, extends_default()({}, this.props, { className: this.getClassName() })));
-
-  };return FormButtonGroup;}(external_react_default.a.PureComponent /** @lends @FormButtonGroup.prototype */);defineProperty_default()(FormButtonGroup_FormButtonGroup_FormButtonGroup, "propTypes", { id: prop_types_default.a.string // flow: PropTypes.bool,
-});
-
-
-/* harmony default export */ var forms_FormButtonGroup_FormButtonGroup = (forms_FormItemHOC_FormItemHOC(FormButtonGroup_FormButtonGroup_FormButtonGroup));
-// EXTERNAL MODULE: ./src/forms/FormInputGroup/FormInputGroup.pcss
-var FormInputGroup_FormInputGroup = __webpack_require__(44);
-
-// CONCATENATED MODULE: ./src/forms/FormInputGroup/FormInputGroup.jsx
- /** @module FormInputGroup
-                                                                                                                                                                                              *  @class FormInputGroup
-                                                                                                                                                                                              *  @since 2020.10.21, 23:43
-                                                                                                                                                                                              *  @changed 2020.10.21, 23:43
-                                                                                                                                                                                              */
-/* eslint-disable react/require-default-props */
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-
-
-var FormInputGroup_classNameModifiers = [
-// Basic element properties
-'id'
-// Style-related modifiers...
-// 'align',
-// 'padded',
-// 'background',
-// 'flow',
-// 'fullWidth',
-];
-
-var cnFormInputGroup = configure_cn('FormInputGroup');var
-
-FormInputGroup_FormInputGroup_FormInputGroup = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormInputGroup, _React$PureComponent);function FormInputGroup() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = FormInputGroup.prototype;_proto.
-
-
-
-
-
-
-
-
-
-  getClassName = function getClassName() {var _this = this;
-    var mods = FormInputGroup_classNameModifiers.reduce(function (mods, id) {
-      var val = _this.props[id];
-      if (val != null) {var _extends2;
-        return extends_default()({}, mods, (_extends2 = {}, _extends2[id] = val, _extends2));
-      }
-      return mods;
-    }, {});
-    return cnFormInputGroup(mods, [this.props.className]);
-  }
-
-  // Render...
-  ;_proto.
-  render = function render() {
-    return /*#__PURE__*/(
-      external_react_default.a.createElement(forms_FormGroup_FormGroup, extends_default()({}, this.props, { className: this.getClassName() })));
-
-  };return FormInputGroup;}(external_react_default.a.PureComponent /** @lends @FormInputGroup.prototype */);defineProperty_default()(FormInputGroup_FormInputGroup_FormInputGroup, "propTypes", { id: prop_types_default.a.string // disabled: PropTypes.bool, // ???
-  // align: PropTypes.string,
-  // padded: PropTypes.bool,
-  // flow: PropTypes.bool,
-});/* harmony default export */ var forms_FormInputGroup_FormInputGroup = (forms_FormItemHOC_FormItemHOC(FormInputGroup_FormInputGroup_FormInputGroup));
-// EXTERNAL MODULE: ./src/forms/FormDelim/FormDelim.pcss
-var FormDelim_FormDelim = __webpack_require__(45);
-
-// CONCATENATED MODULE: ./src/forms/FormDelim/FormDelim.jsx
-/** @module FormDelim
- *  @class FormDelim
- *  @since 2020.11.27, 12:52
- *  @changed 2020.11.27, 12:52
- */
-
-
-
-
-
-
-var FormDelim_FormDelim_FormDelim = function FormDelim(props) {var
-  id = props.id;
-  var className = Object(classname_["cn"])('FormDelim')({ id: id }, [props.className]);
-  return /*#__PURE__*/(
-    external_react_default.a.createElement("div", { className: className }));
-
-};
-
-/* harmony default export */ var forms_FormDelim_FormDelim = (FormDelim_FormDelim_FormDelim);
-// EXTERNAL MODULE: ./src/forms/FormSpacer/FormSpacer.pcss
-var FormSpacer_FormSpacer = __webpack_require__(46);
-
-// CONCATENATED MODULE: ./src/forms/FormSpacer/FormSpacer.jsx
-/** @module FormSpacer
- *  @class FormSpacer
- *  @since 2020.11.27, 12:52
- *  @changed 2020.11.27, 12:52
- */
-
-
-
-
-
-
-var FormSpacer_FormSpacer_FormSpacer = function FormSpacer(props) {var
-  id = props.id;
-  var className = Object(classname_["cn"])('FormSpacer')({ id: id }, [props.className]);
-  return /*#__PURE__*/(
-    external_react_default.a.createElement("div", { className: className }));
-
-};
-
-/* harmony default export */ var forms_FormSpacer_FormSpacer = (FormSpacer_FormSpacer_FormSpacer);
-// EXTERNAL MODULE: ./src/forms/FormText/FormText.pcss
-var FormText_FormText = __webpack_require__(47);
-
-// CONCATENATED MODULE: ./src/forms/FormText/FormText.jsx
- /** @module FormText
-                                                                                                                                                                                                                          *  @class FormText
-                                                                                                                                                                                                                          *  @since 2020.10.29, 21:25
-                                                                                                                                                                                                                          *  @changed 2020.10.29, 22:42
-                                                                                                                                                                                                                          */
-/* eslint-disable react/require-default-props */
-
-
-
-// import connect from 'react-redux/es/connect/connect'
-
-
-
-
-
-
-var cnFormText = configure_cn('FormText');var
-
-FormText_FormText_FormText = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(FormText, _React$PureComponent);function FormText() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "onClick",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function (event) {var _this$props =
-
-
-
-      _this.props,disabled = _this$props.disabled,onClick = _this$props.onClick;
-      if (!disabled && onClick && typeof onClick === 'function') {
-        onClick(event);
-      }
-    });return _this;}var _proto = FormText.prototype;_proto.getClassName = function getClassName() {var id = this.props.id;var classList = cnFormText({ id: id }, [this.props.className]);return classList;} // Handlers...
-  ;
-  // Render...
-  _proto.
-  render = function render() {var _this$props2 =
-
-
-
-
-
-
-
-    this.props,id = _this$props2.id,disabled = _this$props2.disabled,text = _this$props2.text,children = _this$props2.children,title = _this$props2.title;
-
-    var renderProps = {
-      id: id,
-      className: this.getClassName(),
-      disabled: disabled,
-      title: title };
-
-
-    return /*#__PURE__*/(
-      external_react_default.a.createElement("div", renderProps,
-      children || text || title));
-
-
-
-  };return FormText;}(external_react_default.a.PureComponent /** @lends @FormText.prototype */);defineProperty_default()(FormText_FormText_FormText, "propTypes", { id: prop_types_default.a.string });
-
-
-
-/* harmony default export */ var forms_FormText_FormText = (forms_FormItemHOC_FormItemHOC({ hoverable: true })(FormText_FormText_FormText));
 // EXTERNAL MODULE: ./src/forms/FormSelect/FormSelect.pcss
-var FormSelect_FormSelect = __webpack_require__(48);
+var FormSelect_FormSelect = __webpack_require__(47);
 
 // CONCATENATED MODULE: ./src/forms/FormSelect/FormSelect.jsx
  /** @module FormSelect
@@ -6560,7 +6229,7 @@ var FormSelect_FormSelect = __webpack_require__(48);
 // import FormGroup from 'forms/FormGroup'
 // import FormGroup from '../FormGroup'
 
-// import { FormItemPopup } from 'elements/Popup'
+// import { FormItemPopup } from 'elements/ModalPopup'
 
 
 
@@ -6627,11 +6296,8 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$PureComponent) 
         onControlClick(params);
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "onMenuItemClick",
-    function (params) {
-      // if (typeof this.hideStopper === 'function' && !this.props.closeOnSelect) {
-      //   this.hideStopper()
-      // }
-      var _this$props = _this.props,closeOnSelect = _this$props.closeOnSelect,onMenuItemClick = _this$props.onMenuItemClick;
+    function (params) {var _this$props =
+      _this.props,closeOnSelect = _this$props.closeOnSelect,onMenuItemClick = _this$props.onMenuItemClick;
       if (typeof onMenuItemClick === 'function') {
         onMenuItemClick(params);
       }
@@ -6660,11 +6326,7 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$PureComponent) 
       }
     });_this.id = props.id || props.inputId || props.name;var _checked = props.checked,_value = props.value;_this.state = { checked: Array.isArray(_checked) ? _checked : _value && [_value] || [] };return _this;} // Helper methods...
   var _proto = FormSelect.prototype;_proto.getClassName = function getClassName() {var id = this.id;var classList = cnFormSelect({ id: id }, [this.props.className]);return classList;};_proto.getItemsText = function getItemsText() {var checked = this.state.checked;var options = this.props.options;var text = Array.isArray(options) && Array.isArray(checked) && options.map(function (_ref) {var val = _ref.val,text = _ref.text;if (checked.includes(val)) {return text;}}).filter(Boolean).join(', ');return text;} // Handlers...
-  ; // registerHideStopper = (hideStopper) => { // Called from popup
-  //   this.hideStopper = hideStopper
-  // }
-
-  // Render...
+  ; // Render...
   _proto.
   renderControlContent = function renderControlContent() {var _this$props3 =
 
@@ -6741,13 +6403,12 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$PureComponent) 
       popupControl: controlContent,
       popupContent: menuContent,
       onControlClick: this.onControlClick,
-      // registerHideStopper: this.registerHideStopper,
       fullWidth: fullWidth,
       ref: this.setPopupRef };
 
 
     return /*#__PURE__*/(
-      external_react_default.a.createElement(elements_Popup_Popup, popupProps));
+      external_react_default.a.createElement(elements_ModalPopup_ModalPopup, popupProps));
 
 
   };return FormSelect;}(external_react_default.a.PureComponent /** @lends @FormSelect.prototype */);defineProperty_default()(FormSelect_FormSelect_FormSelect, "propTypes", { // value: PropTypes.oneOfType([ PropTypes.string, PropTypes.number, PropTypes.arrayOf(PropTypes.oneOfType([ PropTypes.string, PropTypes.number ])) ]),
@@ -6756,7 +6417,7 @@ FormSelect_FormSelect_FormSelect = /*#__PURE__*/function (_React$PureComponent) 
 
 /* harmony default export */ var forms_FormSelect_FormSelect = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true })(FormSelect_FormSelect_FormSelect));
 // EXTERNAL MODULE: ./src/forms/FormTextInput/FormTextInput.pcss
-var FormTextInput_FormTextInput = __webpack_require__(49);
+var FormTextInput_FormTextInput = __webpack_require__(48);
 
 // CONCATENATED MODULE: ./src/forms/FormTextInput/FormTextInput.jsx
  /** @module FormTextInput
@@ -7007,7 +6668,7 @@ FormTextInput_FormTextInput_FormTextInput = /*#__PURE__*/function (_React$PureCo
 
 /* harmony default export */ var forms_FormTextInput_FormTextInput = (forms_FormItemHOC_FormItemHOC({ solid: true, hoverable: true, framed: true })(FormTextInput_FormTextInput_FormTextInput));
 // EXTERNAL MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.pcss
-var FormPasswordInput_FormPasswordInput = __webpack_require__(50);
+var FormPasswordInput_FormPasswordInput = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./src/forms/FormPasswordInput/FormPasswordInput.jsx
  /** @module FormPasswordInput
@@ -7292,10 +6953,10 @@ var FormBooleanHOC = function FormBooleanHOC(params) {
 // export default FormItemHOC({ hoverable: true, focusable: true, framed: false })(FormBooleanHOC)
 /* harmony default export */ var FormBooleanHOC_FormBooleanHOC = (FormBooleanHOC);
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio.pcss
-var FormRadio_FormRadio = __webpack_require__(51);
+var FormRadio_FormRadio = __webpack_require__(50);
 
 // EXTERNAL MODULE: ./src/forms/FormRadio/FormRadio-Themes.pcss
-var FormRadio_Themes = __webpack_require__(52);
+var FormRadio_Themes = __webpack_require__(51);
 
 // CONCATENATED MODULE: ./src/forms/FormRadio/FormRadio.jsx
  /** @module FormRadio
@@ -7422,8 +7083,604 @@ FormRadio_FormRadio_FormRadio));
 // export FormDateTime from './FormDateTime'
 //
 // export FormPager from './FormPager'
+// EXTERNAL MODULE: ./src/elements/Loader/Loader.pcss
+var Loader_Loader = __webpack_require__(52);
+
+// EXTERNAL MODULE: ./src/elements/Loader/Loader-animation.pcss
+var Loader_animation = __webpack_require__(53);
+
+// EXTERNAL MODULE: ./src/elements/Loader/Loader-modes.pcss
+var Loader_modes = __webpack_require__(54);
+
+// EXTERNAL MODULE: ./src/elements/Loader/Loader-themes.pcss
+var Loader_themes = __webpack_require__(55);
+
+// CONCATENATED MODULE: ./src/elements/Loader/Loader.jsx
+/** @module Loader
+ *  @since 2020.10.27, 00:39
+ *  @changed 2020.12.25, 00:29
+ *
+ *  TODO: Place block (and local?) loaders into `ModalsContainer`?
+ */
+
+
+// import connect from 'react-redux/es/connect/connect'
+
+
+
+var cnLoader = configure_cn('Loader');
+
+
+
+
+
+
+// eslint-disable-next-line react/prefer-stateless-function
+// export default class Loader extends React.PureComponent [>* @lends @Modal.prototype <] {
+
+/** Loader component
+ * @param {Boolean} [show]
+ * @param {String} [theme] - Component theme (Light, none)
+ * @param {Object} commonLang - Mapped language component
+ */
+var Loader_Loader_Loader = function Loader(props) {var
+
+  className =
+
+
+
+
+
+
+
+  props.className,mode = props.mode,show = props.show,theme = props.theme,text = props.text,onCancel = props.onCancel,cancelText = props.cancelText;
+  var actions = typeof onCancel === 'function' && /*#__PURE__*/
+  external_react_default.a.createElement("div", { className: cnLoader('Actions') }, /*#__PURE__*/
+  external_react_default.a.createElement(forms_FormGroup_FormGroup, { flow: true, alignItems: "center" }, /*#__PURE__*/
+  external_react_default.a.createElement(forms_FormButton_FormButton, {
+    plain: true,
+    onDark: true,
+    text: cancelText || 'Cancel',
+    icon: "faTimes",
+    onClick: onCancel })));
+
+
+
+
+  var thisClassName = cnLoader({ mode: mode, theme: theme, show: show }, [className /* showClass */]);
+  var showText = text != null ? text : 'Loading...'; // commonLang && commonLang.pleaseWait
+  return /*#__PURE__*/(
+    external_react_default.a.createElement("div", { className: thisClassName }, /*#__PURE__*/
+    external_react_default.a.createElement("div", { className: cnLoader('Container') }, /*#__PURE__*/
+    external_react_default.a.createElement("div", { className: cnLoader('Spinner') }), /*#__PURE__*/
+    external_react_default.a.createElement("div", { className: cnLoader('Text') }, showText),
+    actions)));
+
+
+
+};
+/* harmony default export */ var elements_Loader_Loader = (Loader_Loader_Loader);
+// EXTERNAL MODULE: ./src/elements/ModalWindow/ModalWindow-Geometry.pcss
+var ModalWindow_Geometry = __webpack_require__(56);
+
+// EXTERNAL MODULE: ./src/elements/ModalWindow/ModalWindow-Themes.pcss
+var ModalWindow_Themes = __webpack_require__(57);
+
+// CONCATENATED MODULE: ./src/elements/ModalWindow/ModalWindow.jsx
+ /** @module ModalWindow
+                                                                                                                                                                                                                                                                                *  @class ModalWindow
+                                                                                                                                                                                                                                                                                *  @since 2020.12.21, 22:58
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.25, 15:30
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  External methods (for PopupStack):
+                                                                                                                                                                                                                                                                                *  - close
+                                                                                                                                                                                                                                                                                *  - open
+                                                                                                                                                                                                                                                                                *  - updateGeometry
+                                                                                                                                                                                                                                                                                */
+/* --eslint-disable no-console */
+
+
+
+
+// import { Portal } from 'react-portal'
+// import { // Transitions...
+//   // Transition,
+//   CSSTransition,
+//   // TransitionGroup,
+// } from 'react-transition-group'
+
+
+
+
+
+// import Loader from 'elements/Loader'
+
+
+
+
+
+
+// import './ModalWindow-Transitions.pcss'
+
+var cnModalWindow = configure_cn('ModalWindow');
+
+// const doDebug = false // DEBUG!
+
+// const mouseDownEvent = 'mousedown'
+// const mouseUpEvent = 'mouseup'
+// const mouseLeaveEvent = 'mouseleave'
+// const globalKeyPressEventName = 'keydown'
+
+var ModalWindow_selfCloseActionId = '--modal-self-close--';
+var ModalWindow_externalCloseActionId = '--modal-external-close--';var
+
+ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalWindow, _React$PureComponent);function ModalWindow() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "handleOpenState",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (_ref) {var open = _ref.open;
+      // this.setState({ open })
+      var _this$props = _this.props,id = _this$props.id,handleOpenState = _this$props.handleOpenState;
+      if (typeof handleOpenState === 'function') {
+        handleOpenState({ id: id, open: open });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onAction",
+
+    function (actionProps) {// Event handler for ActionContext consumed children
+      var _assertThisInitialize = assertThisInitialized_default()(_this),ModalPortal = _assertThisInitialize.ModalPortal;
+      if (!ModalPortal) {
+        var error = new Error('ModalWindow:onAction: ModalPortal must be defined');
+        console.error(error); // eslint-disable-line no-console
+        //DEBUG//debugger; // eslint-disable-line no-debugger
+        throw error; // ???
+      }
+      var actionId = actionProps.id;var _this$props2 =
+      _this.props,open = _this$props2.open,actionsContextNode = _this$props2.actionsContextNode,autoClose = _this$props2.autoClose,closeOnCancelAction = _this$props2.closeOnCancelAction;
+      // console.log('ModalWindow:onAction', this.props.id, actionId)
+      ModalPortal.setResult(actionId);
+      if (open && (autoClose || closeOnCancelAction && actionId === 'cancel')) {// Close and call `resolveResult` when window is closed
+        ModalPortal.close();
+      } else
+      {// ...Or all `resolveResult` immediatelly
+        ModalPortal.resolveResult();
+      }
+      if (actionsContextNode && typeof actionsContextNode.onAction) {
+        actionsContextNode.onAction(actionProps);
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "onCloseButtonClick",
+
+    function () {// Mouse released on wrapper --> close modal
+      var _assertThisInitialize2 = assertThisInitialized_default()(_this),ModalPortal = _assertThisInitialize2.ModalPortal;
+      if (!ModalPortal) {
+        var error = new Error('ModalWindow:onCloseButtonClick: ModalPortal must be defined');
+        console.error(error); // eslint-disable-line no-console
+        //DEBUG//debugger; // eslint-disable-line no-debugger
+        throw error; // ???
+      }var _this$props3 =
+      _this.props,id = _this$props3.id,closeWithCloseButton = _this$props3.closeWithCloseButton,onCloseButtonClick = _this$props3.onCloseButtonClick;
+      // console.log('ModalWindow: onCloseButtonClick', id)
+      // debugger;
+      if (closeWithCloseButton) {
+        ModalPortal.setResult(ModalWindow_selfCloseActionId);
+        ModalPortal.close();
+      }
+      if (typeof onCloseButtonClick === 'function') {
+        onCloseButtonClick({ id: id });
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "open",
+
+
+
+    function () {return _this.ModalPortal && _this.ModalPortal.open();});defineProperty_default()(assertThisInitialized_default()(_this), "close",
+    function () {return _this.ModalPortal && _this.ModalPortal.close();});defineProperty_default()(assertThisInitialized_default()(_this), "toggle",
+    function (open) {return _this.ModalPortal && _this.ModalPortal.toggle(open);});defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+    function () {return _this.ModalPortal && _this.ModalPortal.isVisible();});defineProperty_default()(assertThisInitialized_default()(_this), "renderWindow",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (portalProps) {var
+      ModalPortal = portalProps.ModalPortal;
+      // console.log(portalProps)
+      // debugger
+      if (ModalPortal) {// Save wrapping ModalPortal instance refernce
+        _this.ModalPortal = ModalPortal; // Save ModalPortal handler (TODO)
+      }
+      // const { width, windowTheme, theme, windowClassName } = this.props
+      // <div
+      //   className={cnModalWindow('Window', { width, theme: windowTheme || theme }, [windowClassName])}
+      //   ref={this.setWindowDomRef}
+      // >
+      return /*#__PURE__*/(
+        external_react_default.a.createElement(external_react_default.a.Fragment, null,
+        _this.renderHeader(), /*#__PURE__*/
+        external_react_default.a.createElement("div", { className: cnModalWindow('Layout') },
+        _this.renderLeftContent(), /*#__PURE__*/
+        external_react_default.a.createElement("div", { className: cnModalWindow('Main') },
+        _this.renderContent(),
+        _this.renderActions()))));
+
+
+
+
+
+    });return _this;}var _proto = ModalWindow.prototype; // Lifecycle...
+  // typeId = 'ModalWindow'
+  /* // UNUSED: constructor
+   * constructor(props) {
+   *   super(props)
+   * }
+   */_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
+  // Handlers...
+  ; // Render helpers...
+  // Render...
+  _proto.renderHeaderIcon = function renderHeaderIcon() {var _this$props4 = this.props,icon = _this$props4.icon,iconTheme = _this$props4.iconTheme;var theme = iconTheme || this.props.theme;var showIcon = icon || theme && config_default.a.ui.defaultIcons[theme];return showIcon && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderIcon", className: cnModalWindow('HeaderIcon', { theme: theme }) }, /*#__PURE__*/external_react_default.a.createElement(elements_InlineIcon_InlineIcon, { theme: theme, icon: showIcon }));};_proto.renderHeaderTitle = function renderHeaderTitle() {var title = this.props.title;return title && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderTitle", className: cnModalWindow('HeaderTitle') }, title);};_proto.renderHeaderCloseButton = function renderHeaderCloseButton() {var showCloseButton = this.props.showCloseButton;return showCloseButton && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderCloseButton", className: cnModalWindow('HeaderCloseButton') }, /*#__PURE__*/external_react_default.a.createElement(forms_FormButton_FormButton, { icon: "faTimes", largeIcon: true, plain: true, title: "Close window" // TODO; Translate?
+      , onClick: this.onCloseButtonClick }));};_proto.renderHeader = function renderHeader() {var _this$props5 = this.props,headerTheme = _this$props5.headerTheme,theme = _this$props5.theme;var content = [this.renderHeaderIcon(), this.renderHeaderTitle(), this.renderHeaderCloseButton()].filter(Boolean);var hasHeader = !!(content && content.length);return hasHeader && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Header', { theme: headerTheme || theme }) }, content);};_proto.renderLeftContent = function renderLeftContent() {var leftContent = this.props.leftContent;return leftContent && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('LeftContent') }, leftContent);};_proto.renderContent = function renderContent() {var _this$props6 = this.props,children = _this$props6.children,contentClassName = _this$props6.contentClassName; // {[> <div className={cnModalWindow('Container')}> <]}
+    // {[> </div> <]}
+    return children && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Content', [contentClassName]) }, children);};_proto.renderActions = function renderActions() {var actions = this.props.actions;return actions && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Actions') }, /*#__PURE__*/external_react_default.a.createElement(ActionsContextProvider, { value: this }, actions));};_proto.render = function render() {// const {
+    //   open,
+    // } = this.state
+    var _this$props7 =
+
+
+
+
+
+
+
+
+
+
+
+
+    this.props,id = _this$props7.id,className = _this$props7.className,closeOnClickOutside = _this$props7.closeOnClickOutside,closeOnEscPressed = _this$props7.closeOnEscPressed,handleLoaderCancel = _this$props7.handleLoaderCancel,loaderTheme = _this$props7.loaderTheme,loading = _this$props7.loading,onAction = _this$props7.onAction,onActivate = _this$props7.onActivate,onClickOutside = _this$props7.onClickOutside,onClose = _this$props7.onClose,onCloseButtonClick = _this$props7.onCloseButtonClick,onDeactivate = _this$props7.onDeactivate,onEscPressed = _this$props7.onEscPressed,onOpen = _this$props7.onOpen,open = _this$props7.open,theme = _this$props7.theme,useLoader = _this$props7.useLoader,windowClassName = _this$props7.windowClassName,windowWidth = _this$props7.windowWidth,wrapperClassName = _this$props7.wrapperClassName,wrapperTheme = _this$props7.wrapperTheme;
+    var portalProps = { // Just pass props throught
+      id: id,
+      className: className,
+      closeOnClickOutside: closeOnClickOutside,
+      closeOnEscPressed: closeOnEscPressed,
+      handleLoaderCancel: handleLoaderCancel,
+      loaderTheme: loaderTheme,
+      loading: loading,
+      onAction: onAction,
+      onActivate: onActivate,
+      onClickOutside: onClickOutside,
+      onClose: onClose,
+      onCloseButtonClick: onCloseButtonClick,
+      onDeactivate: onDeactivate,
+      onEscPressed: onEscPressed,
+      onOpen: onOpen,
+      open: open,
+      theme: theme,
+      useLoader: useLoader,
+      windowClassName: windowClassName,
+      windowWidth: windowWidth,
+      wrapperClassName: wrapperClassName,
+      wrapperTheme: wrapperTheme };
+
+    portalProps.handleOpenState = this.handleOpenState;
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Window" }),
+      this.renderWindow));
+
+
+  };return ModalWindow;}(external_react_default.a.PureComponent /** @lends @ModalWindow.prototype */);defineProperty_default()(ModalWindow_ModalWindow, "propTypes", { useLoader: prop_types_default.a.bool, loading: prop_types_default.a.bool, // Show Loader flashback
+  onAction: prop_types_default.a.func, // Event fired on action invoked (see `actions` prop)
+  // registerCallback: PropTypes.func, // ??? registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
+  // setModalNodeRef: PropTypes.func, // ??? Demo?
+  width: prop_types_default.a.string, // ModalWindow window width (predefined variants: xs, sm, md, lg, xl, xxl)
+  handleLoaderCancel: prop_types_default.a.func, // Loader onCancel event handler
+  actions: prop_types_default.a.oneOfType([prop_types_default.a.array, prop_types_default.a.object]), // Actions component(s) (TODO: `ActionsContext` must be used)
+  closeOnCancelAction: prop_types_default.a.bool, // Auto-close on `cancel` action event
+  closeOnClickOutside: prop_types_default.a.bool, // Close (cancel) modal by click outside modal window (on 'curtain')
+  closeOnEscPressed: prop_types_default.a.bool, // Close (cancel) modal on esc key pressed
+  closeWithCloseButton: prop_types_default.a.bool, // Close (cancel) modal by click on header 'Close' button
+  icon: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Show icon in header
+  id: prop_types_default.a.string, // ModalWindow id
+  leftContent: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Content at left of main content and actions (ideal place for large visual icon)
+  onActivate: prop_types_default.a.func, // Event fired on activate (before open)
+  onClickOutside: prop_types_default.a.func, // Event fired on click outside modal
+  onCloseButtonClick: prop_types_default.a.func, // Event fired on header 'Close' button click
+  onDeactivate: prop_types_default.a.func, // Event fired on deactivate (unmounting from dom)
+  onEscPressed: prop_types_default.a.func, // Event fired on esc key pressed
+  onOpen: prop_types_default.a.func, // Event fired on modal open
+  onClose: prop_types_default.a.func, // Event fired on modal close
+  handleOpenState: prop_types_default.a.func, // Event fired on modal open state change (update external open/close state) ({ open, id } => void)
+  open: prop_types_default.a.bool, // Show modal by default
+  showCloseButton: prop_types_default.a.bool, // Display close button in header
+  title: prop_types_default.a.string, // ModalWindow title
+  className: prop_types_default.a.string, // ModalWindow class name
+  contentClassName: prop_types_default.a.string, // Content element class name
+  windowClassName: prop_types_default.a.string, // ModalWindow window class name
+  wrapperClassName: prop_types_default.a.string, // ModalWindow wrapper class name
+  theme: prop_types_default.a.string, // ModalWindow theme (default theme for all other themed elements, see `*Theme`)
+  iconTheme: prop_types_default.a.string, // Icon theme (using `theme` if not specified)
+  windowTheme: prop_types_default.a.string, // Window theme (using `theme` if not specified)
+  headerTheme: prop_types_default.a.string, // Header theme (using `theme` if not specified)
+  wrapperTheme: prop_types_default.a.string, // Wrapper (back-curtain) theme (using `theme` if not specified)
+  loaderTheme: prop_types_default.a.string // Loader theme ('MediumDark' is default)
+});defineProperty_default()(ModalWindow_ModalWindow, "defaultProps", { closeOnClickOutside: true, // Close (with `selfCloseActionId` action id) modal by outisde-click.
+  closeOnEscPressed: true, // Close (with `selfCloseActionId` action id) modal by esc-key.
+  closeWithCloseButton: true, // Close (with `selfCloseActionId` action id) with 'Close button' (if present in layout -- see `showCloseButton`)
+  loaderTheme: 'MediumDark', loading: false, open: false, showCloseButton: false, // Display 'Close button'?
+  useLoader: false });
+// EXTERNAL MODULE: ./src/elements/ModalsContainer/ModalsContainer.pcss
+var ModalsContainer_ModalsContainer = __webpack_require__(58);
+
+// CONCATENATED MODULE: ./src/elements/ModalsContainer/ModalsContainer.jsx
+ /** @module ModalsContainer
+                                                                    *  @class ModalsContainer
+                                                                    *  @since 2020.12.21, 23:37
+                                                                    *  @changed 2020.12.21, 23:37
+                                                                    */
+
+
+
+
+// import { cssMapping } from 'utils/configure'
+
+// import { // Transitions...
+//   // CSSTransition,
+//   TransitionGroup,
+// } from 'react-transition-group'
+
+
+
+
+var cnModalsContainer = configure_cn('ModalsContainer');
+
+// const doDebug = false // DEBUG!
+var
+ModalsContainer_ModalsContainer_ModalsContainer = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalsContainer, _React$PureComponent);function ModalsContainer() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = ModalsContainer.prototype;
+
+  // Lifecycle...
+
+  /* // UNUSED: constructor
+   * constructor(props) {
+   *   super(props)
+   *   this.ref = React.createRef()
+   *   // this.state = {}
+   *   // const initedPromise = new
+   * }
+   */_proto.
+
+  componentDidMount = function componentDidMount() {
+    // this.registerGlobalHandlers()
+    if (typeof config_default.a.modals._initPromiseResolve == 'function') {
+      config_default.a.modals._initPromiseResolve();
+      // setTimeout(config.modals._initPromiseResolve, 1000) // Delayed initializing?
+    }
+    config_default.a.modals.isInited = true;
+    config_default.a.modals.containerNode = this;
+    // eslint-disable-next-line react/no-find-dom-node
+    var domNode = external_react_dom_default.a.findDOMNode(this); // TODO: Find alternate legal method to get dom node? (refs doesn't works due to high-level element (`TransitionGroup`) rendering)
+    config_default.a.modals.domNode = domNode;
+  };_proto.
+
+  componentWillUnmount = function componentWillUnmount() {
+    // this.unregisterGlobalHandlers()
+  }
+
+  // Handlers...
+
+  /* // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
+   * setDomRef = (domNode) => {
+   *   if (typeof config.modals._initPromiseResolve == 'function') {
+   *     config.modals._initPromiseResolve()
+   *   }
+   *   config.modals.isInited = true
+   *   config.modals.containerNode = this
+   *   // eslint-disable-next-line react/no-find-dom-node
+   *   const domNode = ReactDOM.findDOMNode(domNode)
+   *   debugger
+   *   config.modals.domNode = domNode
+   * }
+   */
+
+  // Render...
+  ;_proto.
+  renderModalsContainer = function renderModalsContainer() {var
+    containerId = config_default.a.modals.containerId;
+    var className = cnModalsContainer(null, [this.props.className /* , cnModalsContainer('TransitionGroup') */]);
+    var renderProps = {
+      key: containerId || 'ModalsContainer',
+      id: containerId,
+      className: className
+      // ref: this.setDomRef, // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
+      // style: { border: '10px solid blue' }, // DEBUG
+    };
+    /* // TRY: css-transitions
+        * <TransitionGroup className={cnModalsContainer('TransitionGroup')}>
+        *   <CSSTransition
+        *     key={id}
+        *     timeout={5000}
+        *     // timeout={config.css.animateTime}
+        *     classNames={cnModalsContainer('Transition')}
+        *   >
+        *     <div {...renderProps}>
+        *       {popupContent}
+        *     </div>
+        *   </CSSTransition>
+        * </TransitionGroup>
+        * <TransitionGroup {...renderProps}>
+        *   <div>xxx</div>
+        * </TransitionGroup>
+        */
+    return /*#__PURE__*/(
+      external_react_default.a.createElement("div", renderProps));
+
+
+  };_proto.
+
+  render = function render() {
+    var node = document.body;
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(PortalCompat, { node: node },
+      this.renderModalsContainer()));
+
+
+  };return ModalsContainer;}(external_react_default.a.PureComponent /** @lends @ModalsContainer.prototype */);
+
+
+
+/* harmony default export */ var elements_ModalsContainer_ModalsContainer = (ModalsContainer_ModalsContainer_ModalsContainer);
+// CONCATENATED MODULE: ./src/elements/elements.js
+/** @module elements
+ *  @desc Basic elements
+ *  @since 2020.10.07, 02:12
+ *  @changed 2020.12.24, 23:52
+ */
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(53);
+var Hello_Hello = __webpack_require__(59);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -7434,7 +7691,6 @@ var Hello_Hello = __webpack_require__(53);
  */
 
 
-// import { cn } from '@bem-react/classname'
 
 // import config from 'config'
 
@@ -7458,14 +7714,16 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(54);
+var build = __webpack_require__(60);
 
-// CONCATENATED MODULE: ./src/build.js
+// CONCATENATED MODULE: ./src/build.jsx
 /** @module build
  *  @desc Library exportable ditributive
  *  @since 2020.05.19, 17:16
- *  @changed 2020.12.24, 19:05
+ *  @changed 2020.12.28, 01:09
  */
+
+
 
 
 
@@ -7478,7 +7736,14 @@ var build = __webpack_require__(54);
 
 
 
-var RootComponent = elements_PopupsContainer_PopupsContainer;
+// TODO: Use WebUiCoreContext?
+var build_WebUiCoreRoot = function WebUiCoreRoot(_ref) {var children = _ref.children;return /*#__PURE__*/(
+    external_react_default.a.createElement(external_react_default.a.Fragment, null,
+    children, /*#__PURE__*/
+    external_react_default.a.createElement(elements_ModalsContainer_ModalsContainer, null)));};
+
+
+/* harmony default export */ var src_build = __webpack_exports__["default"] = (build_WebUiCoreRoot);
 
 /***/ })
 /******/ ]);

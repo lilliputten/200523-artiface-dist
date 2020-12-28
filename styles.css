@@ -1795,8 +1795,12 @@ label.FormLabel-Control[for] {
       background-color: rgba(0, 0, 0, 0.25);
     }
 
-.ModalPortal-Wrapper_theme_Dark {
+.ModalPortal-Wrapper_theme_MediumDark {
       background-color: rgba(0, 0, 0, 0.5);
+    }
+
+.ModalPortal-Wrapper_theme_Dark {
+      background-color: rgba(0, 0, 0, 0.75);
     }
 
 .ModalPortal-Wrapper_theme_OpaqueMediumDark {
@@ -1807,8 +1811,12 @@ label.FormLabel-Control[for] {
       background-color: #fff;
     }
 
-.ModalPortal-Wrapper_theme_Light {
+.ModalPortal-Wrapper_theme_MediumLight {
       background-color: rgba(255, 255, 255, 0.5);
+    }
+
+.ModalPortal-Wrapper_theme_Light {
+      background-color: rgba(255, 255, 255, 0.75);
     }
 
 /** @module ModalPortal-Transitions.styles
@@ -1827,9 +1835,12 @@ label.FormLabel-Control[for] {
  * - *-exit-done
  */
 
+/* Total animatin time*/
+
+/* Animation time for window component*/
+
 .ModalPortal_type_Popup.ModalPortal { /* Animation transitions...*/
   /* Animation transitions...*/
-  /* $descent: 10px;*/
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1837,7 +1848,7 @@ label.FormLabel-Control[for] {
 
 .ModalPortal_type_Popup.ModalPortal .ModalPortal-Window {
     opacity: 0;
-    margin-top: 0;
+    margin-top: 0px;
   }
 
 .ModalPortal_type_Popup.ModalPortal-enter {
@@ -1850,8 +1861,8 @@ label.FormLabel-Control[for] {
 
 .ModalPortal_type_Popup.ModalPortal-enter-active {
     opacity: 1;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
   }
 
 .ModalPortal_type_Popup.ModalPortal-enter-active .ModalPortal-Window {
@@ -1882,8 +1893,8 @@ label.FormLabel-Control[for] {
 
 .ModalPortal_type_Popup.ModalPortal-exit-active {
     opacity: 0;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
   }
 
 .ModalPortal_type_Popup.ModalPortal-exit-active .ModalPortal-Window {
@@ -1905,7 +1916,6 @@ label.FormLabel-Control[for] {
 
 .ModalPortal_type_Window.ModalPortal { /* Animation transitions...*/
   /* Animation transitions...*/
-  /* $descent: 10px;*/
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1913,7 +1923,7 @@ label.FormLabel-Control[for] {
 
 .ModalPortal_type_Window.ModalPortal .ModalPortal-Window {
     opacity: 0;
-    margin-top: 0;
+    margin-top: 20px;
   }
 
 .ModalPortal_type_Window.ModalPortal-enter {
@@ -1921,20 +1931,20 @@ label.FormLabel-Control[for] {
   }
 
 .ModalPortal_type_Window.ModalPortal-enter .ModalPortal-Window {
-      margin-top: -30px;
+      margin-top: -10px;
     }
 
 .ModalPortal_type_Window.ModalPortal-enter-active {
     opacity: 1;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
   }
 
 .ModalPortal_type_Window.ModalPortal-enter-active .ModalPortal-Window {
       -webkit-transition: opacity 250ms, margin-top 250ms;
       transition: opacity 250ms, margin-top 250ms;
       opacity: 1;
-      margin-top: 0px;
+      margin-top: 20px;
     }
 
 .ModalPortal_type_Window.ModalPortal-enter-done {
@@ -1958,15 +1968,15 @@ label.FormLabel-Control[for] {
 
 .ModalPortal_type_Window.ModalPortal-exit-active {
     opacity: 0;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
   }
 
 .ModalPortal_type_Window.ModalPortal-exit-active .ModalPortal-Window {
       -webkit-transition: opacity 250ms, margin-top 250ms;
       transition: opacity 250ms, margin-top 250ms;
       opacity: 0;
-      margin-top: -30px;
+      margin-top: -10px;
     }
 
 .ModalPortal_type_Window.ModalPortal-exit-done {
@@ -3647,6 +3657,10 @@ input.FormTextInput-Control::-ms-clear {
       display: flex;
       -ms-flex-direction: column;
           flex-direction: column;
+      /* align-items: center;*/
+      /* align-content: center;*/
+      -ms-flex-pack: center;
+          justify-content: center;
     }
 
 .ModalPortal_type_Window .ModalPortal-Window {
@@ -3666,9 +3680,8 @@ input.FormTextInput-Control::-ms-clear {
       overflow: hidden;
       margin: 20px auto; /* Auto size & center window horizontally*/
       /* Center window vertically:*/
-      top: 50%;
-      -webkit-transform: translate(0, -50%);
-              transform: translate(0, -50%);
+      /* top: 50%;*/
+      /* transform: translate(0, -50%);*/
       /* Default ('auto') size...*/
       min-width: 300px;
     }

@@ -353,9 +353,9 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.8-201228-0131-build-prod-default",
-  timestamp: "2020.12.28, 01:31",
-  timetag: "201228-0131",
+  buildTag: "v.0.1.8-201228-0337-build-prod-default",
+  timestamp: "2020.12.28, 03:37",
+  timetag: "201228-0337",
   version: "0.1.8" };
 
 /***/ }),
@@ -557,10 +557,6 @@ var cssConfig = { // Common-used css variables...
     xxl: 1200 },
 
 
-  // Typical icons:
-  // error: faExclamationTriangle
-  // error: faExclamationCircle
-
   // Spacings & paddings...
 
   innerPadding: 5,
@@ -572,7 +568,8 @@ var cssConfig = { // Common-used css variables...
 
   transitionTime: defaultTransitionTime, // ms
   animateTime: defaultAnimateTime, // ms
-  modalAnimateTime: defaultTransitionTime, // defaultAnimateTime,
+
+  modalAnimateTime: defaultAnimateTime,
   modalWindowAnimateTime: defaultTransitionTime
 
   // Parameters...
@@ -1131,7 +1128,7 @@ __webpack_require__.d(__webpack_exports__, "Menu", function() { return /* reexpo
 __webpack_require__.d(__webpack_exports__, "MenuItem", function() { return /* reexport */ elements_MenuItem_MenuItem; });
 __webpack_require__.d(__webpack_exports__, "ModalWindow", function() { return /* reexport */ ModalWindow_ModalWindow; });
 __webpack_require__.d(__webpack_exports__, "ModalPopup", function() { return /* reexport */ elements_ModalPopup_ModalPopup; });
-__webpack_require__.d(__webpack_exports__, "ModalPortal", function() { return /* reexport */ ModalPortal_ModalPortal; });
+__webpack_require__.d(__webpack_exports__, "ModalPortal", function() { return /* reexport */ elements_ModalPortal_ModalPortal; });
 __webpack_require__.d(__webpack_exports__, "ModalsContainer", function() { return /* reexport */ elements_ModalsContainer_ModalsContainer; });
 __webpack_require__.d(__webpack_exports__, "FormItemDummy", function() { return /* reexport */ forms_FormItemDummy_FormItemDummy; });
 __webpack_require__.d(__webpack_exports__, "FormLabel", function() { return /* reexport */ forms_FormLabel_FormLabel; });
@@ -4587,11 +4584,14 @@ var ModalPortal_Transitions = __webpack_require__(43);
 // TODO: Use ModalContext
 
 
+// import { compose } from 'redux'
 
 
 
 
 
+
+// import { withModalsContext } from 'helpers/ModalsContext'
 
 // import InlineIcon from 'elements/InlineIcon'
 
@@ -4605,7 +4605,8 @@ var ModalPortal_Transitions = __webpack_require__(43);
 
 var cnModalPortal = configure_cn('ModalPortal');
 
-// const doDebug = false // DEBUG!
+// const doDebug = [>DEBUG<] false && config.build.DEV_DEBUG || // DEBUG!
+//   false
 
 var mouseDownEvent = 'mousedown';
 var mouseUpEvent = 'mouseup';
@@ -4694,7 +4695,7 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
   function ModalPortal(props) {var _this;
     _this = _React$PureComponent.call(this, props) || this;
     // const popupsInited = config.modals.isInited
-    defineProperty_default()(assertThisInitialized_default()(_this), "isOutsideClickWaiting", false);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "transitionTime", 0);defineProperty_default()(assertThisInitialized_default()(_this), "resolvingResult", null);defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+    defineProperty_default()(assertThisInitialized_default()(_this), "isOutsideClickWaiting", false);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "transitionTime", 0);defineProperty_default()(assertThisInitialized_default()(_this), "resolvingResult", null);defineProperty_default()(assertThisInitialized_default()(_this), "getId",
 
 
 
@@ -4733,9 +4734,17 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
-    function () {
-      return _this.state.open;
-    });defineProperty_default()(assertThisInitialized_default()(_this), "activate",
+
+
+
+
+
+
+
+    function () {return _this.props.id;});defineProperty_default()(assertThisInitialized_default()(_this), "getType",
+    function () {return _this.props.type;});defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
+
+    function () {return _this.state.open;});defineProperty_default()(assertThisInitialized_default()(_this), "activate",
 
     function (cb) {var _this$props =
       _this.props,id = _this$props.id,onActivate = _this$props.onActivate;var
@@ -4751,6 +4760,7 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
             onActivate({ id: id });
           }
         });
+        config_default.a.modals.containerNode.registerModal(assertThisInitialized_default()(_this));
       } else
       if (typeof cb === 'function') {
         cb();
@@ -4767,6 +4777,7 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
           onDeactivate({ id: id });
         }
         _this.setState({ activated: false });
+        config_default.a.modals.containerNode.unregisterModal(assertThisInitialized_default()(_this));
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "toggle",
 
@@ -4780,10 +4791,10 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
         return false;
       }
       if (open) {
-        _this.close();
+        _this.open();
       } else
       {
-        _this.open();
+        _this.close();
       }
     });defineProperty_default()(assertThisInitialized_default()(_this), "close",
 
@@ -4944,17 +4955,20 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
-      _this.props,id = _this$props5.id,onEscPressed = _this$props5.onEscPressed,closeOnEscPressed = _this$props5.closeOnEscPressed,loading = _this$props5.loading;
-      if (!loading) {var
-        keyCode = event.keyCode;
-        var isEscPressed = keyCode === 27;
-        var cbProps = { event: event, id: id, keyCode: keyCode };
-        if (isEscPressed) {
+      _this.props,id = _this$props5.id,onEscPressed = _this$props5.onEscPressed,closeOnEscPressed = _this$props5.closeOnEscPressed,loading = _this$props5.loading;var
+      keyCode = event.keyCode;
+      var isEscPressed = keyCode === 27;
+      if (isEscPressed && !loading) {
+        var isTopmost = config_default.a.modals.containerNode.isModalTopmostVisible(assertThisInitialized_default()(_this));
+        // console.log('ModalPortal:onKeyPress', id, isTopmost)
+        if (isTopmost) {
+          // event.stopPropagation()
           if (closeOnEscPressed) {
             _this.setResult(selfCloseActionId);
             _this.close();
           }
           if (typeof onEscPressed === 'function') {
+            var cbProps = { event: event, id: id, keyCode: keyCode };
             onEscPressed(cbProps);
           }
         }
@@ -5013,7 +5027,13 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
 
     function (domNode) {
       _this.wrapperDomNode = domNode;
-    });_this.state = { popupsInited: false, activated: false, open: false };config_default.a.modals.initPromise.then(_this.onPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;_this.modalType = props.type;return _this;}var _proto = ModalPortal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state; // console.log('ModalPortal:componentDidUpdate', {
+    });_this.state = { popupsInited: false, activated: false, open: false };config_default.a.modals.initPromise.then(_this.onPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;_this.modalType = props.type; /* // UNUSED: Failed `ModalsContext` test implementation
+                                                                                                                                                                                                                   * const {
+                                                                                                                                                                                                                   *   modalsContainerNode, // ModalsContext Provider
+                                                                                                                                                                                                                   * } = props
+                                                                                                                                                                                                                   * console.log(modalsContainerNode)
+                                                                                                                                                                                                                   * debugger
+                                                                                                                                                                                                                   */return _this;}var _proto = ModalPortal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state; // console.log('ModalPortal:componentDidUpdate', {
     //   'props.open': props.open,
     //   'state.open': state.open,
     // })
@@ -5063,14 +5083,13 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
   _proto.renderWindow = function renderWindow() {var _this$props9 = this.props,windowWidth = _this$props9.windowWidth,windowTheme = _this$props9.windowTheme,theme = _this$props9.theme,windowClassName = _this$props9.windowClassName,children = _this$props9.children;var windowDomNode = this.windowDomNode,wrapperDomNode = this.wrapperDomNode; // console.log('ModalPortal:renderWindow', { windowWidth })
     // TODO: Pass windowDomNode to children?
     var childrenProps = { ModalPortal: this, windowDomNode: windowDomNode, wrapperDomNode: wrapperDomNode };var isElement = /*#__PURE__*/external_react_default.a.isValidElement(children);var childrenType = typeof children;var isFunction = childrenType === 'function'; // Extend element or call function with children' props
-    var content = isElement ? /*#__PURE__*/external_react_default.a.cloneElement(children, childrenProps) : isFunction ? children(childrenProps) : children;return /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal('Window', { width: windowWidth, theme: windowTheme || theme }, [windowClassName]), ref: this.setWindowDomRef }, content);};_proto.renderLoader = function renderLoader() {var _this$props10 = this.props,loading = _this$props10.loading,loaderTheme = _this$props10.loaderTheme,handleLoaderCancel = _this$props10.handleLoaderCancel;return /*#__PURE__*/external_react_default.a.createElement(elements_Loader_Loader, { mode: "local", theme: loaderTheme, show: loading, onCancel: handleLoaderCancel });};_proto.renderModalPortal = function renderModalPortal() {var _this$props11 = this.props,type = _this$props11.type,id = _this$props11.id,theme = _this$props11.theme,wrapperTheme = _this$props11.wrapperTheme,className = _this$props11.className,wrapperClassName = _this$props11.wrapperClassName,useLoader = _this$props11.useLoader;var open = this.state.open; // console.log('ModalPortal:renderModalPortal', { id, open })
-    return /*#__PURE__*/external_react_default.a.createElement(esm_CSSTransition, { key: id // id={id}
+    var content = isElement ? /*#__PURE__*/external_react_default.a.cloneElement(children, childrenProps) : isFunction ? children(childrenProps) : children;return /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal('Window', { width: windowWidth, theme: windowTheme || theme }, [windowClassName]), ref: this.setWindowDomRef }, content);};_proto.renderLoader = function renderLoader() {var _this$props10 = this.props,loading = _this$props10.loading,loaderTheme = _this$props10.loaderTheme,handleLoaderCancel = _this$props10.handleLoaderCancel;return /*#__PURE__*/external_react_default.a.createElement(elements_Loader_Loader, { mode: "local", theme: loaderTheme, show: loading, onCancel: handleLoaderCancel });};_proto.renderModalPortal = function renderModalPortal() {var _this$props11 = this.props,type = _this$props11.type,id = _this$props11.id,theme = _this$props11.theme,wrapperTheme = _this$props11.wrapperTheme,className = _this$props11.className,wrapperClassName = _this$props11.wrapperClassName,useLoader = _this$props11.useLoader,loading = _this$props11.loading;if (loading && !useLoader) {var error = new Error('ModalPortal: `useLoader` must be enabled for using `loading` prop');console.error(error); // eslint-disable-line no-console
+      //DEBUG//debugger; // eslint-disable-line no-debugger
+      throw error; // ???
+    }var open = this.state.open;return /*#__PURE__*/external_react_default.a.createElement(esm_CSSTransition, { key: id // id={id}
       , timeout: this.transitionTime, in: open, classNames: cnModalPortal() // Generate animation classes
     }, /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal({ type: type, id: id }, [className]) // Root node
-      , ref: this.setRootDomRef }, /*#__PURE__*/
-    external_react_default.a.createElement("div", {
-      className: cnModalPortal('Wrapper', { theme: wrapperTheme || theme }, [wrapperClassName]),
-      ref: this.setWrapperDomRef },
+      , ref: this.setRootDomRef }, /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal('Wrapper', { theme: wrapperTheme || theme }, [wrapperClassName]), ref: this.setWrapperDomRef },
 
     this.renderWindow(),
     useLoader && this.renderLoader())));
@@ -5115,7 +5134,11 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
   windowTheme: prop_types_default.a.string, // Window theme (using `theme` if not specified)
   wrapperTheme: prop_types_default.a.string, // Wrapper (back-curtain) theme (using `theme` if not specified)
   loaderTheme: prop_types_default.a.string // Loader theme ('MediumDark' is default)
-});defineProperty_default()(ModalPortal_ModalPortal, "defaultProps", { loaderTheme: 'Transparent' });
+});defineProperty_default()(ModalPortal_ModalPortal, "defaultProps", { loaderTheme: 'MediumDark' });/* harmony default export */ var elements_ModalPortal_ModalPortal = (ModalPortal_ModalPortal); /* // UNUSED: Failed `ModalsContext` test implementation
+                                                                                                            * export default compose(
+                                                                                                            *   withModalsContext,
+                                                                                                            * )(ModalPortal)
+                                                                                                            */
 // EXTERNAL MODULE: ./src/elements/ModalPopup/ModalPopup.pcss
 var ModalPopup_ModalPopup = __webpack_require__(44);
 
@@ -5142,15 +5165,7 @@ var ModalPopup_ModalPopup = __webpack_require__(44);
 
 
 
-// import { PortalWithState } from 'react-portal'
-// import { Portal } from 'react-portal'
 
-/* UNUSED: Transitions
-                                                                                 * import { // Transitions...
-                                                                                 *   CSSTransition,
-                                                                                 *   TransitionGroup,
-                                                                                 * } from 'react-transition-group'
-                                                                                 */
 
 
 
@@ -5856,7 +5871,7 @@ ModalPopup_ModalPopup_ModalPopup = /*#__PURE__*/function (_React$PureComponent) 
   ;_proto.clearContentGeometry = function clearContentGeometry() {var _this2 = this; // UNUSED? Must be used on content update (using registrable callback; see example in constructor).
     Object.keys(this.geometry).forEach(function (key) {if (key.startsWith('content')) {_this2.geometry[key] = null;}});}; // Render...
   _proto.renderControl = function renderControl() {var _this$props4 = this.props,id = _this$props4.id,popupControl = _this$props4.popupControl,className = _this$props4.className;var open = this.state.open; // TODO: Cache modified `popupControl` in state?
-    var content = /*#__PURE__*/external_react_default.a.cloneElement(popupControl, { onClick: this.onControlClick, checked: open, setDomRef: this.setControlRef });var renderProps = { id: id, className: this.getClassName({ cnCtx: cnModalPopupControl, className: className }), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderContent = function renderContent() {var _this3 = this;var portalProps = passModalPortalProps.reduce(function (data, id) {var _extends3;return extends_default()({}, data, (_extends3 = {}, _extends3[id] = _this3.props[id], _extends3));}, {});if (this.state.open != null) {portalProps.open = this.state.open;}Object.assign(portalProps, { handleOpenState: this.handleOpenState, onActivate: this.onActivate, onDeactivate: this.onDeactivate, wrapperTheme: 'SubtleDark' });return /*#__PURE__*/external_react_default.a.createElement(ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Popup" }), this.renderPortalContent);};_proto.render = function render() {return /*#__PURE__*/external_react_default.a.createElement(external_react_default.a.Fragment, null, this.renderControl(), this.renderContent());};return ModalPopup;}(external_react_default.a.PureComponent /** @lends @ModalPopup.prototype */);defineProperty_default()(ModalPopup_ModalPopup_ModalPopup, "propTypes", { // onEscPressed: PropTypes.func,
+    var content = /*#__PURE__*/external_react_default.a.cloneElement(popupControl, { onClick: this.onControlClick, checked: open, setDomRef: this.setControlRef });var renderProps = { id: id, className: this.getClassName({ cnCtx: cnModalPopupControl, className: className }), ref: this.setControlRef };return /*#__PURE__*/external_react_default.a.createElement("div", renderProps, content);};_proto.renderContent = function renderContent() {var _this3 = this;var portalProps = passModalPortalProps.reduce(function (data, id) {var _extends3;return extends_default()({}, data, (_extends3 = {}, _extends3[id] = _this3.props[id], _extends3));}, {});if (this.state.open != null) {portalProps.open = this.state.open;}Object.assign(portalProps, { handleOpenState: this.handleOpenState, onActivate: this.onActivate, onDeactivate: this.onDeactivate, wrapperTheme: 'SubtleDark' });return /*#__PURE__*/external_react_default.a.createElement(elements_ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Popup" }), this.renderPortalContent);};_proto.render = function render() {return /*#__PURE__*/external_react_default.a.createElement(external_react_default.a.Fragment, null, this.renderControl(), this.renderContent());};return ModalPopup;}(external_react_default.a.PureComponent /** @lends @ModalPopup.prototype */);defineProperty_default()(ModalPopup_ModalPopup_ModalPopup, "propTypes", { // onEscPressed: PropTypes.func,
   // onKeyPress: PropTypes.func,
   // registerCallback: PropTypes.func, // registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
   className: prop_types_default.a.string, closeOnClickOutside: prop_types_default.a.bool, closeOnEscPressed: prop_types_default.a.bool, id: prop_types_default.a.string, onControlClick: prop_types_default.a.func, open: prop_types_default.a.bool, popupContent: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, popupControl: prop_types_default.a.oneOfType([prop_types_default.a.func, prop_types_default.a.object]).isRequired, setModalPopupNodeRef: prop_types_default.a.func });defineProperty_default()(ModalPopup_ModalPopup_ModalPopup, "defaultProps", { // onEscPressed: null,
@@ -7182,18 +7197,11 @@ var ModalWindow_Themes = __webpack_require__(57);
 
 
 
-// import { Portal } from 'react-portal'
-// import { // Transitions...
-//   // Transition,
-//   CSSTransition,
-//   // TransitionGroup,
-// } from 'react-transition-group'
 
 
 
 
 
-// import Loader from 'elements/Loader'
 
 
 
@@ -7204,17 +7212,14 @@ var ModalWindow_Themes = __webpack_require__(57);
 
 var cnModalWindow = configure_cn('ModalWindow');
 
-// const doDebug = false // DEBUG!
-
-// const mouseDownEvent = 'mousedown'
-// const mouseUpEvent = 'mouseup'
-// const mouseLeaveEvent = 'mouseleave'
-// const globalKeyPressEventName = 'keydown'
+// const doDebug = [>DEBUG<] false && config.build.DEV_DEBUG || // DEBUG!
+//   false
 
 var ModalWindow_selfCloseActionId = '--modal-self-close--';
 var ModalWindow_externalCloseActionId = '--modal-external-close--';var
 
 ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalWindow, _React$PureComponent);function ModalWindow() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "handleOpenState",
+
 
 
 
@@ -7430,16 +7435,7 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
 
     function (portalProps) {var
       ModalPortal = portalProps.ModalPortal;
-      // console.log(portalProps)
-      // debugger
-      if (ModalPortal) {// Save wrapping ModalPortal instance refernce
-        _this.ModalPortal = ModalPortal; // Save ModalPortal handler (TODO)
-      }
-      // const { width, windowTheme, theme, windowClassName } = this.props
-      // <div
-      //   className={cnModalWindow('Window', { width, theme: windowTheme || theme }, [windowClassName])}
-      //   ref={this.setWindowDomRef}
-      // >
+      _this.ModalPortal = ModalPortal; // Save ModalPortal handler (TODO)
       return /*#__PURE__*/(
         external_react_default.a.createElement(external_react_default.a.Fragment, null,
         _this.renderHeader(), /*#__PURE__*/
@@ -7466,53 +7462,10 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
   _proto.renderHeaderIcon = function renderHeaderIcon() {var _this$props4 = this.props,icon = _this$props4.icon,iconTheme = _this$props4.iconTheme;var theme = iconTheme || this.props.theme;var showIcon = icon || theme && config_default.a.ui.defaultIcons[theme];return showIcon && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderIcon", className: cnModalWindow('HeaderIcon', { theme: theme }) }, /*#__PURE__*/external_react_default.a.createElement(elements_InlineIcon_InlineIcon, { theme: theme, icon: showIcon }));};_proto.renderHeaderTitle = function renderHeaderTitle() {var title = this.props.title;return title && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderTitle", className: cnModalWindow('HeaderTitle') }, title);};_proto.renderHeaderCloseButton = function renderHeaderCloseButton() {var showCloseButton = this.props.showCloseButton;return showCloseButton && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderCloseButton", className: cnModalWindow('HeaderCloseButton') }, /*#__PURE__*/external_react_default.a.createElement(forms_FormButton_FormButton, { icon: "faTimes", largeIcon: true, plain: true, title: "Close window" // TODO; Translate?
       , onClick: this.onCloseButtonClick }));};_proto.renderHeader = function renderHeader() {var _this$props5 = this.props,headerTheme = _this$props5.headerTheme,theme = _this$props5.theme;var content = [this.renderHeaderIcon(), this.renderHeaderTitle(), this.renderHeaderCloseButton()].filter(Boolean);var hasHeader = !!(content && content.length);return hasHeader && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Header', { theme: headerTheme || theme }) }, content);};_proto.renderLeftContent = function renderLeftContent() {var leftContent = this.props.leftContent;return leftContent && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('LeftContent') }, leftContent);};_proto.renderContent = function renderContent() {var _this$props6 = this.props,children = _this$props6.children,contentClassName = _this$props6.contentClassName; // {[> <div className={cnModalWindow('Container')}> <]}
     // {[> </div> <]}
-    return children && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Content', [contentClassName]) }, children);};_proto.renderActions = function renderActions() {var actions = this.props.actions;return actions && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Actions') }, /*#__PURE__*/external_react_default.a.createElement(ActionsContextProvider, { value: this }, actions));};_proto.render = function render() {// const {
-    //   open,
-    // } = this.state
-    var _this$props7 =
-
-
-
-
-
-
-
-
-
-
-
-
-    this.props,id = _this$props7.id,className = _this$props7.className,closeOnClickOutside = _this$props7.closeOnClickOutside,closeOnEscPressed = _this$props7.closeOnEscPressed,handleLoaderCancel = _this$props7.handleLoaderCancel,loaderTheme = _this$props7.loaderTheme,loading = _this$props7.loading,onAction = _this$props7.onAction,onActivate = _this$props7.onActivate,onClickOutside = _this$props7.onClickOutside,onClose = _this$props7.onClose,onCloseButtonClick = _this$props7.onCloseButtonClick,onDeactivate = _this$props7.onDeactivate,onEscPressed = _this$props7.onEscPressed,onOpen = _this$props7.onOpen,open = _this$props7.open,theme = _this$props7.theme,useLoader = _this$props7.useLoader,windowClassName = _this$props7.windowClassName,windowWidth = _this$props7.windowWidth,wrapperClassName = _this$props7.wrapperClassName,wrapperTheme = _this$props7.wrapperTheme;
-    var portalProps = { // Just pass props throught
-      id: id,
-      className: className,
-      closeOnClickOutside: closeOnClickOutside,
-      closeOnEscPressed: closeOnEscPressed,
-      handleLoaderCancel: handleLoaderCancel,
-      loaderTheme: loaderTheme,
-      loading: loading,
-      onAction: onAction,
-      onActivate: onActivate,
-      onClickOutside: onClickOutside,
-      onClose: onClose,
-      onCloseButtonClick: onCloseButtonClick,
-      onDeactivate: onDeactivate,
-      onEscPressed: onEscPressed,
-      onOpen: onOpen,
-      open: open,
-      theme: theme,
-      useLoader: useLoader,
-      windowClassName: windowClassName,
-      windowWidth: windowWidth,
-      wrapperClassName: wrapperClassName,
-      wrapperTheme: wrapperTheme };
-
-    portalProps.handleOpenState = this.handleOpenState;
-    return /*#__PURE__*/(
-      external_react_default.a.createElement(ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Window" }),
-      this.renderWindow));
-
-
+    return children && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Content', [contentClassName]) }, children);};_proto.renderActions = function renderActions() {var actions = this.props.actions;return actions && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Actions') }, /*#__PURE__*/external_react_default.a.createElement(ActionsContextProvider, { value: this }, actions));};_proto.render = function render() {var _this2 = this;var portalProps = passModalPortalProps.reduce(function (data, id) {var _extends2;return extends_default()({}, data, (_extends2 = {}, _extends2[id] = _this2.props[id], _extends2));}, {});Object.assign(portalProps, { handleOpenState: this.handleOpenState // onActivate: this.onActivate,
+      // onDeactivate: this.onDeactivate,
+      // wrapperTheme: 'SubtleDark',
+    });return /*#__PURE__*/external_react_default.a.createElement(elements_ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Window" }), this.renderWindow);
   };return ModalWindow;}(external_react_default.a.PureComponent /** @lends @ModalWindow.prototype */);defineProperty_default()(ModalWindow_ModalWindow, "propTypes", { useLoader: prop_types_default.a.bool, loading: prop_types_default.a.bool, // Show Loader flashback
   onAction: prop_types_default.a.func, // Event fired on action invoked (see `actions` prop)
   // registerCallback: PropTypes.func, // ??? registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
@@ -7552,27 +7505,24 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
   closeOnEscPressed: true, // Close (with `selfCloseActionId` action id) modal by esc-key.
   closeWithCloseButton: true, // Close (with `selfCloseActionId` action id) with 'Close button' (if present in layout -- see `showCloseButton`)
   loaderTheme: 'MediumDark', loading: false, open: false, showCloseButton: false, // Display 'Close button'?
-  useLoader: false });
+  useLoader: false, wrapperTheme: 'MediumDark' });
 // EXTERNAL MODULE: ./src/elements/ModalsContainer/ModalsContainer.pcss
 var ModalsContainer_ModalsContainer = __webpack_require__(58);
 
 // CONCATENATED MODULE: ./src/elements/ModalsContainer/ModalsContainer.jsx
  /** @module ModalsContainer
-                                                                    *  @class ModalsContainer
-                                                                    *  @since 2020.12.21, 23:37
-                                                                    *  @changed 2020.12.21, 23:37
-                                                                    */
+                                                                                                                                                                                                                          *  @class ModalsContainer
+                                                                                                                                                                                                                          *  @since 2020.12.21, 23:37
+                                                                                                                                                                                                                          *  @changed 2020.12.21, 23:37
+                                                                                                                                                                                                                          */
 
 
 
 
 // import { cssMapping } from 'utils/configure'
 
-// import { // Transitions...
-//   // CSSTransition,
-//   TransitionGroup,
-// } from 'react-transition-group'
 
+// import { ModalsContextProvider } from 'helpers/ModalsContext'
 
 
 
@@ -7580,89 +7530,96 @@ var cnModalsContainer = configure_cn('ModalsContainer');
 
 // const doDebug = false // DEBUG!
 var
-ModalsContainer_ModalsContainer_ModalsContainer = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalsContainer, _React$PureComponent);function ModalsContainer() {return _React$PureComponent.apply(this, arguments) || this;}var _proto = ModalsContainer.prototype;
+ModalsContainer_ModalsContainer_ModalsContainer = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalsContainer, _React$PureComponent);
+
+
 
   // Lifecycle...
 
-  /* // UNUSED: constructor
-   * constructor(props) {
-   *   super(props)
-   *   this.ref = React.createRef()
-   *   // this.state = {}
-   *   // const initedPromise = new
-   * }
-   */_proto.
+  function ModalsContainer(props) {var _this;
+    _this = _React$PureComponent.call(this, props) || this;
+    // ???
+    // const {
+    //   modalsContainerNode, // ModalsContext Provider
+    // } = props
+    // console.log(modalsContainerNode)
+    // debugger
+    defineProperty_default()(assertThisInitialized_default()(_this), "modalsStack", []);defineProperty_default()(assertThisInitialized_default()(_this), "registerModal",
 
-  componentDidMount = function componentDidMount() {
-    // this.registerGlobalHandlers()
-    if (typeof config_default.a.modals._initPromiseResolve == 'function') {
-      config_default.a.modals._initPromiseResolve();
-      // setTimeout(config.modals._initPromiseResolve, 1000) // Delayed initializing?
-    }
-    config_default.a.modals.isInited = true;
-    config_default.a.modals.containerNode = this;
-    // eslint-disable-next-line react/no-find-dom-node
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function (modal) {
+      // console.log('ModalsContainer:registerModal', modal.props.type, modal.props.id)
+      if (!_this.modalsStack.includes(modal)) {// Add to stack if not exist
+        _this.modalsStack.push(modal);
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "unregisterModal",
+
+    function (modal) {
+      // console.log('ModalsContainer:unregisterModal', modal.props.type, modal.props.id)
+      var idx = _this.modalsStack.indexOf(modal);
+      if (idx !== -1) {// Remove if found...
+        _this.modalsStack.splice(idx, 1);
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "getTopmostVisibleModal",
+
+    function () {
+      // Look for items from last (topmost) to first (bottommost) for first visible
+      for (var n = _this.modalsStack.length - 1; n >= 0; n--) {
+        var modal = _this.modalsStack[n];
+        var isVisible = modal.isVisible();
+        if (isVisible) {
+          return modal;
+        }
+      }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "isModalTopmostVisible",
+
+    function (modal) {
+      var topmost = _this.getTopmostVisibleModal();
+      return modal === topmost;
+    });return _this;}var _proto = ModalsContainer.prototype;_proto.componentDidMount = function componentDidMount() {// this.registerGlobalHandlers()
+    if (typeof config_default.a.modals._initPromiseResolve == 'function') {config_default.a.modals._initPromiseResolve();}config_default.a.modals.isInited = true;config_default.a.modals.containerNode = this; // eslint-disable-next-line react/no-find-dom-node
     var domNode = external_react_dom_default.a.findDOMNode(this); // TODO: Find alternate legal method to get dom node? (refs doesn't works due to high-level element (`TransitionGroup`) rendering)
-    config_default.a.modals.domNode = domNode;
-  };_proto.
-
-  componentWillUnmount = function componentWillUnmount() {
-    // this.unregisterGlobalHandlers()
-  }
-
-  // Handlers...
-
-  /* // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
-   * setDomRef = (domNode) => {
-   *   if (typeof config.modals._initPromiseResolve == 'function') {
-   *     config.modals._initPromiseResolve()
-   *   }
-   *   config.modals.isInited = true
-   *   config.modals.containerNode = this
-   *   // eslint-disable-next-line react/no-find-dom-node
-   *   const domNode = ReactDOM.findDOMNode(domNode)
-   *   debugger
-   *   config.modals.domNode = domNode
-   * }
-   */
-
-  // Render...
-  ;_proto.
-  renderModalsContainer = function renderModalsContainer() {var
-    containerId = config_default.a.modals.containerId;
-    var className = cnModalsContainer(null, [this.props.className /* , cnModalsContainer('TransitionGroup') */]);
-    var renderProps = {
+    config_default.a.modals.domNode = domNode;};_proto.componentWillUnmount = function componentWillUnmount() {// this.unregisterGlobalHandlers()
+  } // Handlers...
+  // External methods...
+  ; // Render...
+  _proto.renderModalsContainer = function renderModalsContainer() {var containerId = config_default.a.modals.containerId;var className = cnModalsContainer(null, [this.props.className /* , cnModalsContainer('TransitionGroup') */]);var renderProps = {
       key: containerId || 'ModalsContainer',
       id: containerId,
-      className: className
-      // ref: this.setDomRef, // UNUSED: Using (deprecated!) `findDOMNode` in `componentDidMount` (see above)
-      // style: { border: '10px solid blue' }, // DEBUG
-    };
-    /* // TRY: css-transitions
-        * <TransitionGroup className={cnModalsContainer('TransitionGroup')}>
-        *   <CSSTransition
-        *     key={id}
-        *     timeout={5000}
-        *     // timeout={config.css.animateTime}
-        *     classNames={cnModalsContainer('Transition')}
-        *   >
-        *     <div {...renderProps}>
-        *       {popupContent}
-        *     </div>
-        *   </CSSTransition>
-        * </TransitionGroup>
-        * <TransitionGroup {...renderProps}>
-        *   <div>xxx</div>
-        * </TransitionGroup>
-        */
+      className: className };
+
+    /* // UNUSED: Failed `ModalsContext` test implementation
+                               * return (
+                               *   <ModalsContextProvider value={this}>
+                               *     <div {...renderProps} />
+                               *   </ModalsContextProvider>
+                               * )
+                               */
     return /*#__PURE__*/(
       external_react_default.a.createElement("div", renderProps));
-
 
   };_proto.
 
   render = function render() {
-    var node = document.body;
+    var node = document.body; // Render as new node in top level of dom tree
     return /*#__PURE__*/(
       external_react_default.a.createElement(PortalCompat, { node: node },
       this.renderModalsContainer()));
@@ -7737,12 +7694,14 @@ var build = __webpack_require__(60);
 
 
 // TODO: Use WebUiCoreContext?
-var build_WebUiCoreRoot = function WebUiCoreRoot(_ref) {var children = _ref.children;return /*#__PURE__*/(
+var build_WebUiCoreRoot = function WebUiCoreRoot(_ref) {var children = _ref.children;
+  return /*#__PURE__*/(
     external_react_default.a.createElement(external_react_default.a.Fragment, null,
     children, /*#__PURE__*/
-    external_react_default.a.createElement(elements_ModalsContainer_ModalsContainer, null)));};
+    external_react_default.a.createElement(elements_ModalsContainer_ModalsContainer, null)));
 
 
+};
 /* harmony default export */ var src_build = __webpack_exports__["default"] = (build_WebUiCoreRoot);
 
 /***/ })

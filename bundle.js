@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 61);
+/******/ 	return __webpack_require__(__webpack_require__.s = 62);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -353,10 +353,10 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.8-201228-0337-build-prod-default",
-  timestamp: "2020.12.28, 03:37",
-  timetag: "201228-0337",
-  version: "0.1.8" };
+  buildTag: "v.0.1.10-201229-2307-build-prod-default",
+  timestamp: "2020.12.29, 23:07",
+  timetag: "201229-2307",
+  version: "0.1.10" };
 
 /***/ }),
 /* 19 */
@@ -1112,6 +1112,12 @@ module.exports = function(originalModule) {
 
 /***/ }),
 /* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2843,7 +2849,7 @@ var FormButton_Themes = __webpack_require__(33);
  /** @module FormButton
                                                                                                                                                                                                                                                                                 *  @class FormButton
                                                                                                                                                                                                                                                                                 *  @since 2020.07.20, 19:07
-                                                                                                                                                                                                                                                                                *  @changed 2020.10.29, 03:30
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.29, 20:57
                                                                                                                                                                                                                                                                                 */
 
 
@@ -2961,11 +2967,16 @@ FormButton_FormButton_FormButton = /*#__PURE__*/function (_React$PureComponent) 
 
 
       _this.props,id = _this$props.id,actionsContextNode = _this$props.actionsContextNode,disabled = _this$props.disabled,onClick = _this$props.onClick;
-      if (!disabled && onClick && typeof onClick === 'function') {
-        onClick(event);
-      }
-      if (actionsContextNode && typeof actionsContextNode.onAction) {
-        actionsContextNode.onAction({ id: id });
+      if (!disabled) {
+        var hasOnClick = onClick && typeof onClick === 'function';
+        var result = hasOnClick ? onClick(event) : true;
+        if (result !== false && actionsContextNode && typeof actionsContextNode.onAction) {
+          Promise.resolve(result).then(function (result) {
+            if (result !== false) {// Check for non-false value
+              actionsContextNode.onAction({ id: id, result: result });
+            }
+          });
+        }
       }
     });return _this;}var _proto = FormButton.prototype; // static defaultProps = {
   // }
@@ -3112,6 +3123,8 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {in
 
 
 
+
+
   function FormGroup(props) {var _this;
     _this = _React$PureComponent.call(this, props) || this;
     _this.state = {};return _this;
@@ -3147,14 +3160,14 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {in
       content || children));
 
 
-  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, alignItems: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
+  };return FormGroup;}(external_react_default.a.PureComponent /** @lends @FormGroup.prototype */);defineProperty_default()(FormGroup_FormGroup_FormGroup, "propTypes", { id: prop_types_default.a.string, align: prop_types_default.a.string, alignItems: prop_types_default.a.string, background: prop_types_default.a.string, flow: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]), noWrap: prop_types_default.a.bool, fullWidth: prop_types_default.a.bool, padded: prop_types_default.a.bool, stack: prop_types_default.a.oneOfType([prop_types_default.a.bool, prop_types_default.a.string]) // name: PropTypes.string,
   // disabled: PropTypes.bool,
   // value: PropTypes.any,
   // valueType: PropTypes.string,
   // onChange: PropTypes.func,
 });defineProperty_default()(FormGroup_FormGroup_FormGroup, "classNameModifiers", [// Basic element properties
 'id', // Style-related modifiers...
-'align', 'alignItems', 'background', 'flow', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
+'align', 'alignItems', 'background', 'flow', 'noWrap', 'fullWidth', 'padded', 'stack']);/* harmony default export */ var forms_FormGroup_FormGroup = (forms_FormItemHOC_FormItemHOC(FormGroup_FormGroup_FormGroup));
 // CONCATENATED MODULE: ./src/forms/FormLabeledGroup/FormLabeledGroup.jsx
 /** @module FormLabeledGroup
  *  @class FormLabeledGroup
@@ -3175,9 +3188,7 @@ FormGroup_FormGroup_FormGroup = /*#__PURE__*/function (_React$PureComponent) {in
 // class FormLabeledGroup extends React.PureComponent [>* @lends @FormLabeledGroup.prototype <] {
 var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @lends @FormLabeledGroup.prototype */{var
 
-
-  children =
-
+  className =
 
 
 
@@ -3186,10 +3197,13 @@ var FormLabeledGroup_FormLabeledGroup = function FormLabeledGroup(props) /** @le
 
 
 
-  props.children,id = props.id,fullWidth = props.fullWidth,innerFlex = props.innerFlex,htmlFor = props.htmlFor,title = props.title,text = props.text,flow = props.flow;
+
+
+  props.className,children = props.children,id = props.id,fullWidth = props.fullWidth,innerFlex = props.innerFlex,htmlFor = props.htmlFor,title = props.title,text = props.text,flow = props.flow;
   // const thisClassName = cnFormLabeledGroup({ flow, full })
   return /*#__PURE__*/(
     external_react_default.a.createElement(forms_FormGroup_FormGroup, {
+      className: className,
       fullWidth: fullWidth,
       innerFlex: innerFlex,
       flow: flow,
@@ -4567,7 +4581,7 @@ var ModalPortal_Transitions = __webpack_require__(43);
  /** @module ModalPortal
                                                                                                                                                                                                                                                                                 *  @class ModalPortal
                                                                                                                                                                                                                                                                                 *  @since 2020.12.21, 22:58
-                                                                                                                                                                                                                                                                                *  @changed 2020.12.26, 23:11
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.29, 19:58
                                                                                                                                                                                                                                                                                 *
                                                                                                                                                                                                                                                                                 *  External methods (for PopupStack, ModalWindow etc):
                                                                                                                                                                                                                                                                                 *
@@ -4679,6 +4693,7 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
+
   // Instance variables...
 
 
@@ -4696,6 +4711,15 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
     _this = _React$PureComponent.call(this, props) || this;
     // const popupsInited = config.modals.isInited
     defineProperty_default()(assertThisInitialized_default()(_this), "isOutsideClickWaiting", false);defineProperty_default()(assertThisInitialized_default()(_this), "globalHandlersRegistered", false);defineProperty_default()(assertThisInitialized_default()(_this), "wrapperDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "windowDomNode", null);defineProperty_default()(assertThisInitialized_default()(_this), "transitionTime", 0);defineProperty_default()(assertThisInitialized_default()(_this), "resolvingResult", null);defineProperty_default()(assertThisInitialized_default()(_this), "getId",
+
+
+
+
+
+
+
+
+
 
 
 
@@ -5027,13 +5051,16 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
 
     function (domNode) {
       _this.wrapperDomNode = domNode;
-    });_this.state = { popupsInited: false, activated: false, open: false };config_default.a.modals.initPromise.then(_this.onPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;_this.modalType = props.type; /* // UNUSED: Failed `ModalsContext` test implementation
-                                                                                                                                                                                                                   * const {
-                                                                                                                                                                                                                   *   modalsContainerNode, // ModalsContext Provider
-                                                                                                                                                                                                                   * } = props
-                                                                                                                                                                                                                   * console.log(modalsContainerNode)
-                                                                                                                                                                                                                   * debugger
-                                                                                                                                                                                                                   */return _this;}var _proto = ModalPortal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state; // console.log('ModalPortal:componentDidUpdate', {
+    });_this.state = { popupsInited: false, activated: false, open: false };config_default.a.modals.initPromise.then(_this.onPopupsInited);_this.transitionTime = config_default.a.css.modalAnimateTime;_this.modalType = props.type;if (typeof props.setPortalNode === 'function') {props.setPortalNode(assertThisInitialized_default()(_this));} /* // UNUSED: Failed `ModalsContext` test implementation
+                                                                                                                                                                                                                                                                                                                       * const {
+                                                                                                                                                                                                                                                                                                                       *   modalsContainerNode, // ModalsContext Provider
+                                                                                                                                                                                                                                                                                                                       * } = props
+                                                                                                                                                                                                                                                                                                                       * console.log(modalsContainerNode)
+                                                                                                                                                                                                                                                                                                                       * debugger
+                                                                                                                                                                                                                                                                                                                       */return _this;}var _proto = ModalPortal.prototype;_proto.componentWillUnmount = function componentWillUnmount() {if (!this.unregisterGlobalHandlers) {var error = new Error('ModalPortal: unregisterGlobalHandlers method is undefined');console.error(error); // eslint-disable-line no-console
+      //DEBUG//debugger; // eslint-disable-line no-debugger
+      throw error; // ???
+    }this.unregisterGlobalHandlers();};_proto.componentDidUpdate = function componentDidUpdate(prevProps, prevState) {var _this2 = this;var props = this.props;var state = this.state; // console.log('ModalPortal:componentDidUpdate', {
     //   'props.open': props.open,
     //   'state.open': state.open,
     // })
@@ -5089,10 +5116,7 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
     }var open = this.state.open;return /*#__PURE__*/external_react_default.a.createElement(esm_CSSTransition, { key: id // id={id}
       , timeout: this.transitionTime, in: open, classNames: cnModalPortal() // Generate animation classes
     }, /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal({ type: type, id: id }, [className]) // Root node
-      , ref: this.setRootDomRef }, /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal('Wrapper', { theme: wrapperTheme || theme }, [wrapperClassName]), ref: this.setWrapperDomRef },
-
-    this.renderWindow(),
-    useLoader && this.renderLoader())));
+      , ref: this.setRootDomRef }, /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalPortal('Wrapper', { theme: wrapperTheme || theme }, [wrapperClassName]), ref: this.setWrapperDomRef }, this.renderWindow(), useLoader && this.renderLoader())));
 
 
 
@@ -5102,9 +5126,20 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
   render = function render() {var _this$state =
     this.state,popupsInited = _this$state.popupsInited,activated = _this$state.activated;
     var toDisplay = popupsInited && activated;
-    return toDisplay && /*#__PURE__*/
-    external_react_default.a.createElement(PortalCompat, { node: config_default.a.modals.domNode },
-    this.renderModalPortal());
+    if (!toDisplay) {
+      return null;
+    }
+    var node = config_default.a.modals.domNode;
+    if (!node) {
+      var error = new Error('ModalPortal: config.modals.domNode is undefined. Don\'t forget to use WebUiCoreRoot with autoModalsContainer mode or render ModalsContainer manually.');
+      console.error(error); // eslint-disable-line no-console
+      //DEBUG//debugger; // eslint-disable-line no-debugger
+      throw error; // ???
+    }
+    // console.log('ModalPortal:render', this.props.children)
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(PortalCompat, { node: node },
+      this.renderModalPortal()));
 
 
   };return ModalPortal;}(external_react_default.a.PureComponent /** @lends @ModalPortal.prototype */);defineProperty_default()(ModalPortal_ModalPortal, "propTypes", { useLoader: prop_types_default.a.bool, // Use loader (see `loading`)
@@ -5133,7 +5168,8 @@ ModalPortal_ModalPortal = /*#__PURE__*/function (_React$PureComponent) {inherits
   theme: prop_types_default.a.string, // ModalPortal theme (default theme for all other themed elements, see `*Theme`)
   windowTheme: prop_types_default.a.string, // Window theme (using `theme` if not specified)
   wrapperTheme: prop_types_default.a.string, // Wrapper (back-curtain) theme (using `theme` if not specified)
-  loaderTheme: prop_types_default.a.string // Loader theme ('MediumDark' is default)
+  loaderTheme: prop_types_default.a.string, // Loader theme ('MediumDark' is default)
+  setPortalNode: prop_types_default.a.func // Get reference to `ModalPortal` instance node
 });defineProperty_default()(ModalPortal_ModalPortal, "defaultProps", { loaderTheme: 'MediumDark' });/* harmony default export */ var elements_ModalPortal_ModalPortal = (ModalPortal_ModalPortal); /* // UNUSED: Failed `ModalsContext` test implementation
                                                                                                             * export default compose(
                                                                                                             *   withModalsContext,
@@ -5307,6 +5343,8 @@ ModalPopup_ModalPopup_ModalPopup = /*#__PURE__*/function (_React$PureComponent) 
 
 
 
+
+  // Properties...
 
 
 
@@ -5749,9 +5787,8 @@ ModalPopup_ModalPopup_ModalPopup = /*#__PURE__*/function (_React$PureComponent) 
         _this.ModalPortal = ModalPortal; // Save ModalPortal handler (TODO)
         _this.windowDomNode = windowDomNode;
         _this.wrapperDomNode = wrapperDomNode;
-      }
-      // debugger
-      var _this$props2 =
+      }var _this$props2 =
+
 
 
 
@@ -7181,18 +7218,24 @@ var ModalWindow_Geometry = __webpack_require__(56);
 // EXTERNAL MODULE: ./src/elements/ModalWindow/ModalWindow-Themes.pcss
 var ModalWindow_Themes = __webpack_require__(57);
 
+// EXTERNAL MODULE: ./src/elements/ModalWindow/ModalWindow-Errors.pcss
+var ModalWindow_Errors = __webpack_require__(58);
+
 // CONCATENATED MODULE: ./src/elements/ModalWindow/ModalWindow.jsx
  /** @module ModalWindow
                                                                                                                                                                                                                                                                                 *  @class ModalWindow
                                                                                                                                                                                                                                                                                 *  @since 2020.12.21, 22:58
-                                                                                                                                                                                                                                                                                *  @changed 2020.12.25, 15:30
+                                                                                                                                                                                                                                                                                *  @changed 2020.12.29, 20:05
                                                                                                                                                                                                                                                                                 *
                                                                                                                                                                                                                                                                                 *  External methods (for PopupStack):
                                                                                                                                                                                                                                                                                 *  - close
                                                                                                                                                                                                                                                                                 *  - open
                                                                                                                                                                                                                                                                                 *  - updateGeometry
+                                                                                                                                                                                                                                                                                *
+                                                                                                                                                                                                                                                                                *  TODO 2020.12.29, 21:51 -- Use level mod (increase margins)
                                                                                                                                                                                                                                                                                 */
 /* --eslint-disable no-console */
+
 
 
 
@@ -7215,10 +7258,10 @@ var cnModalWindow = configure_cn('ModalWindow');
 // const doDebug = [>DEBUG<] false && config.build.DEV_DEBUG || // DEBUG!
 //   false
 
-var ModalWindow_selfCloseActionId = '--modal-self-close--';
-var ModalWindow_externalCloseActionId = '--modal-external-close--';var
+var ModalWindow_selfCloseActionId = 'modalSelfClose';
+var ModalWindow_externalCloseActionId = 'modalExternalClose';var
 
-ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalWindow, _React$PureComponent);function ModalWindow() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "handleOpenState",
+ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalWindow, _React$PureComponent);function ModalWindow() {var _this;for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _React$PureComponent.call.apply(_React$PureComponent, [this].concat(args)) || this;defineProperty_default()(assertThisInitialized_default()(_this), "ModalPortal",
 
 
 
@@ -7277,13 +7320,7 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
-
-
-
-
-
-
-
+    null);defineProperty_default()(assertThisInitialized_default()(_this), "handleOpenState",
 
 
 
@@ -7340,6 +7377,10 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
       if (typeof onCloseButtonClick === 'function') {
         onCloseButtonClick({ id: id });
       }
+    });defineProperty_default()(assertThisInitialized_default()(_this), "setPortalNode",
+
+    function (node) {// Save reference to ModalPortal node
+      _this.ModalPortal = node;
     });defineProperty_default()(assertThisInitialized_default()(_this), "open",
 
 
@@ -7347,7 +7388,7 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
     function () {return _this.ModalPortal && _this.ModalPortal.open();});defineProperty_default()(assertThisInitialized_default()(_this), "close",
     function () {return _this.ModalPortal && _this.ModalPortal.close();});defineProperty_default()(assertThisInitialized_default()(_this), "toggle",
     function (open) {return _this.ModalPortal && _this.ModalPortal.toggle(open);});defineProperty_default()(assertThisInitialized_default()(_this), "isVisible",
-    function () {return _this.ModalPortal && _this.ModalPortal.isVisible();});defineProperty_default()(assertThisInitialized_default()(_this), "renderWindow",
+    function () {return _this.ModalPortal && _this.ModalPortal.isVisible();});defineProperty_default()(assertThisInitialized_default()(_this), "renderContentError",
 
 
 
@@ -7411,6 +7452,27 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
+    function (error) {
+      if (Array.isArray(error)) {
+        return error.
+        map(_this.renderContentError).
+        filter(function (x) {return x;}).
+        map(function (str, n) {
+          var key = 'error' + n;
+          return /*#__PURE__*/external_react_default.a.createElement("div", { key: key, className: cnModalWindow('ErrorItem') }, str);
+        });
+      }
+      if (!error) {
+        return null;
+      }
+      if (error instanceof Error) {
+        return String(error).replace(/^Error:\s*/, '');
+      }
+      if (typeof error !== 'string') {
+        return String(error);
+      }
+      return error;
+    });defineProperty_default()(assertThisInitialized_default()(_this), "renderWindow",
 
 
 
@@ -7433,9 +7495,17 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
-    function (portalProps) {var
-      ModalPortal = portalProps.ModalPortal;
-      _this.ModalPortal = ModalPortal; // Save ModalPortal handler (TODO)
+
+
+
+
+
+
+
+    function () /* portalProps */{
+      // const { ModalPortal } = portalProps || {} // !!!
+      // this.ModalPortal = ModalPortal // Save ModalPortal handler
+      // console.log('ModalWindow:renderWindow', this.props.children)
       return /*#__PURE__*/(
         external_react_default.a.createElement(external_react_default.a.Fragment, null,
         _this.renderHeader(), /*#__PURE__*/
@@ -7449,34 +7519,43 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
 
 
 
-    });return _this;}var _proto = ModalWindow.prototype; // Lifecycle...
-  // typeId = 'ModalWindow'
-  /* // UNUSED: constructor
-   * constructor(props) {
-   *   super(props)
-   * }
-   */_proto.componentWillUnmount = function componentWillUnmount() {this.unregisterGlobalHandlers();} // Helpers...
-  // Handlers...
-  ; // Render helpers...
+    });return _this;}var _proto = ModalWindow.prototype; // Render helpers...
   // Render...
   _proto.renderHeaderIcon = function renderHeaderIcon() {var _this$props4 = this.props,icon = _this$props4.icon,iconTheme = _this$props4.iconTheme;var theme = iconTheme || this.props.theme;var showIcon = icon || theme && config_default.a.ui.defaultIcons[theme];return showIcon && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderIcon", className: cnModalWindow('HeaderIcon', { theme: theme }) }, /*#__PURE__*/external_react_default.a.createElement(elements_InlineIcon_InlineIcon, { theme: theme, icon: showIcon }));};_proto.renderHeaderTitle = function renderHeaderTitle() {var title = this.props.title;return title && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderTitle", className: cnModalWindow('HeaderTitle') }, title);};_proto.renderHeaderCloseButton = function renderHeaderCloseButton() {var showCloseButton = this.props.showCloseButton;return showCloseButton && /*#__PURE__*/external_react_default.a.createElement("div", { key: "HeaderCloseButton", className: cnModalWindow('HeaderCloseButton') }, /*#__PURE__*/external_react_default.a.createElement(forms_FormButton_FormButton, { icon: "faTimes", largeIcon: true, plain: true, title: "Close window" // TODO; Translate?
-      , onClick: this.onCloseButtonClick }));};_proto.renderHeader = function renderHeader() {var _this$props5 = this.props,headerTheme = _this$props5.headerTheme,theme = _this$props5.theme;var content = [this.renderHeaderIcon(), this.renderHeaderTitle(), this.renderHeaderCloseButton()].filter(Boolean);var hasHeader = !!(content && content.length);return hasHeader && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Header', { theme: headerTheme || theme }) }, content);};_proto.renderLeftContent = function renderLeftContent() {var leftContent = this.props.leftContent;return leftContent && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('LeftContent') }, leftContent);};_proto.renderContent = function renderContent() {var _this$props6 = this.props,children = _this$props6.children,contentClassName = _this$props6.contentClassName; // {[> <div className={cnModalWindow('Container')}> <]}
-    // {[> </div> <]}
-    return children && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Content', [contentClassName]) }, children);};_proto.renderActions = function renderActions() {var actions = this.props.actions;return actions && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Actions') }, /*#__PURE__*/external_react_default.a.createElement(ActionsContextProvider, { value: this }, actions));};_proto.render = function render() {var _this2 = this;var portalProps = passModalPortalProps.reduce(function (data, id) {var _extends2;return extends_default()({}, data, (_extends2 = {}, _extends2[id] = _this2.props[id], _extends2));}, {});Object.assign(portalProps, { handleOpenState: this.handleOpenState // onActivate: this.onActivate,
+      , onClick: this.onCloseButtonClick }));};_proto.renderHeader = function renderHeader() {var _this$props5 = this.props,headerTheme = _this$props5.headerTheme,theme = _this$props5.theme;var content = [this.renderHeaderIcon(), this.renderHeaderTitle(), this.renderHeaderCloseButton()].filter(Boolean);var hasHeader = !!(content && content.length);return hasHeader && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Header', { theme: headerTheme || theme }) }, content);};_proto.renderLeftContent = function renderLeftContent() {var leftContent = this.props.leftContent;return leftContent && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('LeftContent') }, leftContent);};_proto.renderContent = function renderContent() {var _this$props6 = this.props,children = _this$props6.children,contentClassName = _this$props6.contentClassName,error = _this$props6.error; // console.log('ModalWindow:renderContent', children)
+    // debugger
+    var errorContent = error && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Error') }, this.renderContentError(error));return children && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Content', [contentClassName]) }, errorContent, children);};_proto.renderActions = function renderActions() {var actions = this.props.actions;return actions && /*#__PURE__*/external_react_default.a.createElement("div", { className: cnModalWindow('Actions') }, /*#__PURE__*/external_react_default.a.createElement(ActionsContextProvider, { value: this }, actions));};_proto.render = function render() {var _this2 = this;var portalProps = passModalPortalProps.reduce(function (data, id) {var _extends2;return extends_default()({}, data, (_extends2 = {}, _extends2[id] = _this2.props[id], _extends2));}, {});
+    Object.assign(portalProps, {
+      handleOpenState: this.handleOpenState
+      // onActivate: this.onActivate,
       // onDeactivate: this.onDeactivate,
       // wrapperTheme: 'SubtleDark',
-    });return /*#__PURE__*/external_react_default.a.createElement(elements_ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Window" }), this.renderWindow);
+    });
+    // console.log('ModalWindow:render', this.props.children)
+    // NOTE: Use arrow function to force update modal content
+    return /*#__PURE__*/(
+      external_react_default.a.createElement(elements_ModalPortal_ModalPortal, extends_default()({}, portalProps, { type: "Window", setPortalNode: this.setPortalNode }),
+      this.renderWindow()));
+
+
+    // return (
+    //   <ModalPortal {...portalProps} type="Window">
+    //     {(props) => this.renderWindow(props)}
+    //   </ModalPortal>
+    // )
   };return ModalWindow;}(external_react_default.a.PureComponent /** @lends @ModalWindow.prototype */);defineProperty_default()(ModalWindow_ModalWindow, "propTypes", { useLoader: prop_types_default.a.bool, loading: prop_types_default.a.bool, // Show Loader flashback
   onAction: prop_types_default.a.func, // Event fired on action invoked (see `actions` prop)
   // registerCallback: PropTypes.func, // ??? registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
   // setModalNodeRef: PropTypes.func, // ??? Demo?
   width: prop_types_default.a.string, // ModalWindow window width (predefined variants: xs, sm, md, lg, xl, xxl)
   handleLoaderCancel: prop_types_default.a.func, // Loader onCancel event handler
+  error: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.arrayOf(prop_types_default.a.string)]), // Error(s) strings to display above content
   actions: prop_types_default.a.oneOfType([prop_types_default.a.array, prop_types_default.a.object]), // Actions component(s) (TODO: `ActionsContext` must be used)
   closeOnCancelAction: prop_types_default.a.bool, // Auto-close on `cancel` action event
   closeOnClickOutside: prop_types_default.a.bool, // Close (cancel) modal by click outside modal window (on 'curtain')
   closeOnEscPressed: prop_types_default.a.bool, // Close (cancel) modal on esc key pressed
   closeWithCloseButton: prop_types_default.a.bool, // Close (cancel) modal by click on header 'Close' button
+  showCloseButton: prop_types_default.a.bool, // Display close button in header
   icon: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Show icon in header
   id: prop_types_default.a.string, // ModalWindow id
   leftContent: prop_types_default.a.oneOfType([prop_types_default.a.string, prop_types_default.a.object]), // Content at left of main content and actions (ideal place for large visual icon)
@@ -7489,7 +7568,6 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
   onClose: prop_types_default.a.func, // Event fired on modal close
   handleOpenState: prop_types_default.a.func, // Event fired on modal open state change (update external open/close state) ({ open, id } => void)
   open: prop_types_default.a.bool, // Show modal by default
-  showCloseButton: prop_types_default.a.bool, // Display close button in header
   title: prop_types_default.a.string, // ModalWindow title
   className: prop_types_default.a.string, // ModalWindow class name
   contentClassName: prop_types_default.a.string, // Content element class name
@@ -7507,7 +7585,7 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
   loaderTheme: 'MediumDark', loading: false, open: false, showCloseButton: false, // Display 'Close button'?
   useLoader: false, wrapperTheme: 'MediumDark' });
 // EXTERNAL MODULE: ./src/elements/ModalsContainer/ModalsContainer.pcss
-var ModalsContainer_ModalsContainer = __webpack_require__(58);
+var ModalsContainer_ModalsContainer = __webpack_require__(59);
 
 // CONCATENATED MODULE: ./src/elements/ModalsContainer/ModalsContainer.jsx
  /** @module ModalsContainer
@@ -7515,6 +7593,7 @@ var ModalsContainer_ModalsContainer = __webpack_require__(58);
                                                                                                                                                                                                                           *  @since 2020.12.21, 23:37
                                                                                                                                                                                                                           *  @changed 2020.12.21, 23:37
                                                                                                                                                                                                                           */
+
 
 
 
@@ -7531,6 +7610,12 @@ var cnModalsContainer = configure_cn('ModalsContainer');
 // const doDebug = false // DEBUG!
 var
 ModalsContainer_ModalsContainer_ModalsContainer = /*#__PURE__*/function (_React$PureComponent) {inheritsLoose_default()(ModalsContainer, _React$PureComponent);
+
+
+
+
+
+  // Internal variables...
 
 
 
@@ -7620,13 +7705,17 @@ ModalsContainer_ModalsContainer_ModalsContainer = /*#__PURE__*/function (_React$
 
   render = function render() {
     var node = document.body; // Render as new node in top level of dom tree
-    return /*#__PURE__*/(
-      external_react_default.a.createElement(PortalCompat, { node: node },
-      this.renderModalsContainer()));
-
-
-  };return ModalsContainer;}(external_react_default.a.PureComponent /** @lends @ModalsContainer.prototype */);
-
+    var container = this.renderModalsContainer();var
+    usePortal = this.props.usePortal;
+    var content = usePortal ? /*#__PURE__*/external_react_default.a.createElement(PortalCompat, { node: node }, container) : container;
+    return content;
+    // return (
+    //   <Portal node={node}>
+    //     {this.renderModalsContainer()}
+    //   </Portal>
+    // )
+  };return ModalsContainer;}(external_react_default.a.PureComponent /** @lends @ModalsContainer.prototype */);defineProperty_default()(ModalsContainer_ModalsContainer_ModalsContainer, "propTypes", { usePortal: prop_types_default.a.bool // Render container at end of dom tree root level
+});
 
 
 /* harmony default export */ var elements_ModalsContainer_ModalsContainer = (ModalsContainer_ModalsContainer_ModalsContainer);
@@ -7637,7 +7726,7 @@ ModalsContainer_ModalsContainer_ModalsContainer = /*#__PURE__*/function (_React$
  *  @changed 2020.12.24, 23:52
  */
 // EXTERNAL MODULE: ./src/demo/Hello/Hello.pcss
-var Hello_Hello = __webpack_require__(59);
+var Hello_Hello = __webpack_require__(60);
 
 // CONCATENATED MODULE: ./src/demo/Hello/img/LockColor2.svg
 /* harmony default export */ var LockColor2 = ("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggc3R5bGU9ImZpbGw6I0Y3RjJGNDsiIGQ9Ik00MzIsNDg3SDgwYy00NC4xMTIsMC04MC0zNS44ODgtODAtODBzMzUuODg4LTgwLDgwLTgwaDM1MmM0NC4xMTIsMCw4MCwzNS44ODgsODAsODANCglTNDc2LjExMiw0ODcsNDMyLDQ4N3oiLz4NCjxnPg0KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzZENzM3RjsiIGN4PSIyMDYiIGN5PSI0MDciIHI9IjI1Ii8+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgY3g9IjEwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNkQ3MzdGOyIgZD0iTTMxNiwxNTdIMTk2Yy04LjI4NCwwLTE1LTYuNzE2LTE1LTE1di00MmMwLTQxLjM1NSwzMy42NDUtNzUsNzUtNzVzNzUsMzMuNjQ1LDc1LDc1djQyDQoJCUMzMzEsMTUwLjI4NCwzMjQuMjg0LDE1NywzMTYsMTU3eiBNMjExLDEyN2g5MHYtMjdjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1cy00NSwyMC4xODctNDUsNDVWMTI3eiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6IzVFNUY2OTsiIGQ9Ik0yNTYsMjV2MzBjMjQuODEzLDAsNDUsMjAuMTg3LDQ1LDQ1djI3aC00NXYzMGg2MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di00Mg0KCUMzMzEsNTguNjQ1LDI5Ny4zNTUsMjUsMjU2LDI1eiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGQUMyQjsiIGQ9Ik0zNTEsMjc2SDE2MWMtOC4yODQsMC0xNS02LjcxNi0xNS0xNVYxNDJjMC04LjI4NCw2LjcxNi0xNSwxNS0xNWgxOTBjOC4yODQsMCwxNSw2LjcxNiwxNSwxNXYxMTkNCglDMzY2LDI2OS4yODQsMzU5LjI4NCwyNzYsMzUxLDI3NnoiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRjk4MUU7IiBkPSJNMzUxLDEyN2gtOTV2MTQ5aDk1YzguMjg0LDAsMTUtNi43MTYsMTUtMTVWMTQyQzM2NiwxMzMuNzE2LDM1OS4yODQsMTI3LDM1MSwxMjd6Ii8+DQoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGOTgxRTsiIGQ9Ik0yODEsMTkyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTIwYy04LjI4NCwwLTE1LDYuNzE2LTE1LDE1YzAsNi41MjgsNC4xNzgsMTIuMDY3LDEwLDE0LjEyOFYyMTINCgkJYzAsOC4yODQsNi43MTYsMTUsMTUsMTVzMTUtNi43MTYsMTUtMTV2LTUuODcyQzI3Ni44MjIsMjA0LjA2NywyODEsMTk4LjUyOCwyODEsMTkyeiIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0RGREFFMDsiIGQ9Ik00MzIsMzI3SDI1NnYxNjBoMTc2YzQ0LjExMiwwLDgwLTM1Ljg4OCw4MC04MFM0NzYuMTEyLDMyNyw0MzIsMzI3eiIvPg0KPGc+DQoJPGNpcmNsZSBzdHlsZT0iZmlsbDojNUU1RjY5OyIgY3g9IjMwNiIgY3k9IjQwNyIgcj0iMjUiLz4NCgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1RTVGNjk7IiBjeD0iNDA2IiBjeT0iNDA3IiByPSIyNSIvPg0KPC9nPg0KPHBhdGggc3R5bGU9ImZpbGw6I0ZGODUxMjsiIGQ9Ik0yNjYsMTc3aC0xMHY1MGM4LjI4NCwwLDE1LTYuNzE2LDE1LTE1di01Ljg3MmM1LjgyMi0yLjA2MSwxMC03LjYsMTAtMTQuMTI4DQoJQzI4MSwxODMuNzE2LDI3NC4yODQsMTc3LDI2NiwxNzd6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
@@ -7671,7 +7760,7 @@ var Hello_Hello_Hello = function Hello(_ref) {var _ref$greeting = _ref.greeting,
 
 /* harmony default export */ var demo_Hello_Hello = (Hello_Hello_Hello);
 // EXTERNAL MODULE: ./src/build.pcss
-var build = __webpack_require__(60);
+var build = __webpack_require__(61);
 
 // CONCATENATED MODULE: ./src/build.jsx
 /** @module build
@@ -7694,11 +7783,11 @@ var build = __webpack_require__(60);
 
 
 // TODO: Use WebUiCoreContext?
-var build_WebUiCoreRoot = function WebUiCoreRoot(_ref) {var children = _ref.children;
+var build_WebUiCoreRoot = function WebUiCoreRoot(_ref) {var children = _ref.children,autoModalsContainer = _ref.autoModalsContainer;
   return /*#__PURE__*/(
     external_react_default.a.createElement(external_react_default.a.Fragment, null,
-    children, /*#__PURE__*/
-    external_react_default.a.createElement(elements_ModalsContainer_ModalsContainer, null)));
+    children,
+    autoModalsContainer && /*#__PURE__*/external_react_default.a.createElement(elements_ModalsContainer_ModalsContainer, null)));
 
 
 };

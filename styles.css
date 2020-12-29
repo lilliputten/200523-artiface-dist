@@ -1629,9 +1629,9 @@ label.FormLabel-Control[for] {
 .FormGroup_flow, .FormGroup_flow_vertical {
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
     }
+
+/* flex-wrap: wrap;*/
 
 .FormGroup_flow > .FormItem_fill, .FormGroup_flow_vertical > .FormItem_fill {
         -ms-flex: 1 1;
@@ -1641,12 +1641,19 @@ label.FormLabel-Control[for] {
 .FormGroup_flow_vertical {
       -ms-flex-direction: column;
           flex-direction: column;
+      /* flex-wrap: nowrap;*/
     }
 
 .FormGroup_flow.FormGroup_alignItems_center {
         -ms-flex-pack: center;
             justify-content: center;
       }
+
+.FormGroup_noWrap {
+    white-space: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 
 .FormGroup > .FormGroup_align_right { /* flow*/
       /* Align to right*/
@@ -2205,6 +2212,7 @@ input.FormTextInput-Control::-ms-clear {
 
 .FormRadio { /* Basic geometry. For styles look for `FormRadio-Styles.pcss`*/
   overflow: hidden;
+  min-width: 32px;
 }
 
 /* NOTE: FormItem inherited*/
@@ -3876,10 +3884,10 @@ input.FormTextInput-Control::-ms-clear {
 .ModalWindow-Content {
     -ms-flex: 1 1 auto;
         flex: 1 1 auto;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    /* align-items: center;*/
+    /* align-content: center;*/
     /* align-self: center;*/
     /* border: 1px solid blue;*/
     padding: 10px;
@@ -3920,6 +3928,22 @@ input.FormTextInput-Control::-ms-clear {
       border-radius: 5px;
     }
 
+/** @module ModalWindow-Errors.styles
+ *  @since 2020.12.29, 19:51
+ *  @changed 2020.12.29, 19:51
+ */
+
+.ModalWindow-Error {
+    color: #c33;
+    /* padding: 0 4px;*/
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+.ModalWindow-ErrorItem + .ModalWindow-ErrorItem {
+      margin-top: 10px;
+    }
+
 /** @module ModalsContainer.pcss
  *  @class ModalsContainer
  *  @since 2020.12.21, 23:37
@@ -3927,7 +3951,7 @@ input.FormTextInput-Control::-ms-clear {
  */
 
 .ModalsContainer {
-  z-index: 500; /* Lift ip to top-most level TODO: Pay attemtion to target app header/footer z-indices?*/
+  z-index: 200; /* Lift ip to top-most level (but below footer which located at 300 z-level).*/
   position: fixed;
   top: 0;
   bottom: 0;

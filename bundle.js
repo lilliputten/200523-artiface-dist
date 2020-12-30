@@ -353,10 +353,10 @@ module.exports = { // Common-used build variables...
   DEV_DEBUG: DEV_DEBUG,
 
   THEME: "default",
-  buildTag: "v.0.1.10-201229-2307-build-prod-default",
-  timestamp: "2020.12.29, 23:07",
-  timetag: "201229-2307",
-  version: "0.1.10" };
+  buildTag: "v.0.1.11-201230-1909-build-prod-default",
+  timestamp: "2020.12.30, 19:09",
+  timetag: "201230-1909",
+  version: "0.1.11" };
 
 /***/ }),
 /* 19 */
@@ -7538,11 +7538,6 @@ ModalWindow_ModalWindow = /*#__PURE__*/function (_React$PureComponent) {inherits
       this.renderWindow()));
 
 
-    // return (
-    //   <ModalPortal {...portalProps} type="Window">
-    //     {(props) => this.renderWindow(props)}
-    //   </ModalPortal>
-    // )
   };return ModalWindow;}(external_react_default.a.PureComponent /** @lends @ModalWindow.prototype */);defineProperty_default()(ModalWindow_ModalWindow, "propTypes", { useLoader: prop_types_default.a.bool, loading: prop_types_default.a.bool, // Show Loader flashback
   onAction: prop_types_default.a.func, // Event fired on action invoked (see `actions` prop)
   // registerCallback: PropTypes.func, // ??? registerCallback(handler = this.someMethod) -- handler stored by parent component and called when detected click on pulldown menu -- prevents popup content closing
